@@ -1,0 +1,22 @@
+{
+  "name": "infotech/reference",
+  "require": {
+    "php": ">=7.0.0",
+    "yiisoft/yii2": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "infotech\\reference\\": "src"
+    }
+  },
+  "minimum-stability": "stable",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^6.4"
+  }
+}
