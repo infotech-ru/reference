@@ -26,22 +26,22 @@ class Emplacement extends ActiveRecord
         return new EmplacementQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getSerie(): SerieQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'serie_id']);
     }
 
-    public function getColor(): ColorQuery
+    public function getColor()
     {
         return $this->hasOne(Color::class, ['id' => 'color_id']);
     }
 
-    public function getEquipment(): EquipmentQuery
+    public function getEquipment()
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }

@@ -14,4 +14,15 @@ class EmplacementQueryTest extends TestCase
     {
         $this->assertInstanceOf(ActiveQuery::class, new EmplacementQuery(Emplacement::class));
     }
+
+    public function testIsRecent()
+    {
+        $query = new EmplacementQuery(Emplacement::class);
+        $query->isMain();
+        $this->assertEquals(['eqt_catalog_emplacement.is_main' => true], $query->where);
+
+        $query = new EmplacementQuery(Emplacement::class);
+        $query->isMain(1);
+        $this->assertEquals(['eqt_catalog_emplacement.is_main' => 1], $query->where);
+    }
 }

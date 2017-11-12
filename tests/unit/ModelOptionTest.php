@@ -44,4 +44,21 @@ class ModelOptionTest extends TestCase
         $model = new ModelOption();
         $this->assertInstanceOf(ModelOptionTagQuery::class, $model->getModelOptionTag());
     }
+
+    public function testAttributes()
+    {
+        $model = new ModelOption();
+        $this->assertEquals(
+            [
+                'id',
+                'model_id',
+                'option_group_id',
+                'model_option_tag_id',
+                'name',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }

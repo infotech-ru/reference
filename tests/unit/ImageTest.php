@@ -42,4 +42,21 @@ class ImageTest extends TestCase
         $model = new Image();
         $this->assertInstanceOf(ForeshorteningQuery::class, $model->getForeshortening());
     }
+
+    public function testAttributes()
+    {
+        $model = new Image();
+        $this->assertEquals(
+            [
+                'emplacement_id',
+                'foreshortening_id',
+                'url',
+                'is_main',
+                'is_serie_main',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }

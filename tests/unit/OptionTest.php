@@ -44,4 +44,21 @@ class OptionTest extends TestCase
         $model = new Option();
         $this->assertInstanceOf(OptionGroupQuery::class, $model->getOptionGroup());
     }
+
+    public function testAttributes()
+    {
+        $model = new Option();
+        $this->assertEquals(
+            [
+                'id',
+                'equipment_id',
+                'model_option_id',
+                'name',
+                'created_at',
+                'updated_at',
+                'option_group_id',
+            ],
+            $model->attributes()
+        );
+    }
 }

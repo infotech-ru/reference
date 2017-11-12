@@ -26,17 +26,17 @@ class ModelOption extends ActiveRecord
         return new ModelOptionQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getOptionGroup(): OptionGroupQuery
+    public function getOptionGroup()
     {
         return $this->hasOne(OptionGroup::class, ['id' => 'option_group_id']);
     }
 
-    public function getModelOptionTag(): ModelOptionTagQuery
+    public function getModelOptionTag()
     {
         return $this->hasOne(ModelOptionTag::class, ['id' => 'model_option_tag_id']);
     }

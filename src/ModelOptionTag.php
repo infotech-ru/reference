@@ -22,7 +22,7 @@ class ModelOptionTag extends ActiveRecord
         return new ModelOptionTagQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }

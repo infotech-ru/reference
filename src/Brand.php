@@ -28,17 +28,17 @@ class Brand extends ActiveRecord
         return new BrandQuery(get_called_class());
     }
 
-    public function getModels(): ModelQuery
+    public function getModels()
     {
         return $this->hasMany(Model::class, ['brand_id' => 'id']);
     }
 
-    public function getBrandLogo(): BrandLogoQuery
+    public function getBrandLogo()
     {
         return $this->hasOne(BrandLogo::class, ['brand_id' => 'id']);
     }
 
-    public function getOptionGroups(): OptionGroupQuery
+    public function getOptionGroups()
     {
         return $this->hasMany(OptionGroup::class, ['brand_id' => 'id']);
     }

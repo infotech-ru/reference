@@ -51,4 +51,22 @@ class EmplacementTest extends TestCase
         $model = new Emplacement();
         $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
+
+    public function testAttributes()
+    {
+        $model = new Emplacement();
+        $this->assertEquals(
+            [
+                'id',
+                'model_id',
+                'serie_id',
+                'color_id',
+                'equipment_id',
+                'is_main',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }

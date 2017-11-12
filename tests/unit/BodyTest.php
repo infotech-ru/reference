@@ -23,4 +23,17 @@ class BodyTest extends TestCase
     {
         $this->assertInstanceOf(BodyQuery::class, Body::find());
     }
+
+    public function testAttributes()
+    {
+        $model = new Body();
+        $this->assertEquals(
+            [
+                'id',
+                'name',
+                'tradein_code',
+            ],
+            $model->attributes()
+        );
+    }
 }
