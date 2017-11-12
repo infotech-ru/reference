@@ -4,12 +4,12 @@ namespace infotech\reference;
 
 class SerieQuery extends ActiveQuery
 {
-    public function recent($value = true)
+    public function isRecent($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_recent' => $value]);
     }
 
-    public function visible($value = true)
+    public function isVisible($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_visible' => $value]);
     }

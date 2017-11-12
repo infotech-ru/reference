@@ -42,4 +42,23 @@ class GenerationTest extends TestCase
         $model = new Generation();
         $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
+
+    public function testAttributes()
+    {
+        $model = new Generation();
+        $this->assertEquals(
+            [
+                'id_car_generation',
+                'name',
+                'model_id',
+                'year_begin',
+                'year_end',
+                'is_visible',
+                'id_car_type',
+                'is_recent',
+                'origin_id',
+            ],
+            $model->attributes()
+        );
+    }
 }

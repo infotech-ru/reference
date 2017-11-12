@@ -25,17 +25,17 @@ class Option extends ActiveRecord
         return new OptionQuery(get_called_class());
     }
 
-    public function getEquipment(): EquipmentQuery
+    public function getEquipment()
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 
-    public function getModelOption(): ModelOptionQuery
+    public function getModelOption()
     {
         return $this->hasOne(ModelOption::class, ['id' => 'model_option_id']);
     }
 
-    public function getOptionGroup(): OptionGroupQuery
+    public function getOptionGroup()
     {
         return $this->hasOne(OptionGroup::class, ['id' => 'option_group_id']);
     }

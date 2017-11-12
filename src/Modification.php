@@ -10,7 +10,7 @@ class Modification extends ActiveRecord
         return 'car_modification';
     }
 
-    public static function primaryKey(): string
+    public static function primaryKey()
     {
         return 'id_car_modification';
     }
@@ -20,7 +20,7 @@ class Modification extends ActiveRecord
         return new ModificationQuery(get_called_class());
     }
 
-    public function getSerie(): SerieQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'id_car_serie']);
     }

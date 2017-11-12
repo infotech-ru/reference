@@ -63,4 +63,23 @@ class SerieTest extends TestCase
         $model = new Serie();
         $this->assertInstanceOf(EmplacementQuery::class, $model->getEmplacements());
     }
+
+    public function testAttributes()
+    {
+        $model = new Serie();
+        $this->assertEquals(
+            [
+                'id_car_serie',
+                'model_id',
+                'name',
+                'is_visible',
+                'id_car_generation',
+                'id_car_type',
+                'body_id',
+                'is_recent',
+                'origin_id',
+            ],
+            $model->attributes()
+        );
+    }
 }

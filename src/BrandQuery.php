@@ -5,7 +5,7 @@ namespace infotech\reference;
 
 class BrandQuery extends ActiveQuery
 {
-    public function supported($value)
+    public function isSupported($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_supported' => $value]);
     }

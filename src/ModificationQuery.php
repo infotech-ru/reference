@@ -5,17 +5,17 @@ namespace infotech\reference;
 
 class ModificationQuery extends ActiveQuery
 {
-    public function recent($value = true)
+    public function isRecent($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_recent' => $value]);
     }
 
-    public function visible($value = true)
+    public function isVisible($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_visible' => $value]);
     }
 
-    public function deleted($value = true)
+    public function isDeleted($value = true)
     {
         return $this->andWhere([$this->tableName().'.is_deleted' => $value]);
     }

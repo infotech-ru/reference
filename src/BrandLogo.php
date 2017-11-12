@@ -15,7 +15,7 @@ class BrandLogo extends ActiveRecord
         return 'eqt_brand_logo';
     }
 
-    public static function primaryKey(): string
+    public static function primaryKey()
     {
         return 'brand_id';
     }
@@ -25,7 +25,7 @@ class BrandLogo extends ActiveRecord
         return new BrandLogoQuery(get_called_class());
     }
 
-    public function getBrand(): BrandQuery
+    public function getBrand()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }

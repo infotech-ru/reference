@@ -35,4 +35,16 @@ class BrandLogoTest extends TestCase
         $model = new BrandLogo();
         $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
+
+    public function testAttributes()
+    {
+        $model = new BrandLogo();
+        $this->assertEquals(
+            [
+                'brand_id',
+                'url',
+            ],
+            $model->attributes()
+        );
+    }
 }

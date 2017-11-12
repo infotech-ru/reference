@@ -20,7 +20,7 @@ class Image extends ActiveRecord
         return 'eqt_catalog_image';
     }
 
-    public static function primaryKey(): array
+    public static function primaryKey()
     {
         return ['emplacement_id', 'foreshortening_id'];
     }
@@ -30,12 +30,12 @@ class Image extends ActiveRecord
         return new ImageQuery(get_called_class());
     }
 
-    public function getEmplacement(): EmplacementQuery
+    public function getEmplacement()
     {
         return $this->hasOne(Emplacement::class, ['id' => 'emplacement_id']);
     }
 
-    public function getForeshortening(): ForeshorteningQuery
+    public function getForeshortening()
     {
         return $this->hasOne(Foreshortening::class, ['id' => 'foreshortening_id']);
     }
