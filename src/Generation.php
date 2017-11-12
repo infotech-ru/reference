@@ -32,12 +32,12 @@ class Generation extends ActiveRecord
         return new GenerationQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getSeries(): SerieQuery
+    public function getSeries()
     {
         return $this->hasMany(Serie::class, ['id_car_generation' => 'id_car_generation']);
     }

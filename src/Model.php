@@ -28,42 +28,42 @@ class Model extends ActiveRecord
         return new ModelQuery(get_called_class());
     }
 
-    public function getBrand(): BrandQuery
+    public function getBrand()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 
-    public function getGenerations(): GenerationQuery
+    public function getGenerations()
     {
         return $this->hasMany(Generation::class, ['model_id' => 'id']);
     }
 
-    public function getEquipments(): EquipmentQuery
+    public function getEquipments()
     {
         return $this->hasMany(Equipment::class, ['model_id' => 'id']);
     }
 
-    public function getModelYears(): ModelYearQuery
+    public function getModelYears()
     {
         return $this->hasMany(ModelYear::class, ['model_id' => 'id']);
     }
 
-    public function getColors(): ColorQuery
+    public function getColors()
     {
         return $this->hasMany(Color::class, ['model_id' => 'id']);
     }
 
-    public function getEmplacements(): EmplacementQuery
+    public function getEmplacements()
     {
         return $this->hasMany(Emplacement::class, ['model_id' => 'id']);
     }
 
-    public function getModelOptionTags(): ModelOptionTagQuery
+    public function getModelOptionTags()
     {
         return $this->hasMany(ModelOptionTag::class, ['model_id' => 'id']);
     }
 
-    public function getModelOptions(): ModelOptionQuery
+    public function getModelOptions()
     {
         return $this->hasMany(ModelOption::class, ['model_id' => 'id']);
     }

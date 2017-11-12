@@ -20,7 +20,7 @@ class Modification extends ActiveRecord
         return new ModificationQuery(get_called_class());
     }
 
-    public function getSerie(): SerieQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'id_car_serie']);
     }

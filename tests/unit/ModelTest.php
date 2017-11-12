@@ -79,4 +79,25 @@ class ModelTest extends TestCase
         $model = new Model();
         $this->assertInstanceOf(ModelOptionQuery::class, $model->getModelOptions());
     }
+
+    public function testAttributes()
+    {
+        $model = new Model();
+        $this->assertEquals(
+            [
+                'brand_id',
+                'id',
+                'name',
+                'tradein_code',
+                'is_recent',
+                'dealerpoint_code',
+                'ord',
+                'ecm_id',
+                'is_deleted',
+                'is_commercial',
+                'origin_id',
+            ],
+            $model->attributes()
+        );
+    }
 }

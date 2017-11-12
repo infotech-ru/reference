@@ -30,4 +30,19 @@ class ModelYearTest extends TestCase
         $model = new ModelYear();
         $this->assertInstanceOf(ModelQuery::class, $model->getModel());
     }
+
+    public function testAttributes()
+    {
+        $model = new ModelYear();
+        $this->assertEquals(
+            [
+                'id',
+                'model_id',
+                'year',
+                'is_recent',
+                'is_default',
+            ],
+            $model->attributes()
+        );
+    }
 }

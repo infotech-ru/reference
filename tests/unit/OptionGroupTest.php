@@ -30,4 +30,19 @@ class OptionGroupTest extends TestCase
         $model = new OptionGroup();
         $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
+
+    public function testAttributes()
+    {
+        $model = new OptionGroup();
+        $this->assertEquals(
+            [
+                'id',
+                'brand_id',
+                'name',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }

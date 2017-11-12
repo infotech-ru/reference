@@ -43,4 +43,22 @@ class ColorTest extends TestCase
         $model = new Color();
         $this->assertInstanceOf(EmplacementQuery::class, $model->getEmplacements());
     }
+
+    public function testAttributes()
+    {
+        $model = new Color();
+        $this->assertEquals(
+            [
+                'id',
+                'code',
+                'model_id',
+                'common_color_id',
+                'rgb',
+                'name',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }

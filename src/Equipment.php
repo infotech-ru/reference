@@ -29,17 +29,17 @@ class Equipment extends ActiveRecord
         return new EquipmentQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getSerie(): SerieQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
 
-    public function getEmplacements(): EmplacementQuery
+    public function getEmplacements()
     {
         return $this->hasMany(Emplacement::class, ['equipment_id' => 'id']);
     }

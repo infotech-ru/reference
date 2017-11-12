@@ -35,4 +35,30 @@ class ModificationTest extends TestCase
         $model = new Modification();
         $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
+
+    public function testAttributes()
+    {
+        $model = new Modification();
+        $this->assertEquals(
+            [
+                'id_car_modification',
+                'id_car_serie',
+                'name',
+                'start_production_year',
+                'end_production_year',
+                'drive_type',
+                'engine_type',
+                'transmission_type',
+                'is_visible',
+                'id_car_type',
+                'price_min',
+                'price_max',
+                'package_code',
+                'is_recent',
+                'origin_id',
+                'is_deleted',
+            ],
+            $model->attributes()
+        );
+    }
 }

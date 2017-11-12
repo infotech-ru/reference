@@ -23,4 +23,19 @@ class ForeshorteningTest extends TestCase
     {
         $this->assertInstanceOf(ForeshorteningQuery::class, Foreshortening::find());
     }
+
+    public function testAttributes()
+    {
+        $model = new Foreshortening();
+        $this->assertEquals(
+            [
+                'id',
+                'name',
+                'order',
+                'created_at',
+                'updated_at',
+            ],
+            $model->attributes()
+        );
+    }
 }
