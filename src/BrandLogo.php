@@ -15,7 +15,7 @@ class BrandLogo extends ActiveRecord
         return 'eqt_brand_logo';
     }
 
-    public static function primaryKey(): string
+    public static function primaryKey()
     {
         return 'brand_id';
     }

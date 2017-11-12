@@ -10,7 +10,7 @@ class Modification extends ActiveRecord
         return 'car_modification';
     }
 
-    public static function primaryKey(): string
+    public static function primaryKey()
     {
         return 'id_car_modification';
     }

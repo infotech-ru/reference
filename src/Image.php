@@ -20,7 +20,7 @@ class Image extends ActiveRecord
         return 'eqt_catalog_image';
     }
 
-    public static function primaryKey(): array
+    public static function primaryKey()
     {
         return ['emplacement_id', 'foreshortening_id'];
     }

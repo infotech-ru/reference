@@ -13,7 +13,7 @@ class Serie extends ActiveRecord
         return 'car_serie';
     }
 
-    public static function primaryKey(): string
+    public static function primaryKey()
     {
         return 'id_car_serie';
     }
