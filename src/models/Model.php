@@ -15,6 +15,14 @@ namespace infotech\reference\models;
  * @property boolean $is_deleted
  * @property boolean $is_commercial
  * @property integer $origin_id
+ * @property Brand $brand
+ * @property Generation[] $generations
+ * @property Equipment[] $equipments
+ * @property ModelYear[] $modelYears
+ * @property Color[] $colors
+ * @property CatalogEmplacement[] $catalogEmplacements
+ * @property ModelOptionTag[] $modelOptionTags
+ * @property ModelOption[] $modelOptions
  */
 class Model extends ActiveRecord
 {

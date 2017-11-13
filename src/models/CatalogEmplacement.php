@@ -13,6 +13,10 @@ namespace infotech\reference\models;
  * @property boolean $is_main
  * @property string  $created_at
  * @property string  $updated_at
+ * @property Model $model
+ * @property Serie $serie
+ * @property Color $color
+ * @property Equipment $equipment
  */
 class CatalogEmplacement extends ActiveRecord
 {

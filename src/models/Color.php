@@ -13,6 +13,9 @@ namespace infotech\reference\models;
  * @property string  $name
  * @property string  $created_at
  * @property string  $updated_at
+ * @property Model $model
+ * @property Color $commonColor
+ * @property CatalogEmplacement[] $catalogEmplacements
  */
 class Color extends ActiveRecord
 {
