@@ -26,7 +26,7 @@ class SerieTest extends TestCase
 
     public function testPrimaryKey()
     {
-        $this->assertEquals('id_car_serie', Serie::primaryKey());
+        $this->assertEquals(['id_car_serie'], Serie::primaryKey());
     }
 
     public function testFind()

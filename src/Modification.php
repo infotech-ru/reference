@@ -10,9 +10,9 @@ class Modification extends ActiveRecord
         return 'car_modification';
     }
 
-    public static function primaryKey()
+    public static function primaryKey(): array
     {
-        return 'id_car_modification';
+        return ['id_car_modification'];
     }
 
     public static function find()

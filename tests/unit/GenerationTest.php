@@ -23,7 +23,7 @@ class GenerationTest extends TestCase
 
     public function testPrimaryKey()
     {
-        $this->assertEquals('id_car_generation', Generation::primaryKey());
+        $this->assertEquals(['id_car_generation'], Generation::primaryKey());
     }
 
     public function testFind()

@@ -22,7 +22,7 @@ class BrandLogoTest extends TestCase
 
     public function testPrimaryKey()
     {
-        $this->assertEquals('brand_id', BrandLogo::primaryKey());
+        $this->assertEquals(['brand_id'], BrandLogo::primaryKey());
     }
 
     public function testFind()

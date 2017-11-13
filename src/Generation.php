@@ -17,9 +17,9 @@ namespace infotech\reference;
  */
 class Generation extends ActiveRecord
 {
-    public static function primaryKey()
+    public static function primaryKey(): array
     {
-        return 'id_car_generation';
+        return ['id_car_generation'];
     }
 
     public static function tableName(): string

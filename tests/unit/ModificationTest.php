@@ -22,7 +22,7 @@ class ModificationTest extends TestCase
 
     public function testPrimaryKey()
     {
-        $this->assertEquals('id_car_modification', Modification::primaryKey());
+        $this->assertEquals(['id_car_modification'], Modification::primaryKey());
     }
 
     public function testFind()

@@ -13,9 +13,9 @@ class Serie extends ActiveRecord
         return 'car_serie';
     }
 
-    public static function primaryKey()
+    public static function primaryKey(): array
     {
-        return 'id_car_serie';
+        return ['id_car_serie'];
     }
 
     public static function find()
