@@ -13,6 +13,9 @@ namespace infotech\reference\models;
  * @property string  $name
  * @property string  $created_at
  * @property string  $updated_at
+ * @property-read Model $model
+ * @property-read OptionGroup $optionGroup
+ * @property-read ModelOptionTag $modelOptionTag
  */
 class ModelOption extends ActiveRecord
 {

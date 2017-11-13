@@ -5,6 +5,20 @@ namespace infotech\reference\models;
 /**
  * Class Serie
  * @package infotech\reference\models
+ * @property integer $id_car_serie
+ * @property integer $model_id
+ * @property string $name
+ * @property boolean $is_visible
+ * @property integer $id_car_generation
+ * @property integer $id_car_type
+ * @property integer $body_id
+ * @property boolean $is_recent
+ * @property integer $origin_id
+ * @property-read Generation $generation
+ * @property-read Body $body
+ * @property-read Modification[] $modifications
+ * @property-read Equipment[] $equipments
+ * @property-read CatalogEmplacement[] $catalogEmplacements
  */
 class Serie extends ActiveRecord
 {

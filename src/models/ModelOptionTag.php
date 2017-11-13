@@ -9,6 +9,7 @@ namespace infotech\reference\models;
  * @property integer $id
  * @property integer $model_id
  * @property integer $name
+ * @property-read Model $model
  */
 class ModelOptionTag extends ActiveRecord
 {

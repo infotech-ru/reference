@@ -14,8 +14,8 @@ namespace infotech\reference\models;
  * @property integer $id_car_type
  * @property boolean $is_recent
  * @property integer $origin_id
- * @property Model $model
- * @property Serie[] $series
+ * @property-read Model $model
+ * @property-read Serie[] $series
  */
 class Generation extends ActiveRecord
 {

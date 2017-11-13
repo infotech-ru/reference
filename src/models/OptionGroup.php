@@ -10,6 +10,7 @@ namespace infotech\reference\models;
  * @property string  $name
  * @property string  $created_at
  * @property string  $updated_at
+ * @property-read Brand $brand
  */
 class OptionGroup extends ActiveRecord
 {

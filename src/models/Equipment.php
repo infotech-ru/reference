@@ -16,9 +16,9 @@ namespace infotech\reference\models;
  * @property string  $created_at
  * @property string  $updated_at
  * @property integer $origin_id
- * @property Model $model
- * @property Serie $serie
- * @property CatalogEmplacement[] $catalogEmplacements
+ * @property-read Model $model
+ * @property-read Serie $serie
+ * @property-read CatalogEmplacement[] $catalogEmplacements
  */
 class Equipment extends ActiveRecord
 {

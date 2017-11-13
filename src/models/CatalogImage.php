@@ -12,8 +12,8 @@ namespace infotech\reference\models;
  * @property boolean $is_serie_main
  * @property string  $created_at
  * @property string  $updated_at
- * @property CatalogEmplacement $catalogEmplacement
- * @property CatalogForeshortening $catalogForeshortening
+ * @property-read CatalogEmplacement $catalogEmplacement
+ * @property-read CatalogForeshortening $catalogForeshortening
  */
 class CatalogImage extends ActiveRecord
 {

@@ -10,6 +10,7 @@ namespace infotech\reference\models;
  * @property integer $year
  * @property boolean $is_recent
  * @property boolean $is_default
+ * @property-read Model $model
  */
 class ModelYear extends ActiveRecord
 {

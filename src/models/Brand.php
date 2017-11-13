@@ -15,9 +15,9 @@ namespace infotech\reference\models;
  * @property integer $ecm_id
  * @property boolean $is_supported
  * @property integer $origin_id
- * @property Model[] $models
- * @property BrandLogo $brandLogo
- * @property OptionGroup[] $optionGroups
+ * @property-read Model[] $models
+ * @property-read BrandLogo $brandLogo
+ * @property-read OptionGroup[] $optionGroups
  */
 class Brand extends ActiveRecord
 {
