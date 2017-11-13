@@ -44,4 +44,9 @@ class Modification extends ActiveRecord
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'id_car_serie']);
     }
+
+    public function getCharacteristicValues()
+    {
+        return $this->hasMany(CharacteristicValue::class, ['id_car_modification' => 'id_car_modification']);
+    }
 }

@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\Modification;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\SerieQuery;
@@ -34,6 +35,12 @@ class ModificationTest extends TestCase
     {
         $model = new Modification();
         $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
+    }
+
+    public function testGetCharacteristicValues()
+    {
+        $model = new Modification();
+        $this->assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
     }
 
     public function testAttributes()
