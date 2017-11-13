@@ -1,0 +1,30 @@
+<?php
+
+namespace infotech\reference\models;
+
+/**
+ * Class ModelYear
+ * @package infotech\reference\models
+ * @property integer $id
+ * @property integer $model_id
+ * @property integer $year
+ * @property boolean $is_recent
+ * @property boolean $is_default
+ */
+class ModelYear extends ActiveRecord
+{
+    public static function tableName(): string
+    {
+        return 'model_year';
+    }
+
+    public static function find()
+    {
+        return new ModelYearQuery(get_called_class());
+    }
+
+    public function getModel()
+    {
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
+    }
+}
