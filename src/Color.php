@@ -26,17 +26,17 @@ class Color extends ActiveRecord
         return new ColorQuery(get_called_class());
     }
 
-    public function getModel(): ModelQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getCommonColor(): ColorQuery
+    public function getCommonColor()
     {
         return $this->hasOne(Color::class, ['id' => 'common_color_id']);
     }
 
-    public function getEmplacements(): EmplacementQuery
+    public function getEmplacements()
     {
         return $this->hasMany(Emplacement::class, ['color_id' => 'id']);
     }
