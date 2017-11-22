@@ -36,4 +36,15 @@ class ModelQueryTest extends TestCase
         $query->isDeleted(1);
         $this->assertEquals(['models.is_deleted' => 1], $query->where);
     }
+
+    public function testBrand()
+    {
+        $query = new ModelQuery(Model::class);
+        $query->brand(1);
+        $this->assertEquals(['models.brand_id' => 1], $query->where);
+
+        $query = new ModelQuery(Model::class);
+        $query->brand(23);
+        $this->assertEquals(['models.brand_id' => 23], $query->where);
+    }
 }
