@@ -22,6 +22,24 @@ class Source extends ActiveRecord
         return new SourceQuery(get_called_class());
     }
 
+    private static function processItems($list, $parentId, $prefix): array
+    {
+        $result = [];
+        foreach ($list as $item) {
+            if ($item->parent_id == $parentId) {
+                $result[$item->id] = $prefix . ' ' . $item->name;
+                $result += static::processItems($list, $item->id, $prefix . '-');
+            }
+        }
+        return $result;
+    }
+
+
+    public static function getList(): array
+    {
+        return static::processItems(static::find()->all(), null, '');
+    }
+
     public function getParent()
     {
         return $this->hasOne(Source::class, ['id' => 'parent_id']);
