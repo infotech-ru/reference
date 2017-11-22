@@ -1082,6 +1082,17 @@ CREATE TABLE `sources` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `sources`
+--
+
+LOCK TABLES `sources` WRITE;
+/*!40000 ALTER TABLE `sources` DISABLE KEYS */;
+INSERT INTO `sources` VALUES (1,'1',NULL),(2,'2',1),(3,'3',2),(4,'4',NULL),(5,'5',4);
+/*!40000 ALTER TABLE `sources` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+--
 -- Table structure for table `stat_models`
 --
 
