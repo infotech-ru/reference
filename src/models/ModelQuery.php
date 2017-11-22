@@ -11,6 +11,11 @@ class ModelQuery extends ActiveQuery
 
     public function isDeleted($value = true)
     {
-        return $this->andWhere([$this->tableName().'.is_deleted' => $value]);
+        return $this->andWhere([$this->tableName() . '.is_deleted' => $value]);
+    }
+
+    public function brand($id)
+    {
+        return $this->andWhere([$this->tableName() . '.brand_id' => $id]);
     }
 }
