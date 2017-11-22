@@ -52,6 +52,20 @@ CREATE TABLE `brands` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `brands`
+--
+
+LOCK TABLES `brands` WRITE;
+/*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (1,'Opel','opel.png','opel',NULL,NULL,NULL,0,NULL),(2,'Chevrolet','chevrolet.png','chevrolet',NULL,NULL,NULL,0,NULL),(3,'Cadillac','cadillac.png','cadillac',NULL,NULL,NULL,0,NULL);
+/*!40000 ALTER TABLE `brands` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+
+
+
+--
 -- Table structure for table `car_characteristic`
 --
 
