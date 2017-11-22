@@ -21,9 +21,18 @@ namespace infotech\reference\models;
  */
 class Brand extends ActiveRecord
 {
+    const SUBARU_ID = 111;
+    const GAZ_ID = 127;
+    const UAZ_ID = 134;
+
     public static function tableName(): string
     {
         return 'brands';
+    }
+
+    public static function getList(): array
+    {
+        return static::find()->select('name, id')->indexBy('id')->column();
     }
 
     public static function find()

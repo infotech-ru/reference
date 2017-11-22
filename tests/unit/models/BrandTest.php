@@ -63,4 +63,28 @@ class BrandTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals([
+            '1' => 'Opel',
+            '2' => 'Chevrolet',
+            '3' => 'Cadillac',
+        ], Brand::getList());
+    }
+
+    public function testSubaruId()
+    {
+        $this->assertEquals(111, Brand::SUBARU_ID);
+    }
+
+    public function testGazId()
+    {
+        $this->assertEquals(127, Brand::GAZ_ID);
+    }
+
+    public function testUazId()
+    {
+        $this->assertEquals(134, Brand::UAZ_ID);
+    }
 }
