@@ -20,4 +20,9 @@ class Body extends ActiveRecord
     {
         return new BodyQuery(get_called_class());
     }
+
+    public static function getList(): array
+    {
+        return static::find()->select('name, id')->indexBy('id')->column();
+    }
 }
