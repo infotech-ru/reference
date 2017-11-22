@@ -31,6 +31,17 @@ CREATE TABLE `bodies` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `bodies`
+--
+
+LOCK TABLES `bodies` WRITE;
+/*!40000 ALTER TABLE `bodies` DISABLE KEYS */;
+INSERT INTO `bodies` VALUES (1,'1',NULL),(2,'2',NULL);
+/*!40000 ALTER TABLE `bodies` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+--
 -- Table structure for table `brands`
 --
 
@@ -670,6 +681,18 @@ CREATE TABLE `eqt_color` (
   CONSTRAINT `eqt_fk_color_model` FOREIGN KEY (`model_id`) REFERENCES `models` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11374 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_color`
+--
+
+LOCK TABLES `eqt_color` WRITE;
+/*!40000 ALTER TABLE `eqt_color` DISABLE KEYS */;
+INSERT INTO `eqt_color` VALUES (1,NULL,NULL,NULL,'','1','2016-11-01 15:11:16','2017-10-05 10:59:05'),(2,NULL,NULL,NULL,'','2','2016-11-01 15:11:16','2017-10-05 10:59:05');
+/*!40000 ALTER TABLE `eqt_color` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
 
 --
 -- Table structure for table `eqt_equipment`
