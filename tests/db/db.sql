@@ -176,6 +176,18 @@ CREATE TABLE `car_modification` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `car_modification`
+--
+
+LOCK TABLES `car_modification` WRITE;
+/*!40000 ALTER TABLE `car_modification` DISABLE KEYS */;
+INSERT INTO `car_modification` VALUES (1,1,'1',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,0,NULL,0),(2,1,'2',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,0,NULL,1),(3,1,'3',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,0),(4,1,'4',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,1),(5,1,'5',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,1,NULL,0),(6,1,'6',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,1,NULL,1),(7,1,'7',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,0),(8,1,'8',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,1);
+/*!40000 ALTER TABLE `car_modification` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+
+--
 -- Table structure for table `car_serie`
 --
 
@@ -294,6 +306,19 @@ CREATE TABLE `countries` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `countries`
+--
+
+LOCK TABLES `countries` WRITE;
+/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
+INSERT INTO `countries` VALUES (1,'Россия','+7','ru'),(2,'Беларусь','+375','by'),(7,'Казахстан','+7','ru');
+/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+
 
 --
 -- Table structure for table `crm_instructions`

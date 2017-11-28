@@ -68,4 +68,12 @@ class ModificationTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals([], Modification::getList(1, true));
+        $this->assertEquals([], Modification::getList(1, false));
+        $this->assertEquals([], Modification::getList(0, true));
+        $this->assertEquals([], Modification::getList(0, false));
+    }
 }
