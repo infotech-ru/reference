@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: localhost    Database: autocrm
+-- Host: localhost    Database: autocrm_test
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -1239,6 +1239,7 @@ CREATE TABLE `eqt_skin` (
 
 LOCK TABLES `eqt_skin` WRITE;
 /*!40000 ALTER TABLE `eqt_skin` DISABLE KEYS */;
+INSERT INTO `eqt_skin` VALUES (1,1,NULL,'1','1','2017-11-28 18:40:00','2017-11-28 18:40:05'),(2,2,NULL,NULL,'2','2017-11-28 18:40:29','2017-11-28 18:40:32');
 /*!40000 ALTER TABLE `eqt_skin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1290,6 +1291,7 @@ CREATE TABLE `model_year` (
 
 LOCK TABLES `model_year` WRITE;
 /*!40000 ALTER TABLE `model_year` DISABLE KEYS */;
+INSERT INTO `model_year` VALUES (1,1,1,1,0),(2,1,2,0,0),(3,2,3,1,0),(4,2,4,0,0);
 /*!40000 ALTER TABLE `model_year` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1700,4 +1702,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-28 18:01:07
+-- Dump completed on 2017-11-28 18:41:01

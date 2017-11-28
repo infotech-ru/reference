@@ -28,4 +28,17 @@ class ModelYear extends ActiveRecord
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
+
+    public static function getList($modelId, $recentOnly)
+    {
+        $query = static::find()
+            ->model($modelId)
+            ->select('year, id')
+            ->indexBy('id');
+        if ($recentOnly) {
+            $query->isRecent(true);
+        }
+
+        return $query->column();
+    }
 }

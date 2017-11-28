@@ -14,4 +14,9 @@ class ModelYearQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName().'.is_default' => $value]);
     }
+
+    public function model($value)
+    {
+        return $this->andWhere([$this->tableName().'.model_id' => $value]);
+    }
 }

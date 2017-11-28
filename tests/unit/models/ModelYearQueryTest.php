@@ -36,4 +36,15 @@ class ModelYearQueryTest extends TestCase
         $query->isDefault(1);
         $this->assertEquals(['model_year.is_default' => 1], $query->where);
     }
+
+    public function testModel()
+    {
+        $query = new ModelYearQuery(ModelYear::class);
+        $query->model(1);
+        $this->assertEquals(['model_year.model_id' => 1], $query->where);
+
+        $query = new ModelYearQuery(ModelYear::class);
+        $query->model([1, 2]);
+        $this->assertEquals(['model_year.model_id' => [1, 2]], $query->where);
+    }
 }

@@ -13,6 +13,7 @@ use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelYearQuery;
+use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
 
 class ModelTest extends TestCase
@@ -105,5 +106,18 @@ class ModelTest extends TestCase
     {
         $this->assertEquals(['1' => '1'], Model::getList(1, true));
         $this->assertEquals(['1' => '1', '2' => '2'], Model::getList(1, false));
+    }
+
+    public function testGetSkins()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(SkinQuery::class, $model->getSkins());
+    }
+
+    public function testGetFullName()
+    {
+        $model = Model::findOne(1);
+        $this->assertInstanceOf(Model::class, $model);
+        $this->assertEquals('Opel 1', $model->getFullName());
     }
 }
