@@ -45,4 +45,10 @@ class ModelYearTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], ModelYear::getList(1, true));
+        $this->assertEquals(['1' => '1', '2' => '2'], ModelYear::getList(1, false));
+    }
 }

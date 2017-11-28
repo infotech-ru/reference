@@ -23,6 +23,7 @@ namespace infotech\reference\models;
  * @property-read CatalogEmplacement[] $catalogEmplacements
  * @property-read ModelOptionTag[] $modelOptionTags
  * @property-read ModelOption[] $modelOptions
+ * @property-read Skin[] $skins
  */
 class Model extends ActiveRecord
 {
@@ -88,5 +89,15 @@ class Model extends ActiveRecord
     public function getModelOptions()
     {
         return $this->hasMany(ModelOption::class, ['model_id' => 'id']);
+    }
+
+    public function getSkins()
+    {
+        return $this->hasMany(Skin::class, ['model_id' => 'id']);
+    }
+
+    public function getFullName()
+    {
+        return $this->brand->name.' '.$this->name;
     }
 }
