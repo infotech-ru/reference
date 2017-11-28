@@ -13,4 +13,9 @@ class SerieQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName().'.is_visible' => $value]);
     }
+
+    public function generation($generationId)
+    {
+        return $this->andWhere([$this->tableName().'.id_car_generation' => $generationId]);
+    }
 }

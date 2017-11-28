@@ -82,4 +82,10 @@ class SerieTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], Serie::getList(1, true));
+        $this->assertEquals(['1' => '1', '2' => '2'], Serie::getList(1, false));
+    }
 }

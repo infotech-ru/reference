@@ -71,9 +71,7 @@ class ModificationTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals([], Modification::getList(1, true));
-        $this->assertEquals([], Modification::getList(1, false));
-        $this->assertEquals([], Modification::getList(0, true));
-        $this->assertEquals([], Modification::getList(0, false));
+        $this->assertEquals(['1' => '1'], Modification::getList(1, true));
+        $this->assertEquals(['1' => '1', '2' => '2'], Modification::getList(1, false));
     }
 }

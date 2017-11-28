@@ -100,4 +100,10 @@ class ModelTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], Model::getList(1, true));
+        $this->assertEquals(['1' => '1', '2' => '2'], Model::getList(1, false));
+    }
 }

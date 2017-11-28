@@ -22,6 +22,10 @@ namespace infotech\reference\models;
  */
 class Equipment extends ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+
+    const STATUS_ARCHIVE = 3;
+
     public static function tableName(): string
     {
         return 'eqt_equipment';
@@ -31,6 +35,20 @@ class Equipment extends ActiveRecord
     {
         return new EquipmentQuery(get_called_class());
     }
+
+    public static function getList($serieId, $recentOnly)
+    {
+        $query = static::find()
+            ->serie($serieId)
+            ->select('name, id')
+            ->indexBy('id');
+        if ($recentOnly) {
+            $query->status(Equipment::STATUS_ACTIVE);
+        }
+
+        return $query->column();
+    }
+
 
     public function getModel()
     {
