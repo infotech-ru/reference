@@ -18,6 +18,7 @@ namespace infotech\reference\models;
  * @property-read Model[] $models
  * @property-read BrandLogo $brandLogo
  * @property-read OptionGroup[] $optionGroups
+ * @property-read OrderType[] $orderTypes
  */
 class Brand extends ActiveRecord
 {
@@ -53,5 +54,10 @@ class Brand extends ActiveRecord
     public function getOptionGroups()
     {
         return $this->hasMany(OptionGroup::class, ['brand_id' => 'id']);
+    }
+
+    public function getOrderTypes()
+    {
+        return $this->hasMany(OrderType::class, ['brand_id' => 'id']);
     }
 }

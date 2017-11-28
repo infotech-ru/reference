@@ -8,6 +8,7 @@ use infotech\reference\models\BrandLogoQuery;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\OptionGroupQuery;
+use infotech\reference\models\OrderTypeQuery;
 use PHPUnit\Framework\TestCase;
 
 class BrandTest extends TestCase
@@ -86,5 +87,11 @@ class BrandTest extends TestCase
     public function testUazId()
     {
         $this->assertEquals(134, Brand::UAZ_ID);
+    }
+
+    public function testGetOrderTypes()
+    {
+        $model = new Brand();
+        $this->assertInstanceOf(OrderTypeQuery::class, $model->getOrderTypes());
     }
 }
