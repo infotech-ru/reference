@@ -24,6 +24,16 @@ class City extends ActiveRecord
         return new CityQuery(get_called_class());
     }
 
+    public static function getList($regionId)
+    {
+        $query = static::find()
+            ->region($regionId)
+            ->select('name, id')
+            ->indexBy('id');
+
+        return $query->column();
+    }
+
     public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
