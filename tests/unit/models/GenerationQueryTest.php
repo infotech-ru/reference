@@ -37,4 +37,14 @@ class GenerationQueryTest extends TestCase
         $this->assertEquals(['car_generation.is_recent' => 1], $query->where);
     }
 
+    public function testModel()
+    {
+        $query = new GenerationQuery(Generation::class);
+        $query->model(1);
+        $this->assertEquals(['car_generation.model_id' => 1], $query->where);
+
+        $query = new GenerationQuery(Generation::class);
+        $query->model([1, 2]);
+        $this->assertEquals(['car_generation.model_id' => [1, 2]], $query->where);
+    }
 }

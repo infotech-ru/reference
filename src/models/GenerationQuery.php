@@ -14,4 +14,9 @@ class GenerationQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName().'.is_recent' => $value]);
     }
+
+    public function model($modelId)
+    {
+        return $this->andWhere([$this->tableName().'.model_id' => $modelId]);
+    }
 }

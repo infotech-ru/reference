@@ -37,6 +37,20 @@ class Serie extends ActiveRecord
         return new SerieQuery(get_called_class());
     }
 
+    public static function getList($generationId, $recentOnly)
+    {
+        $query = static::find()
+            ->isVisible(1)
+            ->generation($generationId)
+            ->select('name, id_car_serie')
+            ->indexBy('id_car_serie');
+        if ($recentOnly) {
+            $query->isRecent(true);
+        }
+
+        return $query->column();
+    }
+
     public function getGeneration()
     {
         return $this->hasOne(Generation::class, ['id_car_generation' => 'id_car_generation']);

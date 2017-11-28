@@ -6,10 +6,10 @@ namespace infotech\reference\models;
 /**
  * @property integer $brand_id
  * @property integer $id
- * @property string  $name
- * @property string  $tradein_code
+ * @property string $name
+ * @property string $tradein_code
  * @property integer $is_recent
- * @property string  $dealerpoint_code
+ * @property string $dealerpoint_code
  * @property integer $ord
  * @property integer $ecm_id
  * @property boolean $is_deleted
@@ -34,6 +34,20 @@ class Model extends ActiveRecord
     public static function find()
     {
         return new ModelQuery(get_called_class());
+    }
+
+    public static function getList($brandId, $recentOnly)
+    {
+        $query = static::find()
+            ->isDeleted(0)
+            ->brand($brandId)
+            ->select('name, id')
+            ->indexBy('id');
+        if ($recentOnly) {
+            $query->isRecent(true);
+        }
+
+        return $query->column();
     }
 
     public function getBrand()

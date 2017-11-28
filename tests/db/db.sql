@@ -39,7 +39,6 @@ LOCK TABLES `bodies` WRITE;
 INSERT INTO `bodies` VALUES (1,'1',NULL),(2,'2',NULL);
 /*!40000 ALTER TABLE `bodies` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 --
 -- Table structure for table `brands`
@@ -71,10 +70,6 @@ LOCK TABLES `brands` WRITE;
 INSERT INTO `brands` VALUES (1,'Opel','opel.png','opel',NULL,NULL,NULL,0,NULL),(2,'Chevrolet','chevrolet.png','chevrolet',NULL,NULL,NULL,0,NULL),(3,'Cadillac','cadillac.png','cadillac',NULL,NULL,NULL,0,NULL);
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-
-
 
 --
 -- Table structure for table `car_characteristic`
@@ -95,6 +90,15 @@ CREATE TABLE `car_characteristic` (
   KEY `car_characteristic_origin` (`origin_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1572 DEFAULT CHARSET=utf8 COMMENT='Характеристики автомобилей';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `car_characteristic`
+--
+
+LOCK TABLES `car_characteristic` WRITE;
+/*!40000 ALTER TABLE `car_characteristic` DISABLE KEYS */;
+/*!40000 ALTER TABLE `car_characteristic` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `car_characteristic_value`
@@ -122,6 +126,15 @@ CREATE TABLE `car_characteristic_value` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `car_characteristic_value`
+--
+
+LOCK TABLES `car_characteristic_value` WRITE;
+/*!40000 ALTER TABLE `car_characteristic_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `car_characteristic_value` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `car_generation`
 --
 
@@ -143,6 +156,16 @@ CREATE TABLE `car_generation` (
   KEY `car_generation_origin` (`origin_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10954 DEFAULT CHARSET=utf8 COMMENT='Поколения Моделей';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `car_generation`
+--
+
+LOCK TABLES `car_generation` WRITE;
+/*!40000 ALTER TABLE `car_generation` DISABLE KEYS */;
+INSERT INTO `car_generation` VALUES (1,'1',1,'1','1',1,1,1,1),(2,'2',1,'1','1',1,1,0,1),(3,'3',1,'1','1',0,1,1,1),(4,'4',1,'1','1',0,1,0,1);
+/*!40000 ALTER TABLE `car_generation` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `car_modification`
@@ -181,11 +204,9 @@ CREATE TABLE `car_modification` (
 
 LOCK TABLES `car_modification` WRITE;
 /*!40000 ALTER TABLE `car_modification` DISABLE KEYS */;
-INSERT INTO `car_modification` VALUES (1,1,'1',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,0,NULL,0),(2,1,'2',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,0,NULL,1),(3,1,'3',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,0),(4,1,'4',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,1),(5,1,'5',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,1,NULL,0),(6,1,'6',2010,2013,NULL,NULL,NULL,0,0,0,0,NULL,1,NULL,1),(7,1,'7',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,0),(8,1,'8',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,1);
+INSERT INTO `car_modification` VALUES (1,1,'1',2010,2013,NULL,NULL,NULL,1,1,0,0,NULL,1,NULL,0),(2,1,'2',2010,2013,NULL,NULL,NULL,1,1,0,0,NULL,0,NULL,0),(3,1,'3',2010,2013,NULL,NULL,NULL,1,1,0,0,NULL,1,NULL,1),(4,1,'4',2010,2013,NULL,NULL,NULL,1,1,0,0,NULL,0,NULL,1),(5,1,'5',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,0),(6,1,'6',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,0),(7,1,'7',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,1,NULL,1),(8,1,'8',2010,2013,NULL,NULL,NULL,0,1,0,0,NULL,0,NULL,1);
 /*!40000 ALTER TABLE `car_modification` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
 
 --
 -- Table structure for table `car_serie`
@@ -216,6 +237,16 @@ CREATE TABLE `car_serie` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `car_serie`
+--
+
+LOCK TABLES `car_serie` WRITE;
+/*!40000 ALTER TABLE `car_serie` DISABLE KEYS */;
+INSERT INTO `car_serie` VALUES (1,1,'1',1,1,1,NULL,1,457),(2,1,'2',1,1,1,NULL,0,457),(3,1,'3',0,1,1,NULL,1,457),(4,1,'4',0,1,1,NULL,0,457);
+/*!40000 ALTER TABLE `car_serie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `car_type`
 --
 
@@ -228,6 +259,15 @@ CREATE TABLE `car_type` (
   PRIMARY KEY (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Автомобильный сайт';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `car_type`
+--
+
+LOCK TABLES `car_type` WRITE;
+/*!40000 ALTER TABLE `car_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `car_type` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cities`
@@ -250,6 +290,15 @@ CREATE TABLE `cities` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `cities`
+--
+
+LOCK TABLES `cities` WRITE;
+/*!40000 ALTER TABLE `cities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `configurable_reference_params_weights`
 --
 
@@ -265,6 +314,15 @@ CREATE TABLE `configurable_reference_params_weights` (
   UNIQUE KEY `unique` (`paramId`,`fieldId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `configurable_reference_params_weights`
+--
+
+LOCK TABLES `configurable_reference_params_weights` WRITE;
+/*!40000 ALTER TABLE `configurable_reference_params_weights` DISABLE KEYS */;
+/*!40000 ALTER TABLE `configurable_reference_params_weights` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `configurable_reference_vehicle`
@@ -292,6 +350,15 @@ CREATE TABLE `configurable_reference_vehicle` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `configurable_reference_vehicle`
+--
+
+LOCK TABLES `configurable_reference_vehicle` WRITE;
+/*!40000 ALTER TABLE `configurable_reference_vehicle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `configurable_reference_vehicle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `countries`
 --
 
@@ -316,9 +383,6 @@ LOCK TABLES `countries` WRITE;
 INSERT INTO `countries` VALUES (1,'Россия','+7','ru'),(2,'Беларусь','+375','by'),(7,'Казахстан','+7','ru');
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-
 
 --
 -- Table structure for table `crm_instructions`
@@ -340,6 +404,15 @@ CREATE TABLE `crm_instructions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `crm_instructions`
+--
+
+LOCK TABLES `crm_instructions` WRITE;
+/*!40000 ALTER TABLE `crm_instructions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `crm_instructions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `crms`
 --
 
@@ -354,6 +427,15 @@ CREATE TABLE `crms` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=733 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `crms`
+--
+
+LOCK TABLES `crms` WRITE;
+/*!40000 ALTER TABLE `crms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `crms` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `discount_types`
@@ -374,6 +456,15 @@ CREATE TABLE `discount_types` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `discount_types`
+--
+
+LOCK TABLES `discount_types` WRITE;
+/*!40000 ALTER TABLE `discount_types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `discount_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_brand_logo`
 --
 
@@ -387,6 +478,15 @@ CREATE TABLE `eqt_brand_logo` (
   CONSTRAINT `eqt_fk_brand_logo_brand` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_brand_logo`
+--
+
+LOCK TABLES `eqt_brand_logo` WRITE;
+/*!40000 ALTER TABLE `eqt_brand_logo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_brand_logo` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_car_characteristic`
@@ -407,6 +507,15 @@ CREATE TABLE `eqt_car_characteristic` (
   KEY `id_car_type` (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1572 DEFAULT CHARSET=utf8 COMMENT='Характеристики автомобилей';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_car_characteristic`
+--
+
+LOCK TABLES `eqt_car_characteristic` WRITE;
+/*!40000 ALTER TABLE `eqt_car_characteristic` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_characteristic` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_car_characteristic_value`
@@ -433,6 +542,15 @@ CREATE TABLE `eqt_car_characteristic_value` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_characteristic_value`
+--
+
+LOCK TABLES `eqt_car_characteristic_value` WRITE;
+/*!40000 ALTER TABLE `eqt_car_characteristic_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_characteristic_value` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_equipment`
 --
 
@@ -453,6 +571,15 @@ CREATE TABLE `eqt_car_equipment` (
   KEY `date_delete` (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19875 DEFAULT CHARSET=utf8 COMMENT='Комплектации';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_car_equipment`
+--
+
+LOCK TABLES `eqt_car_equipment` WRITE;
+/*!40000 ALTER TABLE `eqt_car_equipment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_equipment` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_car_generation`
@@ -477,6 +604,15 @@ CREATE TABLE `eqt_car_generation` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_generation`
+--
+
+LOCK TABLES `eqt_car_generation` WRITE;
+/*!40000 ALTER TABLE `eqt_car_generation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_generation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_mark`
 --
 
@@ -494,6 +630,15 @@ CREATE TABLE `eqt_car_mark` (
   KEY `id_car_type` (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4143 DEFAULT CHARSET=utf8 COMMENT='Марки автомобилей';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_car_mark`
+--
+
+LOCK TABLES `eqt_car_mark` WRITE;
+/*!40000 ALTER TABLE `eqt_car_mark` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_mark` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_car_model`
@@ -518,6 +663,15 @@ CREATE TABLE `eqt_car_model` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_model`
+--
+
+LOCK TABLES `eqt_car_model` WRITE;
+/*!40000 ALTER TABLE `eqt_car_model` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_model` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_modification`
 --
 
@@ -540,6 +694,15 @@ CREATE TABLE `eqt_car_modification` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_modification`
+--
+
+LOCK TABLES `eqt_car_modification` WRITE;
+/*!40000 ALTER TABLE `eqt_car_modification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_modification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_option`
 --
 
@@ -557,6 +720,15 @@ CREATE TABLE `eqt_car_option` (
   KEY `id_car_type` (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=30557 DEFAULT CHARSET=utf8 COMMENT='Опции';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_car_option`
+--
+
+LOCK TABLES `eqt_car_option` WRITE;
+/*!40000 ALTER TABLE `eqt_car_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_option` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_car_option_value`
@@ -581,6 +753,15 @@ CREATE TABLE `eqt_car_option_value` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_option_value`
+--
+
+LOCK TABLES `eqt_car_option_value` WRITE;
+/*!40000 ALTER TABLE `eqt_car_option_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_option_value` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_serie`
 --
 
@@ -603,6 +784,15 @@ CREATE TABLE `eqt_car_serie` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_car_serie`
+--
+
+LOCK TABLES `eqt_car_serie` WRITE;
+/*!40000 ALTER TABLE `eqt_car_serie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_serie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_car_type`
 --
 
@@ -615,6 +805,15 @@ CREATE TABLE `eqt_car_type` (
   PRIMARY KEY (`id_car_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Автомобильный сайт';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_car_type`
+--
+
+LOCK TABLES `eqt_car_type` WRITE;
+/*!40000 ALTER TABLE `eqt_car_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_car_type` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_catalog_emplacement`
@@ -645,6 +844,15 @@ CREATE TABLE `eqt_catalog_emplacement` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_catalog_emplacement`
+--
+
+LOCK TABLES `eqt_catalog_emplacement` WRITE;
+/*!40000 ALTER TABLE `eqt_catalog_emplacement` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_catalog_emplacement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_catalog_foreshortening`
 --
 
@@ -660,6 +868,15 @@ CREATE TABLE `eqt_catalog_foreshortening` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_catalog_foreshortening`
+--
+
+LOCK TABLES `eqt_catalog_foreshortening` WRITE;
+/*!40000 ALTER TABLE `eqt_catalog_foreshortening` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_catalog_foreshortening` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_catalog_image`
@@ -682,6 +899,15 @@ CREATE TABLE `eqt_catalog_image` (
   CONSTRAINT `eqt_fk_catalog_image_foreshortening` FOREIGN KEY (`foreshortening_id`) REFERENCES `eqt_catalog_foreshortening` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_catalog_image`
+--
+
+LOCK TABLES `eqt_catalog_image` WRITE;
+/*!40000 ALTER TABLE `eqt_catalog_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_catalog_image` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_color`
@@ -716,8 +942,6 @@ LOCK TABLES `eqt_color` WRITE;
 INSERT INTO `eqt_color` VALUES (1,NULL,NULL,NULL,'','1','2016-11-01 15:11:16','2017-10-05 10:59:05'),(2,NULL,NULL,NULL,'','2','2016-11-01 15:11:16','2017-10-05 10:59:05');
 /*!40000 ALTER TABLE `eqt_color` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
 
 --
 -- Table structure for table `eqt_equipment`
@@ -747,6 +971,16 @@ CREATE TABLE `eqt_equipment` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_equipment`
+--
+
+LOCK TABLES `eqt_equipment` WRITE;
+/*!40000 ALTER TABLE `eqt_equipment` DISABLE KEYS */;
+INSERT INTO `eqt_equipment` VALUES (1,1,1,'1',NULL,NULL,NULL,1,'2016-11-01 15:07:22','2017-02-17 10:25:16',NULL),(2,1,1,'2',NULL,NULL,NULL,3,'2016-11-01 15:07:22','2017-02-17 10:25:16',NULL),(3,2,2,'3',NULL,NULL,NULL,1,'2016-11-01 15:07:22','2017-02-17 10:25:16',NULL),(4,2,2,'4',NULL,NULL,NULL,3,'2016-11-01 15:07:22','2017-02-17 10:25:16',NULL);
+/*!40000 ALTER TABLE `eqt_equipment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_image`
 --
 
@@ -773,6 +1007,15 @@ CREATE TABLE `eqt_image` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_image`
+--
+
+LOCK TABLES `eqt_image` WRITE;
+/*!40000 ALTER TABLE `eqt_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_migration`
 --
 
@@ -785,6 +1028,15 @@ CREATE TABLE `eqt_migration` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_migration`
+--
+
+LOCK TABLES `eqt_migration` WRITE;
+/*!40000 ALTER TABLE `eqt_migration` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_migration` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_model_option`
@@ -812,6 +1064,15 @@ CREATE TABLE `eqt_model_option` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_model_option`
+--
+
+LOCK TABLES `eqt_model_option` WRITE;
+/*!40000 ALTER TABLE `eqt_model_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_model_option` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_model_option_tag`
 --
 
@@ -825,6 +1086,15 @@ CREATE TABLE `eqt_model_option_tag` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_model_option_tag`
+--
+
+LOCK TABLES `eqt_model_option_tag` WRITE;
+/*!40000 ALTER TABLE `eqt_model_option_tag` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_model_option_tag` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_offer`
@@ -870,6 +1140,15 @@ CREATE TABLE `eqt_offer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_offer`
+--
+
+LOCK TABLES `eqt_offer` WRITE;
+/*!40000 ALTER TABLE `eqt_offer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_offer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_option`
 --
 
@@ -895,6 +1174,15 @@ CREATE TABLE `eqt_option` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_option`
+--
+
+LOCK TABLES `eqt_option` WRITE;
+/*!40000 ALTER TABLE `eqt_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_option` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eqt_option_group`
 --
 
@@ -912,6 +1200,15 @@ CREATE TABLE `eqt_option_group` (
   CONSTRAINT `eqt_fk_option_group_brand` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=942 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eqt_option_group`
+--
+
+LOCK TABLES `eqt_option_group` WRITE;
+/*!40000 ALTER TABLE `eqt_option_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_option_group` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eqt_skin`
@@ -937,6 +1234,15 @@ CREATE TABLE `eqt_skin` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `eqt_skin`
+--
+
+LOCK TABLES `eqt_skin` WRITE;
+/*!40000 ALTER TABLE `eqt_skin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eqt_skin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `federal_districts`
 --
 
@@ -949,6 +1255,15 @@ CREATE TABLE `federal_districts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `federal_districts`
+--
+
+LOCK TABLES `federal_districts` WRITE;
+/*!40000 ALTER TABLE `federal_districts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `federal_districts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `model_year`
@@ -968,6 +1283,15 @@ CREATE TABLE `model_year` (
   CONSTRAINT `fk_model_year_model` FOREIGN KEY (`model_id`) REFERENCES `models` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model_year`
+--
+
+LOCK TABLES `model_year` WRITE;
+/*!40000 ALTER TABLE `model_year` DISABLE KEYS */;
+/*!40000 ALTER TABLE `model_year` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `models`
@@ -994,6 +1318,16 @@ CREATE TABLE `models` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `models`
+--
+
+LOCK TABLES `models` WRITE;
+/*!40000 ALTER TABLE `models` DISABLE KEYS */;
+INSERT INTO `models` VALUES (1,1,'1','1',1,NULL,0,NULL,0,0,1425),(1,2,'2','2',0,NULL,0,NULL,0,0,1427),(1,3,'3','3',0,NULL,0,NULL,1,0,1427),(1,4,'4','4',1,NULL,0,NULL,1,0,1427);
+/*!40000 ALTER TABLE `models` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `models_bodies`
 --
 
@@ -1008,6 +1342,15 @@ CREATE TABLE `models_bodies` (
   PRIMARY KEY (`model_id`,`body_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `models_bodies`
+--
+
+LOCK TABLES `models_bodies` WRITE;
+/*!40000 ALTER TABLE `models_bodies` DISABLE KEYS */;
+/*!40000 ALTER TABLE `models_bodies` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `news`
@@ -1027,6 +1370,15 @@ CREATE TABLE `news` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `news`
+--
+
+LOCK TABLES `news` WRITE;
+/*!40000 ALTER TABLE `news` DISABLE KEYS */;
+/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `okopf`
 --
 
@@ -1042,6 +1394,15 @@ CREATE TABLE `okopf` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `okopf`
+--
+
+LOCK TABLES `okopf` WRITE;
+/*!40000 ALTER TABLE `okopf` DISABLE KEYS */;
+/*!40000 ALTER TABLE `okopf` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `okved`
 --
 
@@ -1055,6 +1416,15 @@ CREATE TABLE `okved` (
   UNIQUE KEY `code_version` (`code`,`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `okved`
+--
+
+LOCK TABLES `okved` WRITE;
+/*!40000 ALTER TABLE `okved` DISABLE KEYS */;
+/*!40000 ALTER TABLE `okved` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `old_models_map`
@@ -1074,6 +1444,15 @@ CREATE TABLE `old_models_map` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `old_models_map`
+--
+
+LOCK TABLES `old_models_map` WRITE;
+/*!40000 ALTER TABLE `old_models_map` DISABLE KEYS */;
+/*!40000 ALTER TABLE `old_models_map` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `order_types`
 --
 
@@ -1088,6 +1467,15 @@ CREATE TABLE `order_types` (
   UNIQUE KEY `idx` (`code`,`brand_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_types`
+--
+
+LOCK TABLES `order_types` WRITE;
+/*!40000 ALTER TABLE `order_types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_types` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `regions`
@@ -1110,6 +1498,15 @@ CREATE TABLE `regions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `regions`
+--
+
+LOCK TABLES `regions` WRITE;
+/*!40000 ALTER TABLE `regions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `regions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `slmi_models`
 --
 
@@ -1127,6 +1524,15 @@ CREATE TABLE `slmi_models` (
   UNIQUE KEY `code` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `slmi_models`
+--
+
+LOCK TABLES `slmi_models` WRITE;
+/*!40000 ALTER TABLE `slmi_models` DISABLE KEYS */;
+/*!40000 ALTER TABLE `slmi_models` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sources`
@@ -1152,7 +1558,6 @@ LOCK TABLES `sources` WRITE;
 INSERT INTO `sources` VALUES (1,'1',NULL),(2,'2',1),(3,'3',2),(4,'4',NULL),(5,'5',4);
 /*!40000 ALTER TABLE `sources` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 --
 -- Table structure for table `stat_models`
@@ -1173,6 +1578,15 @@ CREATE TABLE `stat_models` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `stat_models`
+--
+
+LOCK TABLES `stat_models` WRITE;
+/*!40000 ALTER TABLE `stat_models` DISABLE KEYS */;
+/*!40000 ALTER TABLE `stat_models` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `statuses`
 --
 
@@ -1189,6 +1603,15 @@ CREATE TABLE `statuses` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `statuses`
+--
+
+LOCK TABLES `statuses` WRITE;
+/*!40000 ALTER TABLE `statuses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_migration`
 --
 
@@ -1201,6 +1624,15 @@ CREATE TABLE `tbl_migration` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_migration`
+--
+
+LOCK TABLES `tbl_migration` WRITE;
+/*!40000 ALTER TABLE `tbl_migration` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_migration` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -1226,6 +1658,15 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `works`
 --
 
@@ -1240,6 +1681,15 @@ CREATE TABLE `works` (
   KEY `index2` (`id`,`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `works`
+--
+
+LOCK TABLES `works` WRITE;
+/*!40000 ALTER TABLE `works` DISABLE KEYS */;
+/*!40000 ALTER TABLE `works` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1250,4 +1700,4 @@ CREATE TABLE `works` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-09 19:37:56
+-- Dump completed on 2017-11-28 18:01:07

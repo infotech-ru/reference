@@ -34,6 +34,20 @@ class Generation extends ActiveRecord
         return new GenerationQuery(get_called_class());
     }
 
+    public static function getList($modelId, $recentOnly)
+    {
+        $query = static::find()
+            ->isVisible(1)
+            ->model($modelId)
+            ->select('name, id_car_generation')
+            ->indexBy('id_car_generation');
+        if ($recentOnly) {
+            $query->isRecent(true);
+        }
+
+        return $query->column();
+    }
+
     public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
