@@ -44,4 +44,24 @@ class OrderTypeTest extends TestCase
         $model = new OrderType();
         $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
+
+    public function testConstantNone()
+    {
+        $this->assertEquals('None', OrderType::NONE);
+    }
+
+    public function testConstantContract()
+    {
+        $this->assertEquals('Contract', OrderType::CONTRACT);
+    }
+
+    public function testConstantDelivery()
+    {
+        $this->assertEquals('Delivery', OrderType::DELIVERY);
+    }
+
+    public function testConstantTEST()
+    {
+        $this->assertEquals('TEST', OrderType::TEST);
+    }
 }
