@@ -49,4 +49,20 @@ class Modification extends ActiveRecord
     {
         return $this->hasMany(CharacteristicValue::class, ['id_car_modification' => 'id_car_modification']);
     }
+
+    public static function getList($serieId, $isRecentOnly): array
+    {
+        $query = static::find()
+            ->isDeleted(false)
+            ->isVisible(true)
+            ->andWhere(['id_car_serie' => $serieId])
+            ->select('name, id_car_modification')
+            ->indexBy('id_car_modification');
+
+        if ($isRecentOnly) {
+            $query->isRecent(true);
+        }
+
+        return $query->column();
+    }
 }
