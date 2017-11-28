@@ -25,6 +25,15 @@ class Region extends ActiveRecord
         return new RegionQuery(get_called_class());
     }
 
+    public static function getList()
+    {
+        $query = static::find()
+            ->select('name, id')
+            ->indexBy('id');
+
+        return $query->column();
+    }
+
     public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);

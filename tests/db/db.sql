@@ -295,6 +295,7 @@ CREATE TABLE `cities` (
 
 LOCK TABLES `cities` WRITE;
 /*!40000 ALTER TABLE `cities` DISABLE KEYS */;
+INSERT INTO `cities` VALUES (1,1,1,'1'),(2,1,2,'2');
 /*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1263,6 +1264,7 @@ CREATE TABLE `federal_districts` (
 
 LOCK TABLES `federal_districts` WRITE;
 /*!40000 ALTER TABLE `federal_districts` DISABLE KEYS */;
+INSERT INTO `federal_districts` VALUES (1,'1');
 /*!40000 ALTER TABLE `federal_districts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1505,6 +1507,7 @@ CREATE TABLE `regions` (
 
 LOCK TABLES `regions` WRITE;
 /*!40000 ALTER TABLE `regions` DISABLE KEYS */;
+INSERT INTO `regions` VALUES (1,1,1,'1'),(2,1,1,'2');
 /*!40000 ALTER TABLE `regions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1702,4 +1705,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-28 18:41:01
+-- Dump completed on 2017-11-28 19:44:18

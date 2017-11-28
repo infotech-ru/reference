@@ -59,4 +59,8 @@ class RegionTest extends TestCase
         $this->assertInstanceOf(CityQuery::class, $model->getCities());
     }
 
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1', '2' => '2'], Region::getList());
+    }
 }

@@ -49,4 +49,9 @@ class StatusTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testSUBARU_STATUS_DEALER_IN_WAY()
+    {
+        $this->assertEquals('ДИЛЕР_ПУТЬ', Status::SUBARU_STATUS_DEALER_IN_WAY);
+    }
 }
