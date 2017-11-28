@@ -12,6 +12,11 @@ namespace infotech\reference\models;
  */
 class OrderType extends ActiveRecord
 {
+    const NONE = 'None';
+    const CONTRACT = 'Contract';
+    const DELIVERY = 'Delivery';
+    const TEST = 'TEST';
+
     public static function tableName(): string
     {
         return 'order_types';
