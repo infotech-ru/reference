@@ -48,6 +48,12 @@ class SkinTest extends TestCase
         $this->assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
+    public function testGetCommonSkin()
+    {
+        $model = new Skin();
+        $this->assertInstanceOf(SkinQuery::class, $model->getCommonSkin());
+    }
+
     public function testGetList()
     {
         $this->assertEquals(['1' => '1'], Skin::getList(1));
