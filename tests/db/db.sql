@@ -1094,6 +1094,7 @@ CREATE TABLE `eqt_model_option_tag` (
 
 LOCK TABLES `eqt_model_option_tag` WRITE;
 /*!40000 ALTER TABLE `eqt_model_option_tag` DISABLE KEYS */;
+INSERT INTO `eqt_model_option_tag` VALUES (1,1,'1');
 /*!40000 ALTER TABLE `eqt_model_option_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1705,4 +1706,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-05 22:34:07
+-- Dump completed on 2017-12-05 23:54:18
