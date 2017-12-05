@@ -18,12 +18,11 @@ class CityQueryTest extends TestCase
     public function testRegion()
     {
         $query = new CityQuery(City::class);
-        $query->region(1);
+        $this->assertEquals($query, $query->region(1));
         $this->assertEquals(['cities.region_id' => 1], $query->where);
 
         $query = new CityQuery(City::class);
-        $query->region([1, 2]);
+        $this->assertEquals($query, $query->region([1, 2]));
         $this->assertEquals(['cities.region_id' => [1, 2]], $query->where);
-
     }
 }

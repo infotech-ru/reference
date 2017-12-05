@@ -15,14 +15,14 @@ class CharacteristicQueryTest extends TestCase
         $this->assertInstanceOf(ActiveQuery::class, new CharacteristicQuery(Characteristic::class));
     }
 
-    public function testIsRecent()
+    public function testIsMain()
     {
         $query = new CharacteristicQuery(Characteristic::class);
-        $query->isMain();
+        $this->assertEquals($query, $query->isMain());
         $this->assertEquals(['car_characteristic.is_main' => true], $query->where);
 
         $query = new CharacteristicQuery(Characteristic::class);
-        $query->isMain(1);
+        $this->assertEquals($query, $query->isMain(1));
         $this->assertEquals(['car_characteristic.is_main' => 1], $query->where);
     }
 }

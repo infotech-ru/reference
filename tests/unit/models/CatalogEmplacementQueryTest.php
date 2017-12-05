@@ -15,14 +15,14 @@ class CatalogEmplacementQueryTest extends TestCase
         $this->assertInstanceOf(ActiveQuery::class, new CatalogEmplacementQuery(CatalogEmplacement::class));
     }
 
-    public function testIsRecent()
+    public function testIsMain()
     {
         $query = new CatalogEmplacementQuery(CatalogEmplacement::class);
-        $query->isMain();
+        $this->assertEquals($query, $query->isMain());
         $this->assertEquals(['eqt_catalog_emplacement.is_main' => true], $query->where);
 
         $query = new CatalogEmplacementQuery(CatalogEmplacement::class);
-        $query->isMain(1);
+        $this->assertEquals($query, $query->isMain(1));
         $this->assertEquals(['eqt_catalog_emplacement.is_main' => 1], $query->where);
     }
 }

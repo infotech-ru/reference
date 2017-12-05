@@ -18,22 +18,22 @@ class CatalogImageQueryTest extends TestCase
     public function testIsMain()
     {
         $query = new CatalogImageQuery(CatalogImage::class);
-        $query->isMain();
+        $this->assertEquals($query, $query->isMain());
         $this->assertEquals(['eqt_catalog_image.is_main' => true], $query->where);
 
         $query = new CatalogImageQuery(CatalogImage::class);
-        $query->isMain(1);
+        $this->assertEquals($query, $query->isMain(1));
         $this->assertEquals(['eqt_catalog_image.is_main' => 1], $query->where);
     }
 
     public function testIsSerieMain()
     {
         $query = new CatalogImageQuery(CatalogImage::class);
-        $query->isSerieMain();
+        $this->assertEquals($query, $query->isSerieMain());
         $this->assertEquals(['eqt_catalog_image.is_serie_main' => true], $query->where);
 
         $query = new CatalogImageQuery(CatalogImage::class);
-        $query->isSerieMain(1);
+        $this->assertEquals($query, $query->isSerieMain(1));
         $this->assertEquals(['eqt_catalog_image.is_serie_main' => 1], $query->where);
     }
 }

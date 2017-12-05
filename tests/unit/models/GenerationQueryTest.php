@@ -18,33 +18,33 @@ class GenerationQueryTest extends TestCase
     public function testIsVisible()
     {
         $query = new GenerationQuery(Generation::class);
-        $query->isVisible();
+        $this->assertEquals($query, $query->isVisible());
         $this->assertEquals(['car_generation.is_visible' => true], $query->where);
 
         $query = new GenerationQuery(Generation::class);
-        $query->isVisible(1);
+        $this->assertEquals($query, $query->isVisible(1));
         $this->assertEquals(['car_generation.is_visible' => 1], $query->where);
     }
 
     public function testIsRecent()
     {
         $query = new GenerationQuery(Generation::class);
-        $query->isRecent();
+        $this->assertEquals($query, $query->isRecent());
         $this->assertEquals(['car_generation.is_recent' => true], $query->where);
 
         $query = new GenerationQuery(Generation::class);
-        $query->isRecent(1);
+        $this->assertEquals($query, $query->isRecent(1));
         $this->assertEquals(['car_generation.is_recent' => 1], $query->where);
     }
 
     public function testModel()
     {
         $query = new GenerationQuery(Generation::class);
-        $query->model(1);
+        $this->assertEquals($query, $query->model(1));
         $this->assertEquals(['car_generation.model_id' => 1], $query->where);
 
         $query = new GenerationQuery(Generation::class);
-        $query->model([1, 2]);
+        $this->assertEquals($query, $query->model([1, 2]));
         $this->assertEquals(['car_generation.model_id' => [1, 2]], $query->where);
     }
 }
