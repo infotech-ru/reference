@@ -45,4 +45,10 @@ class OptionGroupTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], OptionGroup::getList(1));
+        $this->assertEquals([], OptionGroup::getList(2));
+    }
 }
