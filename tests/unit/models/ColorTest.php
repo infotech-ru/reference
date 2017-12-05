@@ -61,4 +61,10 @@ class ColorTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], Color::getList(1));
+        $this->assertEquals(['2' => '2'], Color::getList(2));
+    }
 }
