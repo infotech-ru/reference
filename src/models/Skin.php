@@ -34,4 +34,9 @@ class Skin extends ActiveRecord
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
+
+    public function getCommonSkin()
+    {
+        return $this->hasOne(Skin::class, ['id' => 'common_skin_id']);
+    }
 }
