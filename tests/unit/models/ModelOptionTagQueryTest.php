@@ -14,4 +14,15 @@ class ModelOptionTagQueryTest extends TestCase
     {
         $this->assertInstanceOf(ActiveQuery::class, new ModelOptionTagQuery(ModelOptionTag::class));
     }
+
+    public function testIsVisible()
+    {
+        $query = new ModelOptionTagQuery(ModelOptionTag::class);
+        $query->model(1);
+        $this->assertEquals(['eqt_model_option_tag.model_id' => 1], $query->where);
+
+        $query = new ModelOptionTagQuery(ModelOptionTag::class);
+        $query->model([1, 2]);
+        $this->assertEquals(['eqt_model_option_tag.model_id' => [1, 2]], $query->where);
+    }
 }

@@ -43,4 +43,9 @@ class ModelOptionTagTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], ModelOptionTag::getList(1));
+    }
 }
