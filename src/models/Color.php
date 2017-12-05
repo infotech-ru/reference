@@ -24,6 +24,11 @@ class Color extends ActiveRecord
         return 'eqt_color';
     }
 
+    public static function getList($modelId): array
+    {
+        return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();
+    }
+
     public static function find()
     {
         return new ColorQuery(get_called_class());
