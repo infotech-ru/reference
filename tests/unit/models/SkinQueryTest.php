@@ -18,11 +18,11 @@ class SkinQueryTest extends TestCase
     public function testGeneration()
     {
         $query = new SkinQuery(Skin::class);
-        $query->model(1);
+        $this->assertEquals($query, $query->model(1));
         $this->assertEquals(['eqt_skin.model_id' => 1], $query->where);
 
         $query = new SkinQuery(Skin::class);
-        $query->model([1, 2]);
+        $this->assertEquals($query, $query->model([1, 2]));
         $this->assertEquals(['eqt_skin.model_id' => [1, 2]], $query->where);
     }
 }
