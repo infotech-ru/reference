@@ -1209,6 +1209,7 @@ CREATE TABLE `eqt_option_group` (
 
 LOCK TABLES `eqt_option_group` WRITE;
 /*!40000 ALTER TABLE `eqt_option_group` DISABLE KEYS */;
+INSERT INTO `eqt_option_group` VALUES (1,1,'1','2017-12-05 21:01:03','2017-12-05 21:01:12');
 /*!40000 ALTER TABLE `eqt_option_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1706,4 +1707,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-05 23:54:18
+-- Dump completed on 2017-12-06  0:01:32

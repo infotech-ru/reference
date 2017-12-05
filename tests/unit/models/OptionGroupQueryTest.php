@@ -14,4 +14,15 @@ class OptionGroupQueryTest extends TestCase
     {
         $this->assertInstanceOf(ActiveQuery::class, new OptionGroupQuery(OptionGroup::class));
     }
+
+    public function testBrand()
+    {
+        $query = new OptionGroupQuery(OptionGroup::class);
+        $query->brand(1);
+        $this->assertEquals(['eqt_option_group.brand_id' => 1], $query->where);
+
+        $query = new OptionGroupQuery(OptionGroup::class);
+        $query->brand([1, 2]);
+        $this->assertEquals(['eqt_option_group.brand_id' => [1, 2]], $query->where);
+    }
 }

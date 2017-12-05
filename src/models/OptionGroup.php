@@ -7,9 +7,9 @@ namespace infotech\reference\models;
  * @package infotech\reference\models
  * @property integer $id
  * @property integer $brand_id
- * @property string  $name
- * @property string  $created_at
- * @property string  $updated_at
+ * @property string $name
+ * @property string $created_at
+ * @property string $updated_at
  * @property-read Brand $brand
  */
 class OptionGroup extends ActiveRecord
@@ -27,5 +27,10 @@ class OptionGroup extends ActiveRecord
     public function getBrand()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
+    }
+
+    public static function getList($brandId): array
+    {
+        return static::find()->brand($brandId)->select('name, id')->indexBy('id')->column();
     }
 }
