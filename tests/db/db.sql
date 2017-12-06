@@ -163,7 +163,7 @@ CREATE TABLE `car_generation` (
 
 LOCK TABLES `car_generation` WRITE;
 /*!40000 ALTER TABLE `car_generation` DISABLE KEYS */;
-INSERT INTO `car_generation` VALUES (1,'1',1,'1','1',1,1,1,1),(2,'2',1,'1','1',1,1,0,1),(3,'3',1,'1','1',0,1,1,1),(4,'4',1,'1','1',0,1,0,1);
+INSERT INTO `car_generation` VALUES (1,'1',1,'1','1',1,1,1,1),(2,'2',1,'1','1',1,1,0,1),(3,'3',1,'1','1',0,1,1,1),(4,'4',1,'1','1',0,1,0,1),(5,'5',2,'1','1',1,1,1,NULL);
 /*!40000 ALTER TABLE `car_generation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +242,7 @@ CREATE TABLE `car_serie` (
 
 LOCK TABLES `car_serie` WRITE;
 /*!40000 ALTER TABLE `car_serie` DISABLE KEYS */;
-INSERT INTO `car_serie` VALUES (1,1,'1',1,1,1,NULL,1,457),(2,1,'2',1,1,1,NULL,0,457),(3,1,'3',0,1,1,NULL,1,457),(4,1,'4',0,1,1,NULL,0,457);
+INSERT INTO `car_serie` VALUES (1,1,'1',1,1,1,NULL,1,457),(2,1,'2',1,1,1,NULL,0,457),(3,1,'3',0,1,1,NULL,1,457),(4,1,'4',0,1,1,NULL,0,457),(5,1,'5',1,5,1,NULL,1,NULL);
 /*!40000 ALTER TABLE `car_serie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1707,4 +1707,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06  0:01:32
+-- Dump completed on 2017-12-06 15:56:45

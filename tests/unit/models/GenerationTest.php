@@ -64,7 +64,7 @@ class GenerationTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Generation::getList(1, true));
-        $this->assertEquals(['1' => '1', '2' => '2'], Generation::getList(1, false));
+        $this->assertEquals(['1' => '1', '5' => '5'], Generation::getList(1, true));
+        $this->assertEquals(['1' => '1', '2' => '2', '5' => '5'], Generation::getList(1, false));
     }
 }
