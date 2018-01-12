@@ -1707,7 +1707,7 @@ DROP TABLE IF EXISTS `warehouse_vehicle_pts_status`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `warehouse_vehicle_pts_status` (
   `id` int(11) NOT NULL UNIQUE,
-	`name` varchar(255)
+	`name` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
