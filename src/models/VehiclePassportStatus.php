@@ -3,12 +3,12 @@
 namespace infotech\reference\models;
 
 /**
- * Class WarehouseVehiclePtsStatus
+ * Class VehiclePassportStatus
  * @package infotech\reference\models
  * @property integer $id
  * @property string  $name
  */
-class WarehouseVehiclePtsStatus extends ActiveRecord
+class VehiclePassportStatus extends ActiveRecord
 {
     const NOT_AVAILABLE = 0;
     const PAID = 1;
@@ -19,7 +19,7 @@ class WarehouseVehiclePtsStatus extends ActiveRecord
 
     public static function tableName(): string
     {
-        return 'warehouse_vehicle_pts_status';
+        return 'vehicle_passport_status';
     }
 
     public static function find()
