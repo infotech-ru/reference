@@ -1697,6 +1697,31 @@ LOCK TABLES `works` WRITE;
 /*!40000 ALTER TABLE `works` DISABLE KEYS */;
 /*!40000 ALTER TABLE `works` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `warehouse_vehicle_pts_status`
+--
+
+DROP TABLE IF EXISTS `warehouse_vehicle_pts_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `warehouse_vehicle_pts_status` (
+  `id` int(11) NOT NULL UNIQUE,
+	`name` varchar(255)
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `warehouse_vehicle_pts_status`
+--
+
+LOCK TABLES `warehouse_vehicle_pts_status` WRITE;
+/*!40000 ALTER TABLE `sources` DISABLE KEYS */;
+INSERT INTO `warehouse_vehicle_pts_status` (`id`, `name`) VALUES (0, 'Нет в наличии'), (1, 'Оплачен'), (2, 'В наличии'), (3, 'В наличии (в банке)'), (4, 'Заказан'), (5, 'Отправлен дилеру');
+/*!40000 ALTER TABLE `sources` ENABLE KEYS */;
+UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
