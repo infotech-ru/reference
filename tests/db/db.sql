@@ -1514,6 +1514,32 @@ INSERT INTO `regions` VALUES (1,1,1,'1'),(2,1,1,'2');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `russian_name`
+--
+
+DROP TABLE IF EXISTS `russian_name`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `russian_name` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `sex` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_russian_name_name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=51530 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `russian_name`
+--
+
+LOCK TABLES `russian_name` WRITE;
+/*!40000 ALTER TABLE `russian_name` DISABLE KEYS */;
+INSERT INTO `russian_name` VALUES (1,'Алена','F'),(2,'Алёна','F'),(3,'Женя','F'),(4,'Женя','M'),(5,'Александр','M'),(6,'Александра','F');
+/*!40000 ALTER TABLE `russian_name` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `slmi_models`
 --
 
@@ -1674,6 +1700,30 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `vehicle_passport_status`
+--
+
+DROP TABLE IF EXISTS `vehicle_passport_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vehicle_passport_status` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vehicle_passport_status`
+--
+
+LOCK TABLES `vehicle_passport_status` WRITE;
+/*!40000 ALTER TABLE `vehicle_passport_status` DISABLE KEYS */;
+INSERT INTO `vehicle_passport_status` VALUES (0,'Нет в наличии'),(1,'Оплачен'),(2,'В наличии'),(3,'В наличии (в банке)'),(4,'Заказан'),(5,'Отправлен дилеру');
+/*!40000 ALTER TABLE `vehicle_passport_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `works`
 --
 
@@ -1697,31 +1747,6 @@ LOCK TABLES `works` WRITE;
 /*!40000 ALTER TABLE `works` DISABLE KEYS */;
 /*!40000 ALTER TABLE `works` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `vehicle_passport_status`
---
-
-DROP TABLE IF EXISTS `vehicle_passport_status`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `vehicle_passport_status` (
-  `id` int(11) NOT NULL,
-	`name` varchar(255),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `vehicle_passport_status`
---
-
-LOCK TABLES `vehicle_passport_status` WRITE;
-/*!40000 ALTER TABLE `vehicle_passport_status` DISABLE KEYS */;
-INSERT INTO `vehicle_passport_status` (`id`, `name`) VALUES (0, 'Нет в наличии'), (1, 'Оплачен'), (2, 'В наличии'), (3, 'В наличии (в банке)'), (4, 'Заказан'), (5, 'Отправлен дилеру');
-/*!40000 ALTER TABLE `vehicle_passport_status` ENABLE KEYS */;
-UNLOCK TABLES;
-
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1732,4 +1757,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06 15:56:45
+-- Dump completed on 2018-01-15 10:44:44
