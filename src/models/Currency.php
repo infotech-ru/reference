@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace infotech\reference\models;
 
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
@@ -34,6 +34,6 @@ class Currency extends ActiveRecord
      */
     public static function getList()
     {
-        return ArrayHelper::map(static::find()->all(), 'id', 'name');
+        return ArrayHelper::map(static::find()->all(), 'string_code', 'name');
     }
 }
