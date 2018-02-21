@@ -1742,7 +1742,7 @@ CREATE TABLE `vehicle_internal_status` (
 --
 
 LOCK TABLES `vehicle_internal_status` WRITE;
-/*!40000 ALTER TABLE `vehicle_passport_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vehicle_internal_status` DISABLE KEYS */;
 INSERT INTO `vehicle_internal_status` VALUES (1,'Свободен'),(2,'Выдача'),(3,'Предварительный резерв'),(4,'Контракт'),(5,'Передан другому дилеру'),(6,'Удалён');
 /*!40000 ALTER TABLE `vehicle_internal_status` ENABLE KEYS */;
 UNLOCK TABLES;
