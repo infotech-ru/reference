@@ -1724,6 +1724,30 @@ INSERT INTO `vehicle_passport_status` VALUES (0,'Нет в наличии'),(1,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `vehicle_internal_status`
+--
+
+DROP TABLE IF EXISTS `vehicle_internal_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vehicle_internal_status` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vehicle_internal_status`
+--
+
+LOCK TABLES `vehicle_internal_status` WRITE;
+/*!40000 ALTER TABLE `vehicle_internal_status` DISABLE KEYS */;
+INSERT INTO `vehicle_internal_status` VALUES (1,'Свободен'),(2,'Выдача'),(3,'Предварительный резерв'),(4,'Контракт'),(5,'Передан другому дилеру'),(6,'Удалён');
+/*!40000 ALTER TABLE `vehicle_internal_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `works`
 --
 
