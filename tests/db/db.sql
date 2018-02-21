@@ -1730,7 +1730,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `vehicle_internal_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `vehicle_passport_status` (
+CREATE TABLE `vehicle_internal_status` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
