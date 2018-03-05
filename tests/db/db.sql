@@ -163,7 +163,7 @@ CREATE TABLE `car_generation` (
 
 LOCK TABLES `car_generation` WRITE;
 /*!40000 ALTER TABLE `car_generation` DISABLE KEYS */;
-INSERT INTO `car_generation` VALUES (1,'1',1,'1','1',1,1,1,1),(2,'2',1,'1','1',1,1,0,1),(3,'3',1,'1','1',0,1,1,1),(4,'4',1,'1','1',0,1,0,1);
+INSERT INTO `car_generation` VALUES (1,'1',1,'1','1',1,1,1,1),(2,'2',1,'1','1',1,1,0,1),(3,'3',1,'1','1',0,1,1,1),(4,'4',1,'1','1',0,1,0,1),(5,'5',2,'1','1',1,1,1,NULL);
 /*!40000 ALTER TABLE `car_generation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +242,7 @@ CREATE TABLE `car_serie` (
 
 LOCK TABLES `car_serie` WRITE;
 /*!40000 ALTER TABLE `car_serie` DISABLE KEYS */;
-INSERT INTO `car_serie` VALUES (1,1,'1',1,1,1,NULL,1,457),(2,1,'2',1,1,1,NULL,0,457),(3,1,'3',0,1,1,NULL,1,457),(4,1,'4',0,1,1,NULL,0,457);
+INSERT INTO `car_serie` VALUES (1,1,'1',1,1,1,NULL,1,457),(2,1,'2',1,1,1,NULL,0,457),(3,1,'3',0,1,1,NULL,1,457),(4,1,'4',0,1,1,NULL,0,457),(5,1,'5',1,5,1,NULL,1,NULL);
 /*!40000 ALTER TABLE `car_serie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1514,6 +1514,32 @@ INSERT INTO `regions` VALUES (1,1,1,'1'),(2,1,1,'2');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `russian_name`
+--
+
+DROP TABLE IF EXISTS `russian_name`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `russian_name` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `sex` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_russian_name_name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=51530 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `russian_name`
+--
+
+LOCK TABLES `russian_name` WRITE;
+/*!40000 ALTER TABLE `russian_name` DISABLE KEYS */;
+INSERT INTO `russian_name` VALUES (1,'Алена','F'),(2,'Алёна','F'),(3,'Женя','F'),(4,'Женя','M'),(5,'Александр','M'),(6,'Александра','F');
+/*!40000 ALTER TABLE `russian_name` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `slmi_models`
 --
 
@@ -1674,6 +1700,54 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `vehicle_passport_status`
+--
+
+DROP TABLE IF EXISTS `vehicle_passport_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vehicle_passport_status` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vehicle_passport_status`
+--
+
+LOCK TABLES `vehicle_passport_status` WRITE;
+/*!40000 ALTER TABLE `vehicle_passport_status` DISABLE KEYS */;
+INSERT INTO `vehicle_passport_status` VALUES (0,'Нет в наличии'),(1,'Оплачен'),(2,'В наличии'),(3,'В наличии (в банке)'),(4,'Заказан'),(5,'Отправлен дилеру');
+/*!40000 ALTER TABLE `vehicle_passport_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vehicle_internal_status`
+--
+
+DROP TABLE IF EXISTS `vehicle_internal_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vehicle_internal_status` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vehicle_internal_status`
+--
+
+LOCK TABLES `vehicle_internal_status` WRITE;
+/*!40000 ALTER TABLE `vehicle_internal_status` DISABLE KEYS */;
+INSERT INTO `vehicle_internal_status` VALUES (1,'Свободен'),(2,'Выдача'),(3,'Предварительный резерв'),(4,'Контракт'),(5,'Передан другому дилеру'),(6,'Удалён');
+/*!40000 ALTER TABLE `vehicle_internal_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `works`
 --
 
@@ -1707,4 +1781,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06  0:01:32
+-- Dump completed on 2018-01-15 10:44:44

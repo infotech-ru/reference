@@ -47,4 +47,15 @@ class SerieQueryTest extends TestCase
         $query->generation([1, 2]);
         $this->assertEquals(['car_serie.id_car_generation' => [1, 2]], $query->where);
     }
+
+    public function testModel()
+    {
+        $query = new SerieQuery(Serie::class);
+        $query->model(1);
+        $this->assertEquals(['car_serie.model_id' => 1], $query->where);
+
+        $query = new SerieQuery(Serie::class);
+        $query->model([1, 2]);
+        $this->assertEquals(['car_serie.model_id' => [1, 2]], $query->where);
+    }
 }
