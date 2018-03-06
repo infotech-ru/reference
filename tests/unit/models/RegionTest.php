@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\FederalDistrictQuery;
@@ -61,6 +60,6 @@ class RegionTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2'], Region::getList());
+        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList());
     }
 }

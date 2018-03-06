@@ -54,6 +54,6 @@ class CityTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1',], City::getList(1));
+        $this->assertEquals(['1' => '1', '3' => 'г. Санкт-Петербург'], City::getList(1));
     }
 }
