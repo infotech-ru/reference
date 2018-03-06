@@ -295,7 +295,7 @@ CREATE TABLE `cities` (
 
 LOCK TABLES `cities` WRITE;
 /*!40000 ALTER TABLE `cities` DISABLE KEYS */;
-INSERT INTO `cities` VALUES (1,1,1,'1'),(2,1,2,'2');
+INSERT INTO `cities` VALUES (1,1,1,'1'),(2,1,2,'2'),(3,1,1,'г. Санкт-Петербург');
 /*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1509,7 +1509,7 @@ CREATE TABLE `regions` (
 
 LOCK TABLES `regions` WRITE;
 /*!40000 ALTER TABLE `regions` DISABLE KEYS */;
-INSERT INTO `regions` VALUES (1,1,1,'1'),(2,1,1,'2');
+INSERT INTO `regions` VALUES (1,1,1,'1'),(2,1,1,'2'),(3,1,1,'Ленинградская область');
 /*!40000 ALTER TABLE `regions` ENABLE KEYS */;
 UNLOCK TABLES;
 

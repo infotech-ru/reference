@@ -9,4 +9,9 @@ class CityQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName().'.region_id' => $value]);
     }
+
+    public function name(string $name): ActiveQuery
+    {
+        return $this->andWhere(['like', 'name', $name]);
+    }
 }
