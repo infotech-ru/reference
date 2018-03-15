@@ -2,7 +2,6 @@
 
 namespace infotech\reference\models;
 
-use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 /**
