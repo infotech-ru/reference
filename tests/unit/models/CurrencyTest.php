@@ -40,6 +40,15 @@ class CurrencyTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '3' => 'г. Санкт-Петербург'], Currency::getList());
+        $this->assertEquals(
+            [
+                'AMD' => 'Армянский драм',
+                'KZT' => 'Тенге',
+                'RUB' => 'Российский рубль',
+                'BYN' => 'Белорусский рубль',
+                'UAH' => 'Гривна',
+            ],
+            Currency::getList()
+        );
     }
 }
