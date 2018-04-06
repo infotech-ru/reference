@@ -25,6 +25,8 @@ class Brand extends ActiveRecord
     const SUBARU_ID = 111;
     const GAZ_ID = 127;
     const UAZ_ID = 134;
+    const CHEVROLET_ID = 2;
+    const CADILLAC_ID = 3;
 
     public static function tableName(): string
     {
