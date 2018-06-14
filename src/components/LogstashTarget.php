@@ -4,6 +4,7 @@ namespace infotech\reference\components;
 
 use yii\helpers\ArrayHelper;
 use yii\log\Logger;
+use yii\web\Request;
 
 class LogstashTarget extends \yii\log\Target
 {
@@ -42,6 +43,10 @@ class LogstashTarget extends \yii\log\Target
     protected function addContextToMessages()
     {
         $context = $this->getContextMessage();
+        $request = \Yii::$app->request;
+        if ($request instanceof Request) {
+            $context['rawBody'] = $request->getRawBody();
+        }
 
         if (!$context) {
             return;
