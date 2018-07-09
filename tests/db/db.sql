@@ -1335,7 +1335,7 @@ CREATE TABLE `model_class` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1344,6 +1344,7 @@ CREATE TABLE `model_class` (
 
 LOCK TABLES `model_class` WRITE;
 /*!40000 ALTER TABLE `model_class` DISABLE KEYS */;
+INSERT INTO `model_class` VALUES (1,'1',0),(2,'2',0);
 /*!40000 ALTER TABLE `model_class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1359,7 +1360,7 @@ CREATE TABLE `model_segment` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1368,6 +1369,7 @@ CREATE TABLE `model_segment` (
 
 LOCK TABLES `model_segment` WRITE;
 /*!40000 ALTER TABLE `model_segment` DISABLE KEYS */;
+INSERT INTO `model_segment` VALUES (1,'1',0),(2,'2',0);
 /*!40000 ALTER TABLE `model_segment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1889,4 +1891,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-09 15:46:33
+-- Dump completed on 2018-07-09 15:58:58

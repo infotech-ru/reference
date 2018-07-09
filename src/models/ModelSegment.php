@@ -16,7 +16,7 @@ class ModelSegment extends ActiveRecord
 
     public static function tableName(): string
     {
-        return 'model_class';
+        return 'model_segment';
     }
 
     public static function getList()

@@ -9,9 +9,11 @@ use infotech\reference\models\ColorQuery;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\Model;
+use infotech\reference\models\ModelClassQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\ModelSegmentQuery;
 use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
@@ -81,6 +83,19 @@ class ModelTest extends TestCase
         $this->assertInstanceOf(ModelOptionQuery::class, $model->getModelOptions());
     }
 
+    public function testGetModelSegment()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelSegmentQuery::class, $model->getModelSegment());
+    }
+
+
+    public function testGetModelClass()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelClassQuery::class, $model->getModelClass());
+    }
+
     public function testAttributes()
     {
         $model = new Model();
@@ -97,6 +112,8 @@ class ModelTest extends TestCase
                 'is_deleted',
                 'is_commercial',
                 'origin_id',
+                'model_class_id',
+                'model_segment_id',
             ],
             $model->attributes()
         );

@@ -96,6 +96,16 @@ class Model extends ActiveRecord
         return $this->hasMany(Skin::class, ['model_id' => 'id']);
     }
 
+    public function getModelClass()
+    {
+        return $this->hasMany(ModelClass::class, ['id' => 'model_class_id']);
+    }
+
+    public function getModelSegment()
+    {
+        return $this->hasMany(ModelSegment::class, ['id' => 'model_segment_id']);
+    }
+
     public function getFullName()
     {
         return $this->brand->name.' '.$this->name;
