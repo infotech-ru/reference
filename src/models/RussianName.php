@@ -26,9 +26,8 @@ class RussianName extends ActiveRecord
         if (count($models) != 1) {
             return null;
         }
-        $current = reset($models);
 
-        return $current->sex;
+        return reset($models)->sex;
     }
 
     private static function mb_ucfirst($string, $enc = 'UTF-8')
@@ -41,7 +40,7 @@ class RussianName extends ActiveRecord
 
     public static function find()
     {
-        return new RussianNameQuery(get_called_class());
+        return new RussianNameQuery(static::class);
     }
 
 }

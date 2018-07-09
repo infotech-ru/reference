@@ -33,7 +33,7 @@ class Equipment extends ActiveRecord
 
     public static function find()
     {
-        return new EquipmentQuery(get_called_class());
+        return new EquipmentQuery(static::class);
     }
 
     public static function getList($serieId, $recentOnly)

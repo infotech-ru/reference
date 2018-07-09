@@ -34,7 +34,7 @@ class Model extends ActiveRecord
 
     public static function find()
     {
-        return new ModelQuery(get_called_class());
+        return new ModelQuery(static::class);
     }
 
     public static function getList($brandId, $recentOnly)
@@ -94,6 +94,16 @@ class Model extends ActiveRecord
     public function getSkins()
     {
         return $this->hasMany(Skin::class, ['model_id' => 'id']);
+    }
+
+    public function getModelClass()
+    {
+        return $this->hasMany(ModelClass::class, ['id' => 'model_class_id']);
+    }
+
+    public function getModelSegment()
+    {
+        return $this->hasMany(ModelSegment::class, ['id' => 'model_segment_id']);
     }
 
     public function getFullName()

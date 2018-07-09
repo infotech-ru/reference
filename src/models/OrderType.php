@@ -24,7 +24,7 @@ class OrderType extends ActiveRecord
 
     public static function find()
     {
-        return new OrderTypeQuery(get_called_class());
+        return new OrderTypeQuery(static::class);
     }
 
     public function getBrand()

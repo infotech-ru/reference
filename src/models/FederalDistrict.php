@@ -18,7 +18,7 @@ class FederalDistrict extends ActiveRecord
 
     public static function find()
     {
-        return new FederalDistrictQuery(get_called_class());
+        return new FederalDistrictQuery(static::class);
     }
 
     public function getRegions()

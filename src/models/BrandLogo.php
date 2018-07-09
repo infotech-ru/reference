@@ -23,7 +23,7 @@ class BrandLogo extends ActiveRecord
 
     public static function find()
     {
-        return new BrandLogoQuery(get_called_class());
+        return new BrandLogoQuery(static::class);
     }
 
     public function getBrand()

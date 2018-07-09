@@ -24,6 +24,6 @@ class VehiclePassportStatus extends ActiveRecord
 
     public static function find()
     {
-        return new VehiclePassportStatusQuery(get_called_class());
+        return new VehiclePassportStatusQuery(static::class);
     }
 }

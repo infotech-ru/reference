@@ -29,7 +29,7 @@ class CatalogImage extends ActiveRecord
 
     public static function find()
     {
-        return new CatalogImageQuery(get_called_class());
+        return new CatalogImageQuery(static::class);
     }
 
     public function getCatalogEmplacement()

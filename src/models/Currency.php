@@ -25,7 +25,7 @@ class Currency extends ActiveRecord
 
     public static function find()
     {
-        return new CurrencyQuery(get_called_class());
+        return new CurrencyQuery(static::class);
     }
 
     /**

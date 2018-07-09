@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
 -- Host: localhost    Database: autocrm_test
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.16.04.1
+-- Server version	5.7.22-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -50,6 +50,7 @@ DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `name_eng` varchar(255) NOT NULL,
   `logo` varchar(64) NOT NULL,
   `importer_db_name` varchar(32) NOT NULL,
   `host` varchar(128) DEFAULT NULL,
@@ -67,7 +68,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (1,'Opel','opel.png','opel',NULL,NULL,NULL,0,NULL),(2,'Chevrolet','chevrolet.png','chevrolet',NULL,NULL,NULL,0,NULL),(3,'Cadillac','cadillac.png','cadillac',NULL,NULL,NULL,0,NULL);
+INSERT INTO `brands` VALUES (1,'Opel','Opel','opel.png','opel',NULL,NULL,NULL,0,NULL),(2,'Chevrolet','Chevrolet','chevrolet.png','chevrolet',NULL,NULL,NULL,0,NULL),(3,'Cadillac','Cadillac','cadillac.png','cadillac',NULL,NULL,NULL,0,NULL);
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1063,6 +1064,7 @@ CREATE TABLE `eqt_migration` (
 
 LOCK TABLES `eqt_migration` WRITE;
 /*!40000 ALTER TABLE `eqt_migration` DISABLE KEYS */;
+INSERT INTO `eqt_migration` VALUES ('m000000_000000_base',1449656551),('m151204_094738_create_table_equipment',1449656557),('m151204_095515_create_table_option',1449656557),('m151204_143536_create_table_option_group',1449656557),('m151207_120819_create_table_image',1449656557),('m151207_134449_create_table_color',1449656557),('m151221_112806_create_table_skin',1450697587),('m151221_112950_create_table_offer',1450708079),('m160212_144228_add__ref_brand_id__in__car_mark',1456473137),('m160212_144240_add__ref_model_id__in__car_model',1456473137),('m160212_144730_drop__brand_model_ids',1456473138),('m160414_125307_add_to_works',1463645568),('m160504_081702_link',1463645568),('m160617_090724_add_city',1466154996),('m160719_093338_add_body_code_package_code',1468922990),('m160719_144216_drop_body_code',1468940416),('m160719_144309_add_body_id_car_serie',1468940417),('m161018_181929_create__order_types',1476823835),('m161021_133213_add_column_car_modification_is_recent',1477058597),('m161102_134606_add_column_color_model_id',1478106108),('m161102_142113_create_table_model_option',1478106108),('m161102_163536_add_column_option_model_option_id',1478106108),('m161103_100330_alter_fk_option_model_option',1478167781),('m161107_084302_add_column_car_serie_is_recent',1478509332),('m161107_084550_add_column_car_generation_is_recent',1478509332),('m161116_100719_add_column_model_is_deleted',1479292255),('m161212_072059_add_column_image_serie_id',1481528255),('m161229_111631_add_column_car_serie_model_id',1484651211),('m161229_145500_create__table__news',1483082741),('m170112_064127_models_index',1484205836),('m170113_091527_create_table_model_year',1484317097),('m170117_162924_add_columns_to_car_modification',1484742722),('m170123_055058_create_catalog_foreshortening_table',1485256240),('m170123_055708_create_catalog_emplacement_table',1485256240),('m170123_055734_create_catalog_image_table',1485256240),('m170202_170646_remove_column_skin_brand_id',1486059570),('m170202_170858_add_column_skin_model_id',1486059570),('m170202_172611_rename_column_color_code',1486059570),('m170202_173111_add_column_color_code',1486059570),('m170206_081854_add_column_catalog_image_is_serie_main',1486371466),('m170207_111714_add_series_column_to_equipment_table',1486468510),('m170213_091625_create_auto_ru_tables',1487697628),('m170213_121041_add_column_car_origin_id',1487697939),('m170214_091810_add_column_is_main_car_characteristic',1487697939),('m170216_063903_create_brand_logo_table',1487239425),('m170221_113913_add_column_car_generation_model_id',1487697939),('m170301_112103_alter_name_column_model_option_table',1488367546),('m170301_113929_alter_name_column_in_option_table',1488368496),('m170303_111324_alter_equipment_table',1488552366),('m170307_110206_add_column_equipment_origin_id',1488888684),('m170327_131812_create__car_characteristic_value__id_car_modification__index',1490620828),('m170406_153749_add__is_supported__in__brands',1491551370),('m170419_134704_add_column_equipment_tech_name',1492680420),('m170620_130659_add_country_alias_phone_code_columns',1497964169),('m170703_144633_add_column_car_modification_is_deleted',1499093761),('m170705_093621_add_column_model_is_commercial',1499256144),('m170724_123421_create_table_common_color',1500977532),('m170724_133626_create_table_common_skin',1500977532),('m170818_075326_add_column_brands_origin_id',1503299430),('m170818_080034_drop_table_car_mark',1503299430),('m170818_085950_add_models_origin_id',1503299431),('m170818_090153_drop_table_car_model',1503299431),('m170818_093842_drop_column_car_generation_id_car_model',1503299431),('m170818_124451_drop_column_car_serie_id_car_model',1503299431),('m170818_125755_drop_column_car_modification_id_car_model',1503299435),('m170928_135826_add_news_tags',1506689001),('m170929_144533_assign_news_tags',1506939114),('m171004_100929_create_model_option_tag_table',1507296817),('m171102_115324_alter_model_option_increase_name',1509623963),('m171102_130134_alter_option_increase_name',1509628715),('m171208_132915_add_timezones',1512745637),('m180112_090556_create_vehicle_passport_status',1515757269),('m180112_140433_create_table_russian_name',1516002719),('m180201_103417_create_table_currency',1517490485),('m180221_114216_create__vehicle_internal_status',1519219001),('m180326_133545_drop_city_71',1522071593),('m180329_221322_create_mbr_sap_model_class',1522421081),('m180329_221323_create_mbr_sap_model',1522421081),('m180423_112723_add_equipment_country_field',1524488141),('m180507_134850_create_country_equipment_table',1525767270),('m180607_102209_create_equipment_catalog_emplacement_table',1528374885),('m180613_144131_add__serie_in_mbr_sap_model_class',1528911229),('m180614_124756_add__equipment_id_in_mbr_sap_model',1528983508),('m180703_144825_add_columns_federal_districts_code_okato',1530629801),('m180703_145223_add_columns_regions_okato',1530629801),('m180709_111851_add_column_brand_name_eng',1531138026),('m180709_121803_create_table_model_class',1531140368),('m180709_122052_create_table_model_segment',1531140369),('m180709_122805_add_column_model_class_model_segment',1531140372);
 /*!40000 ALTER TABLE `eqt_migration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1298,6 +1300,80 @@ INSERT INTO `federal_districts` VALUES (1,'1');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `migration`
+--
+
+DROP TABLE IF EXISTS `migration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migration`
+--
+
+LOCK TABLES `migration` WRITE;
+/*!40000 ALTER TABLE `migration` DISABLE KEYS */;
+INSERT INTO `migration` VALUES ('m000000_000000_base',1531137649);
+/*!40000 ALTER TABLE `migration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model_class`
+--
+
+DROP TABLE IF EXISTS `model_class`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model_class` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model_class`
+--
+
+LOCK TABLES `model_class` WRITE;
+/*!40000 ALTER TABLE `model_class` DISABLE KEYS */;
+INSERT INTO `model_class` VALUES (1,'1',0),(2,'2',0);
+/*!40000 ALTER TABLE `model_class` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model_segment`
+--
+
+DROP TABLE IF EXISTS `model_segment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model_segment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model_segment`
+--
+
+LOCK TABLES `model_segment` WRITE;
+/*!40000 ALTER TABLE `model_segment` DISABLE KEYS */;
+INSERT INTO `model_segment` VALUES (1,'1',0),(2,'2',0);
+/*!40000 ALTER TABLE `model_segment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `model_year`
 --
 
@@ -1345,8 +1421,14 @@ CREATE TABLE `models` (
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `is_commercial` tinyint(1) NOT NULL,
   `origin_id` int(11) DEFAULT NULL COMMENT 'ссылка на таблицу eqt_car_model',
+  `model_class_id` int(11) DEFAULT NULL,
+  `model_segment_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `brand_id_is_recent` (`brand_id`,`is_recent`)
+  KEY `brand_id_is_recent` (`brand_id`,`is_recent`),
+  KEY `fk_models_model_class_id` (`model_class_id`),
+  KEY `fk_models_model_segment_id` (`model_segment_id`),
+  CONSTRAINT `fk_models_model_class_id` FOREIGN KEY (`model_class_id`) REFERENCES `model_class` (`id`),
+  CONSTRAINT `fk_models_model_segment_id` FOREIGN KEY (`model_segment_id`) REFERENCES `model_segment` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8854 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1356,7 +1438,7 @@ CREATE TABLE `models` (
 
 LOCK TABLES `models` WRITE;
 /*!40000 ALTER TABLE `models` DISABLE KEYS */;
-INSERT INTO `models` VALUES (1,1,'1','1',1,NULL,0,NULL,0,0,1425),(1,2,'2','2',0,NULL,0,NULL,0,0,1427),(1,3,'3','3',0,NULL,0,NULL,1,0,1427),(1,4,'4','4',1,NULL,0,NULL,1,0,1427);
+INSERT INTO `models` VALUES (1,1,'1','1',1,NULL,0,NULL,0,0,1425,NULL,NULL),(1,2,'2','2',0,NULL,0,NULL,0,0,1427,NULL,NULL),(1,3,'3','3',0,NULL,0,NULL,1,0,1427,NULL,NULL),(1,4,'4','4',1,NULL,0,NULL,1,0,1427,NULL,NULL);
 /*!40000 ALTER TABLE `models` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1691,6 +1773,7 @@ CREATE TABLE `tbl_migration` (
 
 LOCK TABLES `tbl_migration` WRITE;
 /*!40000 ALTER TABLE `tbl_migration` DISABLE KEYS */;
+INSERT INTO `tbl_migration` VALUES ('m000000_000000_base',1436521965),('m150519_121039_users',1436521966),('m150520_072029_vehicle_reference',1436521966),('m151021_100534_create_br_mod_ids',1446727788),('m151210_092940_alter_vehicle_param_id',1451329704),('m151210_094622_add_vehicle_reference_generation_param',1451329704),('m151224_122448_add_reference_vehicles_warranty_period',1451329704),('m151224_131932_set_null_to_vehicle_reference_params',1451329704),('m151229_124633_correct_vehicle_reference_weights_and_cache',1454106975),('m160208_100750_create_maintenances_worktypes',1455189558);
 /*!40000 ALTER TABLE `tbl_migration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1808,4 +1891,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-15 10:44:44
+-- Dump completed on 2018-07-09 15:58:58

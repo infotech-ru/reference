@@ -27,7 +27,7 @@ class CatalogEmplacement extends ActiveRecord
 
     public static function find()
     {
-        return new CatalogEmplacementQuery(get_called_class());
+        return new CatalogEmplacementQuery(static::class);
     }
 
     public function getModel()

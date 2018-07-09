@@ -20,6 +20,6 @@ class CatalogForeshortening extends ActiveRecord
 
     public static function find()
     {
-        return new CatalogForeshorteningQuery(get_called_class());
+        return new CatalogForeshorteningQuery(static::class);
     }
 }

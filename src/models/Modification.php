@@ -37,7 +37,7 @@ class Modification extends ActiveRecord
 
     public static function find()
     {
-        return new ModificationQuery(get_called_class());
+        return new ModificationQuery(static::class);
     }
 
     public function getSerie()

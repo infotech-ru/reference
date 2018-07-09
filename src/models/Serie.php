@@ -34,7 +34,7 @@ class Serie extends ActiveRecord
 
     public static function find()
     {
-        return new SerieQuery(get_called_class());
+        return new SerieQuery(static::class);
     }
 
     public static function getList($generationId, $recentOnly)

@@ -25,6 +25,6 @@ class VehicleInternalStatus extends ActiveRecord
 
     public static function find()
     {
-        return new VehicleInternalStatusQuery(get_called_class());
+        return new VehicleInternalStatusQuery(static::class);
     }
 }
