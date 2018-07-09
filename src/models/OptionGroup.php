@@ -21,7 +21,7 @@ class OptionGroup extends ActiveRecord
 
     public static function find()
     {
-        return new OptionGroupQuery(get_called_class());
+        return new OptionGroupQuery(static::class);
     }
 
     public function getBrand()

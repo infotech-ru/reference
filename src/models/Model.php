@@ -34,7 +34,7 @@ class Model extends ActiveRecord
 
     public static function find()
     {
-        return new ModelQuery(get_called_class());
+        return new ModelQuery(static::class);
     }
 
     public static function getList($brandId, $recentOnly)

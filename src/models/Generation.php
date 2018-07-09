@@ -31,7 +31,7 @@ class Generation extends ActiveRecord
 
     public static function find()
     {
-        return new GenerationQuery(get_called_class());
+        return new GenerationQuery(static::class);
     }
 
     public static function getList($modelId, $recentOnly)

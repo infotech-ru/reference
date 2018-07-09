@@ -21,7 +21,7 @@ class City extends ActiveRecord
 
     public static function find()
     {
-        return new CityQuery(get_called_class());
+        return new CityQuery(static::class);
     }
 
     public static function getList($regionId)

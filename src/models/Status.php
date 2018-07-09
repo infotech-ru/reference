@@ -21,7 +21,7 @@ class Status extends ActiveRecord
 
     public static function find()
     {
-        return new StatusQuery(get_called_class());
+        return new StatusQuery(static::class);
     }
 
     public function getBrand()

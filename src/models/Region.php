@@ -22,7 +22,7 @@ class Region extends ActiveRecord
 
     public static function find()
     {
-        return new RegionQuery(get_called_class());
+        return new RegionQuery(static::class);
     }
 
     public static function getList()

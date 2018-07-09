@@ -31,7 +31,7 @@ class Color extends ActiveRecord
 
     public static function find()
     {
-        return new ColorQuery(get_called_class());
+        return new ColorQuery(static::class);
     }
 
     public function getModel()

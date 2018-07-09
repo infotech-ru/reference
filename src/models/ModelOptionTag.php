@@ -20,7 +20,7 @@ class ModelOptionTag extends ActiveRecord
 
     public static function find()
     {
-        return new ModelOptionTagQuery(get_called_class());
+        return new ModelOptionTagQuery(static::class);
     }
 
     public function getModel()

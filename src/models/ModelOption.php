@@ -26,7 +26,7 @@ class ModelOption extends ActiveRecord
 
     public static function find()
     {
-        return new ModelOptionQuery(get_called_class());
+        return new ModelOptionQuery(static::class);
     }
 
     public function getModel()

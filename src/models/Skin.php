@@ -27,7 +27,7 @@ class Skin extends ActiveRecord
 
     public static function find()
     {
-        return new SkinQuery(get_called_class());
+        return new SkinQuery(static::class);
     }
 
     public function getModel()
