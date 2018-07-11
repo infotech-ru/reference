@@ -21,8 +21,8 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 before_script:
-  - mysql -e 'CREATE DATABASE autocrm;'
-  - mysql autocrm < tests/db/db.sql
+  - mysql -e 'CREATE DATABASE autocrm DEFAULT CHARSET utf8;'
+  - travis_retry php yii migrate/up --interactive=0
 
 script:
   - vendor/bin/phpunit --verbose --coverage-clover=coverage.clover

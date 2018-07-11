@@ -3,12 +3,33 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\RussianNameFixture;
 use infotech\reference\models\RussianName;
 use infotech\reference\models\RussianNameQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class RussianNameTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            RussianNameFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new RussianName());

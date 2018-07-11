@@ -9,18 +9,4 @@ require_once __DIR__.'/../vendor/yiisoft/yii2/Yii.php';
 
 Yii::setAlias('@tests', __DIR__);
 
-$app = new \yii\console\Application(
-    [
-        'id' => 'id',
-        'basePath' => __DIR__,
-        'components' => [
-            'ref_db' => [
-                'class' => \yii\db\Connection::class,
-                'dsn' => 'mysql:host=127.0.0.1;dbname=autocrm',
-                'username' => 'root',
-                'password' => '',
-                'charset' => 'utf8',
-            ],
-        ],
-    ]
-);
+$app = new \yii\console\Application(require __DIR__.'/config.php');

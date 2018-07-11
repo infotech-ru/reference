@@ -3,15 +3,37 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\EquipmentFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
+use infotech\reference\models\CountryQuery;
 use infotech\reference\models\Equipment;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class EquipmentTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            EquipmentFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Equipment());
@@ -45,6 +67,12 @@ class EquipmentTest extends TestCase
         $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
     }
 
+    public function testGetCountry()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+    }
+
     public function testAttributes()
     {
         $model = new Equipment();
@@ -61,6 +89,7 @@ class EquipmentTest extends TestCase
                 'created_at',
                 'updated_at',
                 'origin_id',
+                'country_id',
             ],
             $model->attributes()
         );

@@ -3,14 +3,35 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\CountryFixture;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\Country;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\RegionQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class CountryTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            CountryFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Country());

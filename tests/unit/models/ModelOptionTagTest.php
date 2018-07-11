@@ -3,13 +3,34 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelOptionTagFixture;
 use infotech\reference\models\ModelOptionTag;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModelOptionTagTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModelOptionTagFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new ModelOptionTag());

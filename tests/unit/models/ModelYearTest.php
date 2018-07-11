@@ -3,13 +3,34 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelYearFixture;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelYear;
 use infotech\reference\models\ModelYearQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModelYearTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModelYearFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new ModelYear());

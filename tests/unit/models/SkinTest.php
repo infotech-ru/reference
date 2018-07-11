@@ -3,13 +3,34 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\SkinFixture;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\Skin;
 use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class SkinTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            SkinFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Skin());
