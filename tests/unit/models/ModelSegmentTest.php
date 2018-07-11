@@ -62,4 +62,15 @@ class ModelSegmentTest extends TestCase
     {
         $this->assertEquals(['1' => '1', '2' => '2'], ModelSegment::getList());
     }
+
+    public function testStatuses()
+    {
+        $this->assertEquals(0, ModelSegment::STATUS_ACTIVE);
+        $this->assertEquals(1, ModelSegment::STATUS_DELETED);
+    }
+
+    public function testGetStatusList()
+    {
+        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelSegment::getStatusList());
+    }
 }
