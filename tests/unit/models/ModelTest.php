@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\ColorQuery;
@@ -17,9 +18,29 @@ use infotech\reference\models\ModelSegmentQuery;
 use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModelTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModelFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Model());

@@ -3,12 +3,33 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\SourceFixture;
 use infotech\reference\models\Source;
 use infotech\reference\models\SourceQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class SourceTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            SourceFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Source());

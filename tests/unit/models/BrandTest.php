@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\BrandFixture;
 use infotech\reference\models\Brand;
 use infotech\reference\models\BrandLogoQuery;
 use infotech\reference\models\BrandQuery;
@@ -10,9 +11,29 @@ use infotech\reference\models\ModelQuery;
 use infotech\reference\models\OptionGroupQuery;
 use infotech\reference\models\OrderTypeQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class BrandTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            BrandFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Brand());

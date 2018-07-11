@@ -3,12 +3,33 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelClassFixture;
 use infotech\reference\models\ModelClass;
 use infotech\reference\models\ModelClassQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModelClassTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModelClassFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new ModelClass());
