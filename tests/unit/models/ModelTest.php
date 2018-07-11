@@ -110,7 +110,6 @@ class ModelTest extends TestCase
         $this->assertInstanceOf(ModelSegmentQuery::class, $model->getModelSegment());
     }
 
-
     public function testGetModelClass()
     {
         $model = new Model();
