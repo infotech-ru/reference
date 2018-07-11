@@ -121,6 +121,16 @@ class BrandTest extends TestCase
         $this->assertEquals(2, Brand::CHEVROLET_ID);
     }
 
+    public function testSmartId()
+    {
+        $this->assertEquals(108, Brand::SMART_ID);
+    }
+
+    public function testMercedesId()
+    {
+        $this->assertEquals(80, Brand::MERCEDES_ID);
+    }
+
     public function testGetOrderTypes()
     {
         $model = new Brand();

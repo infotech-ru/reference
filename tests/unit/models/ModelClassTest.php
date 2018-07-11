@@ -62,4 +62,15 @@ class ModelClassTest extends TestCase
     {
         $this->assertEquals(['1' => '1', '2' => '2'], ModelClass::getList());
     }
+
+    public function testStatuses()
+    {
+        $this->assertEquals(0, ModelClass::STATUS_ACTIVE);
+        $this->assertEquals(1, ModelClass::STATUS_DELETED);
+    }
+
+    public function testGetStatusList()
+    {
+        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelClass::getStatusList());
+    }
 }
