@@ -15,6 +15,8 @@ namespace infotech\reference\models;
  * @property boolean $is_deleted
  * @property boolean $is_commercial
  * @property integer $origin_id
+ * @property integer $model_class_id
+ * @property integer $model_segment_id
  * @property-read Brand $brand
  * @property-read Generation[] $generations
  * @property-read Equipment[] $equipments
@@ -98,12 +100,12 @@ class Model extends ActiveRecord
 
     public function getModelClass()
     {
-        return $this->hasMany(ModelClass::class, ['id' => 'model_class_id']);
+        return $this->hasOne(ModelClass::class, ['id' => 'model_class_id']);
     }
 
     public function getModelSegment()
     {
-        return $this->hasMany(ModelSegment::class, ['id' => 'model_segment_id']);
+        return $this->hasOne(ModelSegment::class, ['id' => 'model_segment_id']);
     }
 
     public function getFullName()

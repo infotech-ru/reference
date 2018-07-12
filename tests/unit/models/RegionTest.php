@@ -87,9 +87,9 @@ class RegionTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList());
+        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList(1, null));
+        $this->assertEquals(['5' => '5'], Region::getList(2, null));
     }
-
 
     public function testStatuses()
     {
