@@ -85,4 +85,11 @@ class FederalDistrictTest extends TestCase
     {
         $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], FederalDistrict::getStatusList());
     }
+
+    public function testGetList()
+    {
+        $this->assertEquals(['1' => '1'], FederalDistrict::getList(1));
+        $this->assertEquals(['2' => '2'], FederalDistrict::getList(2));
+        $this->assertEquals(['1' => '1', '2' => '2'], FederalDistrict::getList(null));
+    }
 }

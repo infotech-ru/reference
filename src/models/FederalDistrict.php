@@ -46,4 +46,15 @@ class FederalDistrict extends ActiveRecord
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
+
+    public static function getList($countryId)
+    {
+        $query = static::find()
+            ->status(self::STATUS_ACTIVE)
+            ->andFilterWhere(['country_id' => $countryId])
+            ->select('name, id')
+            ->indexBy('id');
+
+        return $query->column();
+    }
 }

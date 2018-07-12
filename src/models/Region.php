@@ -9,6 +9,7 @@ namespace infotech\reference\models;
  * @property integer $country_id
  * @property integer $federal_district_id
  * @property string $name
+ * @property integer $status
  * @property Country $country
  * @property FederalDistrict $federalDistrict
  * @property City[] $cities
@@ -36,9 +37,11 @@ class Region extends ActiveRecord
         return new RegionQuery(static::class);
     }
 
-    public static function getList()
+    public static function getList($countryId, $federalDistrictId)
     {
         $query = static::find()
+            ->status(self::STATUS_ACTIVE)
+            ->andFilterWhere(['country_id' => $countryId, 'federal_district_id' => $federalDistrictId])
             ->select('name, id')
             ->indexBy('id');
 
