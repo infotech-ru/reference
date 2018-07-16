@@ -47,6 +47,16 @@ class Region extends ActiveRecord
 
         return $query->column();
     }
+    
+    public function getListRegionsByCountry()
+    {
+        $query = static::find()
+            ->select('name, id, country_id')
+            ->with('country')
+            ->orderBy('name');
+        
+        return \yii\helpers\ArrayHelper::map($query->all(), 'id', 'name', 'country.name');
+    }
 
     public function getCountry()
     {
