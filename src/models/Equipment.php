@@ -8,18 +8,19 @@ namespace infotech\reference\models;
  * @property integer $id
  * @property integer $model_id
  * @property integer $series_id
- * @property string  $name
- * @property string  $archive_name
- * @property string  $tech_name
+ * @property string $name
+ * @property string $archive_name
+ * @property string $tech_name
  * @property integer $order
  * @property integer $status
- * @property string  $created_at
- * @property string  $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $origin_id
  * @property integer $country_id
  * @property-read Model $model
  * @property-read Serie $serie
  * @property-read CatalogEmplacement[] $catalogEmplacements
+ * @property-read Option[] $options
  */
 class Equipment extends ActiveRecord
 {
@@ -69,5 +70,10 @@ class Equipment extends ActiveRecord
     public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
+    }
+
+    public function getOptions()
+    {
+        return $this->hasMany(Option::class, ['equipment_id' => 'id']);
     }
 }
