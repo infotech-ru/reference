@@ -11,6 +11,7 @@ namespace infotech\reference\models;
  * @property integer $category
  * @property integer $priority
  * @property integer $status
+ * @property-read Model $model
  */
 class ModelImage extends ActiveRecord
 {

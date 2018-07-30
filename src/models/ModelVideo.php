@@ -11,6 +11,7 @@ namespace infotech\reference\models;
  * @property integer $type
  * @property integer $priority
  * @property integer $status
+ * @property-read Model $model
  */
 class ModelVideo extends ActiveRecord
 {
