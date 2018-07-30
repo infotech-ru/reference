@@ -101,4 +101,22 @@ class RegionTest extends TestCase
     {
         $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], Region::getStatusList());
     }
+
+    public function testGetListRegionsByCountry()
+    {
+        $this->assertEquals(
+            [
+                'Россия' => [
+                    1 => '1',
+                    2 => '2',
+                    3 => 'Ленинградская область',
+                    4 => 'Московская область',
+                ],
+                'Беларусь' => [
+                    5 => '5',
+                ],
+            ],
+            Region::getListRegionsByCountry()
+        );
+    }
 }
