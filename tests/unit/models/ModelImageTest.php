@@ -3,9 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
-use app\fixtures\BodyFixture;
-use infotech\reference\models\Body;
-use infotech\reference\models\BodyQuery;
+use app\fixtures\ModelImageFixture;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
 use PHPUnit\Framework\TestCase;
@@ -53,6 +51,7 @@ class ModelImageTest extends TestCase
         $this->assertEquals(
             [
                 'id',
+                'model_id',
                 'url',
                 'category',
                 'priority',

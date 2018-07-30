@@ -3,10 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
-use app\fixtures\BodyFixture;
 use app\fixtures\ModelVideoFixture;
-use infotech\reference\models\Body;
-use infotech\reference\models\BodyQuery;
 use infotech\reference\models\ModelVideo;
 use infotech\reference\models\ModelVideoQuery;
 use PHPUnit\Framework\TestCase;
@@ -54,9 +51,9 @@ class ModelVideoTest extends TestCase
         $this->assertEquals(
             [
                 'id',
+                'model_id',
                 'type',
                 'url',
-                'category',
                 'priority',
                 'status',
             ],

@@ -11,7 +11,6 @@ use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\Model;
 use infotech\reference\models\ModelClassQuery;
-use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\ModelOptionTagQuery;
