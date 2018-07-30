@@ -60,4 +60,27 @@ class ModelImageTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testStatuses()
+    {
+        $this->assertEquals(0, ModelImage::STATUS_ACTIVE);
+        $this->assertEquals(1, ModelImage::STATUS_DELETED);
+    }
+
+    public function testGetStatusList()
+    {
+        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelImage::getStatusList());
+    }
+
+
+    public function testCategory()
+    {
+        $this->assertEquals(1, ModelImage::CATEGORY_INTERNAL);
+        $this->assertEquals(0, ModelImage::CATEGORY_EXTERNAL);
+    }
+
+    public function testGetCategoryList()
+    {
+        $this->assertEquals([0 => 'Экстернал', 1 => 'Интернал',], ModelImage::getCategoryList());
+    }
 }

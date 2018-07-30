@@ -60,4 +60,27 @@ class ModelVideoTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testStatuses()
+    {
+        $this->assertEquals(0, ModelVideo::STATUS_ACTIVE);
+        $this->assertEquals(1, ModelVideo::STATUS_DELETED);
+    }
+
+    public function testGetStatusList()
+    {
+        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelVideo::getStatusList());
+    }
+
+    public function testType()
+    {
+        $this->assertEquals(1, ModelVideo::TYPE_YOUTUBE);
+        $this->assertEquals(0, ModelVideo::TYPE_URL);
+    }
+
+    public function testGetTypeList()
+    {
+        $this->assertEquals([0 => 'Видео', 1 => 'YouTube',], ModelVideo::getTypeList());
+    }
+
 }
