@@ -11,10 +11,13 @@ use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\Model;
 use infotech\reference\models\ModelClassQuery;
+use infotech\reference\models\ModelImage;
+use infotech\reference\models\ModelImageQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelSegmentQuery;
+use infotech\reference\models\ModelVideoQuery;
 use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
@@ -114,6 +117,18 @@ class ModelTest extends TestCase
     {
         $model = new Model();
         $this->assertInstanceOf(ModelClassQuery::class, $model->getModelClass());
+    }
+
+    public function testGetModelImages()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelImageQuery::class, $model->getModelImages());
+    }
+
+    public function testGetModelVideos()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelVideoQuery::class, $model->getModelVideos());
     }
 
     public function testAttributes()
