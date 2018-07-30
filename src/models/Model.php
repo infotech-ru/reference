@@ -26,6 +26,8 @@ namespace infotech\reference\models;
  * @property-read ModelOptionTag[] $modelOptionTags
  * @property-read ModelOption[] $modelOptions
  * @property-read Skin[] $skins
+ * @property-read ModelImage[] $modelImages
+ * @property-read ModelVideo[] $modelVideos
  */
 class Model extends ActiveRecord
 {
@@ -111,5 +113,15 @@ class Model extends ActiveRecord
     public function getFullName()
     {
         return $this->brand->name.' '.$this->name;
+    }
+
+    public function getModelImages()
+    {
+        return $this->hasMany(ModelImage::class, ['model_id'=>'id']);
+    }
+
+    public function getModelVideos()
+    {
+        return $this->hasMany(ModelVideo::class, ['model_id'=>'id']);
     }
 }
