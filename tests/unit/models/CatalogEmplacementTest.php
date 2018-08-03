@@ -69,4 +69,10 @@ class CatalogEmplacementTest extends TestCase
             $model->attributes()
         );
     }
+
+    public function testGetCatalogImages()
+    {
+        $model = new CatalogEmplacement();
+        $this->assertInstanceOf(CatalogImageQuery::class, $model->getCatalogImages());
+    }
 }
