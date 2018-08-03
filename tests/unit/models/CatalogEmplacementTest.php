@@ -5,6 +5,7 @@ namespace infotech\reference\tests\unit\models;
 
 use infotech\reference\models\CatalogEmplacement;
 use infotech\reference\models\CatalogEmplacementQuery;
+use infotech\reference\models\CatalogImageQuery;
 use infotech\reference\models\ColorQuery;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
