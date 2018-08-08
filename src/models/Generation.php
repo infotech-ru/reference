@@ -39,6 +39,7 @@ class Generation extends ActiveRecord
         $query = static::find()
             ->isVisible(1)
             ->model($modelId)
+            ->year($year)
             ->select('name, id_car_generation')
             ->indexBy('id_car_generation');
         if ($recentOnly) {
