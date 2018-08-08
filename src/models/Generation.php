@@ -34,7 +34,7 @@ class Generation extends ActiveRecord
         return new GenerationQuery(get_called_class());
     }
 
-    public static function getList($modelId, $recentOnly)
+    public static function getList($modelId, $recentOnly, $year = null)
     {
         $query = static::find()
             ->isVisible(1)
