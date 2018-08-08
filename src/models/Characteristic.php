@@ -27,7 +27,7 @@ class Characteristic extends ActiveRecord
 
     public static function find()
     {
-        return new CharacteristicQuery(get_called_class());
+        return new CharacteristicQuery(static::class);
     }
 
     public function getParent()

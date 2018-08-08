@@ -19,7 +19,7 @@ class Source extends ActiveRecord
 
     public static function find()
     {
-        return new SourceQuery(get_called_class());
+        return new SourceQuery(static::class);
     }
 
     private static function processItems($list, $parentId, $prefix): array

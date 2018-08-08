@@ -9,6 +9,9 @@ namespace infotech\reference\models;
  * @property integer $country_id
  * @property integer $region_id
  * @property string $name
+ * @property string $timezone
+ * @property double $lat
+ * @property double $lng
  * @property Country $country
  * @property Region $region
  */
@@ -21,7 +24,7 @@ class City extends ActiveRecord
 
     public static function find()
     {
-        return new CityQuery(get_called_class());
+        return new CityQuery(static::class);
     }
 
     public static function getList($regionId)

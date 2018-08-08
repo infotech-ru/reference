@@ -2,13 +2,34 @@
 
 namespace infotech\reference\tests\unit\models;
 
+use app\fixtures\CityFixture;
 use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\City;
 use infotech\reference\models\CityQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class CityQueryTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            CityFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertInstanceOf(ActiveQuery::class, new CityQuery(City::class));

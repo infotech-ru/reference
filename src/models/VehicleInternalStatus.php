@@ -16,6 +16,7 @@ class VehicleInternalStatus extends ActiveRecord
     const CONTRACT = 4;
     const TRANSFERRED = 5;
     const DELETED = 6;
+    const PREPARATION = 7;
 
     public static function tableName(): string
     {
@@ -24,6 +25,6 @@ class VehicleInternalStatus extends ActiveRecord
 
     public static function find()
     {
-        return new VehicleInternalStatusQuery(get_called_class());
+        return new VehicleInternalStatusQuery(static::class);
     }
 }

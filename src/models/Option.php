@@ -25,7 +25,7 @@ class Option extends ActiveRecord
 
     public static function find()
     {
-        return new OptionQuery(get_called_class());
+        return new OptionQuery(static::class);
     }
 
     public function getEquipment()

@@ -3,14 +3,35 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\GenerationFixture;
 use infotech\reference\models\Generation;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class GenerationTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            GenerationFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Generation());

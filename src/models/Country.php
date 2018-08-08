@@ -26,7 +26,7 @@ class Country extends ActiveRecord
 
     public static function find()
     {
-        return new CountryQuery(get_called_class());
+        return new CountryQuery(static::class);
     }
 
     public function getRegions()

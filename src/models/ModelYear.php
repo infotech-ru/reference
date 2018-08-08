@@ -21,7 +21,7 @@ class ModelYear extends ActiveRecord
 
     public static function find()
     {
-        return new ModelYearQuery(get_called_class());
+        return new ModelYearQuery(static::class);
     }
 
     public function getModel()

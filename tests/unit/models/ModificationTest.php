@@ -3,14 +3,35 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModificationFixture;
 use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\Modification;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModificationTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModificationFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Modification());

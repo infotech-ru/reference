@@ -3,13 +3,34 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\OptionGroupFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\OptionGroup;
 use infotech\reference\models\OptionGroupQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class OptionGroupTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            OptionGroupFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new OptionGroup());

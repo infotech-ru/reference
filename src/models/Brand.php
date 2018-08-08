@@ -8,6 +8,7 @@ namespace infotech\reference\models;
  * @package infotech\reference\models
  * @property integer $id
  * @property string  $name
+ * @property string $name_eng
  * @property string  $logo
  * @property string  $importer_db_name
  * @property string  $host
@@ -27,6 +28,8 @@ class Brand extends ActiveRecord
     const UAZ_ID = 134;
     const CHEVROLET_ID = 2;
     const CADILLAC_ID = 3;
+    const MERCEDES_ID = 80;
+    const SMART_ID = 108;
 
     public static function tableName(): string
     {
@@ -40,7 +43,7 @@ class Brand extends ActiveRecord
 
     public static function find()
     {
-        return new BrandQuery(get_called_class());
+        return new BrandQuery(static::class);
     }
 
     public function getModels()

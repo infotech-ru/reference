@@ -69,4 +69,9 @@ class VehicleInternalStatusTest extends TestCase
     {
         $this->assertEquals(6, VehicleInternalStatus::DELETED);
     }
+
+    public function testPREPARATION()
+    {
+        $this->assertEquals(7, VehicleInternalStatus::PREPARATION);
+    }
 }

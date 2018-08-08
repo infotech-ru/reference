@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\SerieFixture;
 use infotech\reference\models\BodyQuery;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\EquipmentQuery;
@@ -11,9 +12,29 @@ use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\Serie;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class SerieTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            SerieFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Serie());

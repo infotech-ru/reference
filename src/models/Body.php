@@ -18,7 +18,7 @@ class Body extends ActiveRecord
 
     public static function find()
     {
-        return new BodyQuery(get_called_class());
+        return new BodyQuery(static::class);
     }
 
     public static function getList(): array

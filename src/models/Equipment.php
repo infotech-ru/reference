@@ -16,6 +16,7 @@ namespace infotech\reference\models;
  * @property string  $created_at
  * @property string  $updated_at
  * @property integer $origin_id
+ * @property integer $country_id
  * @property-read Model $model
  * @property-read Serie $serie
  * @property-read CatalogEmplacement[] $catalogEmplacements
@@ -33,7 +34,7 @@ class Equipment extends ActiveRecord
 
     public static function find()
     {
-        return new EquipmentQuery(get_called_class());
+        return new EquipmentQuery(static::class);
     }
 
     public static function getList($serieId, $recentOnly)
@@ -63,5 +64,10 @@ class Equipment extends ActiveRecord
     public function getCatalogEmplacements()
     {
         return $this->hasMany(CatalogEmplacement::class, ['equipment_id' => 'id']);
+    }
+
+    public function getCountry()
+    {
+        return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 }

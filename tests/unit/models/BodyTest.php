@@ -3,12 +3,33 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\BodyFixture;
 use infotech\reference\models\Body;
 use infotech\reference\models\BodyQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class BodyTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            BodyFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Body());

@@ -28,7 +28,7 @@ class CharacteristicValue extends ActiveRecord
 
     public static function find()
     {
-        return new CharacteristicValueQuery(get_called_class());
+        return new CharacteristicValueQuery(static::class);
     }
 
     public function getCharacteristic()

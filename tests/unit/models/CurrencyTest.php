@@ -3,12 +3,33 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\CurrencyFixture;
 use infotech\reference\models\Currency;
 use infotech\reference\models\CurrencyQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class CurrencyTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            CurrencyFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Currency());

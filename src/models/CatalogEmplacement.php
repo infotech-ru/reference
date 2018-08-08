@@ -17,6 +17,7 @@ namespace infotech\reference\models;
  * @property-read Serie $serie
  * @property-read Color $color
  * @property-read Equipment $equipment
+ * @property-read CatalogImage[] $catalogImages
  */
 class CatalogEmplacement extends ActiveRecord
 {
@@ -27,7 +28,7 @@ class CatalogEmplacement extends ActiveRecord
 
     public static function find()
     {
-        return new CatalogEmplacementQuery(get_called_class());
+        return new CatalogEmplacementQuery(static::class);
     }
 
     public function getModel()
@@ -48,5 +49,10 @@ class CatalogEmplacement extends ActiveRecord
     public function getEquipment()
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
+    }
+
+    public function getCatalogImages()
+    {
+        return $this->hasMany(CatalogImage::class, ['emplacement_id'=>'id']);
     }
 }

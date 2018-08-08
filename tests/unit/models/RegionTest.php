@@ -2,15 +2,36 @@
 
 namespace infotech\reference\tests\unit\models;
 
+use app\fixtures\RegionFixture;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\FederalDistrictQuery;
 use infotech\reference\models\Region;
 use infotech\reference\models\RegionQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class RegionTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            RegionFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Region());
@@ -35,6 +56,12 @@ class RegionTest extends TestCase
                 'country_id',
                 'federal_district_id',
                 'name',
+                'status',
+                'timezone',
+                'lat',
+                'lng',
+                'okato',
+
             ],
             $model->attributes()
         );
@@ -60,6 +87,36 @@ class RegionTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList());
+        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList(1, null));
+        $this->assertEquals(['5' => '5'], Region::getList(2, null));
+    }
+
+    public function testStatuses()
+    {
+        $this->assertEquals(0, Region::STATUS_ACTIVE);
+        $this->assertEquals(1, Region::STATUS_DELETED);
+    }
+
+    public function testGetStatusList()
+    {
+        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], Region::getStatusList());
+    }
+
+    public function testGetListRegionsByCountry()
+    {
+        $this->assertEquals(
+            [
+                'Россия' => [
+                    1 => '1',
+                    2 => '2',
+                    3 => 'Ленинградская область',
+                    4 => 'Московская область',
+                ],
+                'Беларусь' => [
+                    5 => '5',
+                ],
+            ],
+            Region::getListRegionsByCountry()
+        );
     }
 }

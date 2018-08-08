@@ -3,21 +3,46 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\ColorQuery;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\Model;
+use infotech\reference\models\ModelClassQuery;
+use infotech\reference\models\ModelImageQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\ModelSegmentQuery;
+use infotech\reference\models\ModelVideoQuery;
 use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\SkinQuery;
 use PHPUnit\Framework\TestCase;
+use yii\test\FixtureTrait;
 
 class ModelTest extends TestCase
 {
+    use FixtureTrait;
+
+    public function fixtures()
+    {
+        return [
+            ModelFixture::class,
+        ];
+    }
+
+    public function setUp()
+    {
+        $this->loadFixtures();
+    }
+
+    public function tearDown()
+    {
+        $this->unloadFixtures();
+    }
+
     public function testConstructor()
     {
         $this->assertNotNull(new Model());
@@ -81,6 +106,30 @@ class ModelTest extends TestCase
         $this->assertInstanceOf(ModelOptionQuery::class, $model->getModelOptions());
     }
 
+    public function testGetModelSegment()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelSegmentQuery::class, $model->getModelSegment());
+    }
+
+    public function testGetModelClass()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelClassQuery::class, $model->getModelClass());
+    }
+
+    public function testGetModelImages()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelImageQuery::class, $model->getModelImages());
+    }
+
+    public function testGetModelVideos()
+    {
+        $model = new Model();
+        $this->assertInstanceOf(ModelVideoQuery::class, $model->getModelVideos());
+    }
+
     public function testAttributes()
     {
         $model = new Model();
@@ -97,6 +146,8 @@ class ModelTest extends TestCase
                 'is_deleted',
                 'is_commercial',
                 'origin_id',
+                'model_class_id',
+                'model_segment_id',
             ],
             $model->attributes()
         );

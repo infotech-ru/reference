@@ -15,6 +15,8 @@ namespace infotech\reference\models;
  * @property boolean $is_deleted
  * @property boolean $is_commercial
  * @property integer $origin_id
+ * @property integer $model_class_id
+ * @property integer $model_segment_id
  * @property-read Brand $brand
  * @property-read Generation[] $generations
  * @property-read Equipment[] $equipments
@@ -24,6 +26,8 @@ namespace infotech\reference\models;
  * @property-read ModelOptionTag[] $modelOptionTags
  * @property-read ModelOption[] $modelOptions
  * @property-read Skin[] $skins
+ * @property-read ModelImage[] $modelImages
+ * @property-read ModelVideo[] $modelVideos
  */
 class Model extends ActiveRecord
 {
@@ -34,7 +38,7 @@ class Model extends ActiveRecord
 
     public static function find()
     {
-        return new ModelQuery(get_called_class());
+        return new ModelQuery(static::class);
     }
 
     public static function getList($brandId, $recentOnly)
@@ -96,8 +100,28 @@ class Model extends ActiveRecord
         return $this->hasMany(Skin::class, ['model_id' => 'id']);
     }
 
+    public function getModelClass()
+    {
+        return $this->hasOne(ModelClass::class, ['id' => 'model_class_id']);
+    }
+
+    public function getModelSegment()
+    {
+        return $this->hasOne(ModelSegment::class, ['id' => 'model_segment_id']);
+    }
+
     public function getFullName()
     {
         return $this->brand->name.' '.$this->name;
+    }
+
+    public function getModelImages()
+    {
+        return $this->hasMany(ModelImage::class, ['model_id'=>'id']);
+    }
+
+    public function getModelVideos()
+    {
+        return $this->hasMany(ModelVideo::class, ['model_id'=>'id']);
     }
 }
