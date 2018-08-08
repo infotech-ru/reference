@@ -45,6 +45,22 @@ class GenerationQuery extends ActiveQuery
      */
     public function year($year)
     {
-        return $this->andFilterWhere(['>=', $this->tableName() . '.year_begin', $year])->andFilterWhere(['<=', $this->tableName() . '.year_end', $year]);
+        if ((int)$year) {
+            $tbl = $this->tableName();
+
+            $this->andWhere([
+                'AND',
+                ":year >= $tbl.year_begin",
+                [
+                    'OR',
+                    ":year <= $tbl.year_end",
+                    "$tbl.year_end IS NULL",
+                ],
+            ]);
+
+            $this->params[':year'] = (int)$year;
+        }
+
+        return $this;
     }
 }
