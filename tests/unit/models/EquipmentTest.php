@@ -9,6 +9,7 @@ use infotech\reference\models\CountryQuery;
 use infotech\reference\models\Equipment;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\OptionQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -71,6 +72,12 @@ class EquipmentTest extends TestCase
     {
         $model = new Equipment();
         $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+    }
+
+    public function testGetOptions()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(OptionQuery::class, $model->getOptions());
     }
 
     public function testAttributes()

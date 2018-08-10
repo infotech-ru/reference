@@ -4,6 +4,7 @@ namespace infotech\reference\tests\unit\models;
 
 
 use app\fixtures\ModelVideoFixture;
+use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelVideo;
 use infotech\reference\models\ModelVideoQuery;
 use PHPUnit\Framework\TestCase;
@@ -83,4 +84,9 @@ class ModelVideoTest extends TestCase
         $this->assertEquals([0 => 'Видео', 1 => 'YouTube',], ModelVideo::getTypeList());
     }
 
+    public function testGetModel()
+    {
+        $model = new ModelVideo();
+        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+    }
 }

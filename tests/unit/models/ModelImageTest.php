@@ -6,6 +6,7 @@ namespace infotech\reference\tests\unit\models;
 use app\fixtures\ModelImageFixture;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
+use infotech\reference\models\ModelQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
@@ -72,7 +73,6 @@ class ModelImageTest extends TestCase
         $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelImage::getStatusList());
     }
 
-
     public function testCategory()
     {
         $this->assertEquals(1, ModelImage::CATEGORY_INTERNAL);
@@ -82,5 +82,11 @@ class ModelImageTest extends TestCase
     public function testGetCategoryList()
     {
         $this->assertEquals([0 => 'Экстернал', 1 => 'Интернал',], ModelImage::getCategoryList());
+    }
+
+    public function testGetModel()
+    {
+        $model = new ModelImage();
+        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 }
