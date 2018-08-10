@@ -53,4 +53,47 @@ class GenerationQueryTest extends TestCase
             $query->createCommand()->sql
         );
     }
+
+    public function testYear()
+    {
+        $query = new GenerationQuery(Generation::class);
+        $this->assertEquals($query, $query->year(null));
+        $this->assertEquals(null, $query->where);
+
+        $query = new GenerationQuery(Generation::class);
+        $this->assertEquals($query, $query->year('test'));
+        $this->assertEquals(null, $query->where);
+
+        $query = new GenerationQuery(Generation::class);
+        $this->assertEquals($query, $query->year('2018'));
+        $this->assertEquals(
+            [
+                'AND',
+                ':year >= car_generation.year_begin',
+                [
+                    'OR',
+                    ':year <= car_generation.year_end',
+                    'car_generation.year_end IS NULL',
+                ],
+            ],
+            $query->where
+        );
+        $this->assertEquals([':year' => 2018], $query->params);
+
+        $query = new GenerationQuery(Generation::class);
+        $this->assertEquals($query, $query->year(2018));
+        $this->assertEquals(
+            [
+                'AND',
+                ':year >= car_generation.year_begin',
+                [
+                    'OR',
+                    ':year <= car_generation.year_end',
+                    'car_generation.year_end IS NULL',
+                ],
+            ],
+            $query->where
+        );
+        $this->assertEquals([':year' => 2018], $query->params);
+    }
 }

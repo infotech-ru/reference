@@ -34,11 +34,12 @@ class Generation extends ActiveRecord
         return new GenerationQuery(static::class);
     }
 
-    public static function getList($modelId, $recentOnly)
+    public static function getList($modelId, $recentOnly, $year)
     {
         $query = static::find()
             ->isVisible(1)
             ->model($modelId)
+            ->year($year)
             ->select('name, id_car_generation')
             ->indexBy('id_car_generation');
         if ($recentOnly) {

@@ -7,6 +7,8 @@ return [
         'model_id' => 1,
         'is_visible' => 1,
         'is_recent' => 1,
+        'year_begin' => null,
+        'year_end' => null,
     ],
     [
         'id_car_generation' => 2,
@@ -14,6 +16,8 @@ return [
         'model_id' => 1,
         'is_visible' => 1,
         'is_recent' => 0,
+        'year_begin' => 2015,
+        'year_end' => 2016,
     ],
     [
         'id_car_generation' => 5,
@@ -21,5 +25,7 @@ return [
         'model_id' => 1,
         'is_visible' => 1,
         'is_recent' => 1,
+        'year_begin' => 2017,
+        'year_end' => 2018,
     ],
 ];
