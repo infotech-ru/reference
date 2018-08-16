@@ -21,7 +21,7 @@ class VehicleVerificationProgramTest extends TestCase
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['brand_id'], VehicleVerificationProgram::primaryKey());
+        $this->assertEquals(['id'], VehicleVerificationProgram::primaryKey());
     }
 
     public function testFind()
@@ -34,6 +34,7 @@ class VehicleVerificationProgramTest extends TestCase
         $model = new VehicleVerificationProgram();
         $this->assertEquals(
             [
+                'id',
                 'brand_id',
                 'name',
                 'description',

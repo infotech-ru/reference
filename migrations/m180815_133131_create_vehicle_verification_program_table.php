@@ -13,12 +13,12 @@ class m180815_133131_create_vehicle_verification_program_table extends Migration
     public function up()
     {
         $this->createTable('vehicle_verification_program', [
+            'id' => $this->primaryKey(),
             'brand_id' => $this->integer()->notNull()->unsigned(),
             'name' => $this->string(),
             'description' => $this->text(),
             'photo' => $this->string(),
         ], 'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci');
-        $this->addPrimaryKey('brand_id', 'vehicle_verification_program', 'brand_id');
         $this->addForeignKey(
             'fk_vehicle_verification_program_brand',
             'vehicle_verification_program',
