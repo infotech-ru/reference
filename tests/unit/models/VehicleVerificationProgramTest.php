@@ -2,6 +2,7 @@
 
 namespace infotech\reference\tests\unit\models;
 
+use infotech\reference\models\Brand;
 use infotech\reference\models\VehicleVerificationProgram;
 use infotech\reference\models\VehicleVerificationProgramQuery;
 use PHPUnit\Framework\TestCase;
@@ -40,5 +41,17 @@ class VehicleVerificationProgramTest extends TestCase
             ],
             $model->attributes()
         );
+    }
+
+    public function testGetPhotoUrl()
+    {
+        $model = new VehicleVerificationProgram();
+
+        $this->assertEquals(null, $model->getPhotoUrl());
+
+        $model->brand_id = Brand::SUBARU_ID;
+        $model->photo = VehicleVerificationProgram::BASE_CATALOG_NAME . "/$model->brand_id/subaru-select.png";
+
+        $this->assertEquals('http://195004.selcdn.com/ref/' . $model->photo, $model->getPhotoUrl());
     }
 }

@@ -13,6 +13,10 @@ namespace infotech\reference\models;
  */
 class VehicleVerificationProgram extends ActiveRecord
 {
+    const BASE_CATALOG_NAME = 'vehicle-verification-program';
+
+    private static $basePhotoUrl = 'http://195004.selcdn.com/ref/';
+
     public static function tableName(): string
     {
         return 'vehicle_verification_program';
@@ -21,5 +25,14 @@ class VehicleVerificationProgram extends ActiveRecord
     public static function find()
     {
         return new VehicleVerificationProgramQuery(static::class);
+    }
+
+    public function getPhotoUrl()
+    {
+        if ($this->photo) {
+            return self::$basePhotoUrl . $this->photo;
+        }
+
+        return null;
     }
 }
