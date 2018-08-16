@@ -34,6 +34,7 @@ class VehicleVerificationProgramTest extends TestCase
         $model = new VehicleVerificationProgram();
         $this->assertEquals(
             [
+                'id',
                 'brand_id',
                 'name',
                 'description',

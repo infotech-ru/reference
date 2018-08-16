@@ -6,6 +6,7 @@ namespace infotech\reference\models;
  * Class VehicleVerificationProgram
  * @package infotech\reference\models
  *
+ * @property integer $id
  * @property integer $brand_id
  * @property string  $name
  * @property string  $description
