@@ -35,4 +35,9 @@ class VehicleVerificationProgram extends ActiveRecord
 
         return null;
     }
+
+    public function getBrand()
+    {
+        return $this->hasOne(Brand::class, ['id' => 'brand_id']);
+    }
 }
