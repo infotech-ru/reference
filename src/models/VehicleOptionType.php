@@ -27,7 +27,7 @@ class VehicleOptionType extends ActiveRecord
     {
         return [
             [['group_id', 'name'], 'required'],
-            ['group_id', 'required', 'exist', 'targetClass' => VehicleOptionGroup::class, 'targetAttribute' => 'id'],
+            ['group_id', 'exist', 'targetClass' => VehicleOptionGroup::class, 'targetAttribute' => 'id'],
             ['values', 'safe'],
         ];
     }
