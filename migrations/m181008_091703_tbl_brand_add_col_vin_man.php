@@ -21,6 +21,5 @@ class m181008_091703_tbl_brand_add_col_vin_man extends Migration
     public function safeDown()
     {
         $this->dropColumn('brands','is_vin_manufacturer');
-        return true;
     }
 }
