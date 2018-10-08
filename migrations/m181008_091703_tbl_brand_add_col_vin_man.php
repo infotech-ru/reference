@@ -16,7 +16,7 @@ class m181008_091703_tbl_brand_add_col_vin_man extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn(self::TBL,self::COL,$this->integer(1)->defaultValue(0)->comment('Ипользуется ли вин производителя'));
+        $this->addColumn(self::TBL,self::COL,$this->integer(1)->notNull()->defaultValue(0)->comment('Ипользуется ли вин производителя'));
     }
 
     /**
