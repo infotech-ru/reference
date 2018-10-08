@@ -7,16 +7,12 @@ use yii\db\Migration;
  */
 class m181008_091703_tbl_brand_add_col_vin_man extends Migration
 {
-    const TBL = 'brands';
-    const COL = 'is_vin_manufacturer';
-    
-    
-    /**
+   /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->addColumn(self::TBL,self::COL,$this->integer(1)->notNull()->defaultValue(0)->comment('Ипользуется ли вин производителя'));
+        $this->addColumn('brands','is_vin_manufacturer',$this->integer(1)->notNull()->defaultValue(0)->comment('Ипользуется ли вин производителя'));
     }
 
     /**
@@ -24,7 +20,7 @@ class m181008_091703_tbl_brand_add_col_vin_man extends Migration
      */
     public function safeDown()
     {
-        $this->dropColumn(self::TBL,self::COL);
+        $this->dropColumn('brands','is_vin_manufacturer');
         return true;
     }
 }
