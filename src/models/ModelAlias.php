@@ -14,6 +14,7 @@ namespace infotech\reference\models;
  * @property integer $status
  * @property string $created_at
  * @property string $updated_at
+ * @property integer $classification
  * @property-read Brand $brand
  * @property-read Model $model
  * @property-read Generation $generation
@@ -24,6 +25,15 @@ class ModelAlias extends ActiveRecord
     const STATUS_ACTIVE = 0;
     const STATUS_DELETED = 1;
 
+    const CLASS_A = 1;
+    const CLASS_B = 2;
+    const CLASS_C = 3;
+    const CLASS_D = 4;
+    const CLASS_F = 5;
+    const CLASS_S = 6;
+    const CLASS_J = 7;
+    const CLASS_M = 8;
+
     public static function tableName(): string
     {
         return 'model_alias';
@@ -31,8 +41,12 @@ class ModelAlias extends ActiveRecord
 
     public static function getList($brandId): array
     {
-        return static::find()->brand($brandId)->status(self::STATUS_ACTIVE)->select('name, id')->indexBy('id')->column(
-        );
+        return static::find()
+            ->brand($brandId)
+            ->status(self::STATUS_ACTIVE)
+            ->select('name, id')
+            ->indexBy('id')
+            ->column();
     }
 
     public static function find()
