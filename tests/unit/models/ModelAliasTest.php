@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 
+use app\fixtures\ModelAliasFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelAlias;
@@ -19,7 +20,7 @@ class ModelAliasTest extends TestCase
     public function fixtures()
     {
         return [
-            ModelAlias::class,
+            ModelAliasFixture::class,
         ];
     }
 
