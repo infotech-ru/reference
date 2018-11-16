@@ -63,27 +63,4 @@ class AEBRegion extends ActiveRecord
             ],
         ];
     }
-
-    /**
-     * @param TemporaryAEBRegionData $data
-     * @return AEBRegion|null
-     */
-    public static function createFromTemporary(TemporaryAEBRegionData $data)
-    {
-        if (!$data->model_id || !$data->city_id || !$data->region_id) {
-            return null;
-        }
-        $obj = new self();
-        $obj->year = $data->year;
-        $obj->month = $data->month;
-        $obj->brand_id = $data->brand_id;
-        $obj->model_id = $data->model_id;
-        $obj->city_id = $data->city_id;
-        $obj->region_id = $data->region_id;
-        $obj->federal_district_id = Region::findOne($data->region_id)->federal_district_id;
-        $obj->segment = $data->segment;
-        $obj->value = $data->value;
-
-        return $obj;
-    }
 }

@@ -15,6 +15,7 @@ namespace infotech\reference\models;
  * @property string $created_at
  * @property string $updated_at
  * @property integer $classification
+ * @property integer $is_new
  * @property-read Brand $brand
  * @property-read Model $model
  * @property-read Generation $generation
