@@ -99,6 +99,7 @@ class ModelAliasTest extends TestCase
                 'created_at',
                 'updated_at',
                 'classification',
+                'is_new'
             ],
             $model->attributes()
         );
