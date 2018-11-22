@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 use infotech\reference\models\Brand;
+use infotech\reference\models\BrandQuery;
 use infotech\reference\models\VehicleVerificationProgram;
 use infotech\reference\models\VehicleVerificationProgramQuery;
 use PHPUnit\Framework\TestCase;
@@ -54,5 +55,11 @@ class VehicleVerificationProgramTest extends TestCase
         $model->photo = VehicleVerificationProgram::BASE_CATALOG_NAME . "/$model->brand_id/subaru-select.png";
 
         $this->assertEquals('http://195004.selcdn.com/ref/' . $model->photo, $model->getPhotoUrl());
+    }
+
+    public function testGetBrand()
+    {
+        $model = new VehicleVerificationProgram();
+        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 }
