@@ -59,6 +59,7 @@ class CityTest extends TestCase
                 'timezone',
                 'lat',
                 'lng',
+                'is_regional_center',
             ],
             $model->attributes()
         );
