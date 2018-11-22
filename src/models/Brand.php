@@ -21,6 +21,8 @@ namespace infotech\reference\models;
  * @property-read BrandLogo $brandLogo
  * @property-read OptionGroup[] $optionGroups
  * @property-read OrderType[] $orderTypes
+ * @property-read NewsBrand[] $newsBrands
+ * @property-read News[] $news
  */
 class Brand extends ActiveRecord
 {

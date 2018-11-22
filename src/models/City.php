@@ -12,6 +12,7 @@ namespace infotech\reference\models;
  * @property string $timezone
  * @property double $lat
  * @property double $lng
+ * @property boolean $is_regional_center
  * @property Country $country
  * @property Region $region
  */

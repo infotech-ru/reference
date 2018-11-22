@@ -2,7 +2,14 @@
 
 namespace infotech\reference\models;
 
-
+/**
+ * Class NewsBrand
+ * @package infotech\reference\models
+ * @property integer $news_id
+ * @property integer $brand_id
+ * @property-read News $news
+ * @property-read Brand $brand
+ */
 class NewsBrand extends ActiveRecord
 {
     public static function tableName(): string
