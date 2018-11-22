@@ -13,7 +13,6 @@ namespace infotech\reference\models;
  */
 class VehicleOptionGroup extends ActiveRecord
 {
-
     public static function tableName(): string
     {
         return 'vehicle_option_group';
