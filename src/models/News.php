@@ -13,4 +13,14 @@ class News extends ActiveRecord
     {
         return new NewsQuery(static::class);
     }
+
+    public function getNewsBrands()
+    {
+        return $this->hasMany(NewsBrand::class, ['news_id' => 'id']);
+    }
+
+    public function getBrands()
+    {
+        return $this->hasMany(Brand::class, ['id' => 'brand_id'])->via('newsBrands');
+    }
 }

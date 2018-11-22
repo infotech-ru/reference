@@ -16,6 +16,7 @@ namespace infotech\reference\models;
  * @property integer $ecm_id
  * @property boolean $is_supported
  * @property integer $origin_id
+ * @property integer $is_vin_manufacturer
  * @property-read Model[] $models
  * @property-read BrandLogo $brandLogo
  * @property-read OptionGroup[] $optionGroups
@@ -64,5 +65,15 @@ class Brand extends ActiveRecord
     public function getOrderTypes()
     {
         return $this->hasMany(OrderType::class, ['brand_id' => 'id']);
+    }
+
+    public function getNews()
+    {
+        return $this->hasMany(News::class, ['id' => 'news_id'])->via('newsBrands');
+    }
+
+    public function getNewsBrands()
+    {
+        return $this->hasMany(NewsBrand::class, ['brand_id' => 'id']);
     }
 }

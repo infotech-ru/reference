@@ -8,6 +8,8 @@ use infotech\reference\models\Brand;
 use infotech\reference\models\BrandLogoQuery;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\NewsBrandQuery;
+use infotech\reference\models\NewsQuery;
 use infotech\reference\models\OptionGroupQuery;
 use infotech\reference\models\OrderTypeQuery;
 use PHPUnit\Framework\TestCase;
@@ -137,4 +139,17 @@ class BrandTest extends TestCase
         $model = new Brand();
         $this->assertInstanceOf(OrderTypeQuery::class, $model->getOrderTypes());
     }
+
+    public function testGetNews()
+    {
+        $model = new Brand();
+        $this->assertInstanceOf(NewsQuery::class, $model->getNews());
+    }
+
+    public function testGetNewsBrands()
+    {
+        $model = new Brand();
+        $this->assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
+    }
+
 }

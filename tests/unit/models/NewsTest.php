@@ -4,7 +4,9 @@ namespace infotech\reference\tests\unit\models;
 
 
 use app\fixtures\NewsFixture;
+use infotech\reference\models\BrandQuery;
 use infotech\reference\models\News;
+use infotech\reference\models\NewsBrandQuery;
 use infotech\reference\models\NewsQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -49,5 +51,17 @@ class NewsTest extends TestCase
     {
         $model = new News();
         $this->assertEquals(['id', 'date_public', 'tags_bitmap', 'title', 'content',], $model->attributes());
+    }
+
+    public function testGetNewsBrands()
+    {
+        $model = new News();
+        $this->assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
+    }
+
+    public function testGetBrands()
+    {
+        $model = new News();
+        $this->assertInstanceOf(BrandQuery::class, $model->getBrands());
     }
 }
