@@ -4,8 +4,10 @@ namespace infotech\reference\tests\unit\models;
 
 
 use app\fixtures\ModelYearFixture;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelYear;
+use infotech\reference\models\ModelYearEquipmentQuery;
 use infotech\reference\models\ModelYearQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -71,5 +73,17 @@ class ModelYearTest extends TestCase
     {
         $this->assertEquals(['1' => '1'], ModelYear::getList(1, true));
         $this->assertEquals(['1' => '1', '2' => '2'], ModelYear::getList(1, false));
+    }
+
+    public function testGetModelYearEquipments()
+    {
+        $model = new ModelYear();
+        $this->assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
+    }
+
+    public function testGetEquipments()
+    {
+        $model = new ModelYear();
+        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }

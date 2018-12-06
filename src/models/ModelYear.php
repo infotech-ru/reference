@@ -11,6 +11,8 @@ namespace infotech\reference\models;
  * @property boolean $is_recent
  * @property boolean $is_default
  * @property-read Model $model
+ * @property-read ModelYearEquipment[] $modelYearEquipments
+ * @property-read Equipment[] $equipments
  */
 class ModelYear extends ActiveRecord
 {
@@ -40,5 +42,15 @@ class ModelYear extends ActiveRecord
         }
 
         return $query->column();
+    }
+
+    public function getModelYearEquipments()
+    {
+        return $this->hasMany(ModelYearEquipment::class, ['model_year_id' => 'id']);
+    }
+
+    public function getEquipments()
+    {
+        return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('modelYearEquipments');
     }
 }
