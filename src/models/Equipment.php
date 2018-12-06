@@ -21,6 +21,8 @@ namespace infotech\reference\models;
  * @property-read Serie $serie
  * @property-read CatalogEmplacement[] $catalogEmplacements
  * @property-read Option[] $options
+ * @property-read ModelYearEquipment[] $modelYearEquipments
+ * @property-read ModelYear[] $modelYears
  */
 class Equipment extends ActiveRecord
 {
@@ -75,5 +77,15 @@ class Equipment extends ActiveRecord
     public function getOptions()
     {
         return $this->hasMany(Option::class, ['equipment_id' => 'id']);
+    }
+
+    public function getModelYearEquipments()
+    {
+        return $this->hasMany(ModelYearEquipment::class, ['equipment_id' => 'id']);
+    }
+
+    public function getModelYears()
+    {
+        return $this->hasMany(ModelYear::class, ['id' => 'model_year_id'])->via('modelYearEquipments');
     }
 }

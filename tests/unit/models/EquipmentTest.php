@@ -9,6 +9,8 @@ use infotech\reference\models\CountryQuery;
 use infotech\reference\models\Equipment;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\ModelYearEquipmentQuery;
+use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\OptionQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
@@ -106,5 +108,17 @@ class EquipmentTest extends TestCase
     {
         $this->assertEquals(['1' => '1'], Equipment::getList(1, true));
         $this->assertEquals(['1' => '1', '2' => '2'], Equipment::getList(1, false));
+    }
+
+    public function testGetModelYearEquipments()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
+    }
+
+    public function testGetModelYears()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(ModelYearQuery::class, $model->getModelYears());
     }
 }
