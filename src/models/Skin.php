@@ -12,6 +12,8 @@ namespace infotech\reference\models;
  * @property string $name
  * @property string $created_at
  * @property string $updated_at
+ * @property-read  SkinSerie[] $skinSeries
+ * @property-read  Serie[] $series
  */
 class Skin extends ActiveRecord
 {
@@ -38,5 +40,15 @@ class Skin extends ActiveRecord
     public function getCommonSkin()
     {
         return $this->hasOne(Skin::class, ['id' => 'common_skin_id']);
+    }
+
+    public function getSkinSeries()
+    {
+        return $this->hasMany(SkinSerie::class, ['skin_id' => 'id']);
+    }
+
+    public function getSeries()
+    {
+        return $this->hasMany(Serie::class, ['is_car_serie' => 'serie_id'])->via('skinSeries');
     }
 }

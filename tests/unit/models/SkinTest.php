@@ -5,8 +5,10 @@ namespace infotech\reference\tests\unit\models;
 
 use app\fixtures\SkinFixture;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\SerieQuery;
 use infotech\reference\models\Skin;
 use infotech\reference\models\SkinQuery;
+use infotech\reference\models\SkinSerieQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
@@ -78,5 +80,17 @@ class SkinTest extends TestCase
     public function testGetList()
     {
         $this->assertEquals(['1' => '1'], Skin::getList(1));
+    }
+
+    public function testGetSkinSeries()
+    {
+        $model = new Skin();
+        $this->assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
+    }
+
+    public function testGetSeries()
+    {
+        $model = new Skin();
+        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 }
