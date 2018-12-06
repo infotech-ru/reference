@@ -49,6 +49,6 @@ class Skin extends ActiveRecord
 
     public function getSeries()
     {
-        return $this->hasMany(Serie::class, ['is_car_serie' => 'serie_id'])->via('skinSeries');
+        return $this->hasMany(Serie::class, ['id_car_serie' => 'serie_id'])->via('skinSeries');
     }
 }
