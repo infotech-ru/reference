@@ -11,6 +11,8 @@ use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\Serie;
 use infotech\reference\models\SerieQuery;
+use infotech\reference\models\SkinQuery;
+use infotech\reference\models\SkinSerieQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
@@ -108,5 +110,17 @@ class SerieTest extends TestCase
     {
         $this->assertEquals(['1' => '1'], Serie::getList(1, true));
         $this->assertEquals(['1' => '1', '2' => '2'], Serie::getList(1, false));
+    }
+
+    public function getSkinSeries()
+    {
+        $model = new Serie();
+        $this->assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
+    }
+
+    public function getSkins()
+    {
+        $model = new Serie();
+        $this->assertInstanceOf(SkinQuery::class, $model->getSkins());
     }
 }

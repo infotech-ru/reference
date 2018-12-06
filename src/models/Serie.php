@@ -19,6 +19,8 @@ namespace infotech\reference\models;
  * @property-read Modification[] $modifications
  * @property-read Equipment[] $equipments
  * @property-read CatalogEmplacement[] $catalogEmplacements
+ * @property-read SkinSerie[] $skinSeries
+ * @property-read Skin[] $skins
  */
 class Serie extends ActiveRecord
 {
@@ -74,5 +76,15 @@ class Serie extends ActiveRecord
     public function getCatalogEmplacements()
     {
         return $this->hasMany(CatalogEmplacement::class, ['serie_id' => 'id_car_serie']);
+    }
+
+    public function getSkinSeries()
+    {
+        return $this->hasMany(SkinSerie::class, ['serie_id' => 'id_car_serie']);
+    }
+
+    public function getSkins()
+    {
+        return $this->hasMany(Skin::class, ['id' => 'skin_id'])->via('skinSeries');
     }
 }
