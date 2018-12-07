@@ -5,7 +5,9 @@ namespace infotech\reference\tests\unit\models;
 
 use app\fixtures\ModificationFixture;
 use infotech\reference\models\CharacteristicValueQuery;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\Modification;
+use infotech\reference\models\ModificationEquipmentQuery;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
@@ -94,5 +96,17 @@ class ModificationTest extends TestCase
     {
         $this->assertEquals(['1' => '1'], Modification::getList(1, true));
         $this->assertEquals(['1' => '1', '2' => '2'], Modification::getList(1, false));
+    }
+
+    public function testGetModificationEquipments()
+    {
+        $model = new Modification();
+        $this->assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
+    }
+
+    public function testGetEquipments()
+    {
+        $model = new Modification();
+        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }

@@ -11,6 +11,8 @@ use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelYearEquipmentQuery;
 use infotech\reference\models\ModelYearQuery;
+use infotech\reference\models\ModificationEquipmentQuery;
+use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\OptionQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
@@ -120,5 +122,17 @@ class EquipmentTest extends TestCase
     {
         $model = new Equipment();
         $this->assertInstanceOf(ModelYearQuery::class, $model->getModelYears());
+    }
+
+    public function testGetModificationEquipments()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
+    }
+
+    public function testGetModifications()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(ModificationQuery::class, $model->getModifications());
     }
 }

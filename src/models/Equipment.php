@@ -88,4 +88,14 @@ class Equipment extends ActiveRecord
     {
         return $this->hasMany(ModelYear::class, ['id' => 'model_year_id'])->via('modelYearEquipments');
     }
+
+    public function getModificationEquipments()
+    {
+        return $this->hasMany(ModificationEquipment::class, ['equipment_id' => 'id']);
+    }
+
+    public function getModifications()
+    {
+        return $this->hasMany(Modification::class, ['id_car_modification' => 'modification_id'])->via('modificationEquipments');
+    }
 }
