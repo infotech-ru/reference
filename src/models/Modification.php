@@ -22,6 +22,8 @@ namespace infotech\reference\models;
  * @property integer $origin_Id
  * @property boolean $is_deleted
  * @property-read Serie[] $series
+ * @property-read ModificationEquipment[] $modificationEquipments
+ * @property-read Equipment[] $equipments
  */
 class Modification extends ActiveRecord
 {
@@ -64,5 +66,15 @@ class Modification extends ActiveRecord
         }
 
         return $query->column();
+    }
+
+    public function getModificationEquipments()
+    {
+        return $this->hasMany(ModificationEquipment::class, ['modification_id' => 'id_car_modification']);
+    }
+
+    public function getEquipments()
+    {
+        return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('modificationEquipments');
     }
 }

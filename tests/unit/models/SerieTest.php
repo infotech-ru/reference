@@ -112,13 +112,13 @@ class SerieTest extends TestCase
         $this->assertEquals(['1' => '1', '2' => '2'], Serie::getList(1, false));
     }
 
-    public function getSkinSeries()
+    public function testGetSkinSeries()
     {
         $model = new Serie();
         $this->assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
     }
 
-    public function getSkins()
+    public function testGetSkins()
     {
         $model = new Serie();
         $this->assertInstanceOf(SkinQuery::class, $model->getSkins());

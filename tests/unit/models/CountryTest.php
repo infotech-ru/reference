@@ -7,6 +7,8 @@ use app\fixtures\CountryFixture;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\Country;
 use infotech\reference\models\CountryQuery;
+use infotech\reference\models\EquipmentCountryQuery;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\RegionQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -83,5 +85,17 @@ class CountryTest extends TestCase
     {
         $model = new Country();
         $this->assertInstanceOf(CityQuery::class, $model->getCities());
+    }
+
+    public function testGetEquipmentCountries()
+    {
+        $model = new Country();
+        $this->assertInstanceOf(EquipmentCountryQuery::class, $model->getEquipmentCountries());
+    }
+
+    public function testGetEquipments()
+    {
+        $model = new Country();
+        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }
