@@ -23,6 +23,10 @@ namespace infotech\reference\models;
  * @property-read Option[] $options
  * @property-read ModelYearEquipment[] $modelYearEquipments
  * @property-read ModelYear[] $modelYears
+ * @property-read ModificationEquipment[] $modificationEquipments
+ * @property-read Modification[] $modifications
+ * @property-read EquipmentCountry[] $equipmentCountries
+ * @property-read Country[] $countries
  */
 class Equipment extends ActiveRecord
 {
@@ -97,5 +101,15 @@ class Equipment extends ActiveRecord
     public function getModifications()
     {
         return $this->hasMany(Modification::class, ['id_car_modification' => 'modification_id'])->via('modificationEquipments');
+    }
+
+    public function getEquipmentCountries()
+    {
+        return $this->hasMany(EquipmentCountry::class, ['equipment_id' => 'id']);
+    }
+
+    public function getCountries()
+    {
+        return $this->hasMany(Country::class, ['id' => 'country_id'])->via('equipmentCountries');
     }
 }

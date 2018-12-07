@@ -11,6 +11,8 @@ namespace infotech\reference\models;
  * @property string $alias
  * @property Region[] $regions
  * @property City[] $cities
+ * @property EquipmentCountry[] $equipmentCountries
+ * @property Equipment[] $equipments
  */
 class Country extends ActiveRecord
 {
@@ -37,5 +39,15 @@ class Country extends ActiveRecord
     public function getCities()
     {
         return $this->hasMany(City::class, ['country_id' => 'id']);
+    }
+
+    public function getEquipmentCountries()
+    {
+        return $this->hasMany(EquipmentCountry::class, ['country_id' => 'id']);
+    }
+
+    public function getEquipments()
+    {
+        return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('equipmentCountries');
     }
 }
