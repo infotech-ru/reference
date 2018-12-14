@@ -13,7 +13,6 @@ class m181214_122605_add_column_brand_name_market extends Migration
     public function safeUp()
     {
         $this->addColumn('brands', 'name_market', $this->string()->notNull()->after('name_eng')->comment('Торговое наименование'));
-        $this->update('brands', ['name_market' => new Expression('name')]);
     }
 
     /**

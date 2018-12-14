@@ -77,6 +77,7 @@ class BrandTest extends TestCase
                 'id',
                 'name',
                 'name_eng',
+                'name_market',
                 'logo',
                 'importer_db_name',
                 'host',

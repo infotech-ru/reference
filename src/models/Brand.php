@@ -8,7 +8,8 @@ namespace infotech\reference\models;
  * @package infotech\reference\models
  * @property integer $id
  * @property string  $name
- * @property string $name_eng
+ * @property string  $name_eng
+ * @property string  $name_market
  * @property string  $logo
  * @property string  $importer_db_name
  * @property string  $host
