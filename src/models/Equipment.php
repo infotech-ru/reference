@@ -19,7 +19,6 @@ namespace infotech\reference\models;
  * @property integer $country_id
  * @property-read Model $model
  * @property-read Serie $serie
- * @property-read CatalogEmplacement[] $catalogEmplacements
  * @property-read Option[] $options
  * @property-read ModelYearEquipment[] $modelYearEquipments
  * @property-read ModelYear[] $modelYears
@@ -27,6 +26,8 @@ namespace infotech\reference\models;
  * @property-read Modification[] $modifications
  * @property-read EquipmentCountry[] $equipmentCountries
  * @property-read Country[] $countries
+ * @property-read EquipmentCatalogEmplacement[] $equipmentCatalogEmplacements
+ * @property-read CatalogEmplacement[] $catalogEmplacements
  */
 class Equipment extends ActiveRecord
 {
@@ -68,11 +69,6 @@ class Equipment extends ActiveRecord
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
 
-    public function getCatalogEmplacements()
-    {
-        return $this->hasMany(CatalogEmplacement::class, ['equipment_id' => 'id']);
-    }
-
     public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
@@ -111,5 +107,15 @@ class Equipment extends ActiveRecord
     public function getCountries()
     {
         return $this->hasMany(Country::class, ['id' => 'country_id'])->via('equipmentCountries');
+    }
+
+    public function getEquipmentCatalogEmplacements()
+    {
+        return $this->hasMany(EquipmentCatalogEmplacement::class, ['equipment_id' => 'id']);
+    }
+
+    public function getCatalogEmplacements()
+    {
+        return $this->hasMany(CatalogEmplacement::class, ['id' => 'catalog_emplacement_id'])->via('equipmentCatalogEmplacements');
     }
 }

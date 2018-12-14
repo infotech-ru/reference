@@ -9,7 +9,6 @@ namespace infotech\reference\models;
  * @property integer $model_id
  * @property integer $serie_id
  * @property integer $color_id
- * @property integer $equipment_id
  * @property boolean $is_main
  * @property string  $created_at
  * @property string  $updated_at
@@ -21,6 +20,9 @@ namespace infotech\reference\models;
  */
 class CatalogEmplacement extends ActiveRecord
 {
+    /** @deprecated надо перейти на использование таблицы eqt_equipment_catalog_emplacement */
+    public $equipment_id;
+
     public static function tableName(): string
     {
         return 'eqt_catalog_emplacement';

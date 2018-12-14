@@ -7,6 +7,7 @@ use app\fixtures\EquipmentFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\Equipment;
+use infotech\reference\models\EquipmentCatalogEmplacementQuery;
 use infotech\reference\models\EquipmentCountryQuery;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;
@@ -147,5 +148,11 @@ class EquipmentTest extends TestCase
     {
         $model = new Equipment();
         $this->assertInstanceOf(CountryQuery::class, $model->getCountries());
+    }
+
+    public function testGetEquipmentCatalogEmplacements()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(EquipmentCatalogEmplacementQuery::class, $model->getEquipmentCatalogEmplacements());
     }
 }
