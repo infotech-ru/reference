@@ -52,8 +52,8 @@ class EquipmentCatalogEmplacementTest extends TestCase
         $model = new EquipmentCatalogEmplacement();
         $this->assertEquals(
             [
-                'equipment_id',
                 'catalog_emplacement_id',
+                'equipment_id',
             ],
             $model->attributes()
         );
