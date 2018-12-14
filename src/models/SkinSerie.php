@@ -6,7 +6,7 @@ namespace infotech\reference\models;
  * Class SkinSerie
  * @package infotech\reference\models
  * @property integer $skin_id
- * @property string $serie_id
+ * @property integer $serie_id
  * @property-read Skin $skin
  * @property-read Serie $serie
  */
