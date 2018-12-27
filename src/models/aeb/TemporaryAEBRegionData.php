@@ -46,7 +46,7 @@ class TemporaryAEBRegionData extends ActiveRecord
         return [
             [
                 [
-                    'brand_id',
+                    'brand',
                     'model',
                     'segment',
                     'city',
@@ -60,6 +60,7 @@ class TemporaryAEBRegionData extends ActiveRecord
             ],
             [
                 [
+                    'brand',
                     'model',
                     'city',
                     'region',
