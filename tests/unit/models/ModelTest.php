@@ -139,6 +139,7 @@ class ModelTest extends TestCase
                 'id',
                 'name',
                 'tradein_code',
+                'code',
                 'is_recent',
                 'dealerpoint_code',
                 'ord',

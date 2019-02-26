@@ -8,6 +8,7 @@ namespace infotech\reference\models;
  * @property integer $id
  * @property string $name
  * @property string $tradein_code
+ * @property string $code
  * @property integer $is_recent
  * @property string $dealerpoint_code
  * @property integer $ord
