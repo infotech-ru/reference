@@ -64,6 +64,7 @@ class ModelYearTest extends TestCase
                 'year',
                 'is_recent',
                 'is_default',
+                'code',
             ],
             $model->attributes()
         );
