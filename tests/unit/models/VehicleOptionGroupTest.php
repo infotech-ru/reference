@@ -36,6 +36,7 @@ class VehicleOptionGroupTest extends TestCase
             [
                 'id',
                 'name',
+                'code',
             ],
             $model->attributes()
         );
