@@ -10,6 +10,10 @@ namespace infotech\reference\models;
  * @property integer $federal_district_id
  * @property string $name
  * @property integer $status
+ * @property string $timezone
+ * @property double $lat
+ * @property double $lng
+ * @property string $okato
  * @property Country $country
  * @property FederalDistrict $federalDistrict
  * @property City[] $cities
