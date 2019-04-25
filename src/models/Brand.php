@@ -35,6 +35,7 @@ class Brand extends ActiveRecord
     const SMART_ID = 108;
     const SUBARU_ID = 111;
     const UAZ_ID = 134;
+    const INFINITI_ID = 57;
 
     public static function tableName(): string
     {
