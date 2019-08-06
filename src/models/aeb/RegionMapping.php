@@ -8,8 +8,11 @@
 
 namespace infotech\reference\models\aeb;
 
-use yii\behaviors\TimestampBehavior;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\Region;
+use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\Expression;
 
 /**
@@ -22,7 +25,7 @@ use yii\db\Expression;
  * @property string $name
  * @property string $created_at
  *
- * @property \infotech\reference\models\Region $region
+ * @property Region $region
  */
 class RegionMapping extends ActiveRecord
 {
@@ -38,7 +41,7 @@ class RegionMapping extends ActiveRecord
                 ['name', 'region_id', 'aeb_region_upload_history_id'],
                 'required'
             ],
-            [['region_id'], 'exist', 'targetClass' => \infotech\reference\models\Region::class, 'targetAttribute' => 'id'],
+            [['region_id'], 'exist', 'targetClass' => Region::class, 'targetAttribute' => 'id'],
             [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
         ];
     }
@@ -76,17 +79,17 @@ class RegionMapping extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => \Yii::t('app', 'Название'),
-            'region_id' => \Yii::t('app', 'ID региона'),
+            'name' => Yii::t('app', 'Название'),
+            'region_id' => Yii::t('app', 'ID региона'),
         ];
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegion()
     {
-        return $this->hasOne(\infotech\reference\models\Region::class, ['id' => 'region_id']);
+        return $this->hasOne(Region::class, ['id' => 'region_id']);
     }
 
     public function behaviors(): array
@@ -99,5 +102,10 @@ class RegionMapping extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public function getAEBRegionUploadHistory()
+    {
+        return $this->hasOne(AEBRegionUploadHistory::class, ['id' => 'aeb_region_upload_history_id']);
     }
 }

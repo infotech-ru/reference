@@ -8,8 +8,12 @@
 
 namespace infotech\reference\models\aeb;
 
-use yii\behaviors\TimestampBehavior;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\Brand;
+use infotech\reference\models\Model;
+use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\Expression;
 
 /**
@@ -23,8 +27,8 @@ use yii\db\Expression;
  * @property string $name
  * @property string $created_at
  *
- * @property \infotech\reference\models\Model $model
- * @property \infotech\reference\models\Brand $brand
+ * @property Model $model
+ * @property Brand $brand
  */
 class ModelMapping extends ActiveRecord
 {
@@ -40,7 +44,7 @@ class ModelMapping extends ActiveRecord
                 ['name', 'brand_id', 'model_id', 'aeb_region_upload_history_id'],
                 'required'
             ],
-            [['model_id'], 'exist', 'targetClass' => \infotech\reference\models\Model::class, 'targetAttribute' => 'id'],
+            [['model_id'], 'exist', 'targetClass' => Model::class, 'targetAttribute' => 'id'],
             [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
         ];
     }
@@ -80,26 +84,26 @@ class ModelMapping extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => \Yii::t('app', 'Название для сопоставления'),
-            'model_id' => \Yii::t('app', 'ID модели'),
-            'brand_id' => \Yii::t('app', 'ID бренда'),
+            'name' => Yii::t('app', 'Название для сопоставления'),
+            'model_id' => Yii::t('app', 'ID модели'),
+            'brand_id' => Yii::t('app', 'ID бренда'),
         ];
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getModel()
     {
-        return $this->hasOne(\infotech\reference\models\Model::class, ['id' => 'model_id']);
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getBrand()
     {
-        return $this->hasOne(\infotech\reference\models\Brand::class, ['id' => 'brand_id']);
+        return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 
     public function behaviors(): array
@@ -112,5 +116,10 @@ class ModelMapping extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public function getAEBRegionUploadHistory()
+    {
+        return $this->hasOne(AEBRegionUploadHistory::class, ['id' => 'aeb_region_upload_history_id']);
     }
 }

@@ -8,8 +8,9 @@
 
 namespace infotech\reference\models\aeb;
 
-use yii\behaviors\TimestampBehavior;
 use infotech\reference\models\ActiveRecord;
+use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
 /**
@@ -57,17 +58,17 @@ class AEBRegionUploadHistory extends ActiveRecord
     public static function getStatusList(): array
     {
         return [
-            self::STATUS_ACTIVE => \Yii::t('app', 'Активная загрузка'),
-            self::STATUS_COMPETED => \Yii::t('app', 'Выполенная загрузка'),
+            self::STATUS_ACTIVE => Yii::t('app', 'Активная загрузка'),
+            self::STATUS_COMPETED => Yii::t('app', 'Выполенная загрузка'),
         ];
     }
 
     public static function getImportStatusList(): array
     {
         return [
-            self::IMPORT_STATUS_NEW => \Yii::t('app', 'Загрузка не запущена'),
-            self::IMPORT_STATUS_RUNNING => \Yii::t('app', 'Выполняется загрузка'),
-            self::IMPORT_STATUS_DONE => \Yii::t('app', 'Загрузка завершена'),
+            self::IMPORT_STATUS_NEW => Yii::t('app', 'Загрузка не запущена'),
+            self::IMPORT_STATUS_RUNNING => Yii::t('app', 'Выполняется загрузка'),
+            self::IMPORT_STATUS_DONE => Yii::t('app', 'Загрузка завершена'),
         ];
     }
 

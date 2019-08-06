@@ -2,11 +2,14 @@
 
 namespace infotech\reference\components;
 
+use Exception;
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\log\Logger;
+use yii\log\Target;
 use yii\web\Request;
 
-class LogstashTarget extends \yii\log\Target
+class LogstashTarget extends Target
 {
     /** @var string Connection configuration to Logstash. */
     public $dsn = 'tcp://localhost:3333';
@@ -43,7 +46,7 @@ class LogstashTarget extends \yii\log\Target
     protected function addContextToMessages()
     {
         $context = $this->getContextMessage();
-        $request = \Yii::$app->request;
+        $request = Yii::$app->request;
         if ($request instanceof Request) {
             $context['rawBody'] = $request->getRawBody();
         }
@@ -91,7 +94,7 @@ class LogstashTarget extends \yii\log\Target
             case 'string':
                 return ['message' => $text];
             case 'object':
-                if ($text instanceof \Exception) {
+                if ($text instanceof Exception) {
                     return [
                         'trace' => $text->getFile().':'.$text->getLine().PHP_EOL.$text->getTraceAsString(),
                         'message' => $text->getMessage(),
@@ -100,7 +103,7 @@ class LogstashTarget extends \yii\log\Target
 
                 return ['message' => get_object_vars($text)];
             default:
-                return ['message' => \Yii::t('yii', "Warning, wrong log message type '{$type}'")];
+                return ['message' => Yii::t('yii', "Warning, wrong log message type '{$type}'")];
         }
     }
 
@@ -117,7 +120,7 @@ class LogstashTarget extends \yii\log\Target
             }
 
             fclose($socket);
-        } catch (\Exception $error) {
+        } catch (Exception $error) {
             $this->emergencyExport(
                 [
                     'dsn' => $this->dsn,
@@ -175,7 +178,7 @@ class LogstashTarget extends \yii\log\Target
         $this->emergencyPrepareMessages($data);
         $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages)).PHP_EOL;
 
-        file_put_contents(\Yii::getAlias($this->emergencyLogFile), $text, FILE_APPEND);
+        file_put_contents(Yii::getAlias($this->emergencyLogFile), $text, FILE_APPEND);
     }
 
     /**

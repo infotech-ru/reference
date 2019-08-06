@@ -8,11 +8,12 @@
 
 namespace infotech\reference\models\aeb;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\Brand;
 use infotech\reference\models\City;
+use infotech\reference\models\FederalDistrict;
 use infotech\reference\models\Model;
 use infotech\reference\models\Region;
-use infotech\reference\models\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
@@ -62,5 +63,30 @@ class AEBRegion extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public function getBrand()
+    {
+        return $this->hasOne(Brand::class, ['id' => 'brand_id']);
+    }
+
+    public function getModel()
+    {
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
+    }
+
+    public function getFederalDistrict()
+    {
+        return $this->hasOne(FederalDistrict::class, ['id' => 'federal_district_id']);
+    }
+
+    public function getRegion()
+    {
+        return $this->hasOne(Region::class, ['id' => 'region_id']);
+    }
+
+    public function getCity()
+    {
+        return $this->hasOne(City::class, ['id' => 'city_id']);
     }
 }

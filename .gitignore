@@ -13,3 +13,4 @@ vendor
 
 # composer lock files
 composer.lock
+phpunit.xml
