@@ -8,6 +8,7 @@ return [
         'name' => 1,
         'is_visible' => 1,
         'is_recent' => 1,
+        'id_car_type' => 1,
     ],
     [
         'id_car_generation' => 1,
@@ -16,5 +17,6 @@ return [
         'name' => 2,
         'is_visible' => 1,
         'is_recent' => 0,
+        'id_car_type' => 1,
     ],
 ];
