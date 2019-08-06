@@ -8,8 +8,9 @@
 
 namespace infotech\reference\models\aeb;
 
-use Yii;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\Brand;
+use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
@@ -30,7 +31,7 @@ class BrandMapping extends ActiveRecord
     {
         return 'aeb_brand_mapping';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +43,7 @@ class BrandMapping extends ActiveRecord
             [['name'], 'string', 'max' => 500],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -55,7 +56,7 @@ class BrandMapping extends ActiveRecord
             'created_at' => Yii::t('app', 'Created At'),
         ];
     }
-    
+
     public function behaviors(): array
     {
         return [
@@ -66,5 +67,10 @@ class BrandMapping extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public function getBrand()
+    {
+        return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use Yii;
+
 /**
  * Class RussianName
  * @package infotech\reference\models
@@ -21,7 +23,7 @@ class RussianName extends ActiveRecord
 
     public static function name2Sex($name)
     {
-        $name = static::mb_ucfirst($name, \Yii::$app->charset);
+        $name = static::mb_ucfirst($name, Yii::$app->charset);
         $models = static::find()->where('name = :name COLLATE utf8_bin', [':name' => $name])->all();
         if (count($models) != 1) {
             return null;

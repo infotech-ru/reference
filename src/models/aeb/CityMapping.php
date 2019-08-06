@@ -8,8 +8,12 @@
 
 namespace infotech\reference\models\aeb;
 
-use yii\behaviors\TimestampBehavior;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\City;
+use infotech\reference\models\Region;
+use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\Expression;
 
 /**
@@ -23,8 +27,8 @@ use yii\db\Expression;
  * @property string $name
  * @property string $created_at
  *
- * @property \infotech\reference\models\Region $region
- * @property \infotech\reference\models\City $city
+ * @property Region $region
+ * @property City $city
  */
 class CityMapping extends ActiveRecord
 {
@@ -40,8 +44,8 @@ class CityMapping extends ActiveRecord
                 ['name', 'region_id', 'city_id', 'aeb_region_upload_history_id'],
                 'required'
             ],
-            [['region_id'], 'exist', 'targetClass' => \infotech\reference\models\Region::class, 'targetAttribute' => 'id'],
-            [['city_id'], 'exist', 'targetClass' => \infotech\reference\models\City::class, 'targetAttribute' => 'id'],
+            [['region_id'], 'exist', 'targetClass' => Region::class, 'targetAttribute' => 'id'],
+            [['city_id'], 'exist', 'targetClass' => City::class, 'targetAttribute' => 'id'],
             [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
         ];
     }
@@ -81,26 +85,26 @@ class CityMapping extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => \Yii::t('app', 'Название'),
-            'region_id' => \Yii::t('app', 'ID региона'),
-            'city_id' => \Yii::t('app', 'ID города'),
+            'name' => Yii::t('app', 'Название'),
+            'region_id' => Yii::t('app', 'ID региона'),
+            'city_id' => Yii::t('app', 'ID города'),
         ];
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegion()
     {
-        return $this->hasOne(\infotech\reference\models\Region::class, ['id' => 'region_id']);
+        return $this->hasOne(Region::class, ['id' => 'region_id']);
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getCity()
     {
-        return $this->hasOne(\infotech\reference\models\City::class, ['id' => 'city_id']);
+        return $this->hasOne(City::class, ['id' => 'city_id']);
     }
 
     public function behaviors(): array
@@ -113,5 +117,10 @@ class CityMapping extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public function getAEBRegionUploadHistory()
+    {
+        return $this->hasOne(AEBRegionUploadHistory::class, ['id' => 'aeb_region_upload_history_id']);
     }
 }

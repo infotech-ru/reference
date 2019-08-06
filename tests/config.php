@@ -1,4 +1,7 @@
 <?php
+
+use yii\db\Connection;
+
 return [
     'id' => 'id',
     'basePath' => __DIR__,
@@ -14,7 +17,7 @@ return [
     ],
     'components' => [
         'ref_db' => [
-            'class' => \yii\db\Connection::class,
+            'class' => Connection::class,
             'dsn' => 'mysql:host=127.0.0.1;dbname=autocrm',
             'username' => 'root',
             'password' => '',

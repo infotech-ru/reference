@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use Yii;
+
 /**
  * Class VehicleOptionGroup
  * @package infotech\reference\models
@@ -35,13 +37,13 @@ class VehicleOptionGroup extends ActiveRecord
     public static function getCodesList()
     {
         return [
-            self::CODE_MULTIMEDIA => \Yii::t('app', 'Мультимедиа'),
-            self::CODE_COMFORT => \Yii::t('app', 'Комфорт'),
-            self::CODE_SAFETY => \Yii::t('app', 'Безопасность'),
-            self::CODE_VISIBILITY => \Yii::t('app', 'Обзор'),
-            self::CODE_EXTERIOR_ELEMENTS => \Yii::t('app', 'Элементы экстерьера'),
-            self::CODE_ANTI_THEFT => \Yii::t('app', 'Защита от угона'),
-            self::CODE_INTERIOR => \Yii::t('app', 'Салон'),
+            self::CODE_MULTIMEDIA => Yii::t('app', 'Мультимедиа'),
+            self::CODE_COMFORT => Yii::t('app', 'Комфорт'),
+            self::CODE_SAFETY => Yii::t('app', 'Безопасность'),
+            self::CODE_VISIBILITY => Yii::t('app', 'Обзор'),
+            self::CODE_EXTERIOR_ELEMENTS => Yii::t('app', 'Элементы экстерьера'),
+            self::CODE_ANTI_THEFT => Yii::t('app', 'Защита от угона'),
+            self::CODE_INTERIOR => Yii::t('app', 'Салон'),
         ];
     }
 

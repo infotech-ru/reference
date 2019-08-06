@@ -27,13 +27,12 @@ class Source extends ActiveRecord
         $result = [];
         foreach ($list as $item) {
             if ($item->parent_id == $parentId) {
-                $result[$item->id] = $prefix . ' ' . $item->name;
+                $result[$item->id] = ltrim($prefix . ' ' . $item->name);
                 $result += static::processItems($list, $item->id, $prefix . '-');
             }
         }
         return $result;
     }
-
 
     public static function getList(): array
     {

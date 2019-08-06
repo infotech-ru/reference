@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use Yii;
+
 /**
  * Class ModelImage
  * @package infotech\reference\models
@@ -24,16 +26,16 @@ class ModelImage extends ActiveRecord
     public static function getStatusList(): array
     {
         return [
-            self::STATUS_ACTIVE => \Yii::t('app', 'Активно'),
-            self::STATUS_DELETED => \Yii::t('app', 'Удалено'),
+            self::STATUS_ACTIVE => Yii::t('app', 'Активно'),
+            self::STATUS_DELETED => Yii::t('app', 'Удалено'),
         ];
     }
 
     public static function getCategoryList(): array
     {
         return [
-            self::CATEGORY_EXTERNAL => \Yii::t('app', 'Экстернал'),
-            self::CATEGORY_INTERNAL => \Yii::t('app', 'Интернал'),
+            self::CATEGORY_EXTERNAL => Yii::t('app', 'Экстернал'),
+            self::CATEGORY_INTERNAL => Yii::t('app', 'Интернал'),
         ];
     }
 

@@ -1,6 +1,9 @@
 <?php
 
 namespace infotech\reference\models\aeb;
+
+use Yii;
+
 /**
  * Class Month
  * @package app\models
@@ -16,18 +19,18 @@ class Month
         static $months;
         if (null === $months) {
             $months = [
-                1 => \Yii::t('app', 'Январь'),
-                2 => \Yii::t('app', 'Февраль'),
-                3 => \Yii::t('app', 'Март'),
-                4 => \Yii::t('app', 'Апрель'),
-                5 => \Yii::t('app', 'Май'),
-                6 => \Yii::t('app', 'Июнь'),
-                7 => \Yii::t('app', 'Июль'),
-                8 => \Yii::t('app', 'Август'),
-                9 => \Yii::t('app', 'Сентябрь'),
-                10 => \Yii::t('app', 'Октябрь'),
-                11 => \Yii::t('app', 'Ноябрь'),
-                12 => \Yii::t('app', 'Декабрь'),
+                1 => Yii::t('app', 'Январь'),
+                2 => Yii::t('app', 'Февраль'),
+                3 => Yii::t('app', 'Март'),
+                4 => Yii::t('app', 'Апрель'),
+                5 => Yii::t('app', 'Май'),
+                6 => Yii::t('app', 'Июнь'),
+                7 => Yii::t('app', 'Июль'),
+                8 => Yii::t('app', 'Август'),
+                9 => Yii::t('app', 'Сентябрь'),
+                10 => Yii::t('app', 'Октябрь'),
+                11 => Yii::t('app', 'Ноябрь'),
+                12 => Yii::t('app', 'Декабрь'),
             ];
         }
 

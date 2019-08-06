@@ -8,9 +8,14 @@
 
 namespace infotech\reference\models\aeb;
 
-use infotech\reference\models\Brand;
-use yii\behaviors\TimestampBehavior;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\Brand;
+use infotech\reference\models\City;
+use infotech\reference\models\Model;
+use infotech\reference\models\Region;
+use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\Expression;
 
 /**
@@ -38,8 +43,6 @@ class TemporaryAEBRegionData extends ActiveRecord
     {
         return 'aeb_temporary_aeb_region_data';
     }
-
-
 
     public function rules(): array
     {
@@ -80,16 +83,16 @@ class TemporaryAEBRegionData extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created_at' => \Yii::t('app', 'Дата и время загрузки'),
-            'year' => \Yii::t('app', 'Год'),
-            'month' => \Yii::t('app', 'Месяц'),
-            'value' => \Yii::t('app', 'Количество'),
-            'model' => \Yii::t('app', 'Модель'),
-            'region' => \Yii::t('app', 'Регион'),
-            'city' => \Yii::t('app', 'Город'),
-            'federal_district' => \Yii::t('app', 'Федеральный окргу'),
-            'brand_id' => \Yii::t('app', 'ID Бренда'),
-            'segment' => \Yii::t('app', 'Сегмент'),
+            'created_at' => Yii::t('app', 'Дата и время загрузки'),
+            'year' => Yii::t('app', 'Год'),
+            'month' => Yii::t('app', 'Месяц'),
+            'value' => Yii::t('app', 'Количество'),
+            'model' => Yii::t('app', 'Модель'),
+            'region' => Yii::t('app', 'Регион'),
+            'city' => Yii::t('app', 'Город'),
+            'federal_district' => Yii::t('app', 'Федеральный окргу'),
+            'brand_id' => Yii::t('app', 'ID Бренда'),
+            'segment' => Yii::t('app', 'Сегмент'),
         ];
     }
 
@@ -108,5 +111,29 @@ class TemporaryAEBRegionData extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getRegion()
+    {
+        return $this->hasOne(Region::class, ['id' => 'region_id']);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getCity()
+    {
+        return $this->hasOne(City::class, ['id' => 'city_id']);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getModel()
+    {
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 }

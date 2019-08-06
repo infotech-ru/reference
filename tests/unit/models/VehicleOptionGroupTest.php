@@ -47,4 +47,17 @@ class VehicleOptionGroupTest extends TestCase
         $model = new VehicleOptionGroup();
         $this->assertInstanceOf(VehicleOptionTypeQuery::class, $model->getTypes());
     }
+
+    public function testGetCodesList()
+    {
+        $this->assertEquals([
+            'multimedia' => 'Мультимедиа',
+            'comfort' => 'Комфорт',
+            'safety' => 'Безопасность',
+            'visibility' => 'Обзор',
+            'exterior_elements' => 'Элементы экстерьера',
+            'anti_theft' => 'Защита от угона',
+            'interior' => 'Салон',
+        ], VehicleOptionGroup::getCodesList());
+    }
 }

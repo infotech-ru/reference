@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use Yii;
+
 /**
  * Class ModelSegment
  * @package infotech\reference\models
@@ -17,8 +19,8 @@ class ModelSegment extends ActiveRecord
     public static function getStatusList(): array
     {
         return [
-            self::STATUS_ACTIVE => \Yii::t('app', 'Активно'),
-            self::STATUS_DELETED => \Yii::t('app', 'Удалено'),
+            self::STATUS_ACTIVE => Yii::t('app', 'Активно'),
+            self::STATUS_DELETED => Yii::t('app', 'Удалено'),
         ];
     }
 

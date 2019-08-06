@@ -82,4 +82,19 @@ class VehicleOptionTypeTest extends TestCase
         $model->group_id = $group->id;
         $this->assertTrue($model->validate(['group_id']));
     }
+
+    public function testValueAfterFind()
+    {
+        $model = VehicleOptionType::findOne(['id' => 1]);
+        $this->assertInstanceOf(VehicleOptionType::class, $model);
+        $this->assertEquals([['id' => 1], ['name' => 'value']], $model->values);
+    }
+
+    public function testValueBeforeSave()
+    {
+        $model = VehicleOptionType::findOne(['id' => 1]);
+        $model->values = [2 => 'Value'];
+        $this->assertTrue($model->beforeSave(false));
+        $this->assertEquals('{"2":"Value"}', $model->values_json);
+    }
 }

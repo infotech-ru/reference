@@ -2,6 +2,9 @@
 
 namespace infotech\reference\models;
 
+use Yii;
+use yii\helpers\ArrayHelper;
+
 /**
  * Class City
  * @package infotech\reference\models
@@ -26,8 +29,8 @@ class Region extends ActiveRecord
     public static function getStatusList(): array
     {
         return [
-            self::STATUS_ACTIVE => \Yii::t('app', 'Активно'),
-            self::STATUS_DELETED => \Yii::t('app', 'Удалено'),
+            self::STATUS_ACTIVE => Yii::t('app', 'Активно'),
+            self::STATUS_DELETED => Yii::t('app', 'Удалено'),
         ];
     }
 
@@ -51,15 +54,15 @@ class Region extends ActiveRecord
 
         return $query->column();
     }
-    
+
     public static function getListRegionsByCountry()
     {
         $query = static::find()
             ->select('name, id, country_id')
             ->with('country')
             ->orderBy('name');
-        
-        return \yii\helpers\ArrayHelper::map($query->all(), 'id', 'name', 'country.name');
+
+        return ArrayHelper::map($query->all(), 'id', 'name', 'country.name');
     }
 
     public function getCountry()
