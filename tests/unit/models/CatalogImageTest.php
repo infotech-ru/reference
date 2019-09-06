@@ -55,6 +55,7 @@ class CatalogImageTest extends TestCase
                 'is_serie_main',
                 'created_at',
                 'updated_at',
+                'is_not_convert',
             ],
             $model->attributes()
         );
