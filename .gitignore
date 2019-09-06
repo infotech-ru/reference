@@ -13,4 +13,5 @@ vendor
 
 # composer lock files
 composer.lock
+composer.phar
 phpunit.xml
