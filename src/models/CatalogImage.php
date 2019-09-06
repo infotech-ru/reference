@@ -10,6 +10,7 @@ namespace infotech\reference\models;
  * @property string  $url
  * @property boolean $is_main
  * @property boolean $is_serie_main
+ * @property boolean $is_not_convert Флаг того, что изображение загружено без обработки
  * @property string  $created_at
  * @property string  $updated_at
  * @property-read CatalogEmplacement $catalogEmplacement
