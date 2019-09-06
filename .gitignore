@@ -2,20 +2,21 @@
 .*.swp
 .DS_Store
 .buildpath
-.idea
+.idea/
 .project
 .settings
 Thumbs.db
-nbproject
+nbproject/
 
 # vendor dirs
-vendor
+vendor/
 
 # composer lock files
 composer.lock
-composer.phar
 composer.phar
 
 #тесты
 phpunit.phar
 phpunit.xml
+
+tests/config/config-local.php
