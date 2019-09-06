@@ -53,6 +53,7 @@ class CatalogImageTest extends TestCase
                 'url',
                 'is_main',
                 'is_serie_main',
+                'is_not_convert',
                 'created_at',
                 'updated_at',
             ],
