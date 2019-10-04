@@ -14,10 +14,10 @@ class Transmission
     public static function getList() : array
     {
         return [
-            self::MANUAL => Yii::t('app','МКПП'),
-            self::AUTOMATIC => Yii::t('app','АКПП'),
-            self::VARIABLE => Yii::t('app','Вариатор'),
-            self::ROBOT => Yii::t('app','Робот'),
+            self::MANUAL => Yii::t('app', 'МКПП'),
+            self::AUTOMATIC => Yii::t('app', 'АКПП'),
+            self::VARIABLE => Yii::t('app', 'Вариатор'),
+            self::ROBOT => Yii::t('app', 'Робот'),
         ];
     }
 }

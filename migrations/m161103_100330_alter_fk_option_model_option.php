@@ -29,7 +29,6 @@ class m161103_100330_alter_fk_option_model_option extends Migration
             'CASCADE',
             'CASCADE'
         );
-
     }
 
     public function down()

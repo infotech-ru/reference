@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class ModelYear
  * @package infotech\reference\models
@@ -32,6 +34,12 @@ class ModelYear extends ActiveRecord
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
+    /**
+     * @param $modelId
+     * @param $recentOnly
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($modelId, $recentOnly)
     {
         $query = static::find()

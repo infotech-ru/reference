@@ -13,9 +13,9 @@ class Drive
     public static function getList() : array
     {
         return [
-            self::FRONT => Yii::t('app','Передний'),
-            self::REAR => Yii::t('app','Задний'),
-            self::ALL => Yii::t('app','Полный'),
+            self::FRONT => Yii::t('app', 'Передний'),
+            self::REAR => Yii::t('app', 'Задний'),
+            self::ALL => Yii::t('app', 'Полный'),
         ];
     }
 }

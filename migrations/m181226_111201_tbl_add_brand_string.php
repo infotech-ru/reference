@@ -12,8 +12,8 @@ class m181226_111201_tbl_add_brand_string extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('aeb_temporary_aeb_region_data','brand',$this->string()->notNull()->after('id'));
-        $this->alterColumn('aeb_temporary_aeb_region_data','brand_id',$this->integer());
+        $this->addColumn('aeb_temporary_aeb_region_data', 'brand', $this->string()->notNull()->after('id'));
+        $this->alterColumn('aeb_temporary_aeb_region_data', 'brand_id', $this->integer());
     }
 
     /**
@@ -21,7 +21,7 @@ class m181226_111201_tbl_add_brand_string extends Migration
      */
     public function safeDown()
     {
-        $this->alterColumn('aeb_temporary_aeb_region_data','brand_id',$this->integer()->notNull());
-        $this->dropColumn('aeb_temporary_aeb_region_data','brand');
+        $this->alterColumn('aeb_temporary_aeb_region_data', 'brand_id', $this->integer()->notNull());
+        $this->dropColumn('aeb_temporary_aeb_region_data', 'brand');
     }
 }

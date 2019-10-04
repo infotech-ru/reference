@@ -2,7 +2,6 @@
 
 namespace infotech\reference\models;
 
-
 /**
  * Class Brand
  * @package infotech\reference\models
@@ -37,6 +36,7 @@ class Brand extends ActiveRecord
     const SMART_ID = 108;
     const SUBARU_ID = 111;
     const UAZ_ID = 134;
+    const KIA_ID = 8;
 
     public static function tableName(): string
     {

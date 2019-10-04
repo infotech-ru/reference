@@ -16,7 +16,7 @@ class VehicleVerificationProgram extends ActiveRecord
 {
     const BASE_CATALOG_NAME = 'vehicle-verification-program';
 
-    private static $basePhotoUrl = 'http://195004.selcdn.com/ref/';
+    private static $_basePhotoUrl = 'http://195004.selcdn.com/ref/';
 
     public static function tableName(): string
     {
@@ -31,7 +31,7 @@ class VehicleVerificationProgram extends ActiveRecord
     public function getPhotoUrl()
     {
         if ($this->photo) {
-            return self::$basePhotoUrl . $this->photo;
+            return self::$_basePhotoUrl . $this->photo;
         }
 
         return null;
