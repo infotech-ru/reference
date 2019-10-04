@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m180507_134850_create_country_equipment_table extends Migration
 {
-    const TABLE_NAME = "eqt_equipment_country";
+    const TABLE_NAME = 'eqt_equipment_country';
     const ENGINE = 'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci';
 
     /**
@@ -24,12 +24,12 @@ class m180507_134850_create_country_equipment_table extends Migration
             self::ENGINE
         );
 
-        $this->addPrimaryKey("equipment_country-pk", self::TABLE_NAME, ['country_id', 'equipment_id']);
+        $this->addPrimaryKey('equipment_country-pk', self::TABLE_NAME, ['country_id', 'equipment_id']);
 
         $this->addForeignKey(
-            "equipment_country-country-fk",
+            'equipment_country-country-fk',
             self::TABLE_NAME,
-            "country_id",
+            'country_id',
             'countries',
             'id'
         );

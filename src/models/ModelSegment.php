@@ -3,6 +3,7 @@
 namespace infotech\reference\models;
 
 use Yii;
+use yii\base\InvalidConfigException;
 
 /**
  * Class ModelSegment
@@ -29,6 +30,10 @@ class ModelSegment extends ActiveRecord
         return 'model_segment';
     }
 
+    /**
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList()
     {
         return static::find()

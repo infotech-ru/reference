@@ -1,6 +1,8 @@
 <?php
 
-class m161229_145500_create__table__news extends \yii\db\Migration
+use yii\db\Migration;
+
+class m161229_145500_create__table__news extends Migration
 {
     public function up()
     {

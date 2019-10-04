@@ -2,6 +2,7 @@
 
 namespace infotech\reference\models\aeb;
 
+use infotech\reference\models\Quarter;
 use Yii;
 
 /**
@@ -47,7 +48,7 @@ class Month
 
         return array_filter(
             self::getList(),
-            function($k) use ($quarterMonth) {
+            function ($k) use ($quarterMonth) {
                 return in_array($k, $quarterMonth);
             },
             ARRAY_FILTER_USE_KEY

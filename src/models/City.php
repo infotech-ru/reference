@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class City
  * @package infotech\reference\models
@@ -28,6 +30,11 @@ class City extends ActiveRecord
         return new CityQuery(static::class);
     }
 
+    /**
+     * @param $regionId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($regionId)
     {
         $query = static::find()

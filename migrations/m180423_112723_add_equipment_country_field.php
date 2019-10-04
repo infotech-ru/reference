@@ -5,7 +5,7 @@ use yii\db\Migration;
 class m180423_112723_add_equipment_country_field extends Migration
 {
 
-    const TABLE_NAME = "eqt_equipment";
+    const TABLE_NAME = 'eqt_equipment';
 
     public function safeUp()
     {
@@ -19,7 +19,7 @@ class m180423_112723_add_equipment_country_field extends Migration
             'equipment-country-fk',
             self::TABLE_NAME,
             'country_id',
-            "countries",
+            'countries',
             'id'
         );
     }
@@ -27,7 +27,6 @@ class m180423_112723_add_equipment_country_field extends Migration
     public function safeDown()
     {
         $this->dropForeignKey('equipment-country-fk', self::TABLE_NAME);
-        $this->dropColumn(self::TABLE_NAME, "country_id");
+        $this->dropColumn(self::TABLE_NAME, 'country_id');
     }
-
 }

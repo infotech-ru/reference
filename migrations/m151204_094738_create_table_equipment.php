@@ -420,7 +420,6 @@ CREATE TABLE `users` (
 
 SQL
         );
-
     }
 
     public function safeDown()

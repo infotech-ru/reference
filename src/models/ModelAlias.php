@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class ModelAlias
  * @package infotech\reference\models
@@ -42,6 +44,11 @@ class ModelAlias extends ActiveRecord
         return 'model_alias';
     }
 
+    /**
+     * @param $brandId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($brandId): array
     {
         return static::find()

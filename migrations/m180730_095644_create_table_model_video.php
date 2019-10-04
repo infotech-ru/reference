@@ -25,7 +25,6 @@ class m180730_095644_create_table_model_video extends Migration
             'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci'
         );
         $this->addForeignKey('fk_model_video_model_id', 'model_video', 'model_id', 'models', 'id');
-
     }
 
     /**

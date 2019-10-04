@@ -3,6 +3,7 @@
 namespace infotech\reference\models;
 
 use Yii;
+use yii\base\InvalidConfigException;
 
 /**
  * Class ModelClass
@@ -29,6 +30,10 @@ class ModelClass extends ActiveRecord
         return 'model_class';
     }
 
+    /**
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList()
     {
         return static::find()

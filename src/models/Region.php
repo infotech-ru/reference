@@ -3,6 +3,7 @@
 namespace infotech\reference\models;
 
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -44,6 +45,12 @@ class Region extends ActiveRecord
         return new RegionQuery(static::class);
     }
 
+    /**
+     * @param $countryId
+     * @param $federalDistrictId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($countryId, $federalDistrictId)
     {
         $query = static::find()
