@@ -43,7 +43,8 @@ class AutoruComplectation extends ActiveRecord
         if (!$serie_ids) {
             return [];
         }
-        return ArrayHelper::map(Equipment::find()
+        return ArrayHelper::map(
+            Equipment::find()
             ->andFilterWhere(['series_id' => $serie_ids])
             ->orderBy(['name' => SORT_ASC])
             ->all(),

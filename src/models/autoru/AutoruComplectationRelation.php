@@ -6,7 +6,6 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\autoru\queries\AutoruComplectationMapQuery;
 
-
 /**
  * This is the model class for table "eqt_autoru_complectation_map".
  *

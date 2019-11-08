@@ -5,7 +5,6 @@ namespace infotech\reference\models\autoru;
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruColorQuery;
 
-
 class AutoruColor extends ActiveRecord
 {
     public static function autoRuColorList()
