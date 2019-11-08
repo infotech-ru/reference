@@ -21,7 +21,7 @@ class AutoruLktFolderGeneration extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_generation';
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -34,7 +34,7 @@ class AutoruLktFolderGeneration extends ActiveRecord
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
         ];
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -45,7 +45,7 @@ class AutoruLktFolderGeneration extends ActiveRecord
             'generation_id' => 'Generation ID',
         ];
     }
-
+    
     /**
      * @return \yii\db\ActiveQuery
      */

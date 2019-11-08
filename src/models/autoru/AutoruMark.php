@@ -37,7 +37,7 @@ class AutoruMark extends ActiveRecord
             'brand_id' => 'Бренд',
         ];
     }
-
+    
     public static function find(): AutoruMapMarksQuery
     {
         return new AutoruMapMarksQuery(static::class);

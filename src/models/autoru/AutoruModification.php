@@ -27,15 +27,15 @@ class AutoruModification extends ActiveRecord
     public static function getBodysList()
     {
         return [
-            1  => 'Кабриолет',
-            2  => 'Компактвэн',
-            3  => 'Купе',
-            4  => 'Купе-хардтоп',
-            5  => 'Фастбек',
-            6  => 'Фургон',
-            7  => 'Хэтчбек',
-            8  => 'Ландо',
-            9  => 'Лифтбек',
+            1 => 'Кабриолет',
+            2 => 'Компактвэн',
+            3 => 'Купе',
+            4 => 'Купе-хардтоп',
+            5 => 'Фастбек',
+            6 => 'Фургон',
+            7 => 'Хэтчбек',
+            8 => 'Ландо',
+            9 => 'Лифтбек',
             10 => 'Лимузин',
             11 => 'Микровэн',
             12 => 'Минивэн',
@@ -89,7 +89,7 @@ class AutoruModification extends ActiveRecord
     {
         return $this->hasOne(AutoruConfiguration::class, ['id' => 'configuration_id']);
     }
-
+    
     public static function find(): AutoruMapModificationQuery
     {
         return new AutoruMapModificationQuery(static::class);

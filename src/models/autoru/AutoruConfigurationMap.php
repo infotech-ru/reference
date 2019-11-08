@@ -19,7 +19,7 @@ class AutoruConfigurationMap extends ActiveRecord
     {
         return 'eqt_autoru_configuration_map';
     }
-
+    
     public function rules()
     {
         return [
@@ -29,7 +29,7 @@ class AutoruConfigurationMap extends ActiveRecord
             [['configuration_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruConfiguration::class, 'targetAttribute' => ['configuration_id' => 'id']],
         ];
     }
-
+    
     public function attributeLabels()
     {
         return [
@@ -37,12 +37,12 @@ class AutoruConfigurationMap extends ActiveRecord
             'serie_id' => 'Serie ID',
         ];
     }
-
+    
     public function getConfiguration()
     {
         return $this->hasOne(AutoruConfiguration::class, ['id' => 'configuration_id']);
     }
-
+    
     public static function find(): AutoruConfigurationMapQuery
     {
         return new AutoruConfigurationMapQuery(static::class);

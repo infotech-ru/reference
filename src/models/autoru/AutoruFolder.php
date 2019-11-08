@@ -39,13 +39,13 @@ class AutoruFolder extends ActiveRecord
             return [];
         }
         return ArrayHelper::map(Model::find()
-            ->where(['brand_id' => $brand_id,'is_deleted' => 0,])
+            ->where(['brand_id' => $brand_id, 'is_deleted' => 0,])
             ->orderBy(['name' => SORT_ASC])
             ->all(),
             'id',
             'name',
-            function(Model $model) {
-                return $model->is_recent?'Актуальные':'Не актуальные';
+            function (Model $model) {
+                return $model->is_recent ? 'Актуальные' : 'Не актуальные';
             }
         );
     }
@@ -67,11 +67,11 @@ class AutoruFolder extends ActiveRecord
                     );
                 }
             ]
-        )->orderBy([Generation::tableName().'.name' => SORT_ASC])->all(),
+        )->orderBy([Generation::tableName() . '.name' => SORT_ASC])->all(),
             'id_car_generation',
             'name',
-            function(Generation $model) {
-                return $model->is_recent?'Актуальные':'Не актуальные';
+            function (Generation $model) {
+                return $model->is_recent ? 'Актуальные' : 'Не актуальные';
             }
         );
     }
@@ -103,7 +103,7 @@ class AutoruFolder extends ActiveRecord
         
         return true;
     }
-
+    
     
     public function attributeLabels(): array
     {
@@ -115,12 +115,12 @@ class AutoruFolder extends ActiveRecord
             'generation_id' => 'Поколение',
         ];
     }
-
+    
     public function getMark()
     {
         return $this->hasOne(AutoruMark::class, ['id' => 'mark_id']);
     }
-
+    
     public static function find(): AutoruMapFolderQuery
     {
         return new AutoruMapFolderQuery(static::class);

@@ -27,7 +27,7 @@ class AutoruFolderGeneration extends ActiveRecord
     {
         return new AutoruFolderGenerationsQuery(static::class);
     }
-
+    
     public function rules()
     {
         return [
@@ -35,7 +35,7 @@ class AutoruFolderGeneration extends ActiveRecord
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruFolder::class, 'targetAttribute' => ['folder_id' => 'id']],
         ];
     }
-
+    
     public function attributeLabels()
     {
         return [
@@ -44,12 +44,12 @@ class AutoruFolderGeneration extends ActiveRecord
             'generation_id' => Yii::t('app', 'Generation ID'),
         ];
     }
-
+    
     public function getFolder()
     {
         return $this->hasOne(AutoruFolder::class, ['id' => 'folder_id']);
     }
-
+    
     public function getGeneration()
     {
         return $this->hasOne(AutoruFolder::class, ['id' => 'generation_id']);

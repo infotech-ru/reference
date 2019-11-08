@@ -21,7 +21,7 @@ class AutoruLktFolderModels extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_models';
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -34,7 +34,7 @@ class AutoruLktFolderModels extends ActiveRecord
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
         ];
     }
-
+    
     /**
      * {@inheritdoc}
      */

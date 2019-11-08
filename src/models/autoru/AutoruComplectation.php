@@ -46,10 +46,10 @@ class AutoruComplectation extends ActiveRecord
             ->orderBy(['name' => SORT_ASC])
             ->all(),
             'id',
-            function(Equipment $item) {
+            function (Equipment $item) {
                 return $item->name . ' / ' . $item->tech_name;
             },
-            function(Equipment $item) {
+            function (Equipment $item) {
                 return $item->serie->name;
             }
         );
@@ -64,7 +64,7 @@ class AutoruComplectation extends ActiveRecord
             [['id'], 'unique'],
         ];
     }
-
+    
     public function attributeLabels(): array
     {
         return [
@@ -74,12 +74,12 @@ class AutoruComplectation extends ActiveRecord
             'complectation_id' => 'Комплектация',
         ];
     }
-
+    
     public function getMaps(): ActiveQuery
     {
         return $this->hasOne(AutoruComplectationRelation::class, ['complectation_id' => 'id']);
     }
-
+    
     public static function find(): AutoruComplectationQuery
     {
         return new AutoruComplectationQuery(static::class);

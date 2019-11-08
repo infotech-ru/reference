@@ -71,7 +71,7 @@ class AutoruConfiguration extends ActiveRecord
         }
         return ArrayHelper::map(
             Series::find()->andWhere(['model_id' => $model_id])->andFilterWhere(['id_car_generation' => $generation_id])->all(), 'id_car_serie', 'name', function (Series $series) {
-            return ($series->is_recent ? 'Актуальные' : 'Не актуальные') . ' ' . ($series->generation->name ?? '' );
+            return ($series->is_recent ? 'Актуальные' : 'Не актуальные') . ' ' . ($series->generation->name ?? '');
         });
     }
     

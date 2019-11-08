@@ -20,7 +20,7 @@ class AutoruModificationMap extends ActiveRecord
     {
         return '{{%autoru_modification_map}}';
     }
-
+    
     public function rules(): array
     {
         return [
@@ -30,7 +30,7 @@ class AutoruModificationMap extends ActiveRecord
             [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruModification::class, 'targetAttribute' => ['modification_id' => 'id']],
         ];
     }
-
+    
     public function attributeLabels(): array
     {
         return [
@@ -38,12 +38,12 @@ class AutoruModificationMap extends ActiveRecord
             'map_id' => 'Map ID',
         ];
     }
-
+    
     public function getModification()
     {
         return $this->hasOne(AutoruModification::class, ['id' => 'modification_id']);
     }
-
+    
     public static function find(): AutoruModificationMapQuery
     {
         return new AutoruModificationMapQuery(static::class);

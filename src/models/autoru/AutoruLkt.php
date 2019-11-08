@@ -97,21 +97,21 @@ class AutoruLkt extends ActiveRecord
     
     public function getAutoruLktFolderGenerationsIds(): array
     {
-        return array_column($this->autoruLktFolderGenerations,'generation_id');
+        return array_column($this->autoruLktFolderGenerations, 'generation_id');
     }
     
     public function getAutoruLktFolderMarksIds(): array
     {
-        return array_column($this->autoruLktFolderMarks,'brand_id');
+        return array_column($this->autoruLktFolderMarks, 'brand_id');
     }
     
     public function getAutoruLktFolderModelsIds(): array
     {
-        return array_column($this->autoruLktFolderModels,'model_id');
+        return array_column($this->autoruLktFolderModels, 'model_id');
     }
     
     public function getAutoruLktFolderSeriesIds(): array
     {
-        return array_column($this->autoruLktFolderSeries,'serie_id');
+        return array_column($this->autoruLktFolderSeries, 'serie_id');
     }
 }

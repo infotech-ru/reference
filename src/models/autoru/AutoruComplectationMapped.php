@@ -14,7 +14,7 @@ class AutoruComplectationMapped extends ActiveRecord
     {
         return 'eqt_autoru_complectation_mapped';
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -27,7 +27,7 @@ class AutoruComplectationMapped extends ActiveRecord
             [['complectation_id', 'modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruComplectationRelation::className(), 'targetAttribute' => ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']],
         ];
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -39,7 +39,7 @@ class AutoruComplectationMapped extends ActiveRecord
             'map_id' => 'Map ID',
         ];
     }
-
+    
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -47,7 +47,7 @@ class AutoruComplectationMapped extends ActiveRecord
     {
         return $this->hasOne(AutoruComplectationRelation::className(), ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']);
     }
-
+    
     /**
      * {@inheritdoc}
      * @return AutoruComplectationMappedQuery the active query used by this AR class.

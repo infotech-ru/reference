@@ -22,7 +22,7 @@ class AutoruComplectationRelation extends ActiveRecord
     {
         return 'eqt_autoru_complectation_map';
     }
-
+    
     public function rules(): array
     {
         return [
@@ -56,7 +56,7 @@ class AutoruComplectationRelation extends ActiveRecord
     {
         return array_column($this->mapped, 'map_id');
     }
-
+    
     public function attributeLabels(): array
     {
         return [
@@ -64,7 +64,7 @@ class AutoruComplectationRelation extends ActiveRecord
             'modification_id' => 'Modification ID',
         ];
     }
-
+    
     public static function find(): AutoruComplectationMapQuery
     {
         return new AutoruComplectationMapQuery(static::class);

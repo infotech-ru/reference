@@ -32,14 +32,14 @@ class AutoruColor extends ActiveRecord
     
     public function getAutoRuName(): ?string
     {
-        return static::autoRuColorList()[$this->autoru_id]??null;
+        return static::autoRuColorList()[$this->autoru_id] ?? null;
     }
     
     public static function tableName(): string
     {
         return '{{%autoru_color}}';
     }
-
+    
     public function rules(): array
     {
         return [
@@ -48,7 +48,7 @@ class AutoruColor extends ActiveRecord
             [['autoru_id', 'color_id'], 'unique', 'targetAttribute' => ['autoru_id', 'color_id']],
         ];
     }
-
+    
     public function attributeLabels(): array
     {
         return [
@@ -57,7 +57,7 @@ class AutoruColor extends ActiveRecord
             'color_id' => 'Color ID',
         ];
     }
-
+    
     public static function find(): AutoruColorQuery
     {
         return new AutoruColorQuery(static::class);
