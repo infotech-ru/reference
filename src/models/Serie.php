@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use infotech\reference\models\Model as ReferenceModel;
+
 /**
  * Class Serie
  * @package infotech\reference\models
@@ -86,5 +88,13 @@ class Serie extends ActiveRecord
     public function getSkins()
     {
         return $this->hasMany(Skin::class, ['id' => 'skin_id'])->via('skinSeries');
+    }
+    
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReferenceModel()
+    {
+        return $this->hasOne(ReferenceModel::class, ['id' => 'model_id']);
     }
 }
