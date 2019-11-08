@@ -4,6 +4,7 @@ namespace infotech\reference\models\autoru;
 
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\ActiveQuery;
+use infotech\reference\models\Equipment;
 use yii\helpers\ArrayHelper;
 use infotech\reference\models\autoru\queries\AutoruComplectationQuery;
 
@@ -27,10 +28,11 @@ class AutoruComplectation extends ActiveRecord
         if (!$serie_id) {
             return [];
         }
-        return ArrayHelper::map(Equipment::find()
-            ->andFilterWhere(['series_id' => $serie_id])
-            ->orderBy(['name' => SORT_ASC])
-            ->all(),
+        return ArrayHelper::map(
+            Equipment::find()
+                ->andFilterWhere(['series_id' => $serie_id])
+                ->orderBy(['name' => SORT_ASC])
+                ->all(),
             'id',
             'name'
         );
@@ -75,7 +77,7 @@ class AutoruComplectation extends ActiveRecord
         ];
     }
     
-    public function getMaps(): ActiveQuery
+    public function getMaps()
     {
         return $this->hasOne(AutoruComplectationRelation::class, ['complectation_id' => 'id']);
     }
