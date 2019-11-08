@@ -38,7 +38,8 @@ class AutoruFolder extends ActiveRecord
         if (!$brand_id) {
             return [];
         }
-        return ArrayHelper::map(Model::find()
+        return ArrayHelper::map(
+            Model::find()
             ->where(['brand_id' => $brand_id, 'is_deleted' => 0,])
             ->orderBy(['name' => SORT_ASC])
             ->all(),
@@ -55,8 +56,9 @@ class AutoruFolder extends ActiveRecord
         if (!$model_id) {
             return [];
         }
-        return ArrayHelper::map(Generation::find()->innerJoinWith(
-            [
+        return ArrayHelper::map(
+            Generation::find()
+            ->innerJoinWith([
                 'series' => function (ActiveQuery $query) use ($model_id) {
                     $query->innerJoinWith(
                         [
@@ -66,8 +68,8 @@ class AutoruFolder extends ActiveRecord
                         ]
                     );
                 }
-            ]
-        )->orderBy([Generation::tableName() . '.name' => SORT_ASC])->all(),
+            ])->orderBy([Generation::tableName() . '.name' => SORT_ASC])
+            ->all(),
             'id_car_generation',
             'name',
             function (Generation $model) {
