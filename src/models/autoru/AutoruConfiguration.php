@@ -78,7 +78,8 @@ class AutoruConfiguration extends ActiveRecord
             'name',
             function (Series $series) {
                 return ($series->is_recent ? 'Актуальные' : 'Не актуальные') . ' ' . ($series->generation->name ?? '');
-            });
+            }
+        );
     }
     
     public function rules(): array
