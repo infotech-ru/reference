@@ -55,7 +55,7 @@ class AutoruModification extends ActiveRecord
     
     public static function tableName(): string
     {
-        return '{{%autoru_modification}}';
+        return 'eqt_autoru_modification';
     }
     
     public function rules(): array

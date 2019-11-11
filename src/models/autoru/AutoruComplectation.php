@@ -20,7 +20,7 @@ class AutoruComplectation extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return '{{%autoru_complectation}}';
+        return 'eqt_autoru_complectation';
     }
     
     public static function getComplectationList(?int $serie_id): array

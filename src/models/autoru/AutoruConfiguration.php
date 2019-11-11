@@ -56,7 +56,7 @@ class AutoruConfiguration extends ActiveRecord
     
     public static function tableName(): string
     {
-        return '{{%autoru_configuration}}';
+        return 'eqt_autoru_configuration';
     }
     
     /**

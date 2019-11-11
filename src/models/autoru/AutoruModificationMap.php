@@ -18,7 +18,7 @@ class AutoruModificationMap extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return '{{%autoru_modification_map}}';
+        return 'eqt_autoru_modification_map';
     }
     
     public function rules(): array
