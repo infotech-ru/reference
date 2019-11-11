@@ -20,7 +20,7 @@ class AutoruFolderGeneration extends ActiveRecord
 {
     public static function tableName()
     {
-        return '{{%autoru_folder_generations}}';
+        return 'eqt_autoru_folder_generations';
     }
     
     public static function find()

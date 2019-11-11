@@ -17,7 +17,7 @@ class AutoruMark extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return '{{%autoru_mark}}';
+        return 'eqt_autoru_mark';
     }
     
     public function rules(): array

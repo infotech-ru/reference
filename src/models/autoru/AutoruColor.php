@@ -36,7 +36,7 @@ class AutoruColor extends ActiveRecord
     
     public static function tableName(): string
     {
-        return '{{%autoru_color}}';
+        return 'eqt_autoru_color';
     }
     
     public function rules(): array

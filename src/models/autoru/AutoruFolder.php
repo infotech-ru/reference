@@ -30,7 +30,7 @@ class AutoruFolder extends ActiveRecord
     
     public static function tableName(): string
     {
-        return '{{%autoru_folder}}';
+        return 'eqt_autoru_folder';
     }
     
     public static function getModelList(?int $brand_id)
