@@ -11,7 +11,7 @@ class m191114_095707_avito extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(),
         ]);
-
+        
         $this->createTable('avito_model', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
@@ -78,8 +78,6 @@ class m191114_095707_avito extends Migration
         );
         
         
-        
-    
         $this->createTable('avito_make_map', [
             'make_id' => $this->integer(),
             'ref_brand_id' => $this->integer()->unsigned(),
@@ -103,10 +101,6 @@ class m191114_095707_avito extends Migration
             'brands',
             'id'
         );
-        
-        
-        
-        
         
         
         $this->createTable('avito_model_map', [
@@ -134,9 +128,6 @@ class m191114_095707_avito extends Migration
         );
         
         
-        
-        
-        
         $this->createTable('avito_generation_map', [
             'generation_id' => $this->integer(),
             'ref_generation_id' => $this->integer(),
@@ -160,8 +151,6 @@ class m191114_095707_avito extends Migration
             'car_generation',
             'id_car_generation'
         );
-        
-        
         
         
         $this->createTable('avito_modification_map_serie', [
@@ -189,10 +178,6 @@ class m191114_095707_avito extends Migration
         );
         
         
-        
-        
-        
-        
         $this->createTable('avito_modification_map_mod', [
             'modification_id' => $this->integer(),
             'ref_modification_id' => $this->integer(),
@@ -218,10 +203,6 @@ class m191114_095707_avito extends Migration
         );
         
         
-        
-        
-        
-        
         $this->createTable('avito_complectation_map', [
             'complectation_id' => $this->integer(),
             'ref_complectation_id' => $this->integer(),
@@ -245,7 +226,6 @@ class m191114_095707_avito extends Migration
             'eqt_equipment',
             'id'
         );
-        
     }
     
     public function safeDown()
