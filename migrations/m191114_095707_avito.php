@@ -197,7 +197,7 @@ class m191114_095707_avito extends Migration
         $this->addForeignKey(
             'fk_avito_modification_map_mod_ref_modification_id',
             'avito_modification_map_mod',
-            'modification_id',
+            'ref_modification_id',
             'car_modification',
             'id_car_modification'
         );
@@ -222,7 +222,7 @@ class m191114_095707_avito extends Migration
         $this->addForeignKey(
             'fk_avito_complectation_map_ref_complectation_id',
             'avito_complectation_map',
-            'complectation_id',
+            'ref_complectation_id',
             'eqt_equipment',
             'id'
         );

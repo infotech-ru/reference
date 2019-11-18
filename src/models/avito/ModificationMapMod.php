@@ -14,7 +14,7 @@ use infotech\reference\models\Modification as RefModification;
  * @property int $ref_modification_id
  *
  * @property Modification $modification
- * @property RefModification $modification0
+ * @property RefModification $refModification
  */
 class ModificationMapMod extends ActiveRecord
 {
@@ -30,7 +30,7 @@ class ModificationMapMod extends ActiveRecord
             [['modification_id', 'ref_modification_id'], 'integer'],
             [['modification_id', 'ref_modification_id'], 'unique', 'targetAttribute' => ['modification_id', 'ref_modification_id']],
             [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => Modification::class, 'targetAttribute' => ['modification_id' => 'id']],
-            [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefModification::class, 'targetAttribute' => ['modification_id' => 'id_car_modification']],
+            [['ref_modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefModification::class, 'targetAttribute' => ['ref_modification_id' => 'id_car_modification']],
         ];
     }
 
@@ -47,7 +47,7 @@ class ModificationMapMod extends ActiveRecord
         return $this->hasOne(Modification::class, ['id' => 'modification_id']);
     }
 
-    public function getModification0()
+    public function getRefModification()
     {
         return $this->hasOne(RefModification::class, ['id_car_modification' => 'modification_id']);
     }

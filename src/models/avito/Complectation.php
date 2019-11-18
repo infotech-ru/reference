@@ -3,6 +3,7 @@
 namespace infotech\reference\models\avito;
 
 use infotech\reference\models\avito\queries\ComplectationQuery;
+use infotech\reference\models\Equipment;
 use Yii;
 use infotech\reference\models\ActiveRecord;
 
@@ -15,6 +16,7 @@ use infotech\reference\models\ActiveRecord;
  *
  * @property Modification $modification
  * @property ComplectationMap[] $complectationMaps
+ * @property Equipment[] $refEquipments
  */
 class Complectation extends ActiveRecord
 {
@@ -49,6 +51,11 @@ class Complectation extends ActiveRecord
     public function getComplectationMaps()
     {
         return $this->hasMany(ComplectationMap::class, ['complectation_id' => 'id']);
+    }
+    
+    public function getRefEquipments()
+    {
+        return $this->hasMany(Equipment::class, ['id' => 'ref_complectation_id'])->viaTable('avito_complectation_map', ['complectation_id' => 'id']);
     }
 
     public static function find()

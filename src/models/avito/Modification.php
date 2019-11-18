@@ -3,6 +3,7 @@
 namespace infotech\reference\models\avito;
 
 use infotech\reference\models\avito\queries\ModificationQuery;
+use infotech\reference\models\Modification as RefModification;
 use infotech\reference\models\Serie;
 use Yii;
 use infotech\reference\models\ActiveRecord;
@@ -28,6 +29,7 @@ use infotech\reference\models\ActiveRecord;
  * @property ModificationMapMod[] $modificationMapMods
  * @property ModificationMapSerie[] $modificationMapSeries
  * @property Serie[] $refSeries
+ * @property RefModification[] $refModification
  */
 class Modification extends ActiveRecord
 {
@@ -85,7 +87,24 @@ class Modification extends ActiveRecord
 
     public function getRefSeries()
     {
-        return $this->hasMany(Serie::class, ['id_car_serie' => 'ref_serie_id'])->viaTable('avito_modification_map_serie', ['modification_id' => 'id']);
+        return $this->hasMany(
+            Serie::class,
+            ['id_car_serie' => 'ref_serie_id']
+        )->viaTable(
+            'avito_modification_map_serie',
+            ['modification_id' => 'id']
+        );
+    }
+    
+    public function getRefModification()
+    {
+        return $this->hasMany(
+            RefModification::class,
+            ['id_car_modification' => 'ref_modification_id']
+        )->viaTable(
+            'avito_modification_map_mod',
+            ['modification_id' => 'id']
+        );
     }
     
     public static function find()

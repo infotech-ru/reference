@@ -14,7 +14,7 @@ use infotech\reference\models\ActiveRecord;
  * @property int $ref_complectation_id
  *
  * @property Complectation $complectation
- * @property Equipment $complectation0
+ * @property Equipment $refEquipments
  */
 class ComplectationMap extends ActiveRecord
 {
@@ -30,7 +30,7 @@ class ComplectationMap extends ActiveRecord
             [['complectation_id', 'ref_complectation_id'], 'integer'],
             [['complectation_id', 'ref_complectation_id'], 'unique', 'targetAttribute' => ['complectation_id', 'ref_complectation_id']],
             [['complectation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Complectation::class, 'targetAttribute' => ['complectation_id' => 'id']],
-            [['complectation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Equipment::class, 'targetAttribute' => ['complectation_id' => 'id']],
+            [['ref_complectation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Equipment::class, 'targetAttribute' => ['ref_complectation_id' => 'id']],
         ];
     }
 
@@ -47,9 +47,9 @@ class ComplectationMap extends ActiveRecord
         return $this->hasOne(Complectation::class, ['id' => 'complectation_id']);
     }
 
-    public function getComplectation0()
+    public function getRefEquipments()
     {
-        return $this->hasOne(Equipment::class, ['id' => 'complectation_id']);
+        return $this->hasOne(Equipment::class, ['id' => 'ref_complectation_id']);
     }
 
     public static function find()
