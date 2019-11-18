@@ -17,7 +17,6 @@ use infotech\reference\models\Serie as Series;
  * @property string $years
  * @property string $autoRuBody
  * @property string $doors_count
- * @property string $serie_id
  *
  * @property AutoruFolder $folder
  * @property AutoruConfigurationMap[] $mapped
@@ -90,7 +89,6 @@ class AutoruConfiguration extends ActiveRecord
             [['body_type', 'years'], 'string', 'max' => 255],
             [['id'], 'unique'],
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruFolder::class, 'targetAttribute' => ['folder_id' => 'id']],
-            ['serie_id', 'number']
         ];
     }
     
@@ -101,7 +99,6 @@ class AutoruConfiguration extends ActiveRecord
             'folder_id' => 'Folder ID',
             'body_type' => 'Кузов (AutoRu)',
             'years' => 'Года (AutoRu)',
-            'serie_id' => 'Серия',
             'doors_count' => 'Кол-во дверей',
         ];
     }
