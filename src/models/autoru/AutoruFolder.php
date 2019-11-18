@@ -16,7 +16,6 @@ use infotech\reference\models\Model;
  * @property string $name
  * @property int $mark_id
  * @property int $model_id
- * @property int $generation_id
  * @property int $model_is_recent
  *
  * @property AutoruMark $mark
@@ -114,7 +113,6 @@ class AutoruFolder extends ActiveRecord
             'name' => 'Модель (AutoRu)',
             'mark_id' => 'Марка',
             'model_id' => 'Модель',
-            'generation_id' => 'Поколение',
         ];
     }
     
