@@ -46,7 +46,6 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(),
         ]);
-        
     }
     
     public function safeDown()
