@@ -11,6 +11,7 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'name' => $this->string(),
             'brand_id' => $this->integer()->unsigned(),
         ]);
+    
         $this->addForeignKey(
             'fk_dromru_mark_brand_id',
             'dromru_mark',
