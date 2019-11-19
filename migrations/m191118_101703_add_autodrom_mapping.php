@@ -2,9 +2,6 @@
 
 use yii\db\Migration;
 
-/**
- * Class m191118_101703_add_autodrom_mapping
- */
 class m191118_101703_add_autodrom_mapping extends Migration
 {
     public function safeUp()
