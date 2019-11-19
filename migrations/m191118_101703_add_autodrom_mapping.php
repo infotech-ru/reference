@@ -9,7 +9,7 @@ class m191118_101703_add_autodrom_mapping extends Migration
 {
     public function safeUp()
     {
-        $this->createTable('dromru_mark',[
+        $this->createTable('dromru_mark', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'brand_id' => $this->integer()->unsigned(),
@@ -21,9 +21,9 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'brands',
             'id'
         );
-        
-        
-        $this->createTable('dromru_model',[
+    
+    
+        $this->createTable('dromru_model', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'mark_id' => $this->integer(),
@@ -43,8 +43,8 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'models',
             'id'
         );
-        
-        $this->createTable('dromru_city',[
+    
+        $this->createTable('dromru_city', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
         ]);

@@ -13,25 +13,25 @@ use infotech\reference\models\ActiveRecord;
  * @property int $id
  * @property string $name
  * @property int $brand_id
- * 
+ *
  * @property Brand $refBrand
  */
 class Mark extends ActiveRecord
 {
-    public static function tableName(): string 
+    public static function tableName(): string
     {
         return 'autocrm.dromru_mark';
     }
-
-    public function rules(): array 
+    
+    public function rules(): array
     {
         return [
             [['brand_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
-
-    public function attributeLabels(): array 
+    
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ИД (DromRu)',
@@ -39,7 +39,7 @@ class Mark extends ActiveRecord
             'brand_id' => 'Бренд',
         ];
     }
-
+    
     public static function find(): MarkQuery
     {
         return new MarkQuery(static::class);

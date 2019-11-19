@@ -13,18 +13,18 @@ use infotech\reference\models\ActiveRecord;
  */
 class City extends ActiveRecord
 {
-    public static function tableName(): string 
+    public static function tableName(): string
     {
         return 'autocrm.dromru_city';
     }
-
-    public function rules(): array 
+    
+    public function rules(): array
     {
         return [
             [['name'], 'string', 'max' => 255],
         ];
     }
-
+    
     public function attributeLabels(): array
     {
         return [
@@ -32,7 +32,7 @@ class City extends ActiveRecord
             'name' => 'Название (DromRu)',
         ];
     }
-
+    
     public static function find(): CityQuery
     {
         return new CityQuery(static::class);
