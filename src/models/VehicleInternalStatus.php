@@ -17,6 +17,8 @@ class VehicleInternalStatus extends ActiveRecord
     const TRANSFERRED = 5;
     const DELETED = 6;
     const PREPARATION = 7;
+    const TRANSIT = 8;
+    const WORKSHEET = 9;
 
     public static function tableName(): string
     {
