@@ -2,14 +2,15 @@
 
 namespace infotech\reference\models;
 
-
+use yii\base\InvalidConfigException;
 use yii\db\Expression;
 
 class GenerationQuery extends ActiveQuery
 {
     /**
-     * @param $value
+     * @param bool $value
      * @return GenerationQuery
+     * @throws InvalidConfigException
      */
     public function isVisible($value = true)
     {
@@ -17,8 +18,9 @@ class GenerationQuery extends ActiveQuery
     }
 
     /**
-     * @param $value
+     * @param bool $value
      * @return GenerationQuery
+     * @throws InvalidConfigException
      */
     public function isRecent($value = true)
     {
@@ -28,6 +30,7 @@ class GenerationQuery extends ActiveQuery
     /**
      * @param $modelId
      * @return GenerationQuery
+     * @throws InvalidConfigException
      */
     public function model($modelId)
     {
@@ -42,6 +45,7 @@ class GenerationQuery extends ActiveQuery
     /**
      * @param $year
      * @return GenerationQuery
+     * @throws InvalidConfigException
      */
     public function year($year)
     {

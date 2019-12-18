@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class Color
  * @package infotech\reference\models
@@ -24,6 +26,11 @@ class Color extends ActiveRecord
         return 'eqt_color';
     }
 
+    /**
+     * @param $modelId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($modelId): array
     {
         return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();

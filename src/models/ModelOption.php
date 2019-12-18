@@ -2,7 +2,6 @@
 
 namespace infotech\reference\models;
 
-
 /**
  * Class ModelOption
  * @package infotech\reference\models

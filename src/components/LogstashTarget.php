@@ -96,7 +96,7 @@ class LogstashTarget extends Target
             case 'object':
                 if ($text instanceof Exception) {
                     return [
-                        'trace' => $text->getFile().':'.$text->getLine().PHP_EOL.$text->getTraceAsString(),
+                        'trace' => $text->getFile() . ':' . $text->getLine() . PHP_EOL . $text->getTraceAsString(),
                         'message' => $text->getMessage(),
                     ];
                 }
@@ -116,7 +116,7 @@ class LogstashTarget extends Target
             $socket = stream_socket_client($this->dsn, $errorNumber, $error, 3);
 
             foreach ($this->messages as &$message) {
-                fwrite($socket, $this->formatMessage($message).PHP_EOL);
+                fwrite($socket, $this->formatMessage($message) . PHP_EOL);
             }
 
             fclose($socket);
@@ -176,7 +176,7 @@ class LogstashTarget extends Target
     public function emergencyExport($data)
     {
         $this->emergencyPrepareMessages($data);
-        $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages)).PHP_EOL;
+        $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages)) . PHP_EOL;
 
         file_put_contents(Yii::getAlias($this->emergencyLogFile), $text, FILE_APPEND);
     }

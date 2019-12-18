@@ -14,20 +14,29 @@ class m181108_091505_453_aeb_add_aeb_region_upload_history_id extends Migration
     {
         $this->addColumn('aeb_model_mapping', 'aeb_region_upload_history_id', $this->integer());
         $this->addForeignKey(
-            'model_mapping_upload_idx', 'aeb_model_mapping', 'aeb_region_upload_history_id',
-            'aeb_region_upload_history', 'id'
+            'model_mapping_upload_idx',
+            'aeb_model_mapping',
+            'aeb_region_upload_history_id',
+            'aeb_region_upload_history',
+            'id'
         );
 
         $this->addColumn('aeb_region_mapping', 'aeb_region_upload_history_id', $this->integer());
         $this->addForeignKey(
-            'region_mapping_upload_idx', 'aeb_region_mapping', 'aeb_region_upload_history_id',
-            'aeb_region_upload_history', 'id'
+            'region_mapping_upload_idx',
+            'aeb_region_mapping',
+            'aeb_region_upload_history_id',
+            'aeb_region_upload_history',
+            'id'
         );
 
         $this->addColumn('aeb_city_mapping', 'aeb_region_upload_history_id', $this->integer());
         $this->addForeignKey(
-            'city_mapping_upload_idx', 'aeb_city_mapping', 'aeb_region_upload_history_id',
-            'aeb_region_upload_history', 'id'
+            'city_mapping_upload_idx',
+            'aeb_city_mapping',
+            'aeb_region_upload_history_id',
+            'aeb_region_upload_history',
+            'id'
         );
     }
 

@@ -2,6 +2,7 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
 
 /**
  * Class ModelOptionTag
@@ -28,6 +29,11 @@ class ModelOptionTag extends ActiveRecord
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
+    /**
+     * @param int $model_id
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList(int $model_id): array
     {
         return static::find()->model($model_id)->select('name, id')->indexBy('id')->column();

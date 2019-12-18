@@ -24,6 +24,7 @@ before_script:
 
 script:
   - vendor/bin/phpunit --verbose --coverage-clover=coverage.clover
+  - vendor/bin/phpcs src/ migrations/ --standard=vendor/yiisoft/yii2-coding-standards/Yii2/ruleset.xml -n
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar

@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class Equipment
  * @package infotech\reference\models
@@ -45,6 +47,12 @@ class Equipment extends ActiveRecord
         return new EquipmentQuery(static::class);
     }
 
+    /**
+     * @param $serieId
+     * @param $recentOnly
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($serieId, $recentOnly)
     {
         $query = static::find()

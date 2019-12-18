@@ -2,6 +2,7 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
 
 /**
  * @property integer $brand_id
@@ -42,6 +43,12 @@ class Model extends ActiveRecord
         return new ModelQuery(static::class);
     }
 
+    /**
+     * @param $brandId
+     * @param $recentOnly
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($brandId, $recentOnly)
     {
         $query = static::find()
@@ -113,7 +120,7 @@ class Model extends ActiveRecord
 
     public function getFullName()
     {
-        return $this->brand->name.' '.$this->name;
+        return $this->brand->name . ' ' . $this->name;
     }
 
     public function getModelImages()

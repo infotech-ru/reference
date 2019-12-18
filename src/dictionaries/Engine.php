@@ -14,10 +14,10 @@ class Engine
     public static function getList():array
     {
         return [
-            self::PETROL => Yii::t('app','Бензин'),
-            self::DIESEL => Yii::t('app','Дизель'),
-            self::HYBRID => Yii::t('app','Гибрид'),
-            self::ELECTRO => Yii::t('app','Электро'),
+            self::PETROL => Yii::t('app', 'Бензин'),
+            self::DIESEL => Yii::t('app', 'Дизель'),
+            self::HYBRID => Yii::t('app', 'Гибрид'),
+            self::ELECTRO => Yii::t('app', 'Электро'),
         ];
     }
 }

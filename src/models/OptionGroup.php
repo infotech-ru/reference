@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class OptionGroup
  * @package infotech\reference\models
@@ -29,6 +31,11 @@ class OptionGroup extends ActiveRecord
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 
+    /**
+     * @param $brandId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($brandId): array
     {
         return static::find()->brand($brandId)->select('name, id')->indexBy('id')->column();

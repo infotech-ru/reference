@@ -135,6 +135,26 @@ class BrandTest extends TestCase
         $this->assertEquals(80, Brand::MERCEDES_ID);
     }
 
+    public function testKiaId()
+    {
+        $this->assertEquals(8, Brand::KIA_ID);
+    }
+
+    public function testFordId()
+    {
+        $this->assertEquals(6, Brand::FORD_ID);
+    }
+
+    public function testInfinitiId()
+    {
+        $this->assertEquals(57, Brand::INFINITI_ID);
+    }
+
+    public function testGeelyId()
+    {
+        $this->assertEquals(46, Brand::GEELY_ID);
+    }
+
     public function testGetOrderTypes()
     {
         $model = new Brand();
@@ -152,5 +172,4 @@ class BrandTest extends TestCase
         $model = new Brand();
         $this->assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
     }
-
 }

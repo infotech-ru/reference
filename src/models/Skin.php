@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models;
 
+use yii\base\InvalidConfigException;
+
 /**
  * Class Skin
  * @package infotech\reference\models
@@ -22,6 +24,11 @@ class Skin extends ActiveRecord
         return 'eqt_skin';
     }
 
+    /**
+     * @param $modelId
+     * @return array
+     * @throws InvalidConfigException
+     */
     public static function getList($modelId): array
     {
         return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();
