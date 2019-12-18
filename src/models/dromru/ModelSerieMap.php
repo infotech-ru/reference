@@ -53,5 +53,4 @@ class ModelSerieMap extends ActiveRecord
     {
         return $this->hasOne(Model::class, ['id' => 'dromru_model_id']);
     }
-
 }

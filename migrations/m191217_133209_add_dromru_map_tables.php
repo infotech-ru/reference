@@ -32,5 +32,4 @@ class m191217_133209_add_dromru_map_tables extends Migration
         $this->dropTable('dromru_model_generation_map');
         $this->dropTable('dromru_model_serie_map');
     }
-
 }
