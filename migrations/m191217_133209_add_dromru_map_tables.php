@@ -21,7 +21,6 @@ class m191217_133209_add_dromru_map_tables extends Migration
             'dromru_model_id' => $this->integer()->notNull()->unsigned()->comment('ID из dromru_model'),
             'serie_id' => $this->integer()->notNull()->unsigned()->comment('Наш ID серии'),
         ]);
-
     }
 
     /**
