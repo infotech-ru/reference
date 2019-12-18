@@ -6,7 +6,7 @@ use infotech\reference\models\dromru\queries\CityQuery;
 use infotech\reference\models\ActiveRecord;
 
 /**
- * This is the model class for table "autocrm.dromru_city".
+ * This is the model class for table "dromru_city".
  *
  * @property int $id
  * @property string $name
@@ -15,7 +15,7 @@ class City extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return 'autocrm.dromru_city';
+        return 'dromru_city';
     }
     
     public function rules(): array
