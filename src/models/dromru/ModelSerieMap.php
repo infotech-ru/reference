@@ -21,7 +21,7 @@ class ModelSerieMap extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'autocrm.dromru_model_serie_map';
+        return 'dromru_model_serie_map';
     }
 
     /**

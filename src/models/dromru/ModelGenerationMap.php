@@ -21,7 +21,7 @@ class ModelGenerationMap extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'autocrm.dromru_model_generation_map';
+        return 'dromru_model_generation_map';
     }
 
     /**
