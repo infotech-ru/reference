@@ -14,6 +14,9 @@ vendor
 # composer lock files
 composer.lock
 composer.phar
+composer.phar
+
+#тесты
 phpunit.phar
 phpunit.xml
-composer.phar
+tests/config/config-local.php
