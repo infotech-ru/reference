@@ -19,4 +19,4 @@ composer.phar
 #тесты
 phpunit.phar
 phpunit.xml
-tests/config/config-local.php
+/tests/config/config-local.php
