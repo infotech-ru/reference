@@ -14,6 +14,6 @@ Yii::setAlias('@tests', __DIR__);
 
 $config = require(__DIR__ . '/config.php');
 if (file_exists(__DIR__ . '/config-local.php'))
-    $config = $config + require(__DIR__ . '/config-local.php');
+    $config = ArrayHelper::merge($config, require(__DIR__ . '/config-local.php'));
 
 $app = new Application($config);
