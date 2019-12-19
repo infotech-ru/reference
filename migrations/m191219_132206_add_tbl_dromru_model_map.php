@@ -52,5 +52,4 @@ class m191219_132206_add_tbl_dromru_model_map extends Migration
 
         $this->dropTable('dromru_model_map');
     }
-
 }
