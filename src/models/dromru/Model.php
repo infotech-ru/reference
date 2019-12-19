@@ -8,7 +8,7 @@ use Yii;
 use infotech\reference\models\ActiveRecord;
 
 /**
- * This is the model class for table "autocrm.dromru_model".
+ * This is the model class for table "dromru_model".
  *
  * @property int $id
  * @property string $name
@@ -22,7 +22,7 @@ class Model extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'autocrm.dromru_model';
+        return 'dromru_model';
     }
 
     public function rules()
