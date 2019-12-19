@@ -12,6 +12,7 @@ class m191219_132206_add_tbl_dromru_model_map extends Migration
      */
     public function safeUp()
     {
+        $this->dropForeignKey('fk_dromru_model_model_id', 'dromru_model');
         $this->dropColumn('dromru_model', 'model_id');
 
         $this->createTable('dromru_model_map', [
