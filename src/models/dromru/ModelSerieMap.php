@@ -34,7 +34,7 @@ class ModelSerieMap extends ActiveRecord
             [['dromru_model_id', 'serie_id'], 'required'],
             [['dromru_model_id', 'serie_id'], 'integer'],
             ['dromru_model_id', 'exist', 'targetRelation' => 'model'],
-            ['generation_id', 'exist', 'targetRelation' => 'serie'],
+            ['serie_id', 'exist', 'targetRelation' => 'serie'],
         ];
     }
 
