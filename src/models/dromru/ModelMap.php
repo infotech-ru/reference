@@ -2,15 +2,13 @@
 
 namespace infotech\reference\models\dromru;
 
-use infotech\reference\models\dromru\Model;
-
 /**
  * This is the model class for table "dromru_model_map".
  *
  * @property int $dromru_model_id ID из dromru_model
  * @property int $model_id Наш ID модели
  *
- * @property DromruModel $dromruModel
+ * @property Model $dromruModel
  * @property \infotech\reference\models\Model $model
  */
 class ModelMap extends \yii\db\ActiveRecord
