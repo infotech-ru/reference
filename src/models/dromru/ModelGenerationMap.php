@@ -53,5 +53,4 @@ class ModelGenerationMap extends ActiveRecord
     {
         return $this->hasOne(Generation::class, ['id_car_generation' => 'generation_id']);
     }
-
 }
