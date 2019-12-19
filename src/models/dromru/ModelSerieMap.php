@@ -53,4 +53,5 @@ class ModelSerieMap extends ActiveRecord
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'serie_id']);
     }
+
 }
