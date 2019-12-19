@@ -3,7 +3,6 @@
 namespace infotech\reference\models\dromru;
 
 use infotech\reference\models\dromru\queries\ModelQuery;
-use infotech\reference\models\Model as RefModel;
 use Yii;
 use infotech\reference\models\ActiveRecord;
 
@@ -13,10 +12,9 @@ use infotech\reference\models\ActiveRecord;
  * @property int $id
  * @property string $name
  * @property int $mark_id
- * @property int $model_id
  *
  * @property-read Mark $mark
- * @property-read RefModel $refModel
+ * @property-read ModelMap $modelsMap
  */
 class Model extends ActiveRecord
 {
@@ -28,7 +26,7 @@ class Model extends ActiveRecord
     public function rules()
     {
         return [
-            [['mark_id', 'model_id'], 'integer'],
+            [['mark_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -39,22 +37,30 @@ class Model extends ActiveRecord
             'id' => 'ИД (DromRu)',
             'name' => 'Марка (DromRu)',
             'mark_id' => 'ID марки (DromRu)',
-            'model_id' => 'Бренд (реф)',
         ];
     }
 
+    /**
+     * @return ModelQuery|\yii\db\ActiveQuery
+     */
     public static function find()
     {
         return new ModelQuery(static::class);
     }
-    
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getMark()
     {
         return $this->hasOne(Mark::class, ['id' => 'mark_id']);
     }
-    
-    public function getRefModel()
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getModelsMap()
     {
-        return $this->hasOne(RefModel::class, ['id' => 'model_id']);
+        return $this->hasMany(ModelMap::class, ['dromru_model_id', 'id']);
     }
 }
