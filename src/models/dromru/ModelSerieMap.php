@@ -2,7 +2,7 @@
 
 namespace infotech\reference\models\dromru;
 
-use Yii;
+use infotech\reference\models\Serie;
 use infotech\reference\models\ActiveRecord;
 
 /**
@@ -12,6 +12,7 @@ use infotech\reference\models\ActiveRecord;
  * @property int $serie_id Наш ID серии
  *
  * @property-read Model $model
+ * @property-read Serie $serie
  *
  */
 class ModelSerieMap extends ActiveRecord
@@ -32,17 +33,8 @@ class ModelSerieMap extends ActiveRecord
         return [
             [['dromru_model_id', 'serie_id'], 'required'],
             [['dromru_model_id', 'serie_id'], 'integer'],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'dromru_model_id' => 'Dromru Model ID',
-            'serie_id' => 'Serie ID',
+            ['dromru_model_id', 'exist', 'targetRelation' => 'model'],
+            ['generation_id', 'exist', 'targetRelation' => 'serie'],
         ];
     }
 
@@ -52,5 +44,13 @@ class ModelSerieMap extends ActiveRecord
     public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'dromru_model_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSerie()
+    {
+        return $this->hasOne(Serie::class, ['id' => 'serie_id']);
     }
 }

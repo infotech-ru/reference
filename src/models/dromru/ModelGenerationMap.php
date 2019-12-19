@@ -2,7 +2,7 @@
 
 namespace infotech\reference\models\dromru;
 
-use Yii;
+use infotech\reference\models\Generation;
 use infotech\reference\models\ActiveRecord;
 
 /**
@@ -12,6 +12,7 @@ use infotech\reference\models\ActiveRecord;
  * @property int $generation_id Наш ID поколения
  *
  * @property-read Model $model
+ * @property-read Generation $generation
  *
  */
 class ModelGenerationMap extends ActiveRecord
@@ -32,17 +33,8 @@ class ModelGenerationMap extends ActiveRecord
         return [
             [['dromru_model_id', 'generation_id'], 'required'],
             [['dromru_model_id', 'generation_id'], 'integer'],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'dromru_model_id' => 'Dromru Model ID',
-            'generation_id' => 'Generation ID',
+            ['dromru_model_id', 'exist', 'targetRelation' => 'model'],
+            ['generation_id', 'exist', 'targetRelation' => 'generation'],
         ];
     }
 
@@ -52,5 +44,13 @@ class ModelGenerationMap extends ActiveRecord
     public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'dromru_model_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGeneration()
+    {
+        return $this->hasOne(Generation::class, ['id' => 'generation_id']);
     }
 }
