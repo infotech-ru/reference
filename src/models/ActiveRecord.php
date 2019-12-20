@@ -16,4 +16,5 @@ abstract class ActiveRecord extends \yii\db\ActiveRecord
     {
         return Yii::$app->get('ref_db');
     }
+
 }
