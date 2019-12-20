@@ -2,6 +2,8 @@
 
 namespace infotech\reference\models\dromru;
 
+use infotech\reference\models\ActiveRecord;
+
 /**
  * This is the model class for table "dromru_model_map".
  *
@@ -11,7 +13,7 @@ namespace infotech\reference\models\dromru;
  * @property Model $dromruModel
  * @property \infotech\reference\models\Model $model
  */
-class ModelMap extends \yii\db\ActiveRecord
+class ModelMap extends ActiveRecord
 {
     /**
      * {@inheritdoc}
