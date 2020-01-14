@@ -9,11 +9,32 @@ use infotech\reference\models\ActiveRecord;
  *
  * @property int $folder_id
  * @property int $serie_id
+ * @property int $body_type
  *
  * @property AutoruLkt $folder
  */
 class AutoruLktFolderSerie extends ActiveRecord
 {
+    const BODY_TYPES = [
+        0  => 'Автотопливозаправщик',
+        1  => 'Бортовой грузовик',
+        2  => 'Бортовой с КМУ',
+        3  => 'Борт-тент',
+        4  => 'Изотермический кузов',
+        5  => 'Кемпер',
+        6  => 'Микроавтобус',
+        7  => 'Пикап',
+        8  => 'Промтоварный автофургон',
+        9  => 'Рефрижератор',
+        10 => 'Самосвал',
+        11 => 'Скорая помощь',
+        12 => 'Фургон для торговли',
+        13 => 'Цельнометаллический фургон',
+        14 => 'Цистерна',
+        15 => 'Шасси',
+        16 => 'Эвакуатор',
+    ];
+
     /**
      * {@inheritdoc}
      */
@@ -32,6 +53,7 @@ class AutoruLktFolderSerie extends ActiveRecord
             [['folder_id', 'serie_id'], 'integer'],
             [['folder_id', 'serie_id'], 'unique', 'targetAttribute' => ['folder_id', 'serie_id']],
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
+            [['body_type'], 'in', 'range' => array_keys(self::BODY_TYPES)],
         ];
     }
     
@@ -43,6 +65,7 @@ class AutoruLktFolderSerie extends ActiveRecord
         return [
             'folder_id' => 'Folder ID',
             'serie_id' => 'Serie ID',
+            'body_type' => 'Тип кузова',
         ];
     }
     
