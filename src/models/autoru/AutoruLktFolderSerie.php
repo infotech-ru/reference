@@ -15,25 +15,23 @@ use infotech\reference\models\ActiveRecord;
  */
 class AutoruLktFolderSerie extends ActiveRecord
 {
-    const BODY_TYPES = [
-        0  => 'Автотопливозаправщик',
-        1  => 'Бортовой грузовик',
-        2  => 'Бортовой с КМУ',
-        3  => 'Борт-тент',
-        4  => 'Изотермический кузов',
-        5  => 'Кемпер',
-        6  => 'Микроавтобус',
-        7  => 'Пикап',
-        8  => 'Промтоварный автофургон',
-        9  => 'Рефрижератор',
-        10 => 'Самосвал',
-        11 => 'Скорая помощь',
-        12 => 'Фургон для торговли',
-        13 => 'Цельнометаллический фургон',
-        14 => 'Цистерна',
-        15 => 'Шасси',
-        16 => 'Эвакуатор',
-    ];
+    const BODY_TYPE_TANKER        = 0;
+    const BODY_TYPE_FLATBED_TRUCK = 1;
+    const BODY_TYPE_LOADER_TRUCK  = 2;
+    const BODY_TYPE_TILT_TRUCK    = 3;
+    const BODY_TYPE_ISOTHERMAL    = 4;
+    const BODY_TYPE_CAMPER        = 5;
+    const BODY_TYPE_MINIBUS       = 6;
+    const BODY_TYPE_PICKUP        = 7;
+    const BODY_TYPE_MANUFACTURED  = 8;
+    const BODY_TYPE_REFRIGERATOR  = 9;
+    const BODY_TYPE_DUMP_TRUCK    = 10;
+    const BODY_TYPE_AMBULANCE     = 11;
+    const BODY_TYPE_WAGON_TRADE   = 12;
+    const BODY_TYPE_ALL_METAL     = 13;
+    const BODY_TYPE_TANK          = 14;
+    const BODY_TYPE_CHASSIS       = 15;
+    const BODY_TYPE_TOW_TRUCK     = 16;
 
     /**
      * {@inheritdoc}
@@ -53,7 +51,7 @@ class AutoruLktFolderSerie extends ActiveRecord
             [['folder_id', 'serie_id'], 'integer'],
             [['folder_id', 'serie_id'], 'unique', 'targetAttribute' => ['folder_id', 'serie_id']],
             [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
-            [['body_type'], 'in', 'range' => array_keys(self::BODY_TYPES)],
+            [['body_type'], 'in', 'range' => array_keys(self::getBodyTypesAliases())],
         ];
     }
     
@@ -72,5 +70,28 @@ class AutoruLktFolderSerie extends ActiveRecord
     public function getFolder()
     {
         return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
+    }
+
+    public static function getBodyTypesAliases()
+    {
+        return [
+            self::BODY_TYPE_TANKER        => 'Автотопливозаправщик',
+            self::BODY_TYPE_FLATBED_TRUCK => 'Бортовой грузовик',
+            self::BODY_TYPE_LOADER_TRUCK  => 'Бортовой с КМУ',
+            self::BODY_TYPE_TILT_TRUCK    => 'Борт-тент',
+            self::BODY_TYPE_ISOTHERMAL    => 'Изотермический кузов',
+            self::BODY_TYPE_CAMPER        => 'Кемпер',
+            self::BODY_TYPE_MINIBUS       => 'Микроавтобус',
+            self::BODY_TYPE_PICKUP        => 'Пикап',
+            self::BODY_TYPE_MANUFACTURED  => 'Промтоварный автофургон',
+            self::BODY_TYPE_REFRIGERATOR  => 'Рефрижератор',
+            self::BODY_TYPE_DUMP_TRUCK    => 'Самосвал',
+            self::BODY_TYPE_AMBULANCE     => 'Скорая помощь',
+            self::BODY_TYPE_WAGON_TRADE   => 'Фургон для торговли',
+            self::BODY_TYPE_ALL_METAL     => 'Цельнометаллический фургон',
+            self::BODY_TYPE_TANK          => 'Цистерна',
+            self::BODY_TYPE_CHASSIS       => 'Шасси',
+            self::BODY_TYPE_TOW_TRUCK     => 'Эвакуатор',
+        ];
     }
 }
