@@ -15,6 +15,11 @@ use infotech\reference\models\autoru\queries\AutoruMapMarksQuery;
  */
 class AutoruMark extends ActiveRecord
 {
+    public static function find(): AutoruMapMarksQuery
+    {
+        return new AutoruMapMarksQuery(static::class);
+    }
+    
     public static function tableName(): string
     {
         return 'eqt_autoru_mark';
@@ -36,10 +41,5 @@ class AutoruMark extends ActiveRecord
             'name' => 'Марка (AutoRu)',
             'brand_id' => 'Бренд',
         ];
-    }
-    
-    public static function find(): AutoruMapMarksQuery
-    {
-        return new AutoruMapMarksQuery(static::class);
     }
 }
