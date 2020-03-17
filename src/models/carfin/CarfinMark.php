@@ -1,6 +1,6 @@
 <?php
 
-namespace infotech\reference\src\models\carfin;
+namespace infotech\reference\models\carfin;
 
 use infotech\reference\models\Brand;
 use yii\db\ActiveQuery;
@@ -18,7 +18,7 @@ class CarfinMark extends ActiveRecord
     /**
      * @return string
      */
-    public static function tableName(): string 
+    public static function tableName(): string
     {
         return 'carfin_mark';
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace infotech\reference\src\models\carfin;
+namespace infotech\reference\models\carfin;
 
 use infotech\reference\models\Model;
 use yii\db\ActiveQuery;
