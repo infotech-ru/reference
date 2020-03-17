@@ -62,6 +62,7 @@ class VehicleOptionTypeTest extends TestCase
                 'group_id',
                 'name',
                 'values_json',
+                'has_text_input',
             ],
             $model->attributes()
         );

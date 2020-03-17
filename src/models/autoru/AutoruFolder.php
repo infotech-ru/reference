@@ -32,7 +32,8 @@ class AutoruFolder extends ActiveRecord
         return 'eqt_autoru_folder';
     }
     
-    public static function getModelList(?int $brand_id)
+    /** @param int|int[] $brand_id */
+    public static function getModelList($brand_id)
     {
         if (!$brand_id) {
             return [];

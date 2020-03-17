@@ -11,6 +11,7 @@ namespace infotech\reference\models;
  * @property string             $name
  * @property string             $values_json
  * @property array              $values
+ * @property boolean            $has_text_input
  *
  * @property VehicleOptionGroup $group
  */
@@ -29,6 +30,7 @@ class VehicleOptionType extends ActiveRecord
             [['group_id', 'name'], 'required'],
             ['group_id', 'exist', 'targetClass' => VehicleOptionGroup::class, 'targetAttribute' => 'id'],
             ['values', 'safe'],
+            ['has_text_input', 'boolean'],
         ];
     }
 

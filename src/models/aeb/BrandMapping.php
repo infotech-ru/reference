@@ -24,17 +24,11 @@ use yii\db\Expression;
  */
 class BrandMapping extends ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'aeb_brand_mapping';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -44,9 +38,6 @@ class BrandMapping extends ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
@@ -64,7 +55,9 @@ class BrandMapping extends ActiveRecord
                 'class' => TimestampBehavior::class,
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'created_at',
-                'value' => new Expression('NOW()'),
+                'value' => function () {
+                    return date('Y-m-d H:i:s');
+                },
             ],
         ];
     }
