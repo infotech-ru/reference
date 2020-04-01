@@ -24,12 +24,12 @@ class CountryTest extends TestCase
         ];
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->loadFixtures();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->unloadFixtures();
     }
@@ -58,6 +58,7 @@ class CountryTest extends TestCase
                 'name',
                 'phone_code',
                 'alias',
+                'nds'
             ],
             $model->attributes()
         );

@@ -9,6 +9,7 @@ namespace infotech\reference\models;
  * @property string $name
  * @property string $phone_code
  * @property string $alias
+ * @property float $nds
  * @property Region[] $regions
  * @property City[] $cities
  * @property EquipmentCountry[] $equipmentCountries
