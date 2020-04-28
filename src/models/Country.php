@@ -21,6 +21,7 @@ class Country extends ActiveRecord
     const BELARUS_ID = 2;
     const KAZAKHSTAN_ID = 7;
     const UKRAINE_ID = 785;
+    const KYRGYZSTAN_ID = 449;
 
     public static function tableName(): string
     {
