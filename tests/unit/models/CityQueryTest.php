@@ -20,12 +20,12 @@ class CityQueryTest extends TestCase
         ];
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->loadFixtures();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->unloadFixtures();
     }
