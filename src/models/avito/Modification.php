@@ -41,7 +41,7 @@ class Modification extends ActiveRecord
     public function rules()
     {
         return [
-            [['generation_id'], 'integer'],
+            [['generation_id', 'avito_id'], 'integer'],
             [['name', 'year_from', 'year_to', 'body_type', 'doors', 'fuel_type', 'drive_type', 'transmission', 'power', 'engine_size'], 'string', 'max' => 255],
             [['generation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Generation::class, 'targetAttribute' => ['generation_id' => 'id']],
         ];
@@ -51,6 +51,7 @@ class Modification extends ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'avito_id' => Yii::t('app', 'Avito ID'),
             'name' => Yii::t('app', 'Name'),
             'generation_id' => Yii::t('app', 'Generation ID'),
             'year_from' => Yii::t('app', 'Year From'),
