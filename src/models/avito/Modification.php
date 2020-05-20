@@ -12,6 +12,7 @@ use infotech\reference\models\ActiveRecord;
  * This is the model class for table "avito_modification".
  *
  * @property int $id
+ * @property int $avito_id
  * @property string $name
  * @property int $generation_id
  * @property string $year_from

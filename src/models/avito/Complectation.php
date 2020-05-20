@@ -11,6 +11,7 @@ use infotech\reference\models\ActiveRecord;
  * This is the model class for table "avito_complectation".
  *
  * @property int $id
+ * @property int $avito_id
  * @property string $name
  * @property int $modification_id
  *
@@ -28,7 +29,7 @@ class Complectation extends ActiveRecord
     public function rules()
     {
         return [
-            [['modification_id'], 'integer'],
+            [['modification_id', 'avito_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => Modification::class, 'targetAttribute' => ['modification_id' => 'id']],
         ];
@@ -38,6 +39,7 @@ class Complectation extends ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'avito_id' => Yii::t('app', 'Avito ID'),
             'name' => Yii::t('app', 'Name'),
             'modification_id' => Yii::t('app', 'Modification ID'),
         ];
