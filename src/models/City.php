@@ -10,13 +10,14 @@ use yii\base\InvalidConfigException;
  * @property integer $id
  * @property integer $country_id
  * @property integer $region_id
- * @property string $name
- * @property string $timezone
- * @property double $lat
- * @property double $lng
+ * @property string  $name
+ * @property string  $name_where
+ * @property string  $timezone
+ * @property double  $lat
+ * @property double  $lng
  * @property boolean $is_regional_center
  * @property Country $country
- * @property Region $region
+ * @property Region  $region
  */
 class City extends ActiveRecord
 {
