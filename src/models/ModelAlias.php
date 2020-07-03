@@ -7,23 +7,25 @@ use yii\base\InvalidConfigException;
 /**
  * Class ModelAlias
  * @package infotech\reference\models
- * @property integer $id
- * @property string $name
- * @property integer $brand_id
- * @property integer $model_id
- * @property integer $generation_id
- * @property integer $serie_id
- * @property integer $status
- * @property string $created_at
- * @property string $updated_at
- * @property integer $classification
- * @property integer $is_new
- * @property string $model_code
- * @property string $body_code
- * @property-read Brand $brand
- * @property-read Model $model
- * @property-read Generation $generation
- * @property-read Serie $serie
+ * @property integer           $id
+ * @property string            $name
+ * @property integer           $brand_id
+ * @property integer           $model_id
+ * @property integer           $generation_id
+ * @property integer           $serie_id
+ * @property integer           $modification_id
+ * @property integer           $status
+ * @property string            $created_at
+ * @property string            $updated_at
+ * @property integer           $classification
+ * @property integer           $is_new
+ * @property string            $model_code
+ * @property string            $body_code
+ * @property-read Brand        $brand
+ * @property-read Model        $model
+ * @property-read Generation   $generation
+ * @property-read Modification $modification
+ * @property-read Serie        $serie
  */
 class ModelAlias extends ActiveRecord
 {
@@ -83,5 +85,10 @@ class ModelAlias extends ActiveRecord
     public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'serie_id']);
+    }
+
+    public function getModification()
+    {
+        return $this->hasOne(Modification::class, ['id_car_modification' => 'modification_id']);
     }
 }
