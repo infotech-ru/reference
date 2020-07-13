@@ -5,6 +5,7 @@ namespace infotech\reference\tests\unit\models;
 
 use app\fixtures\EquipmentFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
+use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\Equipment;
 use infotech\reference\models\EquipmentCatalogEmplacementQuery;
@@ -84,6 +85,12 @@ class EquipmentTest extends TestCase
     {
         $model = new Equipment();
         $this->assertInstanceOf(OptionQuery::class, $model->getOptions());
+    }
+
+    public function testGetCharacteristicValues()
+    {
+        $model = new Equipment();
+        $this->assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
     }
 
     public function testAttributes()

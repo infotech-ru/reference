@@ -6,6 +6,7 @@ namespace infotech\reference\tests\unit\models;
 use infotech\reference\models\CharacteristicQuery;
 use infotech\reference\models\CharacteristicValue;
 use infotech\reference\models\CharacteristicValueQuery;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModificationQuery;
 use PHPUnit\Framework\TestCase;
 
@@ -43,6 +44,12 @@ class CharacteristicValueTest extends TestCase
         $this->assertInstanceOf(ModificationQuery::class, $model->getModification());
     }
 
+    public function testGetEquipment()
+    {
+        $model = new CharacteristicValue();
+        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+    }
+
     public function testAttributes()
     {
         $model = new CharacteristicValue();
@@ -53,6 +60,7 @@ class CharacteristicValueTest extends TestCase
                 'unit',
                 'id_car_characteristic',
                 'id_car_modification',
+                'id_car_equipment',
                 'is_visible',
                 'id_car_type',
                 'origin_id',
