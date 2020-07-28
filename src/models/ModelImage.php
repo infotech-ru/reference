@@ -9,6 +9,8 @@ use Yii;
  * @package infotech\reference\models
  * @property integer $id
  * @property integer $model_id
+ * @property integer $generation_id
+ * @property integer $series_id
  * @property string  $url
  * @property integer $category
  * @property integer $priority
@@ -52,5 +54,15 @@ class ModelImage extends ActiveRecord
     public function getModel()
     {
         return $this->hasOne(Model::class, ['id'=>'model_id']);
+    }
+
+    public function getGeneration()
+    {
+        return $this->hasOne(Generation::class, ['id_car_generation' => 'generation_id']);
+    }
+
+    public function getSeries()
+    {
+        return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
 }
