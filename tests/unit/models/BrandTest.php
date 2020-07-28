@@ -85,7 +85,8 @@ class BrandTest extends TestCase
                 'ecm_id',
                 'is_supported',
                 'origin_id',
-                'is_vin_manufacturer'
+                'is_vin_manufacturer',
+                'color'
             ],
             $model->attributes()
         );
