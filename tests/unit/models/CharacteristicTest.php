@@ -33,6 +33,7 @@ class CharacteristicTest extends TestCase
     {
         $model = new Characteristic();
         $this->assertInstanceOf(CharacteristicQuery::class, $model->getParent());
+        $this->assertNull($model->parent);
     }
 
     public function testAttributes()

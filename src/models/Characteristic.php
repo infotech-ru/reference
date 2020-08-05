@@ -32,6 +32,6 @@ class Characteristic extends ActiveRecord
 
     public function getParent()
     {
-        return $this->hasOne(self::class, ['id_car_characteristic' => 'parent_id']);
+        return $this->hasOne(self::class, ['id_car_characteristic' => 'id_parent']);
     }
 }
