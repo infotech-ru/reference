@@ -9,6 +9,7 @@ use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelAlias;
 use infotech\reference\models\ModelAliasQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\SerieQuery;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -84,6 +85,12 @@ class ModelAliasTest extends TestCase
         $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
 
+    public function testGetModification()
+    {
+        $model = new ModelAlias();
+        $this->assertInstanceOf(ModificationQuery::class, $model->getModification());
+    }
+
     public function testAttributes()
     {
         $model = new ModelAlias();
@@ -102,6 +109,7 @@ class ModelAliasTest extends TestCase
                 'is_new',
                 'model_code',
                 'body_code',
+                'modification_id',
             ],
             $model->attributes()
         );
