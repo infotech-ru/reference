@@ -61,7 +61,7 @@ class RegionTest extends TestCase
                 'lat',
                 'lng',
                 'okato',
-
+                'center_city_id',
             ],
             $model->attributes()
         );
@@ -118,5 +118,11 @@ class RegionTest extends TestCase
             ],
             Region::getListRegionsByCountry()
         );
+    }
+
+    public function testGetCenterCity()
+    {
+        $model = new Region();
+        $this->assertInstanceOf(CityQuery::class, $model->getCenterCity());
     }
 }
