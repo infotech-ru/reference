@@ -22,6 +22,7 @@ jobs:
 
       - uses: php-actions/composer@v2
 
+      - name: migrate up
         run: |
           - php yii migrate/up --interactive=0
 
