@@ -12,22 +12,21 @@ jobs:
         image: mysql:5.6
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ""
           MYSQL_DATABASE: autocrm
         ports:
-          - 3306
+          - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: php-actions/composer@v2
+      #      - uses: php-actions/composer@v2
 
       - name: Execute tests (Unit and Feature tests) using PHPUnit
-        run: mysql -h 127.0.0.1 -e "select now()" autocrm
+        run: mysql --host 127.0.0.1 --port 3306 -e "select now()" autocrm
 
-      - run: php yii migrate/up --interactive=0
+#     - run: php yii migrate/up --interactive=0
 
-      - uses: php-actions/phpunit@v9
-        with:
-          configuration: phpunit.xml.dist
+#      - uses: php-actions/phpunit@v9
+#        with:
+#          configuration: phpunit.xml.dist
