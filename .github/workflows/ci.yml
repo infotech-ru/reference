@@ -23,7 +23,7 @@ jobs:
       #      - uses: php-actions/composer@v2
 
       - name: Execute tests (Unit and Feature tests) using PHPUnit
-        run: mysql --host 127.0.0.1 --port 3306 -e "select now()" autocrm
+        run: mysql --host 127.0.0.1 --user root --port 3306 -e "select now()" autocrm
 
 #     - run: php yii migrate/up --interactive=0
 
