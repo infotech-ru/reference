@@ -21,7 +21,6 @@ jobs:
 
       - uses: php-actions/composer@v2
 
-      - uses: php-actions/php-build@master
       - run: php yii migrate/up --interactive=0
 
       - uses: php-actions/phpunit@v9
