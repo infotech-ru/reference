@@ -1,7 +1,5 @@
 <?php
 
-use yii\db\Connection;
-
 return [
     'id' => 'id',
     'basePath' => __DIR__,
@@ -9,7 +7,7 @@ return [
         'migrate' => [
             'class' => 'yii\console\controllers\MigrateController',
             'migrationPath' => [
-                __DIR__.'/../migrations',
+                __DIR__ . '/../migrations',
             ],
             'db' => 'ref_db',
             'migrationTable' => 'eqt_migration',
@@ -17,7 +15,7 @@ return [
     ],
     'components' => [
         'ref_db' => [
-            'class' => Connection::class,
+            'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=autocrm',
             'username' => 'root',
             'password' => '',
