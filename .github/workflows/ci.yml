@@ -13,6 +13,8 @@ jobs:
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: autocrm
+          MYSQL_USER: autocrm
+          MYSQL_PASSWORD: qweasdzxc
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -23,7 +25,7 @@ jobs:
       #      - uses: php-actions/composer@v2
 
       - name: Execute tests (Unit and Feature tests) using PHPUnit
-        run: mysql --host 127.0.0.1 --user root --port 3306 -e "select now()" autocrm
+        run: mysql --host 127.0.0.1 --user autocrm --password qweasdzxc --port 3306 -e "select now()" autocrm
 
 #     - run: php yii migrate/up --interactive=0
 
