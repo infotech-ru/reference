@@ -22,6 +22,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: php-actions/composer@v2
+
       - name: Execute tests (Unit and Feature tests) using PHPUnit
         env:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
