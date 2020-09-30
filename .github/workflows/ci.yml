@@ -24,7 +24,7 @@ jobs:
       - uses: php-actions/composer@v2
 
       - name: Execute tests (Unit and Feature tests) using PHPUnit
-        run: mysql autocrm -e "select now()"
+        run: mysql -h 127.0.0.1 -e "select now()" autocrm
 
       - run: php yii migrate/up --interactive=0
 
