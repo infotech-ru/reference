@@ -16,7 +16,7 @@ return [
     'components' => [
         'ref_db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=autocrm',
+            'dsn' => 'mysql:host=127.0.0.1;port=3306;dbname=autocrm',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
