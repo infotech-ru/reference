@@ -24,9 +24,7 @@ jobs:
       - uses: php-actions/composer@v2
 
       - name: Execute tests (Unit and Feature tests) using PHPUnit
-        env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
-        run: env
+        run: mysql autocrm -e "select now()"
 
       - run: php yii migrate/up --interactive=0
 
