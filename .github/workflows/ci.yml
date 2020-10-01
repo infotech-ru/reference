@@ -28,6 +28,4 @@ jobs:
 
       - run: php yii migrate/up --interactive=0
 
-      - uses: php-actions/phpunit@v9
-        with:
-          configuration: phpunit.xml.dist
+      - run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php
