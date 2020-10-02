@@ -56,6 +56,7 @@ class CityTest extends TestCase
                 'country_id',
                 'region_id',
                 'name',
+                'name_where',
                 'timezone',
                 'lat',
                 'lng',
