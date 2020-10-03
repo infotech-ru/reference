@@ -33,10 +33,12 @@ create table car_model
 END
         );
         $this->execute(
-            'INSERT INTO car_model(id_car_model, id_car_mark, name, id_car_type, name_rus, origin_id) SELECT id_car_model, id_car_mark, name, id_car_type, name_rus, id_car_model FROM eqt_car_model'
+            'INSERT INTO car_model(id_car_model, id_car_mark, name, id_car_type, name_rus, origin_id) 
+SELECT id_car_model, id_car_mark, name, id_car_type, name_rus, id_car_model FROM eqt_car_model'
         );
         $this->execute(
-            'UPDATE car_model, models SET car_model.ref_model_id = models.id WHERE models.origin_id = car_model.id_car_model'
+            'UPDATE car_model, models SET car_model.ref_model_id = models.id 
+WHERE models.origin_id = car_model.id_car_model'
         );
     }
 }

@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\MakeMapQuery;
 use infotech\reference\models\Brand;
 use Yii;
-use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "avito_make_map".
@@ -23,14 +23,31 @@ class MakeMap extends ActiveRecord
         return 'avito_make_map';
     }
 
+    public static function find()
+    {
+        return new MakeMapQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['make_id', 'ref_brand_id'], 'required'],
             [['make_id', 'ref_brand_id'], 'integer'],
             [['make_id', 'ref_brand_id'], 'unique', 'targetAttribute' => ['make_id', 'ref_brand_id']],
-            [['make_id'], 'exist', 'skipOnError' => true, 'targetClass' => Make::class, 'targetAttribute' => ['make_id' => 'id']],
-            [['ref_brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => Brand::class, 'targetAttribute' => ['ref_brand_id' => 'id']],
+            [
+                ['make_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Make::class,
+                'targetAttribute' => ['make_id' => 'id']
+            ],
+            [
+                ['ref_brand_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Brand::class,
+                'targetAttribute' => ['ref_brand_id' => 'id']
+            ],
         ];
     }
 
@@ -50,10 +67,5 @@ class MakeMap extends ActiveRecord
     public function getRefBrand()
     {
         return $this->hasOne(Brand::class, ['id' => 'ref_brand_id']);
-    }
-    
-    public static function find()
-    {
-        return new MakeMapQuery(static::class);
     }
 }

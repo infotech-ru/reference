@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ComplectationQuery;
 use infotech\reference\models\Equipment;
 use Yii;
-use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "avito_complectation".
@@ -26,12 +26,23 @@ class Complectation extends ActiveRecord
         return 'avito_complectation';
     }
 
+    public static function find()
+    {
+        return new ComplectationQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['modification_id', 'avito_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => Modification::class, 'targetAttribute' => ['modification_id' => 'id']],
+            [
+                ['modification_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Modification::class,
+                'targetAttribute' => ['modification_id' => 'id']
+            ],
         ];
     }
 
@@ -54,14 +65,10 @@ class Complectation extends ActiveRecord
     {
         return $this->hasMany(ComplectationMap::class, ['complectation_id' => 'id']);
     }
-    
+
     public function getRefEquipments()
     {
-        return $this->hasMany(Equipment::class, ['id' => 'ref_complectation_id'])->viaTable('avito_complectation_map', ['complectation_id' => 'id']);
-    }
-
-    public static function find()
-    {
-        return new ComplectationQuery(static::class);
+        return $this->hasMany(Equipment::class, ['id' => 'ref_complectation_id'])
+            ->viaTable('avito_complectation_map', ['complectation_id' => 'id']);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
-use infotech\reference\models\avito\queries\ModelMapQuery;
-use Yii;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\avito\queries\ModelMapQuery;
 use infotech\reference\models\Model as RefModel;
+use Yii;
 
 /**
  * This is the model class for table "avito_model_map".
@@ -23,14 +23,31 @@ class ModelMap extends ActiveRecord
         return 'avito_model_map';
     }
 
+    public static function find()
+    {
+        return new ModelMapQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['model_id', 'ref_model_id'], 'required'],
             [['model_id', 'ref_model_id'], 'integer'],
             [['model_id', 'ref_model_id'], 'unique', 'targetAttribute' => ['model_id', 'ref_model_id']],
-            [['model_id'], 'exist', 'skipOnError' => true, 'targetClass' => Model::class, 'targetAttribute' => ['model_id' => 'id']],
-            [['ref_model_id'], 'exist', 'skipOnError' => true, 'targetClass' => RefModel::class, 'targetAttribute' => ['ref_model_id' => 'id']],
+            [
+                ['model_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Model::class,
+                'targetAttribute' => ['model_id' => 'id']
+            ],
+            [
+                ['ref_model_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => RefModel::class,
+                'targetAttribute' => ['ref_model_id' => 'id']
+            ],
         ];
     }
 
@@ -50,10 +67,5 @@ class ModelMap extends ActiveRecord
     public function getRefModel()
     {
         return $this->hasOne(RefModel::class, ['id' => 'ref_model_id']);
-    }
-    
-    public static function find()
-    {
-        return new ModelMapQuery(static::class);
     }
 }

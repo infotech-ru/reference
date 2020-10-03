@@ -9,7 +9,8 @@ class m170928_135826_add_news_tags extends Migration
         $this->addColumn(
             'news',
             'tags_bitmap',
-            'BIGINT DEFAULT 0 COMMENT "Битовая маска назначенных тэгов (см. класс \app\models\NewsTag)" AFTER `date_public`'
+            'BIGINT DEFAULT 0 COMMENT "Битовая маска назначенных тэгов (см. класс \app\models\NewsTag)" 
+            AFTER `date_public`'
         );
     }
 

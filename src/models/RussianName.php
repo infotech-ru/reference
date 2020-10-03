@@ -35,8 +35,9 @@ class RussianName extends ActiveRecord
     private static function ucFirst($string, $enc = 'UTF-8')
     {
         $string = mb_strtolower($string, $enc);
-
-        return mb_strtoupper(mb_substr($string, 0, 1, $enc), $enc) . mb_substr($string, 1, mb_strlen($string, $enc), $enc);
+        $firstLetter = mb_strtoupper(mb_substr($string, 0, 1, $enc), $enc);
+        $lastLetters = mb_substr($string, 1, mb_strlen($string, $enc), $enc);
+        return $firstLetter . $lastLetters;
     }
 
     public static function find()

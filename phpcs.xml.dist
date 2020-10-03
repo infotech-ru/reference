@@ -8,7 +8,9 @@
     <exclude-pattern>/.github/*</exclude-pattern>
     <exclude-pattern>/vendor/*</exclude-pattern>
 
-    <rule ref="PSR12"/>
+    <rule ref="PSR12">
+        <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+    </rule>
 
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <exclude-pattern>/migrations/*</exclude-pattern>

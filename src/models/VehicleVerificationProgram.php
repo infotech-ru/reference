@@ -8,13 +8,13 @@ namespace infotech\reference\models;
  *
  * @property integer $id
  * @property integer $brand_id
- * @property string  $name
- * @property string  $description
- * @property string  $photo
+ * @property string $name
+ * @property string $description
+ * @property string $photo
  */
 class VehicleVerificationProgram extends ActiveRecord
 {
-public const  BASE_CATALOG_NAME = 'vehicle-verification-program';
+    public const  BASE_CATALOG_NAME = 'vehicle-verification-program';
 
     private static $_basePhotoUrl = 'http://195004.selcdn.com/ref/';
 

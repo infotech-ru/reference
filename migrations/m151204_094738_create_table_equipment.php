@@ -217,7 +217,7 @@ class m151204_094738_create_table_equipment extends Migration
         );
         $this->createIndex('unique', 'configurable_reference_params_weights', ['paramId', 'fieldId'], true);
 
-        $this->_safeUp();
+        $this->safeCreateTables();
         $this->createTable(
             'eqt_equipment',
             [
@@ -240,22 +240,7 @@ class m151204_094738_create_table_equipment extends Migration
         );
     }
 
-    /*
-
-    CREATE TABLE `configurable_reference_params_weights` (
-      `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-      `paramId` varchar(32) NOT NULL,
-      `fieldId` int(10) unsigned NOT NULL,
-      `weight` int(10) unsigned DEFAULT '0',
-      PRIMARY KEY (`id`),
-      UNIQUE KEY `unique` (`paramId`,`fieldId`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-     *
-     */
-
-    private function _safeUp()
+    private function safeCreateTables()
     {
         $this->execute(
             <<< SQL

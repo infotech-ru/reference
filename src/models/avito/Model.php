@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ModelQuery;
 use infotech\reference\models\Model as RefModel;
 use Yii;
-use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "avito_model".
@@ -26,12 +26,23 @@ class Model extends ActiveRecord
         return 'avito_model';
     }
 
+    public static function find()
+    {
+        return new ModelQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['make_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['make_id'], 'exist', 'skipOnError' => true, 'targetClass' => Make::class, 'targetAttribute' => ['make_id' => 'id']],
+            [
+                ['make_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Make::class,
+                'targetAttribute' => ['make_id' => 'id']
+            ],
         ];
     }
 
@@ -61,11 +72,7 @@ class Model extends ActiveRecord
 
     public function getRefModels()
     {
-        return $this->hasMany(RefModel::class, ['id' => 'ref_model_id'])->viaTable('avito_model_map', ['model_id' => 'id']);
-    }
-
-    public static function find()
-    {
-        return new ModelQuery(static::class);
+        return $this->hasMany(RefModel::class, ['id' => 'ref_model_id'])
+            ->viaTable('avito_model_map', ['model_id' => 'id']);
     }
 }

@@ -7,30 +7,30 @@ use yii\base\InvalidConfigException;
 /**
  * Class Equipment
  * @package infotech\reference\models
- * @property integer                            $id
- * @property integer                            $model_id
- * @property integer                            $series_id
- * @property string                             $name
- * @property string                             $archive_name
- * @property string                             $tech_name
- * @property integer                            $order
- * @property integer                            $status
- * @property string                             $created_at
- * @property string                             $updated_at
- * @property integer                            $origin_id
- * @property integer                            $country_id
- * @property-read Model                         $model
- * @property-read Serie                         $serie
- * @property-read Option[]                      $options
- * @property-read ModelYearEquipment[]          $modelYearEquipments
- * @property-read ModelYear[]                   $modelYears
- * @property-read ModificationEquipment[]       $modificationEquipments
- * @property-read Modification[]                $modifications
- * @property-read EquipmentCountry[]            $equipmentCountries
- * @property-read Country[]                     $countries
+ * @property integer $id
+ * @property integer $model_id
+ * @property integer $series_id
+ * @property string $name
+ * @property string $archive_name
+ * @property string $tech_name
+ * @property integer $order
+ * @property integer $status
+ * @property string $created_at
+ * @property string $updated_at
+ * @property integer $origin_id
+ * @property integer $country_id
+ * @property-read Model $model
+ * @property-read Serie $serie
+ * @property-read Option[] $options
+ * @property-read ModelYearEquipment[] $modelYearEquipments
+ * @property-read ModelYear[] $modelYears
+ * @property-read ModificationEquipment[] $modificationEquipments
+ * @property-read Modification[] $modifications
+ * @property-read EquipmentCountry[] $equipmentCountries
+ * @property-read Country[] $countries
  * @property-read EquipmentCatalogEmplacement[] $equipmentCatalogEmplacements
- * @property-read CatalogEmplacement[]          $catalogEmplacements
- * @property-read CharacteristicValue[]         $characteristicValues
+ * @property-read CatalogEmplacement[] $catalogEmplacements
+ * @property-read CharacteristicValue[] $characteristicValues
  */
 class Equipment extends ActiveRecord
 {
@@ -40,11 +40,6 @@ class Equipment extends ActiveRecord
     public static function tableName(): string
     {
         return 'eqt_equipment';
-    }
-
-    public static function find()
-    {
-        return new EquipmentQuery(static::class);
     }
 
     /**
@@ -66,6 +61,10 @@ class Equipment extends ActiveRecord
         return $query->column();
     }
 
+    public static function find()
+    {
+        return new EquipmentQuery(static::class);
+    }
 
     public function getModel()
     {
@@ -104,7 +103,8 @@ class Equipment extends ActiveRecord
 
     public function getModifications()
     {
-        return $this->hasMany(Modification::class, ['id_car_modification' => 'modification_id'])->via('modificationEquipments');
+        return $this->hasMany(Modification::class, ['id_car_modification' => 'modification_id'])
+            ->via('modificationEquipments');
     }
 
     public function getEquipmentCountries()
@@ -124,7 +124,8 @@ class Equipment extends ActiveRecord
 
     public function getCatalogEmplacements()
     {
-        return $this->hasMany(CatalogEmplacement::class, ['id' => 'catalog_emplacement_id'])->via('equipmentCatalogEmplacements');
+        return $this->hasMany(CatalogEmplacement::class, ['id' => 'catalog_emplacement_id'])
+            ->via('equipmentCatalogEmplacements');
     }
 
     public function getCharacteristicValues()

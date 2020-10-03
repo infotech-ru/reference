@@ -12,7 +12,7 @@ namespace infotech\reference\models;
  */
 class Status extends ActiveRecord
 {
-public const  SUBARU_STATUS_DEALER_IN_WAY = 'ДИЛЕР_ПУТЬ';
+    public const SUBARU_STATUS_DEALER_IN_WAY = 'ДИЛЕР_ПУТЬ';
 
     public static function tableName(): string
     {

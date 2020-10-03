@@ -26,10 +26,12 @@ class m170818_080034_drop_table_car_mark extends Migration
 )comment 'Марки автомобилей'"
         );
         $this->execute(
-            'INSERT INTO car_mark(id_car_mark, name, id_car_type, name_rus) SELECT id_car_mark, name, id_car_type, name_rus FROM eqt_car_mark'
+            'INSERT INTO car_mark(id_car_mark, name, id_car_type, name_rus) 
+SELECT id_car_mark, name, id_car_type, name_rus FROM eqt_car_mark'
         );
         $this->execute(
-            'update car_mark, brands set car_mark.ref_brand_id = brands.origin_id where brands.origin_id = car_mark.id_car_mark'
+            'update car_mark, brands set car_mark.ref_brand_id = brands.origin_id 
+where brands.origin_id = car_mark.id_car_mark'
         );
     }
 }
