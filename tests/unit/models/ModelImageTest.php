@@ -2,9 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
+use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\models\SerieQuery;
 use infotech\reference\tests\fixtures\ModelImageFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
@@ -89,5 +91,17 @@ class ModelImageTest extends TestCase
     {
         $model = new ModelImage();
         $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+    }
+
+    public function testGetGeneration()
+    {
+        $model = new ModelImage();
+        $this->assertInstanceOf(GenerationQuery::class, $model->getGeneration());
+    }
+
+    public function testGetSeries()
+    {
+        $model = new ModelImage();
+        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 }
