@@ -16,20 +16,37 @@ jobs:
           mysql database: autocrm_test
           mysql root password: qweasdzxc
 
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - uses: shivammathur/setup-php@v2
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: "7.3"
           coverage: xdebug
           tools: composer
 
-      - run: composer install --prefer-dist --no-suggest --no-progress
+      - name: Determine composer cache directory
+        run: echo "::set-env name=COMPOSER_CACHE_DIR::$(composer config cache-dir)"
 
-      - run: php yii migrate/up --interactive=0
+      - name: Cache dependencies installed with composer
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.COMPOSER_CACHE_DIR }}
+          key: php-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            php-composer-
 
-      - run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php --coverage-text --coverage-html=build/coverage
+      - name: Install dependencies with composer
+        run: composer install --prefer-dist --no-suggest --no-progress
 
-      - uses: chekalsky/phpcs-action@v1
+      - name: Apply migrations
+        run: php yii migrate/up --interactive=0
+
+      - name: Run unit tests
+        run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php --coverage-text --coverage-html=build/coverage
+
+      - name: Static analysis with php codesniffer
+        uses: chekalsky/phpcs-action@v1
         with:
           phpcs_bin_path: './vendor/bin/phpcs'
