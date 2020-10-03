@@ -34,9 +34,8 @@ use yii\base\InvalidConfigException;
  */
 class Equipment extends ActiveRecord
 {
-    const STATUS_ACTIVE = 1;
-
-    const STATUS_ARCHIVE = 3;
+    public const  STATUS_ACTIVE = 1;
+    public const  STATUS_ARCHIVE = 3;
 
     public static function tableName(): string
     {

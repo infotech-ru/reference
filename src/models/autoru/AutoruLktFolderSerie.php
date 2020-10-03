@@ -15,23 +15,23 @@ use infotech\reference\models\ActiveRecord;
  */
 class AutoruLktFolderSerie extends ActiveRecord
 {
-    const BODY_TYPE_TANKER        = 0;
-    const BODY_TYPE_FLATBED_TRUCK = 1;
-    const BODY_TYPE_LOADER_TRUCK  = 2;
-    const BODY_TYPE_TILT_TRUCK    = 3;
-    const BODY_TYPE_ISOTHERMAL    = 4;
-    const BODY_TYPE_CAMPER        = 5;
-    const BODY_TYPE_MINIBUS       = 6;
-    const BODY_TYPE_PICKUP        = 7;
-    const BODY_TYPE_MANUFACTURED  = 8;
-    const BODY_TYPE_REFRIGERATOR  = 9;
-    const BODY_TYPE_DUMP_TRUCK    = 10;
-    const BODY_TYPE_AMBULANCE     = 11;
-    const BODY_TYPE_WAGON_TRADE   = 12;
-    const BODY_TYPE_ALL_METAL     = 13;
-    const BODY_TYPE_TANK          = 14;
-    const BODY_TYPE_CHASSIS       = 15;
-    const BODY_TYPE_TOW_TRUCK     = 16;
+    public const  BODY_TYPE_TANKER = 0;
+    public const  BODY_TYPE_FLATBED_TRUCK = 1;
+    public const  BODY_TYPE_LOADER_TRUCK = 2;
+    public const  BODY_TYPE_TILT_TRUCK = 3;
+    public const  BODY_TYPE_ISOTHERMAL = 4;
+    public const  BODY_TYPE_CAMPER = 5;
+    public const  BODY_TYPE_MINIBUS = 6;
+    public const  BODY_TYPE_PICKUP = 7;
+    public const  BODY_TYPE_MANUFACTURED = 8;
+    public const  BODY_TYPE_REFRIGERATOR = 9;
+    public const  BODY_TYPE_DUMP_TRUCK = 10;
+    public const  BODY_TYPE_AMBULANCE = 11;
+    public const  BODY_TYPE_WAGON_TRADE = 12;
+    public const  BODY_TYPE_ALL_METAL = 13;
+    public const  BODY_TYPE_TANK = 14;
+    public const  BODY_TYPE_CHASSIS = 15;
+    public const  BODY_TYPE_TOW_TRUCK = 16;
 
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class AutoruLktFolderSerie extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_serie';
     }
-    
+
     /**
      * {@inheritdoc}
      */

@@ -6,10 +6,10 @@ use Yii;
 
 class Transmission
 {
-    const MANUAL = 1;
-    const AUTOMATIC = 2;
-    const VARIABLE = 3;
-    const ROBOT = 4;
+    public const  MANUAL = 1;
+    public const  AUTOMATIC = 2;
+    public const  VARIABLE = 3;
+    public const  ROBOT = 4;
 
     public static function getList(): array
     {
