@@ -54,6 +54,6 @@ class AutoruLktFolderModels extends ActiveRecord
 
     public function getFolder()
     {
-        return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
+        return $this->hasOne(AutoruLkt::class, ['id' => 'folder_id']);
     }
 }

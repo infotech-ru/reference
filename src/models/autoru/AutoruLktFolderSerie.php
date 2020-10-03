@@ -50,11 +50,40 @@ class AutoruLktFolderSerie extends ActiveRecord
             [['folder_id', 'serie_id'], 'required'],
             [['folder_id', 'serie_id'], 'integer'],
             [['folder_id', 'serie_id'], 'unique', 'targetAttribute' => ['folder_id', 'serie_id']],
-            [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
+            [
+                ['folder_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruLkt::class,
+                'targetAttribute' => ['folder_id' => 'folder_id']
+            ],
             [['body_type'], 'in', 'range' => array_keys(self::getBodyTypesAliases())],
         ];
     }
-    
+
+    public static function getBodyTypesAliases()
+    {
+        return [
+            self::BODY_TYPE_TANKER => 'Автотопливозаправщик',
+            self::BODY_TYPE_FLATBED_TRUCK => 'Бортовой грузовик',
+            self::BODY_TYPE_LOADER_TRUCK => 'Бортовой с КМУ',
+            self::BODY_TYPE_TILT_TRUCK => 'Борт-тент',
+            self::BODY_TYPE_ISOTHERMAL => 'Изотермический кузов',
+            self::BODY_TYPE_CAMPER => 'Кемпер',
+            self::BODY_TYPE_MINIBUS => 'Микроавтобус',
+            self::BODY_TYPE_PICKUP => 'Пикап',
+            self::BODY_TYPE_MANUFACTURED => 'Промтоварный автофургон',
+            self::BODY_TYPE_REFRIGERATOR => 'Рефрижератор',
+            self::BODY_TYPE_DUMP_TRUCK => 'Самосвал',
+            self::BODY_TYPE_AMBULANCE => 'Скорая помощь',
+            self::BODY_TYPE_WAGON_TRADE => 'Фургон для торговли',
+            self::BODY_TYPE_ALL_METAL => 'Цельнометаллический фургон',
+            self::BODY_TYPE_TANK => 'Цистерна',
+            self::BODY_TYPE_CHASSIS => 'Шасси',
+            self::BODY_TYPE_TOW_TRUCK => 'Эвакуатор',
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -66,32 +95,9 @@ class AutoruLktFolderSerie extends ActiveRecord
             'body_type' => 'Тип кузова',
         ];
     }
-    
+
     public function getFolder()
     {
-        return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
-    }
-
-    public static function getBodyTypesAliases()
-    {
-        return [
-            self::BODY_TYPE_TANKER        => 'Автотопливозаправщик',
-            self::BODY_TYPE_FLATBED_TRUCK => 'Бортовой грузовик',
-            self::BODY_TYPE_LOADER_TRUCK  => 'Бортовой с КМУ',
-            self::BODY_TYPE_TILT_TRUCK    => 'Борт-тент',
-            self::BODY_TYPE_ISOTHERMAL    => 'Изотермический кузов',
-            self::BODY_TYPE_CAMPER        => 'Кемпер',
-            self::BODY_TYPE_MINIBUS       => 'Микроавтобус',
-            self::BODY_TYPE_PICKUP        => 'Пикап',
-            self::BODY_TYPE_MANUFACTURED  => 'Промтоварный автофургон',
-            self::BODY_TYPE_REFRIGERATOR  => 'Рефрижератор',
-            self::BODY_TYPE_DUMP_TRUCK    => 'Самосвал',
-            self::BODY_TYPE_AMBULANCE     => 'Скорая помощь',
-            self::BODY_TYPE_WAGON_TRADE   => 'Фургон для торговли',
-            self::BODY_TYPE_ALL_METAL     => 'Цельнометаллический фургон',
-            self::BODY_TYPE_TANK          => 'Цистерна',
-            self::BODY_TYPE_CHASSIS       => 'Шасси',
-            self::BODY_TYPE_TOW_TRUCK     => 'Эвакуатор',
-        ];
+        return $this->hasOne(AutoruLkt::class, ['id' => 'folder_id']);
     }
 }

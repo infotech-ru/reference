@@ -35,7 +35,7 @@ class AutoruLktFolderMark extends ActiveRecord
                 ['folder_id'],
                 'exist',
                 'skipOnError' => true,
-                'targetClass' => AutoruLkt::className(),
+                'targetClass' => AutoruLkt::class,
                 'targetAttribute' => ['folder_id' => 'folder_id'],
                 'message' => '@@@'
             ],
@@ -55,6 +55,6 @@ class AutoruLktFolderMark extends ActiveRecord
 
     public function getFolder()
     {
-        return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
+        return $this->hasOne(AutoruLkt::class, ['id' => 'folder_id']);
     }
 }
