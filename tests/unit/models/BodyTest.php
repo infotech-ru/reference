@@ -2,9 +2,9 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\BodyFixture;
 use infotech\reference\models\Body;
 use infotech\reference\models\BodyQuery;
+use infotech\reference\tests\fixtures\BodyFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

@@ -2,10 +2,10 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModelVideoFixture;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelVideo;
 use infotech\reference\models\ModelVideoQuery;
+use infotech\reference\tests\fixtures\ModelVideoFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

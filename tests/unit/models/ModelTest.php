@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModelFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\ColorQuery;
@@ -18,6 +17,7 @@ use infotech\reference\models\ModelSegmentQuery;
 use infotech\reference\models\ModelVideoQuery;
 use infotech\reference\models\ModelYearQuery;
 use infotech\reference\models\SkinQuery;
+use infotech\reference\tests\fixtures\ModelFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

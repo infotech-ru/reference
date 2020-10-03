@@ -2,11 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\SkinSerieFixture;
 use infotech\reference\models\SerieQuery;
 use infotech\reference\models\SkinQuery;
 use infotech\reference\models\SkinSerie;
 use infotech\reference\models\SkinSerieQuery;
+use infotech\reference\tests\fixtures\SkinSerieFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

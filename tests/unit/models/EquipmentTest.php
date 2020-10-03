@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\EquipmentFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\CountryQuery;
@@ -17,6 +16,7 @@ use infotech\reference\models\ModificationEquipmentQuery;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\OptionQuery;
 use infotech\reference\models\SerieQuery;
+use infotech\reference\tests\fixtures\EquipmentFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

@@ -2,11 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\GenerationFixture;
 use infotech\reference\models\Generation;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\SerieQuery;
+use infotech\reference\tests\fixtures\GenerationFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

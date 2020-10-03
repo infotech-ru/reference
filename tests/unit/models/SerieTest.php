@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\SerieFixture;
 use infotech\reference\models\BodyQuery;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\EquipmentQuery;
@@ -12,6 +11,7 @@ use infotech\reference\models\Serie;
 use infotech\reference\models\SerieQuery;
 use infotech\reference\models\SkinQuery;
 use infotech\reference\models\SkinSerieQuery;
+use infotech\reference\tests\fixtures\SerieFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

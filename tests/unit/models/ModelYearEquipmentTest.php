@@ -2,11 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModelYearEquipmentFixture;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelYearEquipment;
 use infotech\reference\models\ModelYearEquipmentQuery;
 use infotech\reference\models\ModelYearQuery;
+use infotech\reference\tests\fixtures\ModelYearEquipmentFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

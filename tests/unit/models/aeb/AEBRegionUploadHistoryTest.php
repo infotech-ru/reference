@@ -2,8 +2,8 @@
 
 namespace infotech\reference\tests\unit\models\aeb;
 
-use app\fixtures\AEBRegionUploadHistoryFixture;
 use infotech\reference\models\aeb\AEBRegionUploadHistory;
+use infotech\reference\tests\fixtures\AEBRegionUploadHistoryFixture;
 use PHPUnit\Framework\TestCase;
 use yii\db\ActiveQuery;
 use yii\test\FixtureTrait;

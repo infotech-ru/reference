@@ -2,13 +2,13 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModificationFixture;
 use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\Modification;
 use infotech\reference\models\ModificationEquipmentQuery;
 use infotech\reference\models\ModificationQuery;
 use infotech\reference\models\SerieQuery;
+use infotech\reference\tests\fixtures\ModificationFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

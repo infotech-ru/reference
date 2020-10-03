@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\BrandFixture;
 use infotech\reference\models\Brand;
 use infotech\reference\models\BrandLogoQuery;
 use infotech\reference\models\BrandQuery;
@@ -11,6 +10,7 @@ use infotech\reference\models\NewsBrandQuery;
 use infotech\reference\models\NewsQuery;
 use infotech\reference\models\OptionGroupQuery;
 use infotech\reference\models\OrderTypeQuery;
+use infotech\reference\tests\fixtures\BrandFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

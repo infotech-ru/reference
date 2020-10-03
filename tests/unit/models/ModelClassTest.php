@@ -2,9 +2,9 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModelClassFixture;
 use infotech\reference\models\ModelClass;
 use infotech\reference\models\ModelClassQuery;
+use infotech\reference\tests\fixtures\ModelClassFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

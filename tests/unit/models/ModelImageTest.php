@@ -2,10 +2,10 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\ModelImageFixture;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\tests\fixtures\ModelImageFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
