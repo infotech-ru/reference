@@ -41,18 +41,18 @@ class GenerationQueryTest extends TestCase
         $query = new GenerationQuery(Generation::class);
         $this->assertEquals($query, $query->model(1));
         $this->assertEquals(
-            'SELECT * FROM `car_generation` WHERE (`car_generation`.`model_id`=:qp0) OR 
-                    (EXISTS (SELECT `id_car_serie` FROM `car_serie` WHERE (`car_serie`.`model_id`=:qp1) AND 
-                    (`car_serie`.`id_car_generation`=car_generation.id_car_generation)))',
+            'SELECT * FROM `car_generation` WHERE (`car_generation`.`model_id`=:qp0) OR '
+            . '(EXISTS (SELECT `id_car_serie` FROM `car_serie` WHERE (`car_serie`.`model_id`=:qp1) AND '
+            . '(`car_serie`.`id_car_generation`=car_generation.id_car_generation)))',
             $query->createCommand()->sql
         );
 
         $query = new GenerationQuery(Generation::class);
         $this->assertEquals($query, $query->model([1, 2]));
         $this->assertEquals(
-            'SELECT * FROM `car_generation` WHERE (`car_generation`.`model_id` IN (:qp0, :qp1)) OR 
-                    (EXISTS (SELECT `id_car_serie` FROM `car_serie` WHERE (`car_serie`.`model_id` IN (:qp2, :qp3)) AND 
-                    (`car_serie`.`id_car_generation`=car_generation.id_car_generation)))',
+            'SELECT * FROM `car_generation` WHERE (`car_generation`.`model_id` IN (:qp0, :qp1)) OR '
+            . '(EXISTS (SELECT `id_car_serie` FROM `car_serie` WHERE (`car_serie`.`model_id` IN (:qp2, :qp3)) AND '
+            . '(`car_serie`.`id_car_generation`=car_generation.id_car_generation)))',
             $query->createCommand()->sql
         );
     }
