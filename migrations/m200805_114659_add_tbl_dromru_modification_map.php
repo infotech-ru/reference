@@ -39,5 +39,4 @@ class m200805_114659_add_tbl_dromru_modification_map extends Migration
     {
         $this->dropTable('dromru_model_modification_map');
     }
-
 }
