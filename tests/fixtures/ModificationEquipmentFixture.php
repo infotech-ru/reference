@@ -1,6 +1,6 @@
 <?php
 
-namespace app\fixtures;
+namespace infotech\reference\tests\fixtures;
 
 use infotech\reference\models\ModificationEquipment;
 use yii\test\ActiveFixture;
