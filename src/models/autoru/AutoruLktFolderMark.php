@@ -21,7 +21,7 @@ class AutoruLktFolderMark extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_mark';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -31,10 +31,17 @@ class AutoruLktFolderMark extends ActiveRecord
             [['folder_id', 'brand_id'], 'required'],
             [['folder_id', 'brand_id'], 'integer'],
             [['folder_id', 'brand_id'], 'unique', 'targetAttribute' => ['folder_id', 'brand_id']],
-            [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id'], 'message' => '@@@'],
+            [
+                ['folder_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruLkt::className(),
+                'targetAttribute' => ['folder_id' => 'folder_id'],
+                'message' => '@@@'
+            ],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -45,7 +52,7 @@ class AutoruLktFolderMark extends ActiveRecord
             'brand_id' => 'Brand ID',
         ];
     }
-    
+
     public function getFolder()
     {
         return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
