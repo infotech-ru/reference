@@ -32,4 +32,3 @@ return [
         'short_name' => 'UAH',
     ],
 ];
-

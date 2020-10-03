@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\BrandFixture;
 use infotech\reference\models\Brand;
 use infotech\reference\models\BrandLogoQuery;

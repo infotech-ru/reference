@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\OrderType;
 use infotech\reference\models\OrderTypeQuery;

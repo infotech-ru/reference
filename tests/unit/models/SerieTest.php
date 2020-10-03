@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\SerieFixture;
 use infotech\reference\models\BodyQuery;
 use infotech\reference\models\CatalogEmplacementQuery;

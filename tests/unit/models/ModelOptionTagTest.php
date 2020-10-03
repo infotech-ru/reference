@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelOptionTagFixture;
 use infotech\reference\models\ModelOptionTag;
 use infotech\reference\models\ModelOptionTagQuery;

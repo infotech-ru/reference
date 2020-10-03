@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\VehiclePassportStatus;
 use infotech\reference\models\VehiclePassportStatusQuery;
 use PHPUnit\Framework\TestCase;

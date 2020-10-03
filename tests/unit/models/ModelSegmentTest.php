@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelSegmentFixture;
 use infotech\reference\models\ModelSegment;
 use infotech\reference\models\ModelSegmentQuery;

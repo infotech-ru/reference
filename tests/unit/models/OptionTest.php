@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\Option;

@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelImageFixture;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;

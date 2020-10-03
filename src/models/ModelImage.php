@@ -53,7 +53,7 @@ class ModelImage extends ActiveRecord
 
     public function getModel()
     {
-        return $this->hasOne(Model::class, ['id'=>'model_id']);
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
     public function getGeneration()

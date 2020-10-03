@@ -26,6 +26,6 @@ class CatalogForeshortening extends ActiveRecord
 
     public function getCatalogImages()
     {
-        return $this->hasMany(CatalogImage::class, ['foreshortening_id'=>'id']);
+        return $this->hasMany(CatalogImage::class, ['foreshortening_id' => 'id']);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\SourceFixture;
 use infotech\reference\models\Source;
 use infotech\reference\models\SourceQuery;

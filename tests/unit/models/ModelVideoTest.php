@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelVideoFixture;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\ModelVideo;

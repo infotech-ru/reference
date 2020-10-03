@@ -2,7 +2,6 @@
 
 namespace app\fixtures;
 
-use infotech\reference\models\Body;
 use infotech\reference\models\ModelImage;
 use yii\test\ActiveFixture;
 

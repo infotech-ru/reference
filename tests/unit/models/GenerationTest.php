@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\GenerationFixture;
 use infotech\reference\models\Generation;
 use infotech\reference\models\GenerationQuery;

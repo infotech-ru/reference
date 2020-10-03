@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelClassFixture;
 use infotech\reference\models\ModelClass;
 use infotech\reference\models\ModelClassQuery;

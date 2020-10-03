@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\NewsBrandFixture;
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\NewsBrand;

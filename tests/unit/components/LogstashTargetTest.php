@@ -41,7 +41,7 @@ class LogstashTargetTest extends TestCase
         );
         $model->emergencyExport([]);
         $this->assertEquals(
-            '{"message":"text","emergency":[],"level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}'.PHP_EOL,
+            '{"message":"text","emergency":[],"level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}' . PHP_EOL,
             file_get_contents($path)
         );
         @unlink($path);

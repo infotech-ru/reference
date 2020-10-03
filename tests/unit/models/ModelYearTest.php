@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModelYearFixture;
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelQuery;

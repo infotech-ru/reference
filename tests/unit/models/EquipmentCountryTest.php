@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\EquipmentCountryFixture;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\EquipmentCountry;

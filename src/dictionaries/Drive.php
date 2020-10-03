@@ -10,7 +10,7 @@ class Drive
     const REAR = 2;
     const ALL = 3;
 
-    public static function getList() : array
+    public static function getList(): array
     {
         return [
             self::FRONT => Yii::t('app', 'Передний'),

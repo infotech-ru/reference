@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\CountryFixture;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\Country;

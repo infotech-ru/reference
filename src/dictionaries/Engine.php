@@ -11,7 +11,7 @@ class Engine
     const HYBRID = 3;
     const ELECTRO = 4;
 
-    public static function getList():array
+    public static function getList(): array
     {
         return [
             self::PETROL => Yii::t('app', 'Бензин'),

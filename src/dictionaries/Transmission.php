@@ -11,7 +11,7 @@ class Transmission
     const VARIABLE = 3;
     const ROBOT = 4;
 
-    public static function getList() : array
+    public static function getList(): array
     {
         return [
             self::MANUAL => Yii::t('app', 'МКПП'),

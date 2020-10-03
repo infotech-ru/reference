@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\Brand;
 use infotech\reference\models\BrandQuery;

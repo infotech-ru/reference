@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\CharacteristicQuery;
 use infotech\reference\models\CharacteristicValue;
 use infotech\reference\models\CharacteristicValueQuery;

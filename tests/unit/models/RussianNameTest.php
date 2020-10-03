@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\RussianNameFixture;
 use infotech\reference\models\RussianName;
 use infotech\reference\models\RussianNameQuery;

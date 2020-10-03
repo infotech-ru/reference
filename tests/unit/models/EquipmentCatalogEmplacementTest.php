@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\EquipmentCatalogEmplacementFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\EquipmentCatalogEmplacement;

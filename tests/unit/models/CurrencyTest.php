@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\CurrencyFixture;
 use infotech\reference\models\Currency;
 use infotech\reference\models\CurrencyQuery;

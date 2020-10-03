@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\ModificationFixture;
 use infotech\reference\models\CharacteristicValueQuery;
 use infotech\reference\models\EquipmentQuery;

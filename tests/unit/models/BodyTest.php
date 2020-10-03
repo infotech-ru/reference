@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use app\fixtures\BodyFixture;
 use infotech\reference\models\Body;
 use infotech\reference\models\BodyQuery;
