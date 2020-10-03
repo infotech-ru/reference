@@ -2,12 +2,12 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\RegionFixture;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\FederalDistrictQuery;
 use infotech\reference\models\Region;
 use infotech\reference\models\RegionQuery;
+use infotech\reference\tests\fixtures\RegionFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

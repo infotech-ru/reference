@@ -18,8 +18,8 @@ use Yii;
  */
 class FederalDistrict extends ActiveRecord
 {
-    const STATUS_ACTIVE = 0;
-    const STATUS_DELETED = 1;
+    public const  STATUS_ACTIVE = 0;
+    public const  STATUS_DELETED = 1;
 
     public static function getStatusList(): array
     {

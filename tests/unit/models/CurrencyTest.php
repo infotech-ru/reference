@@ -2,10 +2,9 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\CurrencyFixture;
 use infotech\reference\models\Currency;
 use infotech\reference\models\CurrencyQuery;
+use infotech\reference\tests\fixtures\CurrencyFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

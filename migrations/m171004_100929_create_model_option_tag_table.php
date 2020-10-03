@@ -7,9 +7,6 @@ use yii\db\Migration;
  */
 class m171004_100929_create_model_option_tag_table extends Migration
 {
-
-    const ENGINE = 'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci';
-
     /**
      * @inheritdoc
      */
@@ -22,7 +19,7 @@ class m171004_100929_create_model_option_tag_table extends Migration
                 'model_id' => $this->integer()->notNull(),
                 'name' => $this->string()->notNull(),
             ],
-            self::ENGINE
+            'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci'
         );
 
         $this->addColumn(

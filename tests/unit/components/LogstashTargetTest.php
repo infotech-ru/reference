@@ -16,7 +16,8 @@ class LogstashTargetTest extends TestCase
             $model->formatMessage(['text', Logger::LEVEL_ERROR, 'category', 1528896439])
         );
         $this->assertEquals(
-            '{"message":"text","level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00","trace":["line1","line2"]}',
+            '{"message":"text","level":"error","category":"category",'
+            . '"timestamp":"2018-06-13T13:27:19+00:00","trace":["line1","line2"]}',
             $model->formatMessage(['text', Logger::LEVEL_ERROR, 'category', 1528896439, ['line1', 'line2']])
         );
         $this->assertEquals(
@@ -24,11 +25,13 @@ class LogstashTargetTest extends TestCase
             $model->formatMessage([['item' => 'array'], Logger::LEVEL_ERROR, 'category', 1528896439])
         );
         $this->assertEquals(
-            '{"message":{"property":"object"},"level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}',
+            '{"message":{"property":"object"},"level":"error","category":"category",'
+            . '"timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage([(object)['property' => 'object'], Logger::LEVEL_ERROR, 'category', 1528896439])
         );
         $this->assertEquals(
-            '{"message":"Warning, wrong log message type \'boolean\'","level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}',
+            '{"message":"Warning, wrong log message type \'boolean\'","level":"error","category":"category",'
+            . '"timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage([false, Logger::LEVEL_ERROR, 'category', 1528896439])
         );
     }
@@ -41,7 +44,8 @@ class LogstashTargetTest extends TestCase
         );
         $model->emergencyExport([]);
         $this->assertEquals(
-            '{"message":"text","emergency":[],"level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}'.PHP_EOL,
+            '{"message":"text","emergency":[],"level":"error","category":"category",'
+            . '"timestamp":"2018-06-13T13:27:19+00:00"}' . PHP_EOL,
             file_get_contents($path)
         );
         @unlink($path);

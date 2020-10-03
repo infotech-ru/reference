@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yakov
@@ -28,12 +29,11 @@ use yii\db\Expression;
  */
 class AEBRegionUploadHistory extends ActiveRecord
 {
-    const STATUS_ACTIVE = 0;
-    const STATUS_COMPETED = 1;
-
-    const IMPORT_STATUS_NEW = 0;
-    const IMPORT_STATUS_RUNNING = 1;
-    const IMPORT_STATUS_DONE = 2;
+    public const  STATUS_ACTIVE = 0;
+    public const  STATUS_COMPETED = 1;
+    public const  IMPORT_STATUS_NEW = 0;
+    public const  IMPORT_STATUS_RUNNING = 1;
+    public const  IMPORT_STATUS_DONE = 2;
 
     public static function tableName()
     {

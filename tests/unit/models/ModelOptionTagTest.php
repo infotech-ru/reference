@@ -2,11 +2,10 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\ModelOptionTagFixture;
 use infotech\reference\models\ModelOptionTag;
 use infotech\reference\models\ModelOptionTagQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\tests\fixtures\ModelOptionTagFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

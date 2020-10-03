@@ -7,28 +7,25 @@ use yii\db\Migration;
  */
 class m180507_134850_create_country_equipment_table extends Migration
 {
-    const TABLE_NAME = 'eqt_equipment_country';
-    const ENGINE = 'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci';
-
     /**
      * @inheritdoc
      */
     public function safeUp()
     {
         $this->createTable(
-            self::TABLE_NAME,
+            'eqt_equipment_country',
             [
                 'country_id' => $this->integer()->notNull(),
                 'equipment_id' => $this->integer()->notNull(),
             ],
-            self::ENGINE
+            'ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci'
         );
 
-        $this->addPrimaryKey('equipment_country-pk', self::TABLE_NAME, ['country_id', 'equipment_id']);
+        $this->addPrimaryKey('equipment_country-pk', 'eqt_equipment_country', ['country_id', 'equipment_id']);
 
         $this->addForeignKey(
             'equipment_country-country-fk',
-            self::TABLE_NAME,
+            'eqt_equipment_country',
             'country_id',
             'countries',
             'id'
@@ -36,7 +33,7 @@ class m180507_134850_create_country_equipment_table extends Migration
 
         $this->addForeignKey(
             'equipment_country-equipment-fk',
-            self::TABLE_NAME,
+            'eqt_equipment_country',
             'equipment_id',
             'eqt_equipment',
             'id'
@@ -48,8 +45,8 @@ class m180507_134850_create_country_equipment_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('equipment_country-equipment-fk', self::TABLE_NAME);
-        $this->dropForeignKey('equipment_country-country-fk', self::TABLE_NAME);
-        $this->dropTable(self::TABLE_NAME);
+        $this->dropForeignKey('equipment_country-equipment-fk', 'eqt_equipment_country');
+        $this->dropForeignKey('equipment_country-country-fk', 'eqt_equipment_country');
+        $this->dropTable('eqt_equipment_country');
     }
 }

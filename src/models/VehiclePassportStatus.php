@@ -10,12 +10,12 @@ namespace infotech\reference\models;
  */
 class VehiclePassportStatus extends ActiveRecord
 {
-    const NOT_AVAILABLE = 0;
-    const PAID = 1;
-    const AVAILABLE = 2;
-    const AVAILABLE_IN_BANK = 3;
-    const ORDERED = 4;
-    const SENT_TO_DEALER = 5;
+    public const  NOT_AVAILABLE = 0;
+    public const  PAID = 1;
+    public const  AVAILABLE = 2;
+    public const  AVAILABLE_IN_BANK = 3;
+    public const  ORDERED = 4;
+    public const  SENT_TO_DEALER = 5;
 
     public static function tableName(): string
     {

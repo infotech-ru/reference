@@ -3,7 +3,6 @@
 namespace infotech\reference\models\autoru;
 
 use infotech\reference\models\ActiveRecord;
-use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\autoru\queries\AutoruModificationMapQuery;
 
 /**
@@ -20,17 +19,28 @@ class AutoruModificationMap extends ActiveRecord
     {
         return 'eqt_autoru_modification_map';
     }
-    
+
+    public static function find(): AutoruModificationMapQuery
+    {
+        return new AutoruModificationMapQuery(static::class);
+    }
+
     public function rules(): array
     {
         return [
             [['modification_id', 'map_id'], 'required'],
             [['modification_id', 'map_id'], 'integer'],
             [['modification_id', 'map_id'], 'unique', 'targetAttribute' => ['modification_id', 'map_id']],
-            [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruModification::class, 'targetAttribute' => ['modification_id' => 'id']],
+            [
+                ['modification_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruModification::class,
+                'targetAttribute' => ['modification_id' => 'id']
+            ],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [
@@ -38,14 +48,9 @@ class AutoruModificationMap extends ActiveRecord
             'map_id' => 'Map ID',
         ];
     }
-    
+
     public function getModification()
     {
         return $this->hasOne(AutoruModification::class, ['id' => 'modification_id']);
-    }
-    
-    public static function find(): AutoruModificationMapQuery
-    {
-        return new AutoruModificationMapQuery(static::class);
     }
 }

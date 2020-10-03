@@ -55,6 +55,6 @@ class CatalogEmplacement extends ActiveRecord
 
     public function getCatalogImages()
     {
-        return $this->hasMany(CatalogImage::class, ['emplacement_id'=>'id']);
+        return $this->hasMany(CatalogImage::class, ['emplacement_id' => 'id']);
     }
 }

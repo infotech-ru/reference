@@ -21,7 +21,7 @@ class AutoruLktFolderGeneration extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_generation';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -31,10 +31,16 @@ class AutoruLktFolderGeneration extends ActiveRecord
             [['folder_id', 'generation_id'], 'required'],
             [['folder_id', 'generation_id'], 'integer'],
             [['folder_id', 'generation_id'], 'unique', 'targetAttribute' => ['folder_id', 'generation_id']],
-            [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
+            [
+                ['folder_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruLkt::class,
+                'targetAttribute' => ['folder_id' => 'folder_id']
+            ],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -45,12 +51,12 @@ class AutoruLktFolderGeneration extends ActiveRecord
             'generation_id' => 'Generation ID',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getFolder()
     {
-        return $this->hasOne(AutoruLkt::className(), ['folder_id' => 'folder_id']);
+        return $this->hasOne(AutoruLkt::class, ['folder_id' => 'folder_id']);
     }
 }

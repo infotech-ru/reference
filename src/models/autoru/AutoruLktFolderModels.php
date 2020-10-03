@@ -21,7 +21,7 @@ class AutoruLktFolderModels extends ActiveRecord
     {
         return 'eqt_autoru_lkt_folder_models';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -31,10 +31,16 @@ class AutoruLktFolderModels extends ActiveRecord
             [['folder_id', 'model_id'], 'required'],
             [['folder_id', 'model_id'], 'integer'],
             [['folder_id', 'model_id'], 'unique', 'targetAttribute' => ['folder_id', 'model_id']],
-            [['folder_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruLkt::className(), 'targetAttribute' => ['folder_id' => 'folder_id']],
+            [
+                ['folder_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruLkt::class,
+                'targetAttribute' => ['folder_id' => 'folder_id']
+            ],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -45,9 +51,9 @@ class AutoruLktFolderModels extends ActiveRecord
             'model_id' => 'Model ID',
         ];
     }
-    
+
     public function getFolder()
     {
-        return $this->hasOne(AutoruLkt::className(), ['id' => 'folder_id']);
+        return $this->hasOne(AutoruLkt::class, ['id' => 'folder_id']);
     }
 }

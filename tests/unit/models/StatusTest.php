@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\BrandQuery;
 use infotech\reference\models\Status;
 use infotech\reference\models\StatusQuery;
@@ -50,7 +49,7 @@ class StatusTest extends TestCase
         );
     }
 
-    public function testSUBARU_STATUS_DEALER_IN_WAY()
+    public function testSubaruStatusDealerInWay()
     {
         $this->assertEquals('ДИЛЕР_ПУТЬ', Status::SUBARU_STATUS_DEALER_IN_WAY);
     }

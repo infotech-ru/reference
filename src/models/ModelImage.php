@@ -19,11 +19,10 @@ use Yii;
  */
 class ModelImage extends ActiveRecord
 {
-    const STATUS_ACTIVE = 0;
-    const STATUS_DELETED = 1;
-
-    const CATEGORY_EXTERNAL = 0;
-    const CATEGORY_INTERNAL = 1;
+    public const  STATUS_ACTIVE = 0;
+    public const  STATUS_DELETED = 1;
+    public const  CATEGORY_EXTERNAL = 0;
+    public const  CATEGORY_INTERNAL = 1;
 
     public static function getStatusList(): array
     {
@@ -53,7 +52,7 @@ class ModelImage extends ActiveRecord
 
     public function getModel()
     {
-        return $this->hasOne(Model::class, ['id'=>'model_id']);
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
     public function getGeneration()

@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\ModelVideo;
 use infotech\reference\models\ModelVideoQuery;

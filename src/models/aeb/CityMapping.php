@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yakov
@@ -46,7 +47,12 @@ class CityMapping extends ActiveRecord
             ],
             [['region_id'], 'exist', 'targetClass' => Region::class, 'targetAttribute' => 'id'],
             [['city_id'], 'exist', 'targetClass' => City::class, 'targetAttribute' => 'id'],
-            [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
+            [
+                ['aeb_region_upload_history_id'],
+                'exist',
+                'targetClass' => AEBRegionUploadHistory::class,
+                'targetAttribute' => 'id'
+            ],
         ];
     }
 
@@ -64,10 +70,13 @@ class CityMapping extends ActiveRecord
         parent::afterSave($insert, $changedAttributes);
 
         if ($insert) {
-            TemporaryAEBRegionData::updateAll(['city_id' => $this->city_id], [
-                'city' => $this->name,
-                'region_id' => $this->region_id,
-            ]);
+            TemporaryAEBRegionData::updateAll(
+                ['city_id' => $this->city_id],
+                [
+                    'city' => $this->name,
+                    'region_id' => $this->region_id,
+                ]
+            );
         }
     }
 
@@ -75,10 +84,13 @@ class CityMapping extends ActiveRecord
     {
         parent::afterDelete();
 
-        TemporaryAEBRegionData::updateAll(['city_id' => null], [
-            'city' => $this->name,
-            'region_id' => $this->region_id,
-        ]);
+        TemporaryAEBRegionData::updateAll(
+            ['city_id' => null],
+            [
+                'city' => $this->name,
+                'region_id' => $this->region_id,
+            ]
+        );
     }
 
 

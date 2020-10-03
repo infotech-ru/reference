@@ -27,18 +27,18 @@ namespace infotech\reference\models;
  */
 class Brand extends ActiveRecord
 {
-    const CADILLAC_ID = 3;
-    const CHEVROLET_ID = 2;
-    const FORD_ID = 6;
-    const GAZ_ID = 127;
-    const GEELY_ID = 46;
-    const INFINITI_ID = 57;
-    const MERCEDES_ID = 80;
-    const SMART_ID = 108;
-    const SUBARU_ID = 111;
-    const UAZ_ID = 134;
-    const KIA_ID = 8;
-    const NISSAN_ID = 88;
+    public const  CADILLAC_ID = 3;
+    public const  CHEVROLET_ID = 2;
+    public const  FORD_ID = 6;
+    public const  GAZ_ID = 127;
+    public const  GEELY_ID = 46;
+    public const  INFINITI_ID = 57;
+    public const  MERCEDES_ID = 80;
+    public const  SMART_ID = 108;
+    public const  SUBARU_ID = 111;
+    public const  UAZ_ID = 134;
+    public const  KIA_ID = 8;
+    public const  NISSAN_ID = 88;
 
     public static function tableName(): string
     {

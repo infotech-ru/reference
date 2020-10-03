@@ -10,15 +10,15 @@ namespace infotech\reference\models;
  */
 class VehicleInternalStatus extends ActiveRecord
 {
-    const FREE = 1;
-    const DELIVERY = 2;
-    const RESERVE = 3;
-    const CONTRACT = 4;
-    const TRANSFERRED = 5;
-    const DELETED = 6;
-    const PREPARATION = 7;
-    const TRANSIT = 8;
-    const WORKSHEET = 9;
+    public const  FREE = 1;
+    public const  DELIVERY = 2;
+    public const  RESERVE = 3;
+    public const  CONTRACT = 4;
+    public const  TRANSFERRED = 5;
+    public const  DELETED = 6;
+    public const  PREPARATION = 7;
+    public const  TRANSIT = 8;
+    public const  WORKSHEET = 9;
 
     public static function tableName(): string
     {

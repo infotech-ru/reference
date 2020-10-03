@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
-use infotech\reference\models\avito\queries\ModificationMapSerieQuery;
-use Yii;
 use infotech\reference\models\ActiveRecord;
+use infotech\reference\models\avito\queries\ModificationMapSerieQuery;
 use infotech\reference\models\Serie;
+use Yii;
 
 /**
  * This is the model class for table "avito_modification_map_serie".
@@ -23,14 +23,31 @@ class ModificationMapSerie extends ActiveRecord
         return 'avito_modification_map_serie';
     }
 
+    public static function find()
+    {
+        return new ModificationMapSerieQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['modification_id', 'ref_serie_id'], 'required'],
             [['modification_id', 'ref_serie_id'], 'integer'],
             [['modification_id', 'ref_serie_id'], 'unique', 'targetAttribute' => ['modification_id', 'ref_serie_id']],
-            [['modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => Modification::class, 'targetAttribute' => ['modification_id' => 'id']],
-            [['ref_serie_id'], 'exist', 'skipOnError' => true, 'targetClass' => Serie::class, 'targetAttribute' => ['ref_serie_id' => 'id_car_serie']],
+            [
+                ['modification_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Modification::class,
+                'targetAttribute' => ['modification_id' => 'id']
+            ],
+            [
+                ['ref_serie_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Serie::class,
+                'targetAttribute' => ['ref_serie_id' => 'id_car_serie']
+            ],
         ];
     }
 
@@ -50,10 +67,5 @@ class ModificationMapSerie extends ActiveRecord
     public function getRefSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'ref_serie_id']);
-    }
-    
-    public static function find()
-    {
-        return new ModificationMapSerieQuery(static::class);
     }
 }

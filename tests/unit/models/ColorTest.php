@@ -2,12 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\ColorFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\Color;
 use infotech\reference\models\ColorQuery;
 use infotech\reference\models\ModelQuery;
+use infotech\reference\tests\fixtures\ColorFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

@@ -17,11 +17,11 @@ namespace infotech\reference\models;
  */
 class Country extends ActiveRecord
 {
-    const RUSSIA_ID = 1;
-    const BELARUS_ID = 2;
-    const KAZAKHSTAN_ID = 7;
-    const UKRAINE_ID = 785;
-    const KYRGYZSTAN_ID = 449;
+    public const  RUSSIA_ID = 1;
+    public const  BELARUS_ID = 2;
+    public const  KAZAKHSTAN_ID = 7;
+    public const  UKRAINE_ID = 785;
+    public const  KYRGYZSTAN_ID = 449;
 
     public static function tableName(): string
     {

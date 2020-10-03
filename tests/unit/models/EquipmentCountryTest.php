@@ -2,12 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\EquipmentCountryFixture;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\EquipmentCountry;
 use infotech\reference\models\EquipmentCountryQuery;
 use infotech\reference\models\EquipmentQuery;
+use infotech\reference\tests\fixtures\EquipmentCountryFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

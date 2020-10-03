@@ -18,8 +18,18 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - uses: php-actions/composer@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.3"
+          coverage: xdebug
+          tools: composer
+
+      - run: composer install --prefer-dist --no-suggest --no-progress
 
       - run: php yii migrate/up --interactive=0
 
-      - run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php
+      - run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php --coverage-text --coverage-html=build/coverage
+
+      - uses: chekalsky/phpcs-action@v1
+        with:
+          phpcs_bin_path: './vendor/bin/phpcs'

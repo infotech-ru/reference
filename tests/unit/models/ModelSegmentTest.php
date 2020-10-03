@@ -2,10 +2,9 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\ModelSegmentFixture;
 use infotech\reference\models\ModelSegment;
 use infotech\reference\models\ModelSegmentQuery;
+use infotech\reference\tests\fixtures\ModelSegmentFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
