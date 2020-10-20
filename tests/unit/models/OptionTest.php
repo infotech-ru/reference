@@ -56,7 +56,6 @@ class OptionTest extends TestCase
                 'created_at',
                 'updated_at',
                 'option_group_id',
-                'incompatible_options_codes',
             ],
             $model->attributes()
         );
