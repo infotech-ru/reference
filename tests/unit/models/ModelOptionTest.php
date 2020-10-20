@@ -56,6 +56,7 @@ class ModelOptionTest extends TestCase
                 'name',
                 'created_at',
                 'updated_at',
+                'incompatible_options_codes',
             ],
             $model->attributes()
         );
