@@ -15,7 +15,7 @@ class m190805_075217_cover extends Migration
             'url' => $this->string()
         ]);
     }
-    
+
     public function safeDown()
     {
         $this->dropTable('cover');
