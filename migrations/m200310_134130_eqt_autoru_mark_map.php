@@ -13,13 +13,13 @@ class m200310_134130_eqt_autoru_mark_map extends Migration
                 'brand_id' => $this->integer(10)->unsigned()
             ]
         );
-        
+
         $this->addPrimaryKey(
             'pk_eqt_autoru_mark_map',
             'eqt_autoru_mark_map',
             ['mark_id', 'brand_id']
         );
-        
+
         $this->addForeignKey(
             'fk_eqt_autoru_mark_map_mark_id',
             'eqt_autoru_mark_map',
@@ -29,7 +29,7 @@ class m200310_134130_eqt_autoru_mark_map extends Migration
             'CASCADE',
             'CASCADE'
         );
-        
+
         $this->addForeignKey(
             'fk_eqt_autoru_mark_map_brand_id',
             'eqt_autoru_mark_map',
@@ -40,7 +40,7 @@ class m200310_134130_eqt_autoru_mark_map extends Migration
             'CASCADE'
         );
     }
-    
+
     public function safeDown()
     {
         $this->dropTable('eqt_autoru_mark_map');

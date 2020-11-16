@@ -11,7 +11,7 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'name' => $this->string(),
             'brand_id' => $this->integer()->unsigned(),
         ]);
-    
+
         $this->addForeignKey(
             'fk_dromru_mark_brand_id',
             'dromru_mark',
@@ -19,8 +19,8 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'brands',
             'id'
         );
-    
-    
+
+
         $this->createTable('dromru_model', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
@@ -41,13 +41,13 @@ class m191118_101703_add_autodrom_mapping extends Migration
             'models',
             'id'
         );
-    
+
         $this->createTable('dromru_city', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
         ]);
     }
-    
+
     public function safeDown()
     {
         $this->dropTable('dromru_mark');

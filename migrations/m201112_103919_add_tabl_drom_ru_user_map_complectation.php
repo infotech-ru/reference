@@ -49,7 +49,7 @@ class m201112_103919_add_tabl_drom_ru_user_map_complectation extends Migration
                 $fk[3]
             );
             $this->createIndex(
-                'IDX_' .$md5name,
+                'IDX_' . $md5name,
                 $fk[0],
                 $fk[1]
             );
