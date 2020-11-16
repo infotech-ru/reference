@@ -2,10 +2,9 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\SourceFixture;
 use infotech\reference\models\Source;
 use infotech\reference\models\SourceQuery;
+use infotech\reference\tests\fixtures\SourceFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

@@ -40,5 +40,4 @@ class m200519_082109_add_column_avito_id_to_avito_modifications extends Migratio
         $this->dropIndex('IDX_avito_modification_power', 'avito_modification');
         $this->dropIndex('IDX_avito_modification_engine_size', 'avito_modification');
     }
-
 }

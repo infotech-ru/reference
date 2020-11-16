@@ -14,7 +14,7 @@ use infotech\reference\models\ActiveRecord;
  * @property int $mark_id
  *
  * @property-read Mark $mark
- * @property-read ModelMap $modelsMap
+ * @property-read ModelMap[] $modelsMap
  */
 class Model extends ActiveRecord
 {
@@ -61,6 +61,6 @@ class Model extends ActiveRecord
      */
     public function getModelsMap()
     {
-        return $this->hasMany(ModelMap::class, ['dromru_model_id', 'id']);
+        return $this->hasMany(ModelMap::class, ['dromru_model_id' => 'id']);
     }
 }

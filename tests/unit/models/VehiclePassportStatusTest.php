@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\VehiclePassportStatus;
 use infotech\reference\models\VehiclePassportStatusQuery;
 use PHPUnit\Framework\TestCase;
@@ -41,32 +40,32 @@ class VehiclePassportStatusTest extends TestCase
         );
     }
 
-    public function testNOT_AVAILABLE()
+    public function testNotAvailable()
     {
         $this->assertEquals(0, VehiclePassportStatus::NOT_AVAILABLE);
     }
 
-    public function testPAID()
+    public function testPaid()
     {
         $this->assertEquals(1, VehiclePassportStatus::PAID);
     }
 
-    public function testAVAILABLE()
+    public function testAvailable()
     {
         $this->assertEquals(2, VehiclePassportStatus::AVAILABLE);
     }
 
-    public function testAVAILABLE_IN_BANK()
+    public function testAvailableInBank()
     {
         $this->assertEquals(3, VehiclePassportStatus::AVAILABLE_IN_BANK);
     }
 
-    public function testORDERED()
+    public function testOrdered()
     {
         $this->assertEquals(4, VehiclePassportStatus::ORDERED);
     }
 
-    public function testSENT_TO_DEALER()
+    public function testSentToDealer()
     {
         $this->assertEquals(5, VehiclePassportStatus::SENT_TO_DEALER);
     }

@@ -125,11 +125,11 @@ class Model extends ActiveRecord
 
     public function getModelImages()
     {
-        return $this->hasMany(ModelImage::class, ['model_id'=>'id']);
+        return $this->hasMany(ModelImage::class, ['model_id' => 'id']);
     }
 
     public function getModelVideos()
     {
-        return $this->hasMany(ModelVideo::class, ['model_id'=>'id']);
+        return $this->hasMany(ModelVideo::class, ['model_id' => 'id']);
     }
 }

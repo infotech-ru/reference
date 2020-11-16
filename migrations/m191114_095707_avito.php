@@ -1,6 +1,5 @@
 <?php
 
-
 use yii\db\Migration;
 
 class m191114_095707_avito extends Migration

@@ -11,6 +11,9 @@ class VehicleVerificationProgramQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new VehicleVerificationProgramQuery(VehicleVerificationProgram::class));
+        $this->assertInstanceOf(
+            ActiveQuery::class,
+            new VehicleVerificationProgramQuery(VehicleVerificationProgram::class)
+        );
     }
 }

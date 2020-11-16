@@ -16,13 +16,13 @@ use Yii;
  */
 class VehicleOptionGroup extends ActiveRecord
 {
-    const CODE_MULTIMEDIA = 'multimedia';
-    const CODE_COMFORT = 'comfort';
-    const CODE_SAFETY = 'safety';
-    const CODE_VISIBILITY = 'visibility';
-    const CODE_EXTERIOR_ELEMENTS = 'exterior_elements';
-    const CODE_ANTI_THEFT = 'anti_theft';
-    const CODE_INTERIOR = 'interior';
+    public const  CODE_MULTIMEDIA = 'multimedia';
+    public const  CODE_COMFORT = 'comfort';
+    public const  CODE_SAFETY = 'safety';
+    public const  CODE_VISIBILITY = 'visibility';
+    public const  CODE_EXTERIOR_ELEMENTS = 'exterior_elements';
+    public const  CODE_ANTI_THEFT = 'anti_theft';
+    public const  CODE_INTERIOR = 'interior';
 
     public static function tableName(): string
     {

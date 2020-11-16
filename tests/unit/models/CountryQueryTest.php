@@ -2,10 +2,10 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\CountryFixture;
 use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\Country;
 use infotech\reference\models\CountryQuery;
+use infotech\reference\tests\fixtures\CountryFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

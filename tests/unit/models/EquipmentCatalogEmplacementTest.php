@@ -2,12 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\EquipmentCatalogEmplacementFixture;
 use infotech\reference\models\CatalogEmplacementQuery;
 use infotech\reference\models\EquipmentCatalogEmplacement;
 use infotech\reference\models\EquipmentCatalogEmplacementQuery;
 use infotech\reference\models\EquipmentQuery;
+use infotech\reference\tests\fixtures\EquipmentCatalogEmplacementFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 

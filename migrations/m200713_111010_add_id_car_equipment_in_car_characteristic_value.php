@@ -12,7 +12,11 @@ class m200713_111010_add_id_car_equipment_in_car_characteristic_value extends Mi
      */
     public function safeUp()
     {
-        $this->addColumn('car_characteristic_value', 'id_car_equipment', $this->integer()->after('id_car_modification'));
+        $this->addColumn(
+            'car_characteristic_value',
+            'id_car_equipment',
+            $this->integer()->after('id_car_modification')
+        );
     }
 
     /**

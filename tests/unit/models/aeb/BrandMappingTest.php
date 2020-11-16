@@ -47,8 +47,10 @@ class BrandMappingTest extends TestCase
     public function testAttributeLabels()
     {
         $model = new BrandMapping();
-        $this->assertEquals(['id' => 'ID', 'brand_id' => 'Brand ID', 'name' => 'Name', 'created_at' => 'Created At',],
-            $model->attributeLabels());
+        $this->assertEquals(
+            ['id' => 'ID', 'brand_id' => 'Brand ID', 'name' => 'Name', 'created_at' => 'Created At',],
+            $model->attributeLabels()
+        );
     }
 
     public function testBrandIdRequired()

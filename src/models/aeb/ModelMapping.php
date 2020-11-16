@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yakov
@@ -45,7 +46,12 @@ class ModelMapping extends ActiveRecord
                 'required'
             ],
             [['model_id'], 'exist', 'targetClass' => Model::class, 'targetAttribute' => 'id'],
-            [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
+            [
+                ['aeb_region_upload_history_id'],
+                'exist',
+                'targetClass' => AEBRegionUploadHistory::class,
+                'targetAttribute' => 'id'
+            ],
         ];
     }
 
@@ -63,10 +69,13 @@ class ModelMapping extends ActiveRecord
         parent::afterSave($insert, $changedAttributes);
 
         if ($insert) {
-            TemporaryAEBRegionData::updateAll(['model_id' => $this->model_id], [
-                'model' => $this->name,
-                'brand_id' => $this->brand_id,
-            ]);
+            TemporaryAEBRegionData::updateAll(
+                ['model_id' => $this->model_id],
+                [
+                    'model' => $this->name,
+                    'brand_id' => $this->brand_id,
+                ]
+            );
         }
     }
 
@@ -74,10 +83,13 @@ class ModelMapping extends ActiveRecord
     {
         parent::afterDelete();
 
-        TemporaryAEBRegionData::updateAll(['model_id' => null], [
-            'model' => $this->name,
-            'brand_id' => $this->brand_id,
-        ]);
+        TemporaryAEBRegionData::updateAll(
+            ['model_id' => null],
+            [
+                'model' => $this->name,
+                'brand_id' => $this->brand_id,
+            ]
+        );
     }
 
 

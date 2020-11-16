@@ -18,14 +18,16 @@ use yii\helpers\ArrayHelper;
  * @property double $lat
  * @property double $lng
  * @property string $okato
+ * @property int $center_city_id
  * @property Country $country
  * @property FederalDistrict $federalDistrict
  * @property City[] $cities
+ * @property City $centerCity
  */
 class Region extends ActiveRecord
 {
-    const STATUS_ACTIVE = 0;
-    const STATUS_DELETED = 1;
+    public const  STATUS_ACTIVE = 0;
+    public const  STATUS_DELETED = 1;
 
     public static function getStatusList(): array
     {
@@ -85,5 +87,10 @@ class Region extends ActiveRecord
     public function getCities()
     {
         return $this->hasMany(City::class, ['region_id' => 'id']);
+    }
+
+    public function getCenterCity()
+    {
+        return $this->hasOne(City::class, ['id' => 'center_city_id']);
     }
 }

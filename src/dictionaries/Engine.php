@@ -6,12 +6,12 @@ use Yii;
 
 class Engine
 {
-    const PETROL = 1;
-    const DIESEL = 2;
-    const HYBRID = 3;
-    const ELECTRO = 4;
+    public const  PETROL = 1;
+    public const  DIESEL = 2;
+    public const  HYBRID = 3;
+    public const  ELECTRO = 4;
 
-    public static function getList():array
+    public static function getList(): array
     {
         return [
             self::PETROL => Yii::t('app', 'Бензин'),

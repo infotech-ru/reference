@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\EquipmentCountry;
 use infotech\reference\models\EquipmentCountryQuery;
 use PHPUnit\Framework\TestCase;

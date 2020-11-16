@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Raidkon
@@ -12,7 +13,6 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\Brand;
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use yii\db\Expression;
 
 /**
  * This is the model class for table "aeb_brand_mapping".

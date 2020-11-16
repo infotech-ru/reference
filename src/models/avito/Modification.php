@@ -2,11 +2,11 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ModificationQuery;
 use infotech\reference\models\Modification as RefModification;
 use infotech\reference\models\Serie;
 use Yii;
-use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "avito_modification".
@@ -39,12 +39,38 @@ class Modification extends ActiveRecord
         return 'avito_modification';
     }
 
+    public static function find()
+    {
+        return new ModificationQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['generation_id', 'avito_id'], 'integer'],
-            [['name', 'year_from', 'year_to', 'body_type', 'doors', 'fuel_type', 'drive_type', 'transmission', 'power', 'engine_size'], 'string', 'max' => 255],
-            [['generation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Generation::class, 'targetAttribute' => ['generation_id' => 'id']],
+            [
+                [
+                    'name',
+                    'year_from',
+                    'year_to',
+                    'body_type',
+                    'doors',
+                    'fuel_type',
+                    'drive_type',
+                    'transmission',
+                    'power',
+                    'engine_size'
+                ],
+                'string',
+                'max' => 255
+            ],
+            [
+                ['generation_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Generation::class,
+                'targetAttribute' => ['generation_id' => 'id']
+            ],
         ];
     }
 
@@ -97,7 +123,7 @@ class Modification extends ActiveRecord
             ['modification_id' => 'id']
         );
     }
-    
+
     public function getRefModification()
     {
         return $this->hasMany(
@@ -107,10 +133,5 @@ class Modification extends ActiveRecord
             'avito_modification_map_mod',
             ['modification_id' => 'id']
         );
-    }
-    
-    public static function find()
-    {
-        return new ModificationQuery(static::class);
     }
 }

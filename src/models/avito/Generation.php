@@ -2,10 +2,10 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\GenerationQuery;
 use infotech\reference\models\Generation as RefGeneration;
 use Yii;
-use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "avito_generation".
@@ -26,12 +26,23 @@ class Generation extends ActiveRecord
         return 'avito_generation';
     }
 
+    public static function find()
+    {
+        return new GenerationQuery(static::class);
+    }
+
     public function rules()
     {
         return [
             [['model_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['model_id'], 'exist', 'skipOnError' => true, 'targetClass' => Model::class, 'targetAttribute' => ['model_id' => 'id']],
+            [
+                ['model_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Model::class,
+                'targetAttribute' => ['model_id' => 'id']
+            ],
         ];
     }
 
@@ -56,16 +67,12 @@ class Generation extends ActiveRecord
 
     public function getRefGenerations()
     {
-        return $this->hasMany(RefGeneration::class, ['id_car_generation' => 'ref_generation_id'])->viaTable('avito_generation_map', ['generation_id' => 'id']);
+        return $this->hasMany(RefGeneration::class, ['id_car_generation' => 'ref_generation_id'])
+            ->viaTable('avito_generation_map', ['generation_id' => 'id']);
     }
 
     public function getModifications()
     {
         return $this->hasMany(Modification::class, ['generation_id' => 'id']);
-    }
-    
-    public static function find()
-    {
-        return new GenerationQuery(static::class);
     }
 }

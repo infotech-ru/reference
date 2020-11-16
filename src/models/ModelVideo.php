@@ -17,11 +17,10 @@ use Yii;
  */
 class ModelVideo extends ActiveRecord
 {
-    const STATUS_ACTIVE = 0;
-    const STATUS_DELETED = 1;
-
-    const TYPE_URL = 0;
-    const TYPE_YOUTUBE = 1;
+    public const  STATUS_ACTIVE = 0;
+    public const  STATUS_DELETED = 1;
+    public const  TYPE_URL = 0;
+    public const  TYPE_YOUTUBE = 1;
 
     public static function getStatusList(): array
     {
@@ -51,6 +50,6 @@ class ModelVideo extends ActiveRecord
 
     public function getModel()
     {
-        return $this->hasOne(Model::class, ['id'=>'model_id']);
+        return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 }

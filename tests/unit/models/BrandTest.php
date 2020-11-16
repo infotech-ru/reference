@@ -2,8 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\BrandFixture;
 use infotech\reference\models\Brand;
 use infotech\reference\models\BrandLogoQuery;
 use infotech\reference\models\BrandQuery;
@@ -12,6 +10,7 @@ use infotech\reference\models\NewsBrandQuery;
 use infotech\reference\models\NewsQuery;
 use infotech\reference\models\OptionGroupQuery;
 use infotech\reference\models\OrderTypeQuery;
+use infotech\reference\tests\fixtures\BrandFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
@@ -114,6 +113,11 @@ class BrandTest extends TestCase
     public function testUazId()
     {
         $this->assertEquals(134, Brand::UAZ_ID);
+    }
+
+    public function testHavalId()
+    {
+        $this->assertEquals(152, Brand::HAVAL_ID);
     }
 
     public function testCadillacId()

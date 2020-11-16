@@ -23,8 +23,18 @@ class AutoruComplectationMapped extends ActiveRecord
         return [
             [['complectation_id', 'modification_id', 'map_id'], 'required'],
             [['complectation_id', 'modification_id', 'map_id'], 'integer'],
-            [['complectation_id', 'modification_id', 'map_id'], 'unique', 'targetAttribute' => ['complectation_id', 'modification_id', 'map_id']],
-            [['complectation_id', 'modification_id'], 'exist', 'skipOnError' => true, 'targetClass' => AutoruComplectationRelation::className(), 'targetAttribute' => ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']],
+            [
+                ['complectation_id', 'modification_id', 'map_id'],
+                'unique',
+                'targetAttribute' => ['complectation_id', 'modification_id', 'map_id']
+            ],
+            [
+                ['complectation_id', 'modification_id'],
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruComplectationRelation::class,
+                'targetAttribute' => ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']
+            ],
         ];
     }
     
@@ -45,7 +55,10 @@ class AutoruComplectationMapped extends ActiveRecord
      */
     public function getComplectation()
     {
-        return $this->hasOne(AutoruComplectationRelation::className(), ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']);
+        return $this->hasOne(
+            AutoruComplectationRelation::class,
+            ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']
+        );
     }
     
     /**

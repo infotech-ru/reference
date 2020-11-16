@@ -2,7 +2,6 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
 use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\ModelOptionQuery;
 use infotech\reference\models\Option;
@@ -57,6 +56,7 @@ class OptionTest extends TestCase
                 'created_at',
                 'updated_at',
                 'option_group_id',
+                'incompatible_options_codes',
             ],
             $model->attributes()
         );

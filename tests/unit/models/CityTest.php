@@ -2,12 +2,11 @@
 
 namespace infotech\reference\tests\unit\models;
 
-
-use app\fixtures\CityFixture;
 use infotech\reference\models\City;
 use infotech\reference\models\CityQuery;
 use infotech\reference\models\CountryQuery;
 use infotech\reference\models\RegionQuery;
+use infotech\reference\tests\fixtures\CityFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
@@ -56,6 +55,7 @@ class CityTest extends TestCase
                 'country_id',
                 'region_id',
                 'name',
+                'name_where',
                 'timezone',
                 'lat',
                 'lng',

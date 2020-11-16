@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yakov
@@ -42,7 +43,12 @@ class RegionMapping extends ActiveRecord
                 'required'
             ],
             [['region_id'], 'exist', 'targetClass' => Region::class, 'targetAttribute' => 'id'],
-            [['aeb_region_upload_history_id'], 'exist', 'targetClass' => AEBRegionUploadHistory::class, 'targetAttribute' => 'id'],
+            [
+                ['aeb_region_upload_history_id'],
+                'exist',
+                'targetClass' => AEBRegionUploadHistory::class,
+                'targetAttribute' => 'id'
+            ],
         ];
     }
 
@@ -60,9 +66,12 @@ class RegionMapping extends ActiveRecord
         parent::afterSave($insert, $changedAttributes);
 
         if ($insert) {
-            TemporaryAEBRegionData::updateAll(['region_id' => $this->region_id], [
-                'region' => $this->name,
-            ]);
+            TemporaryAEBRegionData::updateAll(
+                ['region_id' => $this->region_id],
+                [
+                    'region' => $this->name,
+                ]
+            );
         }
     }
 
@@ -70,9 +79,12 @@ class RegionMapping extends ActiveRecord
     {
         parent::afterDelete();
 
-        TemporaryAEBRegionData::updateAll(['region_id' => null], [
-            'region' => $this->name,
-        ]);
+        TemporaryAEBRegionData::updateAll(
+            ['region_id' => null],
+            [
+                'region' => $this->name,
+            ]
+        );
     }
 
 

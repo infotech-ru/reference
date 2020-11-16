@@ -6,11 +6,11 @@ use Yii;
 
 class Drive
 {
-    const FRONT = 1;
-    const REAR = 2;
-    const ALL = 3;
+    public const FRONT = 1;
+    public const REAR = 2;
+    public const ALL = 3;
 
-    public static function getList() : array
+    public static function getList(): array
     {
         return [
             self::FRONT => Yii::t('app', 'Передний'),

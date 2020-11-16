@@ -2,12 +2,12 @@
 
 namespace infotech\reference\tests\unit\models;
 
-use app\fixtures\VehicleOptionGroupFixture;
-use app\fixtures\VehicleOptionTypeFixture;
 use infotech\reference\models\VehicleOptionGroup;
 use infotech\reference\models\VehicleOptionGroupQuery;
 use infotech\reference\models\VehicleOptionType;
 use infotech\reference\models\VehicleOptionTypeQuery;
+use infotech\reference\tests\fixtures\VehicleOptionGroupFixture;
+use infotech\reference\tests\fixtures\VehicleOptionTypeFixture;
 use PHPUnit\Framework\TestCase;
 use yii\test\FixtureTrait;
 
