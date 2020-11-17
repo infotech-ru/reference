@@ -5,6 +5,7 @@ namespace infotech\reference\models\dromru;
 use infotech\reference\models\dromru\queries\ModelQuery;
 use Yii;
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_model".
@@ -41,7 +42,7 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return ModelQuery|\yii\db\ActiveQuery
+     * @return ModelQuery|ActiveQuery
      */
     public static function find()
     {
@@ -49,7 +50,7 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getMark()
     {
@@ -57,7 +58,7 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getModelsMap()
     {

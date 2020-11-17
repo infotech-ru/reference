@@ -6,12 +6,12 @@ namespace infotech\reference\models;
  * Class VehicleOptionGroup
  * @package infotech\reference\models
  *
- * @property integer            $id
- * @property integer            $group_id
- * @property string             $name
- * @property string             $values_json
- * @property array              $values
- * @property boolean            $has_text_input
+ * @property integer $id
+ * @property integer $group_id
+ * @property string $name
+ * @property string $values_json
+ * @property array $values
+ * @property boolean $has_text_input
  *
  * @property VehicleOptionGroup $group
  */

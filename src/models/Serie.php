@@ -89,7 +89,7 @@ class Serie extends ActiveRecord
     {
         return $this->hasMany(Skin::class, ['id' => 'skin_id'])->via('skinSeries');
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */

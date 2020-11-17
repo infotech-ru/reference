@@ -4,6 +4,7 @@ namespace infotech\reference\models\dromru;
 
 use infotech\reference\models\Generation;
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_model_generation_map".
@@ -39,7 +40,7 @@ class ModelGenerationMap extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getModel()
     {
@@ -47,7 +48,7 @@ class ModelGenerationMap extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getGeneration()
     {

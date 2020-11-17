@@ -6,7 +6,7 @@ namespace infotech\reference\models;
  * Class BrandLogo
  * @package infotech\reference\models
  * @property integer $brand_id
- * @property string  $url
+ * @property string $url
  * @property-read Brand $brand
  */
 class BrandLogo extends ActiveRecord

@@ -22,7 +22,7 @@ class AutoruComplectation extends ActiveRecord
     {
         return 'eqt_autoru_complectation';
     }
-    
+
     public static function getComplectationList(?int $serie_id): array
     {
         if (!$serie_id) {
@@ -37,7 +37,7 @@ class AutoruComplectation extends ActiveRecord
             'name'
         );
     }
-    
+
     public static function getComplectationListWithTech(?array $serie_ids): array
     {
         if (!$serie_ids) {
@@ -45,9 +45,9 @@ class AutoruComplectation extends ActiveRecord
         }
         return ArrayHelper::map(
             Equipment::find()
-            ->andFilterWhere(['series_id' => $serie_ids])
-            ->orderBy(['name' => SORT_ASC])
-            ->all(),
+                ->andFilterWhere(['series_id' => $serie_ids])
+                ->orderBy(['name' => SORT_ASC])
+                ->all(),
             'id',
             function (Equipment $item) {
                 return $item->name . ' / ' . $item->tech_name;
@@ -57,7 +57,7 @@ class AutoruComplectation extends ActiveRecord
             }
         );
     }
-    
+
     public function rules(): array
     {
         return [
@@ -67,7 +67,7 @@ class AutoruComplectation extends ActiveRecord
             [['id'], 'unique'],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [
@@ -77,12 +77,12 @@ class AutoruComplectation extends ActiveRecord
             'complectation_id' => 'Комплектация',
         ];
     }
-    
+
     public function getMaps()
     {
         return $this->hasOne(AutoruComplectationRelation::class, ['complectation_id' => 'id']);
     }
-    
+
     public static function find(): AutoruComplectationQuery
     {
         return new AutoruComplectationQuery(static::class);

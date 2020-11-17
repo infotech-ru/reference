@@ -6,8 +6,8 @@ namespace infotech\reference\models;
  * Class Foreshortening
  * @package infotech\reference\models
  * @property integer $id
- * @property string  $name
- * @property string  $url
+ * @property string $name
+ * @property string $url
  */
 class Cover extends ActiveRecord
 {

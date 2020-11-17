@@ -6,10 +6,10 @@ namespace infotech\reference\models;
  * Class Foreshortening
  * @package infotech\reference\models
  * @property integer $id
- * @property string  $name
+ * @property string $name
  * @property integer $order
- * @property string  $created_at
- * @property string  $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property-read CatalogImage[] $catalogImages
  */
 class CatalogForeshortening extends ActiveRecord

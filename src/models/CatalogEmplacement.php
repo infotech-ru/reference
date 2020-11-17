@@ -10,8 +10,8 @@ namespace infotech\reference\models;
  * @property integer $serie_id
  * @property integer $color_id
  * @property boolean $is_main
- * @property string  $created_at
- * @property string  $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property-read Model $model
  * @property-read Serie $serie
  * @property-read Color $color

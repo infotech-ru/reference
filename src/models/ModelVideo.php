@@ -9,7 +9,7 @@ use Yii;
  * @package infotech\reference\models
  * @property integer $id
  * @property integer $model_id
- * @property string  $url
+ * @property string $url
  * @property integer $type
  * @property integer $priority
  * @property integer $status

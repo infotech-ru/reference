@@ -17,14 +17,14 @@ class City extends ActiveRecord
     {
         return 'dromru_city';
     }
-    
+
     public function rules(): array
     {
         return [
             [['name'], 'string', 'max' => 255],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [
@@ -32,7 +32,7 @@ class City extends ActiveRecord
             'name' => 'Название (DromRu)',
         ];
     }
-    
+
     public static function find(): CityQuery
     {
         return new CityQuery(static::class);

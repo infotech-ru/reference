@@ -8,9 +8,9 @@ use Yii;
  * Class VehicleOptionGroup
  * @package infotech\reference\models
  *
- * @property integer             $id
- * @property string              $name
- * @property string              $code
+ * @property integer $id
+ * @property string $name
+ * @property string $code
  *
  * @property VehicleOptionType[] $types
  */
