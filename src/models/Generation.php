@@ -6,10 +6,10 @@ namespace infotech\reference\models;
  * Class Generation
  * @package infotech\reference\models
  * @property integer $id_car_generation
- * @property string  $name
+ * @property string $name
  * @property integer $model_id
- * @property string  $year_begin
- * @property string  $year_end
+ * @property string $year_begin
+ * @property string $year_end
  * @property boolean $is_visible
  * @property integer $id_car_type
  * @property boolean $is_recent

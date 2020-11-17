@@ -53,7 +53,7 @@ class Make extends ActiveRecord
     {
         return $this->hasMany(Model::class, ['make_id' => 'id']);
     }
-    
+
     public static function find()
     {
         return new MakeQuery(static::class);

@@ -5,25 +5,25 @@ namespace infotech\reference\models;
 /**
  * Class Brand
  * @package infotech\reference\models
- * @property integer            $id
- * @property string             $name
- * @property string             $name_eng
- * @property string             $name_market
- * @property string             $logo
- * @property string             $importer_db_name
- * @property string             $host
- * @property string             $token
- * @property integer            $ecm_id
- * @property boolean            $is_supported
- * @property integer            $origin_id
- * @property integer            $is_vin_manufacturer
- * @property string             $color
- * @property-read Model[]       $models
- * @property-read BrandLogo     $brandLogo
+ * @property integer $id
+ * @property string $name
+ * @property string $name_eng
+ * @property string $name_market
+ * @property string $logo
+ * @property string $importer_db_name
+ * @property string $host
+ * @property string $token
+ * @property integer $ecm_id
+ * @property boolean $is_supported
+ * @property integer $origin_id
+ * @property integer $is_vin_manufacturer
+ * @property string $color
+ * @property-read Model[] $models
+ * @property-read BrandLogo $brandLogo
  * @property-read OptionGroup[] $optionGroups
- * @property-read OrderType[]   $orderTypes
- * @property-read NewsBrand[]   $newsBrands
- * @property-read News[]        $news
+ * @property-read OrderType[] $orderTypes
+ * @property-read NewsBrand[] $newsBrands
+ * @property-read News[] $news
  */
 class Brand extends ActiveRecord
 {

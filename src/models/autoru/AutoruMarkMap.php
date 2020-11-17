@@ -15,12 +15,12 @@ class AutoruMarkMap extends ActiveRecord
     {
         return new AutoruMarkMapQuery(static::class);
     }
-    
+
     public static function tableName(): string
     {
         return '{{%autoru_mark_map}}';
     }
-    
+
     public function rules(): array
     {
         return [
@@ -29,7 +29,7 @@ class AutoruMarkMap extends ActiveRecord
             [['mark_id', 'brand_id'], 'unique', 'targetAttribute' => ['mark_id', 'brand_id']],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [

@@ -8,13 +8,13 @@ use yii\base\InvalidConfigException;
  * Class Color
  * @package infotech\reference\models
  * @property integer $id
- * @property string  $code
+ * @property string $code
  * @property integer $model_id
  * @property integer $common_color_id
- * @property string  $rgb
- * @property string  $name
- * @property string  $created_at
- * @property string  $updated_at
+ * @property string $rgb
+ * @property string $name
+ * @property string $created_at
+ * @property string $updated_at
  * @property-read Model $model
  * @property-read Color $commonColor
  * @property-read CatalogEmplacement[] $catalogEmplacements

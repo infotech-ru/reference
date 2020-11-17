@@ -5,6 +5,7 @@ namespace infotech\reference\models\dromru;
 use infotech\reference\models\dromru\queries\ModelQuery;
 use Yii;
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_model".
@@ -14,7 +15,7 @@ use infotech\reference\models\ActiveRecord;
  * @property int $mark_id
  *
  * @property-read Mark $mark
- * @property-read ModelMap $modelsMap
+ * @property-read ModelMap[] $modelsMap
  */
 class Model extends ActiveRecord
 {
@@ -41,7 +42,7 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return ModelQuery|\yii\db\ActiveQuery
+     * @return ModelQuery|ActiveQuery
      */
     public static function find()
     {
@@ -49,7 +50,7 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getMark()
     {
@@ -57,10 +58,10 @@ class Model extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getModelsMap()
     {
-        return $this->hasMany(ModelMap::class, ['dromru_model_id', 'id']);
+        return $this->hasMany(ModelMap::class, ['dromru_model_id' => 'id']);
     }
 }

@@ -23,7 +23,7 @@ use infotech\reference\models\autoru\queries\AutoruMapModificationQuery;
  */
 class AutoruModification extends ActiveRecord
 {
-    
+
     public static function getBodysList()
     {
         return [
@@ -52,12 +52,12 @@ class AutoruModification extends ActiveRecord
             23 => 'Фаэтон',
         ];
     }
-    
+
     public static function tableName(): string
     {
         return 'eqt_autoru_modification';
     }
-    
+
     public function rules(): array
     {
         return [
@@ -65,7 +65,7 @@ class AutoruModification extends ActiveRecord
             [['id'], 'integer'],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [
@@ -79,17 +79,17 @@ class AutoruModification extends ActiveRecord
             'body_id' => 'Кузов'
         ];
     }
-    
+
     public function getMap()
     {
         return $this->hasMany(AutoruModificationMap::class, ['modification_id' => 'id']);
     }
-    
+
     public function getConfiguration()
     {
         return $this->hasOne(AutoruConfiguration::class, ['id' => 'configuration_id']);
     }
-    
+
     public static function find(): AutoruMapModificationQuery
     {
         return new AutoruMapModificationQuery(static::class);

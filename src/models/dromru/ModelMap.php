@@ -3,6 +3,7 @@
 namespace infotech\reference\models\dromru;
 
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_model_map".
@@ -37,7 +38,7 @@ class ModelMap extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getDromruModel()
     {
@@ -45,7 +46,7 @@ class ModelMap extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getModel()
     {

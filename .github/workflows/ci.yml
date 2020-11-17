@@ -26,17 +26,6 @@ jobs:
           coverage: xdebug
           tools: composer
 
-      - name: Determine composer cache directory
-        run: echo "::set-env name=COMPOSER_CACHE_DIR::$(composer config cache-dir)"
-
-      - name: Cache dependencies installed with composer
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.COMPOSER_CACHE_DIR }}
-          key: php-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            php-composer-
-
       - name: Install dependencies with composer
         run: composer install --prefer-dist --no-suggest --no-progress
 

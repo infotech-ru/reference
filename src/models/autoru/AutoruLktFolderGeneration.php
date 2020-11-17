@@ -3,6 +3,7 @@
 namespace infotech\reference\models\autoru;
 
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "eqt_autoru_lkt_folder_generation".
@@ -53,7 +54,7 @@ class AutoruLktFolderGeneration extends ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getFolder()
     {

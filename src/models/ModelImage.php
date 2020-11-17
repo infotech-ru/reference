@@ -11,7 +11,7 @@ use Yii;
  * @property integer $model_id
  * @property integer $generation_id
  * @property integer $series_id
- * @property string  $url
+ * @property string $url
  * @property integer $category
  * @property integer $priority
  * @property integer $status

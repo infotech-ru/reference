@@ -27,7 +27,7 @@ use yii\helpers\ArrayHelper;
  */
 class AutoruLkt extends ActiveRecord
 {
-    
+
     /**
      * {@inheritdoc}
      */
@@ -35,7 +35,7 @@ class AutoruLkt extends ActiveRecord
     {
         return 'eqt_autoru_lkt';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -48,7 +48,7 @@ class AutoruLkt extends ActiveRecord
             [['folder_id'], 'unique'],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -62,7 +62,7 @@ class AutoruLkt extends ActiveRecord
             'brand_id' => 'Brand ID',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -70,7 +70,7 @@ class AutoruLkt extends ActiveRecord
     {
         return $this->hasMany(AutoruLktFolderGeneration::class, ['folder_id' => 'folder_id']);
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -78,7 +78,7 @@ class AutoruLkt extends ActiveRecord
     {
         return $this->hasMany(AutoruLktFolderMark::class, ['folder_id' => 'folder_id']);
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -86,7 +86,7 @@ class AutoruLkt extends ActiveRecord
     {
         return $this->hasMany(AutoruLktFolderModels::class, ['folder_id' => 'folder_id']);
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -94,22 +94,22 @@ class AutoruLkt extends ActiveRecord
     {
         return $this->hasMany(AutoruLktFolderSerie::class, ['folder_id' => 'folder_id']);
     }
-    
+
     public function getAutoruLktFolderGenerationsIds(): array
     {
         return array_column($this->autoruLktFolderGenerations, 'generation_id');
     }
-    
+
     public function getAutoruLktFolderMarksIds(): array
     {
         return array_column($this->autoruLktFolderMarks, 'brand_id');
     }
-    
+
     public function getAutoruLktFolderModelsIds(): array
     {
         return array_column($this->autoruLktFolderModels, 'model_id');
     }
-    
+
     public function getAutoruLktFolderSeriesIds(): array
     {
         return array_column($this->autoruLktFolderSeries, 'serie_id');

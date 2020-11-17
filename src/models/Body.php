@@ -6,8 +6,8 @@ namespace infotech\reference\models;
  * Class Body
  * @package infotech\reference\models
  * @property integer $id
- * @property string  $name
- * @property string  $tradein_code
+ * @property string $name
+ * @property string $tradein_code
  */
 class Body extends ActiveRecord
 {

@@ -7,15 +7,15 @@ use yii\base\InvalidConfigException;
 /**
  * Class ModelYear
  * @package infotech\reference\models
- * @property integer                   $id
- * @property integer                   $model_id
- * @property integer                   $year
- * @property boolean                   $is_recent
- * @property boolean                   $is_default
- * @property boolean                   $code
- * @property-read Model                $model
+ * @property integer $id
+ * @property integer $model_id
+ * @property integer $year
+ * @property boolean $is_recent
+ * @property boolean $is_default
+ * @property boolean $code
+ * @property-read Model $model
  * @property-read ModelYearEquipment[] $modelYearEquipments
- * @property-read Equipment[]          $equipments
+ * @property-read Equipment[] $equipments
  */
 class ModelYear extends ActiveRecord
 {

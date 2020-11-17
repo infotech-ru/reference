@@ -4,6 +4,7 @@ namespace infotech\reference\models\autoru;
 
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruComplectationMappedQuery;
+use yii\db\ActiveQuery;
 
 class AutoruComplectationMapped extends ActiveRecord
 {
@@ -14,7 +15,7 @@ class AutoruComplectationMapped extends ActiveRecord
     {
         return 'eqt_autoru_complectation_mapped';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -37,7 +38,7 @@ class AutoruComplectationMapped extends ActiveRecord
             ],
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -49,9 +50,9 @@ class AutoruComplectationMapped extends ActiveRecord
             'map_id' => 'Map ID',
         ];
     }
-    
+
     /**
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getComplectation()
     {
@@ -60,7 +61,7 @@ class AutoruComplectationMapped extends ActiveRecord
             ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']
         );
     }
-    
+
     /**
      * {@inheritdoc}
      * @return AutoruComplectationMappedQuery the active query used by this AR class.

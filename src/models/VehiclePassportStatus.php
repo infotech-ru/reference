@@ -6,7 +6,7 @@ namespace infotech\reference\models;
  * Class VehiclePassportStatus
  * @package infotech\reference\models
  * @property integer $id
- * @property string  $name
+ * @property string $name
  */
 class VehiclePassportStatus extends ActiveRecord
 {

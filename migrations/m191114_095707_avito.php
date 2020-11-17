@@ -10,13 +10,13 @@ class m191114_095707_avito extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(),
         ]);
-        
+
         $this->createTable('avito_model', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'make_id' => $this->integer()
         ]);
-        
+
         $this->addForeignKey(
             'fk_avito_model_make_id',
             'avito_model',
@@ -24,13 +24,13 @@ class m191114_095707_avito extends Migration
             'avito_make',
             'id'
         );
-        
+
         $this->createTable('avito_generation', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'model_id' => $this->integer()
         ]);
-        
+
         $this->addForeignKey(
             'fk_avito_generation_model_id',
             'avito_generation',
@@ -38,7 +38,7 @@ class m191114_095707_avito extends Migration
             'avito_model',
             'id'
         );
-        
+
         $this->createTable('avito_modification', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
@@ -53,7 +53,7 @@ class m191114_095707_avito extends Migration
             'power' => $this->string(),
             'engine_size' => $this->string(),
         ]);
-        
+
         $this->addForeignKey(
             'fk_avito_modification_generation_id',
             'avito_modification',
@@ -61,13 +61,13 @@ class m191114_095707_avito extends Migration
             'avito_generation',
             'id'
         );
-        
+
         $this->createTable('avito_complectation', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'modification_id' => $this->integer()
         ]);
-        
+
         $this->addForeignKey(
             'fk_avito_complectation_modification_id',
             'avito_complectation',
@@ -75,8 +75,8 @@ class m191114_095707_avito extends Migration
             'avito_modification',
             'id'
         );
-        
-        
+
+
         $this->createTable('avito_make_map', [
             'make_id' => $this->integer(),
             'ref_brand_id' => $this->integer()->unsigned(),
@@ -100,8 +100,8 @@ class m191114_095707_avito extends Migration
             'brands',
             'id'
         );
-        
-        
+
+
         $this->createTable('avito_model_map', [
             'model_id' => $this->integer(),
             'ref_model_id' => $this->integer(),
@@ -125,8 +125,8 @@ class m191114_095707_avito extends Migration
             'models',
             'id'
         );
-        
-        
+
+
         $this->createTable('avito_generation_map', [
             'generation_id' => $this->integer(),
             'ref_generation_id' => $this->integer(),
@@ -150,8 +150,8 @@ class m191114_095707_avito extends Migration
             'car_generation',
             'id_car_generation'
         );
-        
-        
+
+
         $this->createTable('avito_modification_map_serie', [
             'modification_id' => $this->integer(),
             'ref_serie_id' => $this->integer(),
@@ -175,8 +175,8 @@ class m191114_095707_avito extends Migration
             'car_serie',
             'id_car_serie'
         );
-        
-        
+
+
         $this->createTable('avito_modification_map_mod', [
             'modification_id' => $this->integer(),
             'ref_modification_id' => $this->integer(),
@@ -200,8 +200,8 @@ class m191114_095707_avito extends Migration
             'car_modification',
             'id_car_modification'
         );
-        
-        
+
+
         $this->createTable('avito_complectation_map', [
             'complectation_id' => $this->integer(),
             'ref_complectation_id' => $this->integer(),
@@ -226,7 +226,7 @@ class m191114_095707_avito extends Migration
             'id'
         );
     }
-    
+
     public function safeDown()
     {
         $this->dropTable('avito_complectation_map');
@@ -235,8 +235,8 @@ class m191114_095707_avito extends Migration
         $this->dropTable('avito_generation_map');
         $this->dropTable('avito_model_map');
         $this->dropTable('avito_make_map');
-        
-        
+
+
         $this->dropTable('avito_complectation');
         $this->dropTable('avito_modification');
         $this->dropTable('avito_generation');

@@ -19,12 +19,12 @@ class AutoruMark extends ActiveRecord
     {
         return new AutoruMapMarksQuery(static::class);
     }
-    
+
     public static function tableName(): string
     {
         return 'eqt_autoru_mark';
     }
-    
+
     public function rules(): array
     {
         return [
@@ -33,7 +33,7 @@ class AutoruMark extends ActiveRecord
             [['id'], 'unique'],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [

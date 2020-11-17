@@ -22,7 +22,7 @@ class Mark extends ActiveRecord
     {
         return 'dromru_mark';
     }
-    
+
     public function rules(): array
     {
         return [
@@ -30,7 +30,7 @@ class Mark extends ActiveRecord
             [['name'], 'string', 'max' => 255],
         ];
     }
-    
+
     public function attributeLabels(): array
     {
         return [
@@ -39,12 +39,12 @@ class Mark extends ActiveRecord
             'brand_id' => 'Бренд',
         ];
     }
-    
+
     public static function find(): MarkQuery
     {
         return new MarkQuery(static::class);
     }
-    
+
     public function getRefBrands()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
