@@ -15,6 +15,7 @@ use yii\base\InvalidConfigException;
  * @property integer $serie_id
  * @property integer $modification_id
  * @property integer $status
+ * @property string $code
  * @property string $created_at
  * @property string $updated_at
  * @property integer $classification
