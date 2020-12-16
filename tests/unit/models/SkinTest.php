@@ -57,6 +57,7 @@ class SkinTest extends TestCase
                 'common_skin_id',
                 'code',
                 'name',
+                'image_url',
                 'created_at',
                 'updated_at',
             ],
