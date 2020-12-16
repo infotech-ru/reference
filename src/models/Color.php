@@ -13,6 +13,7 @@ use yii\base\InvalidConfigException;
  * @property integer $common_color_id
  * @property string $rgb
  * @property string $name
+ * @property string $image_url
  * @property string $created_at
  * @property string $updated_at
  * @property-read Model $model
