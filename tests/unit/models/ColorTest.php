@@ -76,6 +76,7 @@ class ColorTest extends TestCase
                 'common_color_id',
                 'rgb',
                 'name',
+                'image_url',
                 'created_at',
                 'updated_at',
             ],

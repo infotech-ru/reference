@@ -12,6 +12,7 @@ use yii\base\InvalidConfigException;
  * @property integer $common_skin_id
  * @property string $code
  * @property string $name
+ * @property string $image_url
  * @property string $created_at
  * @property string $updated_at
  * @property-read  SkinSerie[] $skinSeries
