@@ -18,6 +18,8 @@ namespace infotech\reference\models;
  * @property integer $origin_id
  * @property integer $is_vin_manufacturer
  * @property string $color
+ * @property boolean $is_recent
+ * @property int $vehicle_type
  * @property-read Model[] $models
  * @property-read BrandLogo $brandLogo
  * @property-read OptionGroup[] $optionGroups
@@ -40,6 +42,10 @@ class Brand extends ActiveRecord
     public const  KIA_ID = 8;
     public const  NISSAN_ID = 88;
     public const  HAVAL_ID = 152;
+
+    public const VEHICLE_TYPE_MIXED = 1;
+    public const VEHICLE_TYPE_PASSENGER = 2;
+    public const VEHICLE_TYPE_CARGO = 3;
 
     public static function tableName(): string
     {
