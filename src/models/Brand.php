@@ -46,6 +46,7 @@ class Brand extends ActiveRecord
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
     public const VEHICLE_TYPE_CARGO = 3;
+    public const VEHICLE_TYPE_MOTO = 4;
 
     public static function tableName(): string
     {
