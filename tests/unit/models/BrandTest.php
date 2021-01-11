@@ -194,4 +194,9 @@ class BrandTest extends TestCase
     {
         $this->assertEquals(3, Brand::VEHICLE_TYPE_CARGO);
     }
+
+    public function testVehicleTypeMoto()
+    {
+        $this->assertEquals(4, Brand::VEHICLE_TYPE_MOTO);
+    }
 }
