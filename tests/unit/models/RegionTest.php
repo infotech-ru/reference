@@ -62,6 +62,7 @@ class RegionTest extends TestCase
                 'lng',
                 'okato',
                 'center_city_id',
+                'iso_code',
             ],
             $model->attributes()
         );
