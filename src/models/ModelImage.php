@@ -11,11 +11,15 @@ use Yii;
  * @property integer $model_id
  * @property integer $generation_id
  * @property integer $series_id
+ * @property integer $equipment_id
  * @property string $url
  * @property integer $category
  * @property integer $priority
  * @property integer $status
  * @property-read Model $model
+ * @property-read Serie $series
+ * @property-read Generation $generation
+ * @property-read Equipment $equipment
  */
 class ModelImage extends ActiveRecord
 {
@@ -63,5 +67,10 @@ class ModelImage extends ActiveRecord
     public function getSeries()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
+    }
+
+    public function getEquipment()
+    {
+        return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 }

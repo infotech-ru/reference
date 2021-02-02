@@ -60,6 +60,7 @@ class ModelImageTest extends TestCase
                 'status',
                 'generation_id',
                 'series_id',
+                'equipment_id',
             ],
             $model->attributes()
         );
