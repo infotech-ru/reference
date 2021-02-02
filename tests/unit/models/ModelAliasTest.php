@@ -102,6 +102,7 @@ class ModelAliasTest extends TestCase
                 'generation_id',
                 'serie_id',
                 'status',
+                'code',
                 'created_at',
                 'updated_at',
                 'classification',

@@ -85,7 +85,9 @@ class BrandTest extends TestCase
                 'is_supported',
                 'origin_id',
                 'is_vin_manufacturer',
-                'color'
+                'color',
+                'is_recent',
+                'vehicle_type',
             ],
             $model->attributes()
         );
@@ -176,5 +178,25 @@ class BrandTest extends TestCase
     {
         $model = new Brand();
         $this->assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
+    }
+
+    public function testVehicleTypeMixed()
+    {
+        $this->assertEquals(1, Brand::VEHICLE_TYPE_MIXED);
+    }
+
+    public function testVehicleTypePassenger()
+    {
+        $this->assertEquals(2, Brand::VEHICLE_TYPE_PASSENGER);
+    }
+
+    public function testVehicleTypeCargo()
+    {
+        $this->assertEquals(3, Brand::VEHICLE_TYPE_CARGO);
+    }
+
+    public function testVehicleTypeMoto()
+    {
+        $this->assertEquals(4, Brand::VEHICLE_TYPE_MOTO);
     }
 }

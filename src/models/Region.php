@@ -7,7 +7,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class City
+ * Class Region
  * @package infotech\reference\models
  * @property integer $id
  * @property integer $country_id
@@ -19,6 +19,7 @@ use yii\helpers\ArrayHelper;
  * @property double $lng
  * @property string $okato
  * @property int $center_city_id
+ * @property string $iso_code
  * @property Country $country
  * @property FederalDistrict $federalDistrict
  * @property City[] $cities

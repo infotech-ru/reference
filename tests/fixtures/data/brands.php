@@ -8,6 +8,8 @@ return [
         'name_market' => 'Opel',
         'logo' => '',
         'importer_db_name' => '',
+        'is_recent' => true,
+        'vehicle_type' => 1,
     ],
     [
         'id' => 2,
@@ -16,6 +18,8 @@ return [
         'name_market' => 'Chevrolet',
         'logo' => '',
         'importer_db_name' => '',
+        'is_recent' => true,
+        'vehicle_type' => 1,
     ],
     [
         'id' => 3,
@@ -24,5 +28,7 @@ return [
         'name_market' => 'Cadillac',
         'logo' => '',
         'importer_db_name' => '',
+        'is_recent' => true,
+        'vehicle_type' => 1,
     ],
 ];
