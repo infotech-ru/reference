@@ -11,6 +11,7 @@ use yii\base\InvalidConfigException;
  * @property integer $country_id
  * @property integer $region_id
  * @property string $name
+ * @property string $english_name
  * @property string $name_where
  * @property string $timezone
  * @property double $lat
