@@ -6,6 +6,6 @@ class CreditBank extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'credit_program_option';
+        return 'credit_bank';
     }
 }
