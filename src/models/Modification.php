@@ -19,6 +19,7 @@ namespace infotech\reference\models;
  * @property integer $price_max
  * @property string $package_code
  * @property boolean $is_recent
+ * @property integer $mileage_interservice_gap
  * @property integer $origin_Id
  * @property boolean $is_deleted
  * @property-read Serie[] $series
