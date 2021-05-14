@@ -86,6 +86,7 @@ class ModificationTest extends TestCase
                 'is_recent',
                 'origin_id',
                 'is_deleted',
+                'mileage_interservice_gap',
             ],
             $model->attributes()
         );
