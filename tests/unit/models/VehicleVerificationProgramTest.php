@@ -12,28 +12,28 @@ class VehicleVerificationProgramTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new VehicleVerificationProgram());
+        self::assertNotNull(new VehicleVerificationProgram());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('vehicle_verification_program', VehicleVerificationProgram::tableName());
+        self::assertEquals('vehicle_verification_program', VehicleVerificationProgram::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id'], VehicleVerificationProgram::primaryKey());
+        self::assertEquals(['id'], VehicleVerificationProgram::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(VehicleVerificationProgramQuery::class, VehicleVerificationProgram::find());
+        self::assertInstanceOf(VehicleVerificationProgramQuery::class, VehicleVerificationProgram::find());
     }
 
     public function testAttributes()
     {
         $model = new VehicleVerificationProgram();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'brand_id',
@@ -49,17 +49,17 @@ class VehicleVerificationProgramTest extends TestCase
     {
         $model = new VehicleVerificationProgram();
 
-        $this->assertEquals(null, $model->getPhotoUrl());
+        self::assertEquals(null, $model->getPhotoUrl());
 
         $model->brand_id = Brand::SUBARU_ID;
         $model->photo = VehicleVerificationProgram::BASE_CATALOG_NAME . "/$model->brand_id/subaru-select.png";
 
-        $this->assertEquals('http://195004.selcdn.com/ref/' . $model->photo, $model->getPhotoUrl());
+        self::assertEquals('http://195004.selcdn.ru/ref/' . $model->photo, $model->getPhotoUrl());
     }
 
     public function testGetBrand()
     {
         $model = new VehicleVerificationProgram();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 }
