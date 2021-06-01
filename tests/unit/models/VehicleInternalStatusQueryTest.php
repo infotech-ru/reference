@@ -11,6 +11,6 @@ class VehicleInternalStatusQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new VehicleInternalStatusQuery(VehicleInternalStatus::class));
+        self::assertInstanceOf(ActiveQuery::class, new VehicleInternalStatusQuery(VehicleInternalStatus::class));
     }
 }

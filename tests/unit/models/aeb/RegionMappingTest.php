@@ -11,23 +11,23 @@ class RegionMappingTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new RegionMapping());
+        self::assertNotNull(new RegionMapping());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('aeb_region_mapping', RegionMapping::tableName());
+        self::assertEquals('aeb_region_mapping', RegionMapping::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ActiveQuery::class, RegionMapping::find());
+        self::assertInstanceOf(ActiveQuery::class, RegionMapping::find());
     }
 
     public function testAttributes()
     {
         $model = new RegionMapping();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'region_id',
@@ -42,21 +42,24 @@ class RegionMappingTest extends TestCase
     public function testGetRegion()
     {
         $model = new RegionMapping();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegion());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegion());
     }
 
     public function testGetAEBRegionUploadHistory()
     {
         $model = new RegionMapping();
-        $this->assertInstanceOf(ActiveQuery::class, $model->getAEBRegionUploadHistory());
+        self::assertInstanceOf(ActiveQuery::class, $model->getAEBRegionUploadHistory());
     }
 
     public function testAttributeLabels()
     {
         $model = new RegionMapping();
-        $this->assertEquals([
-            'name' => 'Название',
-            'region_id' => 'ID региона',
-        ], $model->attributeLabels());
+        self::assertEquals(
+            [
+                'name' => 'Название',
+                'region_id' => 'ID региона',
+            ],
+            $model->attributeLabels()
+        );
     }
 }

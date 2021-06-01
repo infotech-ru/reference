@@ -11,6 +11,6 @@ class CharacteristicValueQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new CharacteristicValueQuery(CharacteristicValue::class));
+        self::assertInstanceOf(ActiveQuery::class, new CharacteristicValueQuery(CharacteristicValue::class));
     }
 }

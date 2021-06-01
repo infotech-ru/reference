@@ -31,23 +31,23 @@ class ModelClassTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelClass());
+        self::assertNotNull(new ModelClass());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_class', ModelClass::tableName());
+        self::assertEquals('model_class', ModelClass::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelClassQuery::class, ModelClass::find());
+        self::assertInstanceOf(ModelClassQuery::class, ModelClass::find());
     }
 
     public function testAttributes()
     {
         $model = new ModelClass();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -59,17 +59,17 @@ class ModelClassTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2'], ModelClass::getList());
+        self::assertEquals(['1' => '1', '2' => '2'], ModelClass::getList());
     }
 
     public function testStatuses()
     {
-        $this->assertEquals(0, ModelClass::STATUS_ACTIVE);
-        $this->assertEquals(1, ModelClass::STATUS_DELETED);
+        self::assertEquals(0, ModelClass::STATUS_ACTIVE);
+        self::assertEquals(1, ModelClass::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelClass::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelClass::getStatusList());
     }
 }

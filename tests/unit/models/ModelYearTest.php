@@ -34,29 +34,29 @@ class ModelYearTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelYear());
+        self::assertNotNull(new ModelYear());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_year', ModelYear::tableName());
+        self::assertEquals('model_year', ModelYear::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelYearQuery::class, ModelYear::find());
+        self::assertInstanceOf(ModelYearQuery::class, ModelYear::find());
     }
 
     public function testGetModel()
     {
         $model = new ModelYear();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testAttributes()
     {
         $model = new ModelYear();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -71,19 +71,19 @@ class ModelYearTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], ModelYear::getList(1, true));
-        $this->assertEquals(['1' => '1', '2' => '2'], ModelYear::getList(1, false));
+        self::assertEquals(['1' => '1'], ModelYear::getList(1, true));
+        self::assertEquals(['1' => '1', '2' => '2'], ModelYear::getList(1, false));
     }
 
     public function testGetModelYearEquipments()
     {
         $model = new ModelYear();
-        $this->assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
+        self::assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
     }
 
     public function testGetEquipments()
     {
         $model = new ModelYear();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }

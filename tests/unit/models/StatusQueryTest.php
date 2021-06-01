@@ -11,6 +11,6 @@ class StatusQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new StatusQuery(Status::class));
+        self::assertInstanceOf(ActiveQuery::class, new StatusQuery(Status::class));
     }
 }

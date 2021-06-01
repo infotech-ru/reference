@@ -11,6 +11,6 @@ class VehicleOptionGroupQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new VehicleOptionGroupQuery(VehicleOptionGroup::class));
+        self::assertInstanceOf(ActiveQuery::class, new VehicleOptionGroupQuery(VehicleOptionGroup::class));
     }
 }

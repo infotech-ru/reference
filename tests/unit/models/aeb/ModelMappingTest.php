@@ -12,23 +12,23 @@ class ModelMappingTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelMapping());
+        self::assertNotNull(new ModelMapping());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('aeb_model_mapping', ModelMapping::tableName());
+        self::assertEquals('aeb_model_mapping', ModelMapping::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ActiveQuery::class, ModelMapping::find());
+        self::assertInstanceOf(ActiveQuery::class, ModelMapping::find());
     }
 
     public function testAttributes()
     {
         $model = new ModelMapping();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'brand_id',
@@ -44,28 +44,31 @@ class ModelMappingTest extends TestCase
     public function testGetBrand()
     {
         $model = new ModelMapping();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testGetModel()
     {
         $model = new ModelMapping();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetAEBRegionUploadHistory()
     {
         $model = new ModelMapping();
-        $this->assertInstanceOf(ActiveQuery::class, $model->getAEBRegionUploadHistory());
+        self::assertInstanceOf(ActiveQuery::class, $model->getAEBRegionUploadHistory());
     }
 
     public function testAttributeLabels()
     {
         $model = new ModelMapping();
-        $this->assertEquals([
-            'name' => 'Название для сопоставления',
-            'model_id' => 'ID модели',
-            'brand_id' => 'ID бренда',
-        ], $model->attributeLabels());
+        self::assertEquals(
+            [
+                'name' => 'Название для сопоставления',
+                'model_id' => 'ID модели',
+                'brand_id' => 'ID бренда',
+            ],
+            $model->attributeLabels()
+        );
     }
 }

@@ -13,41 +13,41 @@ class OptionTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new Option());
+        self::assertNotNull(new Option());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_option', Option::tableName());
+        self::assertEquals('eqt_option', Option::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(OptionQuery::class, Option::find());
+        self::assertInstanceOf(OptionQuery::class, Option::find());
     }
 
     public function testGetEquipment()
     {
         $model = new Option();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
 
     public function testGetModelOption()
     {
         $model = new Option();
-        $this->assertInstanceOf(ModelOptionQuery::class, $model->getModelOption());
+        self::assertInstanceOf(ModelOptionQuery::class, $model->getModelOption());
     }
 
     public function testGetOptionGroup()
     {
         $model = new Option();
-        $this->assertInstanceOf(OptionGroupQuery::class, $model->getOptionGroup());
+        self::assertInstanceOf(OptionGroupQuery::class, $model->getOptionGroup());
     }
 
     public function testAttributes()
     {
         $model = new Option();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'equipment_id',

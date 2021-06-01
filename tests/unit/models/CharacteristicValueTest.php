@@ -13,46 +13,46 @@ class CharacteristicValueTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new CharacteristicValue());
+        self::assertNotNull(new CharacteristicValue());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('car_characteristic_value', CharacteristicValue::tableName());
+        self::assertEquals('car_characteristic_value', CharacteristicValue::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id_car_characteristic_value'], CharacteristicValue::primaryKey());
+        self::assertEquals(['id_car_characteristic_value'], CharacteristicValue::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CharacteristicValueQuery::class, CharacteristicValue::find());
+        self::assertInstanceOf(CharacteristicValueQuery::class, CharacteristicValue::find());
     }
 
     public function testGetCharacteristic()
     {
         $model = new CharacteristicValue();
-        $this->assertInstanceOf(CharacteristicQuery::class, $model->getCharacteristic());
+        self::assertInstanceOf(CharacteristicQuery::class, $model->getCharacteristic());
     }
 
     public function testGetModification()
     {
         $model = new CharacteristicValue();
-        $this->assertInstanceOf(ModificationQuery::class, $model->getModification());
+        self::assertInstanceOf(ModificationQuery::class, $model->getModification());
     }
 
     public function testGetEquipment()
     {
         $model = new CharacteristicValue();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
 
     public function testAttributes()
     {
         $model = new CharacteristicValue();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id_car_characteristic_value',
                 'value',

@@ -11,17 +11,17 @@ class BrandQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new BrandQuery(Brand::class));
+        self::assertInstanceOf(ActiveQuery::class, new BrandQuery(Brand::class));
     }
 
     public function testIsSupported()
     {
         $query = new BrandQuery(Brand::class);
-        $this->assertEquals($query, $query->isSupported());
-        $this->assertEquals(['brands.is_supported' => true], $query->where);
+        self::assertEquals($query, $query->isSupported());
+        self::assertEquals(['brands.is_supported' => true], $query->where);
 
         $query = new BrandQuery(Brand::class);
-        $this->assertEquals($query, $query->isSupported(1));
-        $this->assertEquals(['brands.is_supported' => 1], $query->where);
+        self::assertEquals($query, $query->isSupported(1));
+        self::assertEquals(['brands.is_supported' => 1], $query->where);
     }
 }

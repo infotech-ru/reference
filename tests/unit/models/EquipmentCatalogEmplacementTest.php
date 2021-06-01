@@ -33,23 +33,23 @@ class EquipmentCatalogEmplacementTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new EquipmentCatalogEmplacement());
+        self::assertNotNull(new EquipmentCatalogEmplacement());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_equipment_catalog_emplacement', EquipmentCatalogEmplacement::tableName());
+        self::assertEquals('eqt_equipment_catalog_emplacement', EquipmentCatalogEmplacement::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(EquipmentCatalogEmplacementQuery::class, EquipmentCatalogEmplacement::find());
+        self::assertInstanceOf(EquipmentCatalogEmplacementQuery::class, EquipmentCatalogEmplacement::find());
     }
 
     public function testAttributes()
     {
         $model = new EquipmentCatalogEmplacement();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'catalog_emplacement_id',
                 'equipment_id',
@@ -61,12 +61,12 @@ class EquipmentCatalogEmplacementTest extends TestCase
     public function testGetEquipment()
     {
         $model = new EquipmentCatalogEmplacement();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
 
     public function testGetCatalogEmplacement()
     {
         $model = new EquipmentCatalogEmplacement();
-        $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacement());
+        self::assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacement());
     }
 }

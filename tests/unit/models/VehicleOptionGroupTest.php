@@ -11,28 +11,28 @@ class VehicleOptionGroupTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new VehicleOptionGroup());
+        self::assertNotNull(new VehicleOptionGroup());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('vehicle_option_group', VehicleOptionGroup::tableName());
+        self::assertEquals('vehicle_option_group', VehicleOptionGroup::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id'], VehicleOptionGroup::primaryKey());
+        self::assertEquals(['id'], VehicleOptionGroup::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(VehicleOptionGroupQuery::class, VehicleOptionGroup::find());
+        self::assertInstanceOf(VehicleOptionGroupQuery::class, VehicleOptionGroup::find());
     }
 
     public function testAttributes()
     {
         $model = new VehicleOptionGroup();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -45,19 +45,22 @@ class VehicleOptionGroupTest extends TestCase
     public function testGetTypes()
     {
         $model = new VehicleOptionGroup();
-        $this->assertInstanceOf(VehicleOptionTypeQuery::class, $model->getTypes());
+        self::assertInstanceOf(VehicleOptionTypeQuery::class, $model->getTypes());
     }
 
     public function testGetCodesList()
     {
-        $this->assertEquals([
-            'multimedia' => 'Мультимедиа',
-            'comfort' => 'Комфорт',
-            'safety' => 'Безопасность',
-            'visibility' => 'Обзор',
-            'exterior_elements' => 'Элементы экстерьера',
-            'anti_theft' => 'Защита от угона',
-            'interior' => 'Салон',
-        ], VehicleOptionGroup::getCodesList());
+        self::assertEquals(
+            [
+                'multimedia' => 'Мультимедиа',
+                'comfort' => 'Комфорт',
+                'safety' => 'Безопасность',
+                'visibility' => 'Обзор',
+                'exterior_elements' => 'Элементы экстерьера',
+                'anti_theft' => 'Защита от угона',
+                'interior' => 'Салон',
+            ],
+            VehicleOptionGroup::getCodesList()
+        );
     }
 }

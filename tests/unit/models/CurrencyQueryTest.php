@@ -11,6 +11,6 @@ class CurrencyQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new CurrencyQuery(Currency::class));
+        self::assertInstanceOf(ActiveQuery::class, new CurrencyQuery(Currency::class));
     }
 }

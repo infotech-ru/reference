@@ -33,23 +33,23 @@ class EquipmentCountryTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new EquipmentCountry());
+        self::assertNotNull(new EquipmentCountry());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_equipment_country', EquipmentCountry::tableName());
+        self::assertEquals('eqt_equipment_country', EquipmentCountry::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(EquipmentCountryQuery::class, EquipmentCountry::find());
+        self::assertInstanceOf(EquipmentCountryQuery::class, EquipmentCountry::find());
     }
 
     public function testAttributes()
     {
         $model = new EquipmentCountry();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'country_id',
                 'equipment_id',
@@ -61,12 +61,12 @@ class EquipmentCountryTest extends TestCase
     public function testGetEquipment()
     {
         $model = new EquipmentCountry();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
 
     public function testGetCountry()
     {
         $model = new EquipmentCountry();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountry());
     }
 }

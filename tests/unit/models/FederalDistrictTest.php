@@ -33,23 +33,23 @@ class FederalDistrictTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new FederalDistrict());
+        self::assertNotNull(new FederalDistrict());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('federal_districts', FederalDistrict::tableName());
+        self::assertEquals('federal_districts', FederalDistrict::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(FederalDistrictQuery::class, FederalDistrict::find());
+        self::assertInstanceOf(FederalDistrictQuery::class, FederalDistrict::find());
     }
 
     public function testAttributes()
     {
         $model = new FederalDistrict();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -65,30 +65,30 @@ class FederalDistrictTest extends TestCase
     public function testGetRegions()
     {
         $model = new FederalDistrict();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegions());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegions());
     }
 
     public function testGetCountry()
     {
         $model = new FederalDistrict();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountry());
     }
 
     public function testStatuses()
     {
-        $this->assertEquals(0, FederalDistrict::STATUS_ACTIVE);
-        $this->assertEquals(1, FederalDistrict::STATUS_DELETED);
+        self::assertEquals(0, FederalDistrict::STATUS_ACTIVE);
+        self::assertEquals(1, FederalDistrict::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], FederalDistrict::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], FederalDistrict::getStatusList());
     }
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], FederalDistrict::getList(1));
-        $this->assertEquals(['2' => '2'], FederalDistrict::getList(2));
-        $this->assertEquals(['1' => '1', '2' => '2'], FederalDistrict::getList(null));
+        self::assertEquals(['1' => '1'], FederalDistrict::getList(1));
+        self::assertEquals(['2' => '2'], FederalDistrict::getList(2));
+        self::assertEquals(['1' => '1', '2' => '2'], FederalDistrict::getList(null));
     }
 }

@@ -31,23 +31,23 @@ class ModelSegmentTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelSegment());
+        self::assertNotNull(new ModelSegment());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_segment', ModelSegment::tableName());
+        self::assertEquals('model_segment', ModelSegment::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelSegmentQuery::class, ModelSegment::find());
+        self::assertInstanceOf(ModelSegmentQuery::class, ModelSegment::find());
     }
 
     public function testAttributes()
     {
         $model = new ModelSegment();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -59,17 +59,17 @@ class ModelSegmentTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2'], ModelSegment::getList());
+        self::assertEquals(['1' => '1', '2' => '2'], ModelSegment::getList());
     }
 
     public function testStatuses()
     {
-        $this->assertEquals(0, ModelSegment::STATUS_ACTIVE);
-        $this->assertEquals(1, ModelSegment::STATUS_DELETED);
+        self::assertEquals(0, ModelSegment::STATUS_ACTIVE);
+        self::assertEquals(1, ModelSegment::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelSegment::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelSegment::getStatusList());
     }
 }
