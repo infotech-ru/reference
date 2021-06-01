@@ -11,17 +11,17 @@ class CharacteristicQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new CharacteristicQuery(Characteristic::class));
+        self::assertInstanceOf(ActiveQuery::class, new CharacteristicQuery(Characteristic::class));
     }
 
     public function testIsMain()
     {
         $query = new CharacteristicQuery(Characteristic::class);
-        $this->assertEquals($query, $query->isMain());
-        $this->assertEquals(['car_characteristic.is_main' => true], $query->where);
+        self::assertEquals($query, $query->isMain());
+        self::assertEquals(['car_characteristic.is_main' => true], $query->where);
 
         $query = new CharacteristicQuery(Characteristic::class);
-        $this->assertEquals($query, $query->isMain(1));
-        $this->assertEquals(['car_characteristic.is_main' => 1], $query->where);
+        self::assertEquals($query, $query->isMain(1));
+        self::assertEquals(['car_characteristic.is_main' => 1], $query->where);
     }
 }

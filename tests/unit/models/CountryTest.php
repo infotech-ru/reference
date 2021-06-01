@@ -35,23 +35,23 @@ class CountryTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Country());
+        self::assertNotNull(new Country());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('countries', Country::tableName());
+        self::assertEquals('countries', Country::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CountryQuery::class, Country::find());
+        self::assertInstanceOf(CountryQuery::class, Country::find());
     }
 
     public function testAttributes()
     {
         $model = new Country();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -65,7 +65,7 @@ class CountryTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 '1' => 'Россия',
                 '2' => 'Беларусь',
@@ -78,24 +78,24 @@ class CountryTest extends TestCase
     public function testGetRegions()
     {
         $model = new Country();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegions());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegions());
     }
 
     public function testGetCities()
     {
         $model = new Country();
-        $this->assertInstanceOf(CityQuery::class, $model->getCities());
+        self::assertInstanceOf(CityQuery::class, $model->getCities());
     }
 
     public function testGetEquipmentCountries()
     {
         $model = new Country();
-        $this->assertInstanceOf(EquipmentCountryQuery::class, $model->getEquipmentCountries());
+        self::assertInstanceOf(EquipmentCountryQuery::class, $model->getEquipmentCountries());
     }
 
     public function testGetEquipments()
     {
         $model = new Country();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }

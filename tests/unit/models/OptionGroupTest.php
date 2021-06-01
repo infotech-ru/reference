@@ -32,29 +32,29 @@ class OptionGroupTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new OptionGroup());
+        self::assertNotNull(new OptionGroup());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_option_group', OptionGroup::tableName());
+        self::assertEquals('eqt_option_group', OptionGroup::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(OptionGroupQuery::class, OptionGroup::find());
+        self::assertInstanceOf(OptionGroupQuery::class, OptionGroup::find());
     }
 
     public function testGetBrand()
     {
         $model = new OptionGroup();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testAttributes()
     {
         $model = new OptionGroup();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'brand_id',
@@ -68,7 +68,7 @@ class OptionGroupTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], OptionGroup::getList(1));
-        $this->assertEquals([], OptionGroup::getList(2));
+        self::assertEquals(['1' => '1'], OptionGroup::getList(1));
+        self::assertEquals([], OptionGroup::getList(2));
     }
 }

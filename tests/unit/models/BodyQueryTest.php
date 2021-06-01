@@ -11,6 +11,6 @@ class BodyQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new BodyQuery(Body::class));
+        self::assertInstanceOf(ActiveQuery::class, new BodyQuery(Body::class));
     }
 }

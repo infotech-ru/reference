@@ -31,23 +31,23 @@ class BodyTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Body());
+        self::assertNotNull(new Body());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('bodies', Body::tableName());
+        self::assertEquals('bodies', Body::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(BodyQuery::class, Body::find());
+        self::assertInstanceOf(BodyQuery::class, Body::find());
     }
 
     public function testAttributes()
     {
         $model = new Body();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -59,9 +59,12 @@ class BodyTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals([
-            '1' => '1',
-            '2' => '2',
-        ], Body::getList());
+        self::assertEquals(
+            [
+                '1' => '1',
+                '2' => '2',
+            ],
+            Body::getList()
+        );
     }
 }

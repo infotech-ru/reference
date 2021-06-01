@@ -12,40 +12,40 @@ class CatalogImageTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new CatalogImage());
+        self::assertNotNull(new CatalogImage());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_catalog_image', CatalogImage::tableName());
+        self::assertEquals('eqt_catalog_image', CatalogImage::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['emplacement_id', 'foreshortening_id'], CatalogImage::primaryKey());
+        self::assertEquals(['emplacement_id', 'foreshortening_id'], CatalogImage::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CatalogImageQuery::class, CatalogImage::find());
+        self::assertInstanceOf(CatalogImageQuery::class, CatalogImage::find());
     }
 
     public function testGetCatalogEmplacement()
     {
         $model = new CatalogImage();
-        $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacement());
+        self::assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacement());
     }
 
     public function testGetCatalogForeshortening()
     {
         $model = new CatalogImage();
-        $this->assertInstanceOf(CatalogForeshorteningQuery::class, $model->getCatalogForeshortening());
+        self::assertInstanceOf(CatalogForeshorteningQuery::class, $model->getCatalogForeshortening());
     }
 
     public function testAttributes()
     {
         $model = new CatalogImage();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'emplacement_id',
                 'foreshortening_id',

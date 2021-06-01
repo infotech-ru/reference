@@ -33,23 +33,23 @@ class CityTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new City());
+        self::assertNotNull(new City());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('cities', City::tableName());
+        self::assertEquals('cities', City::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CityQuery::class, City::find());
+        self::assertInstanceOf(CityQuery::class, City::find());
     }
 
     public function testAttributes()
     {
         $model = new City();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'country_id',
@@ -69,17 +69,17 @@ class CityTest extends TestCase
     public function testGetCountry()
     {
         $model = new City();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountry());
     }
 
     public function testGetRegion()
     {
         $model = new City();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegion());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegion());
     }
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '3' => 'г. Санкт-Петербург'], City::getList(1));
+        self::assertEquals(['1' => '1', '3' => 'г. Санкт-Петербург'], City::getList(1));
     }
 }

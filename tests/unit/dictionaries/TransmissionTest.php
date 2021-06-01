@@ -9,6 +9,6 @@ class TransmissionTest extends TestCase
 {
     public function testGetList()
     {
-        $this->assertEquals([1 => 'МКПП', 2 => 'АКПП', 3 => 'Вариатор', 4 => 'Робот'], Transmission::getList());
+        self::assertEquals([1 => 'МКПП', 2 => 'АКПП', 3 => 'Вариатор', 4 => 'Робот'], Transmission::getList());
     }
 }

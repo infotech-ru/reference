@@ -11,23 +11,23 @@ class CatalogForeshorteningTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new CatalogForeshortening());
+        self::assertNotNull(new CatalogForeshortening());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_catalog_foreshortening', CatalogForeshortening::tableName());
+        self::assertEquals('eqt_catalog_foreshortening', CatalogForeshortening::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CatalogForeshorteningQuery::class, CatalogForeshortening::find());
+        self::assertInstanceOf(CatalogForeshorteningQuery::class, CatalogForeshortening::find());
     }
 
     public function testAttributes()
     {
         $model = new CatalogForeshortening();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -42,6 +42,6 @@ class CatalogForeshorteningTest extends TestCase
     public function testGetCatalogImages()
     {
         $model = new CatalogForeshortening();
-        $this->assertInstanceOf(CatalogImageQuery::class, $model->getCatalogImages());
+        self::assertInstanceOf(CatalogImageQuery::class, $model->getCatalogImages());
     }
 }

@@ -32,23 +32,23 @@ class ModelVideoTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelVideo());
+        self::assertNotNull(new ModelVideo());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_video', ModelVideo::tableName());
+        self::assertEquals('model_video', ModelVideo::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelVideoQuery::class, ModelVideo::find());
+        self::assertInstanceOf(ModelVideoQuery::class, ModelVideo::find());
     }
 
     public function testAttributes()
     {
         $model = new ModelVideo();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -63,29 +63,29 @@ class ModelVideoTest extends TestCase
 
     public function testStatuses()
     {
-        $this->assertEquals(0, ModelVideo::STATUS_ACTIVE);
-        $this->assertEquals(1, ModelVideo::STATUS_DELETED);
+        self::assertEquals(0, ModelVideo::STATUS_ACTIVE);
+        self::assertEquals(1, ModelVideo::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelVideo::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelVideo::getStatusList());
     }
 
     public function testType()
     {
-        $this->assertEquals(1, ModelVideo::TYPE_YOUTUBE);
-        $this->assertEquals(0, ModelVideo::TYPE_URL);
+        self::assertEquals(1, ModelVideo::TYPE_YOUTUBE);
+        self::assertEquals(0, ModelVideo::TYPE_URL);
     }
 
     public function testGetTypeList()
     {
-        $this->assertEquals([0 => 'Видео', 1 => 'YouTube',], ModelVideo::getTypeList());
+        self::assertEquals([0 => 'Видео', 1 => 'YouTube',], ModelVideo::getTypeList());
     }
 
     public function testGetModel()
     {
         $model = new ModelVideo();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 }

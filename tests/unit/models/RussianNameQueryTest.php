@@ -11,6 +11,6 @@ class RussianNameQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new RussianNameQuery(RussianName::class));
+        self::assertInstanceOf(ActiveQuery::class, new RussianNameQuery(RussianName::class));
     }
 }

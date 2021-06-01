@@ -11,6 +11,6 @@ class VehiclePassportStatusQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new VehiclePassportStatusQuery(VehiclePassportStatus::class));
+        self::assertInstanceOf(ActiveQuery::class, new VehiclePassportStatusQuery(VehiclePassportStatus::class));
     }
 }

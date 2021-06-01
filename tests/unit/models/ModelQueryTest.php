@@ -11,39 +11,39 @@ class ModelQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModelQuery(Model::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModelQuery(Model::class));
     }
 
     public function testIsRecent()
     {
         $query = new ModelQuery(Model::class);
         $query->isRecent();
-        $this->assertEquals(['models.is_recent' => true], $query->where);
+        self::assertEquals(['models.is_recent' => true], $query->where);
 
         $query = new ModelQuery(Model::class);
         $query->isRecent(1);
-        $this->assertEquals(['models.is_recent' => 1], $query->where);
+        self::assertEquals(['models.is_recent' => 1], $query->where);
     }
 
     public function testIsDeleted()
     {
         $query = new ModelQuery(Model::class);
         $query->isDeleted();
-        $this->assertEquals(['models.is_deleted' => true], $query->where);
+        self::assertEquals(['models.is_deleted' => true], $query->where);
 
         $query = new ModelQuery(Model::class);
         $query->isDeleted(1);
-        $this->assertEquals(['models.is_deleted' => 1], $query->where);
+        self::assertEquals(['models.is_deleted' => 1], $query->where);
     }
 
     public function testBrand()
     {
         $query = new ModelQuery(Model::class);
         $query->brand(1);
-        $this->assertEquals(['models.brand_id' => 1], $query->where);
+        self::assertEquals(['models.brand_id' => 1], $query->where);
 
         $query = new ModelQuery(Model::class);
         $query->brand(23);
-        $this->assertEquals(['models.brand_id' => 23], $query->where);
+        self::assertEquals(['models.brand_id' => 23], $query->where);
     }
 }

@@ -11,6 +11,6 @@ class ModelYearEquipmentQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModelYearEquipmentQuery(ModelYearEquipment::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModelYearEquipmentQuery(ModelYearEquipment::class));
     }
 }

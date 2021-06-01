@@ -11,28 +11,28 @@ class ModelAliasQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModelAliasQuery(ModelAlias::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModelAliasQuery(ModelAlias::class));
     }
 
     public function testBrand()
     {
         $query = new ModelAliasQuery(ModelAlias::class);
-        $this->assertEquals($query, $query->brand(1));
-        $this->assertEquals(['model_alias.brand_id' => 1], $query->where);
+        self::assertEquals($query, $query->brand(1));
+        self::assertEquals(['model_alias.brand_id' => 1], $query->where);
 
         $query = new ModelAliasQuery(ModelAlias::class);
-        $this->assertEquals($query, $query->brand([1, 2]));
-        $this->assertEquals(['model_alias.brand_id' => [1, 2]], $query->where);
+        self::assertEquals($query, $query->brand([1, 2]));
+        self::assertEquals(['model_alias.brand_id' => [1, 2]], $query->where);
     }
 
     public function testStatus()
     {
         $query = new ModelAliasQuery(ModelAlias::class);
-        $this->assertEquals($query, $query->status(1));
-        $this->assertEquals(['model_alias.status' => 1], $query->where);
+        self::assertEquals($query, $query->status(1));
+        self::assertEquals(['model_alias.status' => 1], $query->where);
 
         $query = new ModelAliasQuery(ModelAlias::class);
-        $this->assertEquals($query, $query->status([1, 2]));
-        $this->assertEquals(['model_alias.status' => [1, 2]], $query->where);
+        self::assertEquals($query, $query->status([1, 2]));
+        self::assertEquals(['model_alias.status' => [1, 2]], $query->where);
     }
 }

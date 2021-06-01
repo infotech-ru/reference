@@ -33,23 +33,23 @@ class ModificationEquipmentTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModificationEquipment());
+        self::assertNotNull(new ModificationEquipment());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('modification_equipment', ModificationEquipment::tableName());
+        self::assertEquals('modification_equipment', ModificationEquipment::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModificationEquipmentQuery::class, ModificationEquipment::find());
+        self::assertInstanceOf(ModificationEquipmentQuery::class, ModificationEquipment::find());
     }
 
     public function testAttributes()
     {
         $model = new ModificationEquipment();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'modification_id',
                 'equipment_id',
@@ -61,12 +61,12 @@ class ModificationEquipmentTest extends TestCase
     public function testGetModification()
     {
         $model = new ModificationEquipment();
-        $this->assertInstanceOf(ModificationQuery::class, $model->getModification());
+        self::assertInstanceOf(ModificationQuery::class, $model->getModification());
     }
 
     public function testGetEquipment()
     {
         $model = new ModificationEquipment();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
     }
 }

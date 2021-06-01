@@ -11,23 +11,23 @@ class OrderTypeTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new OrderType());
+        self::assertNotNull(new OrderType());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('order_types', OrderType::tableName());
+        self::assertEquals('order_types', OrderType::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(OrderTypeQuery::class, OrderType::find());
+        self::assertInstanceOf(OrderTypeQuery::class, OrderType::find());
     }
 
     public function testAttributes()
     {
         $model = new OrderType();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'code',
                 'brand_id',
@@ -41,26 +41,26 @@ class OrderTypeTest extends TestCase
     public function testGetBrand()
     {
         $model = new OrderType();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testConstantNone()
     {
-        $this->assertEquals('None', OrderType::NONE);
+        self::assertEquals('None', OrderType::NONE);
     }
 
     public function testConstantContract()
     {
-        $this->assertEquals('Contract', OrderType::CONTRACT);
+        self::assertEquals('Contract', OrderType::CONTRACT);
     }
 
     public function testConstantDelivery()
     {
-        $this->assertEquals('Delivery', OrderType::DELIVERY);
+        self::assertEquals('Delivery', OrderType::DELIVERY);
     }
 
     public function testConstantTEST()
     {
-        $this->assertEquals('TEST', OrderType::TEST);
+        self::assertEquals('TEST', OrderType::TEST);
     }
 }

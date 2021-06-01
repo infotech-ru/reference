@@ -11,34 +11,34 @@ class BrandLogoTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new BrandLogo());
+        self::assertNotNull(new BrandLogo());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_brand_logo', BrandLogo::tableName());
+        self::assertEquals('eqt_brand_logo', BrandLogo::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['brand_id'], BrandLogo::primaryKey());
+        self::assertEquals(['brand_id'], BrandLogo::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(BrandLogoQuery::class, BrandLogo::find());
+        self::assertInstanceOf(BrandLogoQuery::class, BrandLogo::find());
     }
 
     public function testGetBrand()
     {
         $model = new BrandLogo();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testAttributes()
     {
         $model = new BrandLogo();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'brand_id',
                 'url',

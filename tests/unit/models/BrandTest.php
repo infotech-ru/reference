@@ -37,41 +37,41 @@ class BrandTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Brand());
+        self::assertNotNull(new Brand());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('brands', Brand::tableName());
+        self::assertEquals('brands', Brand::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(BrandQuery::class, Brand::find());
+        self::assertInstanceOf(BrandQuery::class, Brand::find());
     }
 
     public function testGetModels()
     {
         $model = new Brand();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModels());
+        self::assertInstanceOf(ModelQuery::class, $model->getModels());
     }
 
     public function testGetBrandLogo()
     {
         $model = new Brand();
-        $this->assertInstanceOf(BrandLogoQuery::class, $model->getBrandLogo());
+        self::assertInstanceOf(BrandLogoQuery::class, $model->getBrandLogo());
     }
 
     public function testGetOptionGroups()
     {
         $model = new Brand();
-        $this->assertInstanceOf(OptionGroupQuery::class, $model->getOptionGroups());
+        self::assertInstanceOf(OptionGroupQuery::class, $model->getOptionGroups());
     }
 
     public function testAttributes()
     {
         $model = new Brand();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -95,108 +95,111 @@ class BrandTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals([
-            '1' => 'Opel',
-            '2' => 'Chevrolet',
-            '3' => 'Cadillac',
-        ], Brand::getList());
+        self::assertEquals(
+            [
+                '1' => 'Opel',
+                '2' => 'Chevrolet',
+                '3' => 'Cadillac',
+            ],
+            Brand::getList()
+        );
     }
 
     public function testSubaruId()
     {
-        $this->assertEquals(111, Brand::SUBARU_ID);
+        self::assertEquals(111, Brand::SUBARU_ID);
     }
 
     public function testGazId()
     {
-        $this->assertEquals(127, Brand::GAZ_ID);
+        self::assertEquals(127, Brand::GAZ_ID);
     }
 
     public function testUazId()
     {
-        $this->assertEquals(134, Brand::UAZ_ID);
+        self::assertEquals(134, Brand::UAZ_ID);
     }
 
     public function testHavalId()
     {
-        $this->assertEquals(152, Brand::HAVAL_ID);
+        self::assertEquals(152, Brand::HAVAL_ID);
     }
 
     public function testCadillacId()
     {
-        $this->assertEquals(3, Brand::CADILLAC_ID);
+        self::assertEquals(3, Brand::CADILLAC_ID);
     }
 
     public function testChevroletId()
     {
-        $this->assertEquals(2, Brand::CHEVROLET_ID);
+        self::assertEquals(2, Brand::CHEVROLET_ID);
     }
 
     public function testSmartId()
     {
-        $this->assertEquals(108, Brand::SMART_ID);
+        self::assertEquals(108, Brand::SMART_ID);
     }
 
     public function testMercedesId()
     {
-        $this->assertEquals(80, Brand::MERCEDES_ID);
+        self::assertEquals(80, Brand::MERCEDES_ID);
     }
 
     public function testKiaId()
     {
-        $this->assertEquals(8, Brand::KIA_ID);
+        self::assertEquals(8, Brand::KIA_ID);
     }
 
     public function testFordId()
     {
-        $this->assertEquals(6, Brand::FORD_ID);
+        self::assertEquals(6, Brand::FORD_ID);
     }
 
     public function testInfinitiId()
     {
-        $this->assertEquals(57, Brand::INFINITI_ID);
+        self::assertEquals(57, Brand::INFINITI_ID);
     }
 
     public function testGeelyId()
     {
-        $this->assertEquals(46, Brand::GEELY_ID);
+        self::assertEquals(46, Brand::GEELY_ID);
     }
 
     public function testGetOrderTypes()
     {
         $model = new Brand();
-        $this->assertInstanceOf(OrderTypeQuery::class, $model->getOrderTypes());
+        self::assertInstanceOf(OrderTypeQuery::class, $model->getOrderTypes());
     }
 
     public function testGetNews()
     {
         $model = new Brand();
-        $this->assertInstanceOf(NewsQuery::class, $model->getNews());
+        self::assertInstanceOf(NewsQuery::class, $model->getNews());
     }
 
     public function testGetNewsBrands()
     {
         $model = new Brand();
-        $this->assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
+        self::assertInstanceOf(NewsBrandQuery::class, $model->getNewsBrands());
     }
 
     public function testVehicleTypeMixed()
     {
-        $this->assertEquals(1, Brand::VEHICLE_TYPE_MIXED);
+        self::assertEquals(1, Brand::VEHICLE_TYPE_MIXED);
     }
 
     public function testVehicleTypePassenger()
     {
-        $this->assertEquals(2, Brand::VEHICLE_TYPE_PASSENGER);
+        self::assertEquals(2, Brand::VEHICLE_TYPE_PASSENGER);
     }
 
     public function testVehicleTypeCargo()
     {
-        $this->assertEquals(3, Brand::VEHICLE_TYPE_CARGO);
+        self::assertEquals(3, Brand::VEHICLE_TYPE_CARGO);
     }
 
     public function testVehicleTypeMoto()
     {
-        $this->assertEquals(4, Brand::VEHICLE_TYPE_MOTO);
+        self::assertEquals(4, Brand::VEHICLE_TYPE_MOTO);
     }
 }

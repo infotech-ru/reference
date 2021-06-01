@@ -11,6 +11,6 @@ class ModificationEquipmentQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModificationEquipmentQuery(ModificationEquipment::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModificationEquipmentQuery(ModificationEquipment::class));
     }
 }

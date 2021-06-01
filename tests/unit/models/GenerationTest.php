@@ -33,40 +33,40 @@ class GenerationTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Generation());
+        self::assertNotNull(new Generation());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('car_generation', Generation::tableName());
+        self::assertEquals('car_generation', Generation::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id_car_generation'], Generation::primaryKey());
+        self::assertEquals(['id_car_generation'], Generation::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(GenerationQuery::class, Generation::find());
+        self::assertInstanceOf(GenerationQuery::class, Generation::find());
     }
 
     public function testGetModel()
     {
         $model = new Generation();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetSeries()
     {
         $model = new Generation();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
+        self::assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 
     public function testAttributes()
     {
         $model = new Generation();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id_car_generation',
                 'name',
@@ -84,7 +84,7 @@ class GenerationTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '5' => '5'], Generation::getList(1, true, null));
-        $this->assertEquals(['1' => '1', '2' => '2', '5' => '5'], Generation::getList(1, false, null));
+        self::assertEquals(['1' => '1', '5' => '5'], Generation::getList(1, true, null));
+        self::assertEquals(['1' => '1', '2' => '2', '5' => '5'], Generation::getList(1, false, null));
     }
 }

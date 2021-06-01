@@ -11,34 +11,34 @@ class StatusTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new Status());
+        self::assertNotNull(new Status());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('statuses', Status::tableName());
+        self::assertEquals('statuses', Status::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['status_code', 'brand_id'], Status::primaryKey());
+        self::assertEquals(['status_code', 'brand_id'], Status::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(StatusQuery::class, Status::find());
+        self::assertInstanceOf(StatusQuery::class, Status::find());
     }
 
     public function testGetBrand()
     {
         $model = new Status();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testAttributes()
     {
         $model = new Status();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'status_code',
                 'brand_id',
@@ -51,6 +51,6 @@ class StatusTest extends TestCase
 
     public function testSubaruStatusDealerInWay()
     {
-        $this->assertEquals('ДИЛЕР_ПУТЬ', Status::SUBARU_STATUS_DEALER_IN_WAY);
+        self::assertEquals('ДИЛЕР_ПУТЬ', Status::SUBARU_STATUS_DEALER_IN_WAY);
     }
 }

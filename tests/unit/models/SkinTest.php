@@ -34,23 +34,23 @@ class SkinTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Skin());
+        self::assertNotNull(new Skin());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_skin', Skin::tableName());
+        self::assertEquals('eqt_skin', Skin::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(SkinQuery::class, Skin::find());
+        self::assertInstanceOf(SkinQuery::class, Skin::find());
     }
 
     public function testAttributes()
     {
         $model = new Skin();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -68,29 +68,29 @@ class SkinTest extends TestCase
     public function testGetModel()
     {
         $model = new Skin();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetCommonSkin()
     {
         $model = new Skin();
-        $this->assertInstanceOf(SkinQuery::class, $model->getCommonSkin());
+        self::assertInstanceOf(SkinQuery::class, $model->getCommonSkin());
     }
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Skin::getList(1));
+        self::assertEquals(['1' => '1'], Skin::getList(1));
     }
 
     public function testGetSkinSeries()
     {
         $model = new Skin();
-        $this->assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
+        self::assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
     }
 
     public function testGetSeries()
     {
         $model = new Skin();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
+        self::assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 }

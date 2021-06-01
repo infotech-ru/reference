@@ -35,28 +35,28 @@ class VehicleOptionTypeTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new VehicleOptionType());
+        self::assertNotNull(new VehicleOptionType());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('vehicle_option_type', VehicleOptionType::tableName());
+        self::assertEquals('vehicle_option_type', VehicleOptionType::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id'], VehicleOptionType::primaryKey());
+        self::assertEquals(['id'], VehicleOptionType::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(VehicleOptionTypeQuery::class, VehicleOptionType::find());
+        self::assertInstanceOf(VehicleOptionTypeQuery::class, VehicleOptionType::find());
     }
 
     public function testAttributes()
     {
         $model = new VehicleOptionType();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'group_id',
@@ -71,31 +71,31 @@ class VehicleOptionTypeTest extends TestCase
     public function testGetGroup()
     {
         $model = new VehicleOptionType();
-        $this->assertInstanceOf(VehicleOptionGroupQuery::class, $model->getGroup());
+        self::assertInstanceOf(VehicleOptionGroupQuery::class, $model->getGroup());
     }
 
     public function testGroupIdIsRequired()
     {
         $model = new VehicleOptionType();
-        $this->assertFalse($model->validate(['group_id']));
+        self::assertFalse($model->validate(['group_id']));
         $group = $this->getFixture('group')->getModel(1);
-        $this->assertInstanceOf(VehicleOptionGroup::class, $group);
+        self::assertInstanceOf(VehicleOptionGroup::class, $group);
         $model->group_id = $group->id;
-        $this->assertTrue($model->validate(['group_id']));
+        self::assertTrue($model->validate(['group_id']));
     }
 
     public function testValueAfterFind()
     {
         $model = VehicleOptionType::findOne(['id' => 1]);
-        $this->assertInstanceOf(VehicleOptionType::class, $model);
-        $this->assertEquals([['id' => 1], ['name' => 'value']], $model->values);
+        self::assertInstanceOf(VehicleOptionType::class, $model);
+        self::assertEquals([['id' => 1], ['name' => 'value']], $model->values);
     }
 
     public function testValueBeforeSave()
     {
         $model = VehicleOptionType::findOne(['id' => 1]);
         $model->values = [2 => 'Value'];
-        $this->assertTrue($model->beforeSave(false));
-        $this->assertEquals('{"2":"Value"}', $model->values_json);
+        self::assertTrue($model->beforeSave(false));
+        self::assertEquals('{"2":"Value"}', $model->values_json);
     }
 }
