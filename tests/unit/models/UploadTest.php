@@ -65,11 +65,16 @@ class UploadTest extends TestCase
         self::assertEquals('selectel', Upload::TYPE_SELECTEL);
     }
 
-    public function testBehavoirs(): void
+    public function testBehaviors(): void
     {
         $model = new Upload();
-        self::assertArrayHasKey(0, $model->behaviors());
-        self::assertArrayHasKey('class', $model->behaviors()[0]);
-        self::assertArrayHasKey(TimestampBehavior::class, $model->behaviors()[0]['class']);
+        $behaviors = $model->behaviors();
+        self::assertArrayHasKey(0, $behaviors);
+        self::assertArrayHasKey('class', $behaviors[0]);
+        self::assertEquals(TimestampBehavior::class, $behaviors[0]['class']);
+        self::assertArrayHasKey('createdAtAttribute', $behaviors[0]);
+        self::assertArrayHasKey('updatedAtAttribute', $behaviors[0]);
+        self::assertArrayHasKey('value', $behaviors[0]);
+        self::assertIsCallable($behaviors[0]['value']);
     }
 }
