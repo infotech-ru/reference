@@ -23,7 +23,7 @@ class WarehouseFeed
     public const YANDEX_DIRECT = 15;
     public const YANDEX_XML = 16;
 
-    public function getList(): array
+    public static function getList(): array
     {
         return [
             self::AUTO_RU => 'AutoRu',
