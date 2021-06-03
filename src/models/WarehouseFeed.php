@@ -1,8 +1,6 @@
 <?php
 
-
 namespace infotech\reference\models;
-
 
 class WarehouseFeed
 {
