@@ -29,8 +29,11 @@ namespace infotech\reference\models;
  */
 class Brand extends ActiveRecord
 {
-    public const  CADILLAC_ID = 3;
+    public const  OPEL_ID = 1;
     public const  CHEVROLET_ID = 2;
+    public const  CADILLAC_ID = 3;
+    public const  PEUGEOT_ID = 4;
+    public const  CITROEN_ID = 5;
     public const  FORD_ID = 6;
     public const  GAZ_ID = 127;
     public const  GEELY_ID = 46;
