@@ -165,6 +165,21 @@ class BrandTest extends TestCase
         self::assertEquals(46, Brand::GEELY_ID);
     }
 
+    public function testOpelId()
+    {
+        self::assertEquals(1, Brand::OPEL_ID);
+    }
+
+    public function testPeugeotId()
+    {
+        self::assertEquals(4, Brand::PEUGEOT_ID);
+    }
+
+    public function testCitroenId()
+    {
+        self::assertEquals(5, Brand::CITROEN_ID);
+    }
+
     public function testGetOrderTypes()
     {
         $model = new Brand();
