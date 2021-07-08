@@ -9,6 +9,6 @@ class EngineTest extends TestCase
 {
     public function testGetList()
     {
-        $this->assertEquals([1 => 'Бензин', 2 => 'Дизель', 3 => 'Гибрид', 4 => 'Электро'], Engine::getList());
+        self::assertEquals([1 => 'Бензин', 2 => 'Дизель', 3 => 'Гибрид', 4 => 'Электро'], Engine::getList());
     }
 }

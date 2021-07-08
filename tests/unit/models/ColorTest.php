@@ -34,41 +34,41 @@ class ColorTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Color());
+        self::assertNotNull(new Color());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_color', Color::tableName());
+        self::assertEquals('eqt_color', Color::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ColorQuery::class, Color::find());
+        self::assertInstanceOf(ColorQuery::class, Color::find());
     }
 
     public function testGetModel()
     {
         $model = new Color();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetCommonColor()
     {
         $model = new Color();
-        $this->assertInstanceOf(ColorQuery::class, $model->getCommonColor());
+        self::assertInstanceOf(ColorQuery::class, $model->getCommonColor());
     }
 
     public function testGetCatalogEmplacements()
     {
         $model = new Color();
-        $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
+        self::assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
     }
 
     public function testAttributes()
     {
         $model = new Color();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'code',
@@ -86,7 +86,7 @@ class ColorTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Color::getList(1));
-        $this->assertEquals(['2' => '2'], Color::getList(2));
+        self::assertEquals(['1' => '1'], Color::getList(1));
+        self::assertEquals(['2' => '2'], Color::getList(2));
     }
 }

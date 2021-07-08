@@ -9,6 +9,6 @@ class DriveTest extends TestCase
 {
     public function testGetList()
     {
-        $this->assertEquals([1 => 'Передний', 2 => 'Задний', 3 => 'Полный',], Drive::getList());
+        self::assertEquals([1 => 'Передний', 2 => 'Задний', 3 => 'Полный',], Drive::getList());
     }
 }

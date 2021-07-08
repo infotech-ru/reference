@@ -11,6 +11,6 @@ class OrderTypeQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new OrderTypeQuery(OrderType::class));
+        self::assertInstanceOf(ActiveQuery::class, new OrderTypeQuery(OrderType::class));
     }
 }

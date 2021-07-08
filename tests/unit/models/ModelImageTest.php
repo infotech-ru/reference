@@ -34,23 +34,23 @@ class ModelImageTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelImage());
+        self::assertNotNull(new ModelImage());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_image', ModelImage::tableName());
+        self::assertEquals('model_image', ModelImage::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelImageQuery::class, ModelImage::find());
+        self::assertInstanceOf(ModelImageQuery::class, ModelImage::find());
     }
 
     public function testAttributes()
     {
         $model = new ModelImage();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -61,6 +61,8 @@ class ModelImageTest extends TestCase
                 'generation_id',
                 'series_id',
                 'equipment_id',
+                'skin_id',
+                'placement_type',
             ],
             $model->attributes()
         );
@@ -68,41 +70,41 @@ class ModelImageTest extends TestCase
 
     public function testStatuses()
     {
-        $this->assertEquals(0, ModelImage::STATUS_ACTIVE);
-        $this->assertEquals(1, ModelImage::STATUS_DELETED);
+        self::assertEquals(0, ModelImage::STATUS_ACTIVE);
+        self::assertEquals(1, ModelImage::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelImage::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], ModelImage::getStatusList());
     }
 
     public function testCategory()
     {
-        $this->assertEquals(1, ModelImage::CATEGORY_INTERNAL);
-        $this->assertEquals(0, ModelImage::CATEGORY_EXTERNAL);
+        self::assertEquals(1, ModelImage::CATEGORY_INTERNAL);
+        self::assertEquals(0, ModelImage::CATEGORY_EXTERNAL);
     }
 
     public function testGetCategoryList()
     {
-        $this->assertEquals([0 => 'Экстернал', 1 => 'Интернал',], ModelImage::getCategoryList());
+        self::assertEquals([0 => 'Экстернал', 1 => 'Интернал',], ModelImage::getCategoryList());
     }
 
     public function testGetModel()
     {
         $model = new ModelImage();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetGeneration()
     {
         $model = new ModelImage();
-        $this->assertInstanceOf(GenerationQuery::class, $model->getGeneration());
+        self::assertInstanceOf(GenerationQuery::class, $model->getGeneration());
     }
 
     public function testGetSeries()
     {
         $model = new ModelImage();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
+        self::assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 }

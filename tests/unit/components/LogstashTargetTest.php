@@ -11,25 +11,25 @@ class LogstashTargetTest extends TestCase
     public function testFormatMessage()
     {
         $model = new LogstashTarget();
-        $this->assertEquals(
+        self::assertEquals(
             '{"message":"text","level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage(['text', Logger::LEVEL_ERROR, 'category', 1528896439])
         );
-        $this->assertEquals(
+        self::assertEquals(
             '{"message":"text","level":"error","category":"category",'
             . '"timestamp":"2018-06-13T13:27:19+00:00","trace":["line1","line2"]}',
             $model->formatMessage(['text', Logger::LEVEL_ERROR, 'category', 1528896439, ['line1', 'line2']])
         );
-        $this->assertEquals(
+        self::assertEquals(
             '{"item":"array","level":"error","category":"category","timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage([['item' => 'array'], Logger::LEVEL_ERROR, 'category', 1528896439])
         );
-        $this->assertEquals(
+        self::assertEquals(
             '{"message":{"property":"object"},"level":"error","category":"category",'
             . '"timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage([(object)['property' => 'object'], Logger::LEVEL_ERROR, 'category', 1528896439])
         );
-        $this->assertEquals(
+        self::assertEquals(
             '{"message":"Warning, wrong log message type \'boolean\'","level":"error","category":"category",'
             . '"timestamp":"2018-06-13T13:27:19+00:00"}',
             $model->formatMessage([false, Logger::LEVEL_ERROR, 'category', 1528896439])
@@ -43,7 +43,7 @@ class LogstashTargetTest extends TestCase
             ['emergencyLogFile' => $path, 'messages' => [['text', Logger::LEVEL_ERROR, 'category', 1528896439]]]
         );
         $model->emergencyExport([]);
-        $this->assertEquals(
+        self::assertEquals(
             '{"message":"text","emergency":[],"level":"error","category":"category",'
             . '"timestamp":"2018-06-13T13:27:19+00:00"}' . PHP_EOL,
             file_get_contents($path)

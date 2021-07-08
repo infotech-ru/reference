@@ -11,6 +11,6 @@ class OptionQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new OptionQuery(Option::class));
+        self::assertInstanceOf(ActiveQuery::class, new OptionQuery(Option::class));
     }
 }

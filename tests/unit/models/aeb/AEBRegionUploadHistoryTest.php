@@ -31,23 +31,23 @@ class AEBRegionUploadHistoryTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new AEBRegionUploadHistory());
+        self::assertNotNull(new AEBRegionUploadHistory());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('aeb_region_upload_history', AEBRegionUploadHistory::tableName());
+        self::assertEquals('aeb_region_upload_history', AEBRegionUploadHistory::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ActiveQuery::class, AEBRegionUploadHistory::find());
+        self::assertInstanceOf(ActiveQuery::class, AEBRegionUploadHistory::find());
     }
 
     public function testAttributes()
     {
         $model = new AEBRegionUploadHistory();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'status',
@@ -64,31 +64,37 @@ class AEBRegionUploadHistoryTest extends TestCase
 
     public function testSetStatusList()
     {
-        $this->assertEquals([
-            0 => 'Активная загрузка',
-            1 => 'Выполенная загрузка',
-        ], AEBRegionUploadHistory::getStatusList());
+        self::assertEquals(
+            [
+                0 => 'Активная загрузка',
+                1 => 'Выполенная загрузка',
+            ],
+            AEBRegionUploadHistory::getStatusList()
+        );
     }
 
     public function testGetImportStatusList()
     {
-        $this->assertEquals([
-            0 => 'Загрузка не запущена',
-            1 => 'Выполняется загрузка',
-            2 => 'Загрузка завершена',
-        ], AEBRegionUploadHistory::getImportStatusList());
+        self::assertEquals(
+            [
+                0 => 'Загрузка не запущена',
+                1 => 'Выполняется загрузка',
+                2 => 'Загрузка завершена',
+            ],
+            AEBRegionUploadHistory::getImportStatusList()
+        );
     }
 
     public function testStatusRequired()
     {
         $model = new AEBRegionUploadHistory();
-        $this->assertFalse($model->validate(['status']));
-        $this->assertEquals(['Status cannot be blank.'], $model->getErrors('status'));
+        self::assertFalse($model->validate(['status']));
+        self::assertEquals(['Status cannot be blank.'], $model->getErrors('status'));
     }
 
     public function testGetActiveUpload()
     {
-        $this->assertNull(AEBRegionUploadHistory::getActiveUpload(false));
-        $this->assertNotNull(AEBRegionUploadHistory::getActiveUpload(true));
+        self::assertNull(AEBRegionUploadHistory::getActiveUpload(false));
+        self::assertNotNull(AEBRegionUploadHistory::getActiveUpload(true));
     }
 }

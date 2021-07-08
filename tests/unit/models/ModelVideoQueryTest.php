@@ -11,6 +11,6 @@ class ModelVideoQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModelVideoQuery(ModelVideo::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModelVideoQuery(ModelVideo::class));
     }
 }

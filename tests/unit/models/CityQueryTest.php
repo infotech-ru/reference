@@ -32,18 +32,18 @@ class CityQueryTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new CityQuery(City::class));
+        self::assertInstanceOf(ActiveQuery::class, new CityQuery(City::class));
     }
 
     public function testRegion()
     {
         $query = new CityQuery(City::class);
-        $this->assertEquals($query, $query->region(1));
-        $this->assertEquals(['cities.region_id' => 1], $query->where);
+        self::assertEquals($query, $query->region(1));
+        self::assertEquals(['cities.region_id' => 1], $query->where);
 
         $query = new CityQuery(City::class);
-        $this->assertEquals($query, $query->region([1, 2]));
-        $this->assertEquals(['cities.region_id' => [1, 2]], $query->where);
+        self::assertEquals($query, $query->region([1, 2]));
+        self::assertEquals(['cities.region_id' => [1, 2]], $query->where);
     }
 
     public function testName()
@@ -51,7 +51,7 @@ class CityQueryTest extends TestCase
         $query = new CityQuery(City::class);
         $query->name('Петербург');
 
-        $this->assertEquals(['like', 'name', 'Петербург'], $query->where);
-        $this->assertEquals(1, count($query->all()));
+        self::assertEquals(['like', 'name', 'Петербург'], $query->where);
+        self::assertEquals(1, count($query->all()));
     }
 }

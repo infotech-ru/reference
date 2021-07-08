@@ -11,6 +11,6 @@ class FederalDistrictQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new FederalDistrictQuery(FederalDistrict::class));
+        self::assertInstanceOf(ActiveQuery::class, new FederalDistrictQuery(FederalDistrict::class));
     }
 }

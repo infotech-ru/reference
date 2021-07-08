@@ -16,6 +16,7 @@ namespace infotech\reference\models;
  * @property integer $origin_id
  * @property-read Model $model
  * @property-read Serie[] $series
+ * @property-read GenerationFile[] $files
  */
 class Generation extends ActiveRecord
 {
@@ -57,5 +58,10 @@ class Generation extends ActiveRecord
     public function getSeries()
     {
         return $this->hasMany(Serie::class, ['id_car_generation' => 'id_car_generation']);
+    }
+
+    public function getFiles()
+    {
+        return $this->hasMany(GenerationFile::class, ['generation_id' => 'id_car_generation']);
     }
 }

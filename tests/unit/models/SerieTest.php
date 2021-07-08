@@ -39,58 +39,58 @@ class SerieTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Serie());
+        self::assertNotNull(new Serie());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('car_serie', Serie::tableName());
+        self::assertEquals('car_serie', Serie::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id_car_serie'], Serie::primaryKey());
+        self::assertEquals(['id_car_serie'], Serie::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(SerieQuery::class, Serie::find());
+        self::assertInstanceOf(SerieQuery::class, Serie::find());
     }
 
     public function testGetGeneration()
     {
         $model = new Serie();
-        $this->assertInstanceOf(GenerationQuery::class, $model->getGeneration());
+        self::assertInstanceOf(GenerationQuery::class, $model->getGeneration());
     }
 
     public function testGetBody()
     {
         $model = new Serie();
-        $this->assertInstanceOf(BodyQuery::class, $model->getBody());
+        self::assertInstanceOf(BodyQuery::class, $model->getBody());
     }
 
     public function testGetModifications()
     {
         $model = new Serie();
-        $this->assertInstanceOf(ModificationQuery::class, $model->getModifications());
+        self::assertInstanceOf(ModificationQuery::class, $model->getModifications());
     }
 
     public function testGetEquipments()
     {
         $model = new Serie();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 
     public function testGetCatalogEmplacements()
     {
         $model = new Serie();
-        $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
+        self::assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
     }
 
     public function testAttributes()
     {
         $model = new Serie();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id_car_serie',
                 'model_id',
@@ -108,25 +108,25 @@ class SerieTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Serie::getList(1, true));
-        $this->assertEquals(['1' => '1', '2' => '2'], Serie::getList(1, false));
+        self::assertEquals(['1' => '1'], Serie::getList(1, true));
+        self::assertEquals(['1' => '1', '2' => '2'], Serie::getList(1, false));
     }
 
     public function testGetSkinSeries()
     {
         $model = new Serie();
-        $this->assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
+        self::assertInstanceOf(SkinSerieQuery::class, $model->getSkinSeries());
     }
 
     public function testGetSkins()
     {
         $model = new Serie();
-        $this->assertInstanceOf(SkinQuery::class, $model->getSkins());
+        self::assertInstanceOf(SkinQuery::class, $model->getSkins());
     }
 
     public function testGetReferenceModel()
     {
         $model = new Serie();
-        $this->assertInstanceOf(ModelQuery::class, $model->getReferenceModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getReferenceModel());
     }
 }

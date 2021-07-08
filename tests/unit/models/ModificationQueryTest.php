@@ -11,39 +11,39 @@ class ModificationQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new ModificationQuery(Modification::class));
+        self::assertInstanceOf(ActiveQuery::class, new ModificationQuery(Modification::class));
     }
 
     public function testIsRecent()
     {
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isRecent());
-        $this->assertEquals(['car_modification.is_recent' => true], $query->where);
+        self::assertEquals($query, $query->isRecent());
+        self::assertEquals(['car_modification.is_recent' => true], $query->where);
 
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isRecent(1));
-        $this->assertEquals(['car_modification.is_recent' => 1], $query->where);
+        self::assertEquals($query, $query->isRecent(1));
+        self::assertEquals(['car_modification.is_recent' => 1], $query->where);
     }
 
     public function testIsVisible()
     {
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isVisible());
-        $this->assertEquals(['car_modification.is_visible' => true], $query->where);
+        self::assertEquals($query, $query->isVisible());
+        self::assertEquals(['car_modification.is_visible' => true], $query->where);
 
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isVisible(1));
-        $this->assertEquals(['car_modification.is_visible' => 1], $query->where);
+        self::assertEquals($query, $query->isVisible(1));
+        self::assertEquals(['car_modification.is_visible' => 1], $query->where);
     }
 
     public function testIsDeleted()
     {
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isDeleted());
-        $this->assertEquals(['car_modification.is_deleted' => true], $query->where);
+        self::assertEquals($query, $query->isDeleted());
+        self::assertEquals(['car_modification.is_deleted' => true], $query->where);
 
         $query = new ModificationQuery(Modification::class);
-        $this->assertEquals($query, $query->isDeleted(1));
-        $this->assertEquals(['car_modification.is_deleted' => 1], $query->where);
+        self::assertEquals($query, $query->isDeleted(1));
+        self::assertEquals(['car_modification.is_deleted' => 1], $query->where);
     }
 }

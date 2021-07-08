@@ -33,35 +33,35 @@ class NewsBrandTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new NewsBrand());
+        self::assertNotNull(new NewsBrand());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('news_brand', NewsBrand::tableName());
+        self::assertEquals('news_brand', NewsBrand::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(NewsBrandQuery::class, NewsBrand::find());
+        self::assertInstanceOf(NewsBrandQuery::class, NewsBrand::find());
     }
 
     public function testGetNews()
     {
         $model = new NewsBrand();
-        $this->assertInstanceOf(NewsQuery::class, $model->getNews());
+        self::assertInstanceOf(NewsQuery::class, $model->getNews());
     }
 
     public function testGetBrand()
     {
         $model = new NewsBrand();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testAttributes()
     {
         $model = new NewsBrand();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'news_id',
                 'brand_id',

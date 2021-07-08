@@ -31,23 +31,23 @@ class CurrencyTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Currency());
+        self::assertNotNull(new Currency());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('currency', Currency::tableName());
+        self::assertEquals('currency', Currency::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(CurrencyQuery::class, Currency::find());
+        self::assertInstanceOf(CurrencyQuery::class, Currency::find());
     }
 
     public function testAttributes()
     {
         $model = new Currency();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'number_code',
                 'string_code',
@@ -60,7 +60,7 @@ class CurrencyTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'AMD' => 'Армянский драм',
                 'KZT' => 'Тенге',

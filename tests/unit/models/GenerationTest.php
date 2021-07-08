@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 use infotech\reference\models\Generation;
+use infotech\reference\models\GenerationFileQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelQuery;
 use infotech\reference\models\SerieQuery;
@@ -14,7 +15,7 @@ class GenerationTest extends TestCase
 {
     use FixtureTrait;
 
-    public function fixtures()
+    public function fixtures(): array
     {
         return [
             GenerationFixture::class,
@@ -31,42 +32,49 @@ class GenerationTest extends TestCase
         $this->unloadFixtures();
     }
 
-    public function testConstructor()
+    public function testConstructor(): void
     {
-        $this->assertNotNull(new Generation());
+        self::assertNotNull(new Generation());
     }
 
-    public function testTableName()
+    public function testTableName(): void
     {
-        $this->assertEquals('car_generation', Generation::tableName());
+        self::assertEquals('car_generation', Generation::tableName());
     }
 
-    public function testPrimaryKey()
+    public function testPrimaryKey(): void
     {
-        $this->assertEquals(['id_car_generation'], Generation::primaryKey());
+        self::assertEquals(['id_car_generation'], Generation::primaryKey());
     }
 
-    public function testFind()
+    public function testFind(): void
     {
-        $this->assertInstanceOf(GenerationQuery::class, Generation::find());
+        self::assertInstanceOf(GenerationQuery::class, Generation::find());
     }
 
-    public function testGetModel()
+    public function testGetModel(): void
     {
         $model = new Generation();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
-    public function testGetSeries()
+    public function testGetSeries(): void
     {
         $model = new Generation();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSeries());
+        self::assertInstanceOf(SerieQuery::class, $model->getSeries());
     }
 
-    public function testAttributes()
+
+    public function testGetFiles(): void
     {
         $model = new Generation();
-        $this->assertEquals(
+        self::assertInstanceOf(GenerationFileQuery::class, $model->getFiles());
+    }
+
+    public function testAttributes(): void
+    {
+        $model = new Generation();
+        self::assertEquals(
             [
                 'id_car_generation',
                 'name',
@@ -82,9 +90,9 @@ class GenerationTest extends TestCase
         );
     }
 
-    public function testGetList()
+    public function testGetList(): void
     {
-        $this->assertEquals(['1' => '1', '5' => '5'], Generation::getList(1, true, null));
-        $this->assertEquals(['1' => '1', '2' => '2', '5' => '5'], Generation::getList(1, false, null));
+        self::assertEquals(['1' => '1', '5' => '5'], Generation::getList(1, true, null));
+        self::assertEquals(['1' => '1', '2' => '2', '5' => '5'], Generation::getList(1, false, null));
     }
 }

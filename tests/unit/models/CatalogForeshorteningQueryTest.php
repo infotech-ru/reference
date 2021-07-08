@@ -11,6 +11,6 @@ class CatalogForeshorteningQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new CatalogForeshorteningQuery(CatalogForeshortening::class));
+        self::assertInstanceOf(ActiveQuery::class, new CatalogForeshorteningQuery(CatalogForeshortening::class));
     }
 }

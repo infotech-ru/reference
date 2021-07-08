@@ -32,7 +32,7 @@ class RegionQueryTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new RegionQuery(Region::class));
+        self::assertInstanceOf(ActiveQuery::class, new RegionQuery(Region::class));
     }
 
     public function testName()
@@ -40,8 +40,8 @@ class RegionQueryTest extends TestCase
         $query = new RegionQuery(Region::class);
         $query->name('Ленинградская');
 
-        $this->assertEquals(['like', 'regions.name', 'Ленинградская'], $query->where);
-        $this->assertEquals(1, count($query->all()));
+        self::assertEquals(['like', 'regions.name', 'Ленинградская'], $query->where);
+        self::assertEquals(1, count($query->all()));
     }
 
     public function testStatus()
@@ -49,7 +49,7 @@ class RegionQueryTest extends TestCase
         $query = new RegionQuery(Region::class);
         $query->status(3);
 
-        $this->assertEquals(['regions.status' => 3], $query->where);
-        $this->assertEquals(0, count($query->all()));
+        self::assertEquals(['regions.status' => 3], $query->where);
+        self::assertEquals(0, count($query->all()));
     }
 }

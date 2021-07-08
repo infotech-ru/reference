@@ -31,29 +31,29 @@ class SourceTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Source());
+        self::assertNotNull(new Source());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('sources', Source::tableName());
+        self::assertEquals('sources', Source::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(SourceQuery::class, Source::find());
+        self::assertInstanceOf(SourceQuery::class, Source::find());
     }
 
     public function testGetParent()
     {
         $model = new Source();
-        $this->assertInstanceOf(SourceQuery::class, $model->getParent());
+        self::assertInstanceOf(SourceQuery::class, $model->getParent());
     }
 
     public function testAttributes()
     {
         $model = new Source();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -65,12 +65,15 @@ class SourceTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals([
-            '1' => '1',
-            '2' => '- 2',
-            '3' => '-- 3',
-            '4' => '4',
-            '5' => '- 5',
-        ], Source::getList());
+        self::assertEquals(
+            [
+                '1' => '1',
+                '2' => '- 2',
+                '3' => '-- 3',
+                '4' => '4',
+                '5' => '- 5',
+            ],
+            Source::getList()
+        );
     }
 }

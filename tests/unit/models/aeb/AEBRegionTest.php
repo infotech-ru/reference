@@ -15,23 +15,23 @@ class AEBRegionTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new AEBRegion());
+        self::assertNotNull(new AEBRegion());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('aeb_region', AEBRegion::tableName());
+        self::assertEquals('aeb_region', AEBRegion::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ActiveQuery::class, AEBRegion::find());
+        self::assertInstanceOf(ActiveQuery::class, AEBRegion::find());
     }
 
     public function testAttributes()
     {
         $model = new AEBRegion();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'year',
@@ -52,37 +52,37 @@ class AEBRegionTest extends TestCase
     public function testGetBrand()
     {
         $model = new AEBRegion();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testGetModel()
     {
         $model = new AEBRegion();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetFederalDistrict()
     {
         $model = new AEBRegion();
-        $this->assertInstanceOf(FederalDistrictQuery::class, $model->getFederalDistrict());
+        self::assertInstanceOf(FederalDistrictQuery::class, $model->getFederalDistrict());
     }
 
     public function testGetRegion()
     {
         $model = new AEBRegion();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegion());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegion());
     }
 
     public function testGetCity()
     {
         $model = new AEBRegion();
-        $this->assertInstanceOf(CityQuery::class, $model->getCity());
+        self::assertInstanceOf(CityQuery::class, $model->getCity());
     }
 
     public function testYearRequired()
     {
         $model = new AEBRegion();
-        $this->assertFalse($model->validate(['year']));
-        $this->assertEquals(['Year cannot be blank.'], $model->getErrors('year'));
+        self::assertFalse($model->validate(['year']));
+        self::assertEquals(['Year cannot be blank.'], $model->getErrors('year'));
     }
 }

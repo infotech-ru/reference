@@ -11,6 +11,6 @@ class BrandLogoQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(ActiveQuery::class, new BrandLogoQuery(BrandLogo::class));
+        self::assertInstanceOf(ActiveQuery::class, new BrandLogoQuery(BrandLogo::class));
     }
 }

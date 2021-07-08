@@ -14,23 +14,23 @@ class TemporaryAEBRegionDataTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new TemporaryAEBRegionData());
+        self::assertNotNull(new TemporaryAEBRegionData());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('aeb_temporary_aeb_region_data', TemporaryAEBRegionData::tableName());
+        self::assertEquals('aeb_temporary_aeb_region_data', TemporaryAEBRegionData::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ActiveQuery::class, TemporaryAEBRegionData::find());
+        self::assertInstanceOf(ActiveQuery::class, TemporaryAEBRegionData::find());
     }
 
     public function testAttributes()
     {
         $model = new TemporaryAEBRegionData();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'brand',
@@ -65,24 +65,24 @@ class TemporaryAEBRegionDataTest extends TestCase
     public function testGetBrand()
     {
         $model = new TemporaryAEBRegionData();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testGetModel()
     {
         $model = new TemporaryAEBRegionData();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetCity()
     {
         $model = new TemporaryAEBRegionData();
-        $this->assertInstanceOf(CityQuery::class, $model->getCity());
+        self::assertInstanceOf(CityQuery::class, $model->getCity());
     }
 
     public function testGetRegion()
     {
         $model = new TemporaryAEBRegionData();
-        $this->assertInstanceOf(RegionQuery::class, $model->getRegion());
+        self::assertInstanceOf(RegionQuery::class, $model->getRegion());
     }
 }

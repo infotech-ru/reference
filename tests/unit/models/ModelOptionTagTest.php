@@ -32,29 +32,29 @@ class ModelOptionTagTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelOptionTag());
+        self::assertNotNull(new ModelOptionTag());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_model_option_tag', ModelOptionTag::tableName());
+        self::assertEquals('eqt_model_option_tag', ModelOptionTag::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelOptionTagQuery::class, ModelOptionTag::find());
+        self::assertInstanceOf(ModelOptionTagQuery::class, ModelOptionTag::find());
     }
 
     public function testGetModel()
     {
         $model = new ModelOptionTag();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testAttributes()
     {
         $model = new ModelOptionTag();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -66,6 +66,6 @@ class ModelOptionTagTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], ModelOptionTag::getList(1));
+        self::assertEquals(['1' => '1'], ModelOptionTag::getList(1));
     }
 }

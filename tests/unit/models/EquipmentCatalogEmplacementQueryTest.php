@@ -11,7 +11,7 @@ class EquipmentCatalogEmplacementQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ActiveQuery::class,
             new EquipmentCatalogEmplacementQuery(EquipmentCatalogEmplacement::class)
         );

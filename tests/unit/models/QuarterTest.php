@@ -9,7 +9,7 @@ class QuarterTest extends TestCase
 {
     public function testGetList()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 1 => [1, 2, 3],
                 2 => [4, 5, 6],

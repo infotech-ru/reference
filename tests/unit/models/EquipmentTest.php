@@ -43,59 +43,59 @@ class EquipmentTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Equipment());
+        self::assertNotNull(new Equipment());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('eqt_equipment', Equipment::tableName());
+        self::assertEquals('eqt_equipment', Equipment::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(EquipmentQuery::class, Equipment::find());
+        self::assertInstanceOf(EquipmentQuery::class, Equipment::find());
     }
 
     public function testGetModel()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetSerie()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
+        self::assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
 
     public function testGetCatalogEmplacements()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
+        self::assertInstanceOf(CatalogEmplacementQuery::class, $model->getCatalogEmplacements());
     }
 
     public function testGetCountry()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountry());
     }
 
     public function testGetOptions()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(OptionQuery::class, $model->getOptions());
+        self::assertInstanceOf(OptionQuery::class, $model->getOptions());
     }
 
     public function testGetCharacteristicValues()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
+        self::assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
     }
 
     public function testAttributes()
     {
         $model = new Equipment();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'model_id',
@@ -116,49 +116,49 @@ class EquipmentTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Equipment::getList(1, true));
-        $this->assertEquals(['1' => '1', '2' => '2'], Equipment::getList(1, false));
+        self::assertEquals(['1' => '1'], Equipment::getList(1, true));
+        self::assertEquals(['1' => '1', '2' => '2'], Equipment::getList(1, false));
     }
 
     public function testGetModelYearEquipments()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
+        self::assertInstanceOf(ModelYearEquipmentQuery::class, $model->getModelYearEquipments());
     }
 
     public function testGetModelYears()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(ModelYearQuery::class, $model->getModelYears());
+        self::assertInstanceOf(ModelYearQuery::class, $model->getModelYears());
     }
 
     public function testGetModificationEquipments()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
+        self::assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
     }
 
     public function testGetModifications()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(ModificationQuery::class, $model->getModifications());
+        self::assertInstanceOf(ModificationQuery::class, $model->getModifications());
     }
 
     public function testGetEquipmentCountries()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(EquipmentCountryQuery::class, $model->getEquipmentCountries());
+        self::assertInstanceOf(EquipmentCountryQuery::class, $model->getEquipmentCountries());
     }
 
     public function testGetCountries()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountries());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountries());
     }
 
     public function testGetEquipmentCatalogEmplacements()
     {
         $model = new Equipment();
-        $this->assertInstanceOf(EquipmentCatalogEmplacementQuery::class, $model->getEquipmentCatalogEmplacements());
+        self::assertInstanceOf(EquipmentCatalogEmplacementQuery::class, $model->getEquipmentCatalogEmplacements());
     }
 }

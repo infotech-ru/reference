@@ -33,23 +33,23 @@ class SkinSerieTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new SkinSerie());
+        self::assertNotNull(new SkinSerie());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('skin_serie', SkinSerie::tableName());
+        self::assertEquals('skin_serie', SkinSerie::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(SkinSerieQuery::class, SkinSerie::find());
+        self::assertInstanceOf(SkinSerieQuery::class, SkinSerie::find());
     }
 
     public function testAttributes()
     {
         $model = new SkinSerie();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'skin_id',
                 'serie_id',
@@ -61,12 +61,12 @@ class SkinSerieTest extends TestCase
     public function testGetSkin()
     {
         $model = new SkinSerie();
-        $this->assertInstanceOf(SkinQuery::class, $model->getSkin());
+        self::assertInstanceOf(SkinQuery::class, $model->getSkin());
     }
 
     public function testGetSerie()
     {
         $model = new SkinSerie();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
+        self::assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
 }

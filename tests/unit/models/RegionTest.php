@@ -34,23 +34,23 @@ class RegionTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Region());
+        self::assertNotNull(new Region());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('regions', Region::tableName());
+        self::assertEquals('regions', Region::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(RegionQuery::class, Region::find());
+        self::assertInstanceOf(RegionQuery::class, Region::find());
     }
 
     public function testAttributes()
     {
         $model = new Region();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'country_id',
@@ -71,41 +71,41 @@ class RegionTest extends TestCase
     public function testGetCountry()
     {
         $model = new Region();
-        $this->assertInstanceOf(CountryQuery::class, $model->getCountry());
+        self::assertInstanceOf(CountryQuery::class, $model->getCountry());
     }
 
     public function testGetFederalDistrict()
     {
         $model = new Region();
-        $this->assertInstanceOf(FederalDistrictQuery::class, $model->getFederalDistrict());
+        self::assertInstanceOf(FederalDistrictQuery::class, $model->getFederalDistrict());
     }
 
     public function testGetCities()
     {
         $model = new Region();
-        $this->assertInstanceOf(CityQuery::class, $model->getCities());
+        self::assertInstanceOf(CityQuery::class, $model->getCities());
     }
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList(1, null));
-        $this->assertEquals(['5' => '5'], Region::getList(2, null));
+        self::assertEquals(['1' => '1', '2' => '2', '3' => 'Ленинградская область'], Region::getList(1, null));
+        self::assertEquals(['5' => '5'], Region::getList(2, null));
     }
 
     public function testStatuses()
     {
-        $this->assertEquals(0, Region::STATUS_ACTIVE);
-        $this->assertEquals(1, Region::STATUS_DELETED);
+        self::assertEquals(0, Region::STATUS_ACTIVE);
+        self::assertEquals(1, Region::STATUS_DELETED);
     }
 
     public function testGetStatusList()
     {
-        $this->assertEquals([0 => 'Активно', 1 => 'Удалено'], Region::getStatusList());
+        self::assertEquals([0 => 'Активно', 1 => 'Удалено'], Region::getStatusList());
     }
 
     public function testGetListRegionsByCountry()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'Россия' => [
                     1 => '1',
@@ -124,6 +124,6 @@ class RegionTest extends TestCase
     public function testGetCenterCity()
     {
         $model = new Region();
-        $this->assertInstanceOf(CityQuery::class, $model->getCenterCity());
+        self::assertInstanceOf(CityQuery::class, $model->getCenterCity());
     }
 }

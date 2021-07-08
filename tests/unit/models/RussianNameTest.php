@@ -31,23 +31,23 @@ class RussianNameTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new RussianName());
+        self::assertNotNull(new RussianName());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('russian_name', RussianName::tableName());
+        self::assertEquals('russian_name', RussianName::tableName());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(RussianNameQuery::class, RussianName::find());
+        self::assertInstanceOf(RussianNameQuery::class, RussianName::find());
     }
 
     public function testAttributes()
     {
         $model = new RussianName();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -64,7 +64,7 @@ class RussianNameTest extends TestCase
      */
     public function testName2Sex($name, $sex)
     {
-        $this->assertEquals($sex, RussianName::name2Sex($name), $name);
+        self::assertEquals($sex, RussianName::name2Sex($name), $name);
     }
 
     public function name2SexProvider()

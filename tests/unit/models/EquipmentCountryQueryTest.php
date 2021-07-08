@@ -10,6 +10,6 @@ class EquipmentCountryQueryTest extends TestCase
 {
     public function testConstructor()
     {
-        $this->assertNotNull(new EquipmentCountryQuery(EquipmentCountry::class));
+        self::assertNotNull(new EquipmentCountryQuery(EquipmentCountry::class));
     }
 }

@@ -35,40 +35,40 @@ class ModificationTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new Modification());
+        self::assertNotNull(new Modification());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('car_modification', Modification::tableName());
+        self::assertEquals('car_modification', Modification::tableName());
     }
 
     public function testPrimaryKey()
     {
-        $this->assertEquals(['id_car_modification'], Modification::primaryKey());
+        self::assertEquals(['id_car_modification'], Modification::primaryKey());
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModificationQuery::class, Modification::find());
+        self::assertInstanceOf(ModificationQuery::class, Modification::find());
     }
 
     public function testGetSerie()
     {
         $model = new Modification();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
+        self::assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
 
     public function testGetCharacteristicValues()
     {
         $model = new Modification();
-        $this->assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
+        self::assertInstanceOf(CharacteristicValueQuery::class, $model->getCharacteristicValues());
     }
 
     public function testAttributes()
     {
         $model = new Modification();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id_car_modification',
                 'id_car_serie',
@@ -86,6 +86,7 @@ class ModificationTest extends TestCase
                 'is_recent',
                 'origin_id',
                 'is_deleted',
+                'mileage_interservice_gap',
             ],
             $model->attributes()
         );
@@ -93,19 +94,19 @@ class ModificationTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], Modification::getList(1, true));
-        $this->assertEquals(['1' => '1', '2' => '2'], Modification::getList(1, false));
+        self::assertEquals(['1' => '1'], Modification::getList(1, true));
+        self::assertEquals(['1' => '1', '2' => '2'], Modification::getList(1, false));
     }
 
     public function testGetModificationEquipments()
     {
         $model = new Modification();
-        $this->assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
+        self::assertInstanceOf(ModificationEquipmentQuery::class, $model->getModificationEquipments());
     }
 
     public function testGetEquipments()
     {
         $model = new Modification();
-        $this->assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }

@@ -37,63 +37,63 @@ class ModelAliasTest extends TestCase
 
     public function testConstructor()
     {
-        $this->assertNotNull(new ModelAlias());
+        self::assertNotNull(new ModelAlias());
     }
 
     public function testTableName()
     {
-        $this->assertEquals('model_alias', ModelAlias::tableName());
+        self::assertEquals('model_alias', ModelAlias::tableName());
     }
 
     public function testStatusActive()
     {
-        $this->assertEquals(0, ModelAlias::STATUS_ACTIVE);
+        self::assertEquals(0, ModelAlias::STATUS_ACTIVE);
     }
 
     public function testStatusDeleted()
     {
-        $this->assertEquals(1, ModelAlias::STATUS_DELETED);
+        self::assertEquals(1, ModelAlias::STATUS_DELETED);
     }
 
     public function testFind()
     {
-        $this->assertInstanceOf(ModelAliasQuery::class, ModelAlias::find());
+        self::assertInstanceOf(ModelAliasQuery::class, ModelAlias::find());
     }
 
     public function testGetBrand()
     {
         $model = new ModelAlias();
-        $this->assertInstanceOf(BrandQuery::class, $model->getBrand());
+        self::assertInstanceOf(BrandQuery::class, $model->getBrand());
     }
 
     public function testGetModel()
     {
         $model = new ModelAlias();
-        $this->assertInstanceOf(ModelQuery::class, $model->getModel());
+        self::assertInstanceOf(ModelQuery::class, $model->getModel());
     }
 
     public function testGetGeneration()
     {
         $model = new ModelAlias();
-        $this->assertInstanceOf(GenerationQuery::class, $model->getGeneration());
+        self::assertInstanceOf(GenerationQuery::class, $model->getGeneration());
     }
 
     public function testGetSerie()
     {
         $model = new ModelAlias();
-        $this->assertInstanceOf(SerieQuery::class, $model->getSerie());
+        self::assertInstanceOf(SerieQuery::class, $model->getSerie());
     }
 
     public function testGetModification()
     {
         $model = new ModelAlias();
-        $this->assertInstanceOf(ModificationQuery::class, $model->getModification());
+        self::assertInstanceOf(ModificationQuery::class, $model->getModification());
     }
 
     public function testAttributes()
     {
         $model = new ModelAlias();
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'id',
                 'name',
@@ -117,6 +117,6 @@ class ModelAliasTest extends TestCase
 
     public function testGetList()
     {
-        $this->assertEquals(['1' => '1'], ModelAlias::getList(1));
+        self::assertEquals(['1' => '1'], ModelAlias::getList(1));
     }
 }
