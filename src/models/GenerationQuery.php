@@ -49,20 +49,25 @@ class GenerationQuery extends ActiveQuery
      */
     public function year($year)
     {
-        if ((int)$year) {
+        $years = array_filter((array)$year, 'intval');
+
+        if ($years) {
             $tbl = $this->tableName();
+            $conditions = ['OR'];
 
-            $this->andWhere([
-                'AND',
-                ":year >= $tbl.year_begin",
-                [
-                    'OR',
-                    ":year <= $tbl.year_end",
-                    "$tbl.year_end IS NULL",
-                ],
-            ]);
+            foreach ($years as $year) {
+                $conditions[] = [
+                    'AND',
+                    ['<=', "$tbl.year_begin", $year],
+                    [
+                        'OR',
+                        ['>=', "$tbl.year_end", $year],
+                        "$tbl.year_end" => null,
+                    ],
+                ];
+            }
 
-            $this->params[':year'] = (int)$year;
+            $this->andWhere($conditions);
         }
 
         return $this;
