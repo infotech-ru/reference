@@ -78,7 +78,7 @@ class GenerationQueryTest extends TestCase
                     [
                         'OR',
                         ['>=', "car_generation.year_end", '2018'],
-                        "car_generation.year_end" => null,
+                        "car_generation.year_end IS NULL",
                     ],
                 ]
             ],
@@ -96,7 +96,7 @@ class GenerationQueryTest extends TestCase
                     [
                         'OR',
                         ['>=', "car_generation.year_end", '2018'],
-                        "car_generation.year_end" => null,
+                        "car_generation.year_end IS NULL",
                     ],
                 ]
             ],
@@ -114,7 +114,7 @@ class GenerationQueryTest extends TestCase
                     [
                         'OR',
                         ['>=', "car_generation.year_end", '2018'],
-                        "car_generation.year_end" => null,
+                        "car_generation.year_end IS NULL",
                     ],
                 ],
                 [
@@ -123,7 +123,7 @@ class GenerationQueryTest extends TestCase
                     [
                         'OR',
                         ['>=', "car_generation.year_end", '2019'],
-                        "car_generation.year_end" => null,
+                        "car_generation.year_end IS NULL",
                     ],
                 ]
             ],

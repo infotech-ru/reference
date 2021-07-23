@@ -62,7 +62,7 @@ class GenerationQuery extends ActiveQuery
                     [
                         'OR',
                         ['>=', "$tbl.year_end", $year],
-                        "$tbl.year_end" => null,
+                        "$tbl.year_end IS NULL",
                     ],
                 ];
             }
