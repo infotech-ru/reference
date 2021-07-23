@@ -71,32 +71,63 @@ class GenerationQueryTest extends TestCase
         self::assertEquals($query, $query->year('2018'));
         self::assertEquals(
             [
-                'AND',
-                ':year >= car_generation.year_begin',
+                'OR',
                 [
-                    'OR',
-                    ':year <= car_generation.year_end',
-                    'car_generation.year_end IS NULL',
-                ],
+                    'AND',
+                    ['<=', "car_generation.year_begin", '2018'],
+                    [
+                        'OR',
+                        ['>=', "car_generation.year_end", '2018'],
+                        "car_generation.year_end" => null,
+                    ],
+                ]
             ],
             $query->where
         );
-        self::assertEquals([':year' => 2018], $query->params);
 
         $query = new GenerationQuery(Generation::class);
         self::assertEquals($query, $query->year(2018));
         self::assertEquals(
             [
-                'AND',
-                ':year >= car_generation.year_begin',
+                'OR',
                 [
-                    'OR',
-                    ':year <= car_generation.year_end',
-                    'car_generation.year_end IS NULL',
-                ],
+                    'AND',
+                    ['<=', "car_generation.year_begin", '2018'],
+                    [
+                        'OR',
+                        ['>=', "car_generation.year_end", '2018'],
+                        "car_generation.year_end" => null,
+                    ],
+                ]
             ],
             $query->where
         );
-        self::assertEquals([':year' => 2018], $query->params);
+
+        $query = new GenerationQuery(Generation::class);
+        self::assertEquals($query, $query->year([2018, 2019]));
+        self::assertEquals(
+            [
+                'OR',
+                [
+                    'AND',
+                    ['<=', "car_generation.year_begin", '2018'],
+                    [
+                        'OR',
+                        ['>=', "car_generation.year_end", '2018'],
+                        "car_generation.year_end" => null,
+                    ],
+                ],
+                [
+                    'AND',
+                    ['<=', "car_generation.year_begin", '2019'],
+                    [
+                        'OR',
+                        ['>=', "car_generation.year_end", '2019'],
+                        "car_generation.year_end" => null,
+                    ],
+                ]
+            ],
+            $query->where
+        );
     }
 }
