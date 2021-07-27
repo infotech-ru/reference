@@ -61,6 +61,7 @@ class OptionGroupTest extends TestCase
                 'name',
                 'created_at',
                 'updated_at',
+                'ord',
             ],
             $model->attributes()
         );

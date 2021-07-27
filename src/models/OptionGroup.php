@@ -12,6 +12,7 @@ use yii\base\InvalidConfigException;
  * @property string $name
  * @property string $created_at
  * @property string $updated_at
+ * @property int $ord
  * @property-read Brand $brand
  */
 class OptionGroup extends ActiveRecord
