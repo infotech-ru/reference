@@ -41,6 +41,7 @@ class ModelAlias extends ActiveRecord
     public const  CLASS_J = 7;
     public const  CLASS_M = 8;
     public const  CLASS_X = 9;
+    public const  CLASS_COMMERCIAL = 10;
 
     public static function tableName(): string
     {
