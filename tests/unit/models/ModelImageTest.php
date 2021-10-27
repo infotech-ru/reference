@@ -2,6 +2,8 @@
 
 namespace infotech\reference\tests\unit\models;
 
+use infotech\reference\models\EquipmentModelImageQuery;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelImage;
 use infotech\reference\models\ModelImageQuery;
@@ -106,5 +108,17 @@ class ModelImageTest extends TestCase
     {
         $model = new ModelImage();
         self::assertInstanceOf(SerieQuery::class, $model->getSeries());
+    }
+
+    public function testGetEquipmentModelImages()
+    {
+        $model = new ModelImage();
+        self::assertInstanceOf(EquipmentModelImageQuery::class, $model->getEquipmentModelImages());
+    }
+
+    public function testGetEquipments()
+    {
+        $model = new ModelImage();
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipments());
     }
 }
