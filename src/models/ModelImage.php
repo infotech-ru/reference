@@ -2,30 +2,29 @@
 
 namespace infotech\reference\models;
 
-use app\models\CatalogEmplacement;
 use Yii;
-use yii\helpers\ArrayHelper;
 
 /**
  * Class ModelImage
  * @package infotech\reference\models
- * @property integer $id
- * @property integer $model_id
- * @property integer $generation_id
- * @property integer $series_id
- * @property integer $equipment_id
- * @property integer $skin_id
- * @property string $url
- * @property integer $category
- * @property integer $priority
- * @property integer $status
- * @property integer $placement_type
- * @property-read Model $model
- * @property-read Serie $series
- * @property-read Generation $generation
- * @property-read Equipment $equipment
- * @property-read Skin $skin
- * @property-read Equipment[] $equipments
+ * @property integer                    $id
+ * @property integer                    $model_id
+ * @property integer                    $generation_id
+ * @property integer                    $series_id
+ * @property integer                    $equipment_id
+ * @property integer                    $skin_id
+ * @property string                     $url
+ * @property integer                    $category
+ * @property integer                    $priority
+ * @property integer                    $status
+ * @property integer                    $placement_type
+ * @property-read Model                 $model
+ * @property-read Serie                 $series
+ * @property-read Generation            $generation
+ * @property-read Equipment             $equipment
+ * @property-read Skin                  $skin
+ * @property-read Equipment[]           $equipments
+ * @property-read EquipmentModelImage[] $equipmentModelImages
  */
 class ModelImage extends ActiveRecord
 {
@@ -34,18 +33,13 @@ class ModelImage extends ActiveRecord
     public const  CATEGORY_EXTERNAL = 0;
     public const  CATEGORY_INTERNAL = 1;
 
-    public const PLACEMENT_MEDIA  = 0;
+    public const PLACEMENT_MEDIA = 0;
     public const PLACEMENT_SLIDER = 1;
-
-    /* @var string Таблица для связи с комплектациями */
-    const EQUIPMENT_RELATION_TABLE = 'eqt_equipment_model_image';
-
-    protected $_equipmentList = [];
 
     public static function getStatusList(): array
     {
         return [
-            self::STATUS_ACTIVE => Yii::t('app', 'Активно'),
+            self::STATUS_ACTIVE  => Yii::t('app', 'Активно'),
             self::STATUS_DELETED => Yii::t('app', 'Удалено'),
         ];
     }
@@ -71,7 +65,7 @@ class ModelImage extends ActiveRecord
         return 'model_image';
     }
 
-    public static function find()
+    public static function find(): ModelImageQuery
     {
         return new ModelImageQuery(static::class);
     }
@@ -91,6 +85,9 @@ class ModelImage extends ActiveRecord
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
 
+    /**
+     * @deprecated
+     */
     public function getEquipment()
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
@@ -102,31 +99,18 @@ class ModelImage extends ActiveRecord
     }
 
     /**
-     * Получить связанные комплектации
-     *
-     * @return ActiveQuery
+     * @return EquipmentModelImageQuery
+     */
+    public function getEquipmentModelImages()
+    {
+        return $this->hasMany(EquipmentModelImage::class, ['model_image_id' => 'id']);
+    }
+
+    /**
+     * @return EquipmentQuery
      */
     public function getEquipments()
     {
-        return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])
-            ->viaTable(self::EQUIPMENT_RELATION_TABLE, ['model_image_id' => 'id']);
-    }
-
-    /**
-     * @return array
-     */
-    public function getEquipmentList()
-    {
-        return ArrayHelper::getColumn($this->equipments, 'id');
-    }
-
-    /**
-     * @param array $equipmentList
-     * @return $this
-     */
-    public function setEquipmentList($equipmentList)
-    {
-        $this->_equipmentList = $equipmentList ?: [];
-        return $this;
+        return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('equipmentModelImages');
     }
 }
