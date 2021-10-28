@@ -5,15 +5,18 @@ namespace infotech\reference\models;
 /**
  * Class Image
  * @package infotech\reference\models
- * @property integer $emplacement_id
- * @property integer $foreshortening_id
- * @property string $url
- * @property boolean $is_main
- * @property boolean $is_serie_main
- * @property boolean $is_not_convert Флаг того, что изображение загружено без обработки
- * @property string $created_at
- * @property string $updated_at
- * @property-read CatalogEmplacement $catalogEmplacement
+ * @property integer                    $emplacement_id
+ * @property integer                    $foreshortening_id
+ * @property string                     $url
+ * @property string                     $original_image_url
+ * @property integer                    $original_image_width
+ * @property integer                    $original_image_height
+ * @property boolean                    $is_main
+ * @property boolean                    $is_serie_main
+ * @property boolean                    $is_not_convert используйте поле original_image_url
+ * @property string                     $created_at
+ * @property string                     $updated_at
+ * @property-read CatalogEmplacement    $catalogEmplacement
  * @property-read CatalogForeshortening $catalogForeshortening
  */
 class CatalogImage extends ActiveRecord
