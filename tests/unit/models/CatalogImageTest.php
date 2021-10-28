@@ -55,6 +55,9 @@ class CatalogImageTest extends TestCase
                 'created_at',
                 'updated_at',
                 'is_not_convert',
+                'original_image_url',
+                'original_image_width',
+                'original_image_height',
             ],
             $model->attributes()
         );
