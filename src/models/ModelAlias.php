@@ -22,6 +22,7 @@ use yii\base\InvalidConfigException;
  * @property integer $is_new
  * @property string $model_code
  * @property string $body_code
+ * @property integer $order
  * @property-read Brand $brand
  * @property-read Model $model
  * @property-read Generation $generation
