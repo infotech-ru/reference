@@ -27,7 +27,6 @@ use yii\helpers\ArrayHelper;
  */
 class AutoruLkt extends ActiveRecord
 {
-
     /**
      * {@inheritdoc}
      */

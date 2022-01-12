@@ -23,7 +23,6 @@ use infotech\reference\models\autoru\queries\AutoruMapModificationQuery;
  */
 class AutoruModification extends ActiveRecord
 {
-
     public static function getBodysList()
     {
         return [
