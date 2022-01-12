@@ -26,7 +26,6 @@ use yii\helpers\ArrayHelper;
  */
 class AutoruFolder extends ActiveRecord
 {
-
     public static function tableName(): string
     {
         return 'eqt_autoru_folder';

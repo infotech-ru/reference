@@ -20,6 +20,7 @@ class Country extends ActiveRecord
     public const  RUSSIA_ID = 1;
     public const  BELARUS_ID = 2;
     public const  KAZAKHSTAN_ID = 7;
+    public const  AZERBAIJAN_ID = 32;
     public const  UKRAINE_ID = 785;
     public const  KYRGYZSTAN_ID = 449;
 

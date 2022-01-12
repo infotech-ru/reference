@@ -7,7 +7,6 @@ use yii\db\Migration;
  */
 class m160719_144216_drop_body_code extends Migration
 {
-
     public function up()
     {
         $this->dropColumn('car_modification', 'body_code');
