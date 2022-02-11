@@ -111,6 +111,7 @@ class ModelAliasTest extends TestCase
                 'body_code',
                 'modification_id',
                 'order',
+                'dealerpoint_code',
             ],
             $model->attributes()
         );
