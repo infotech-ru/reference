@@ -53,4 +53,9 @@ class StatusTest extends TestCase
     {
         self::assertEquals('ДИЛЕР_ПУТЬ', Status::SUBARU_STATUS_DEALER_IN_WAY);
     }
+
+    public function testSubaruStatusDealer()
+    {
+        self::assertEquals('ДИЛЕР', Status::SUBARU_STATUS_DEALER);
+    }
 }
