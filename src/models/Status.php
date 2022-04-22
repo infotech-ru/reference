@@ -5,10 +5,10 @@ namespace infotech\reference\models;
 /**
  * Class Status
  * @package infotech\reference\models
- * @property string $status_code
+ * @property string  $status_code
  * @property integer $brand_id
  * @property integer $status_ord
- * @property string $status_name
+ * @property string  $status_name
  */
 class Status extends ActiveRecord
 {
@@ -28,5 +28,18 @@ class Status extends ActiveRecord
     public function getBrand()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
+    }
+
+    public static function getSubaruDealerStatuses()
+    {
+        return [
+            self::SUBARU_STATUS_DEALER_IN_WAY,
+            'ДИЛЕР_ПУТЬ_М',
+            'ДИЛЕР_ПУТЬ_Н',
+            'ДИЛЕР_ПУТЬ_С',
+            self::SUBARU_STATUS_DEALER,
+            'ДИЛЕР_П_В',
+            'ДИЛЕР_П_П',
+        ];
     }
 }
