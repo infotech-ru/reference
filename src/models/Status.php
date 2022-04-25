@@ -33,13 +33,16 @@ class Status extends ActiveRecord
     public static function getSubaruDealerStatuses()
     {
         return [
+            self::SUBARU_STATUS_DEALER,
             self::SUBARU_STATUS_DEALER_IN_WAY,
             'ДИЛЕР_ПУТЬ_М',
             'ДИЛЕР_ПУТЬ_Н',
             'ДИЛЕР_ПУТЬ_С',
-            self::SUBARU_STATUS_DEALER,
             'ДИЛЕР_П_В',
             'ДИЛЕР_П_П',
+            'ДИЛ_ПУТЬ_М',
+            'ДИЛ_ПУТЬ_Н',
+            'ДИЛ_ПУТЬ_С',
         ];
     }
 }
