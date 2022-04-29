@@ -3,6 +3,8 @@
 namespace infotech\reference\models;
 
 use yii\base\InvalidConfigException;
+use yii\helpers\ArrayHelper;
+use Yii;
 
 /**
  * @property integer $brand_id
@@ -61,6 +63,25 @@ class Model extends ActiveRecord
         }
 
         return $query->column();
+    }
+
+    /**
+     * @param $brandId
+     * @param $recentOnly
+     * @return array
+     * @throws InvalidConfigException
+     */
+    public static function getListWithGroup($brandId, $recentOnly): array
+    {
+        $list = static::find()
+            ->isDeleted(0)
+            ->brand($brandId)
+            ->orderBy(['is_recent' => SORT_DESC, 'name' => SORT_ASC])
+            ->all();
+
+        return ArrayHelper::map($list, 'id', 'name', function ($item) {
+            return $item->is_recent ? Yii::t('app', 'Актуальные') : Yii::t('app', 'Не актуальные');
+        });
     }
 
     public function getBrand()
