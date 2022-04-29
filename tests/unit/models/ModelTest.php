@@ -171,4 +171,9 @@ class ModelTest extends TestCase
         self::assertInstanceOf(Model::class, $model);
         self::assertEquals('Opel 1', $model->getFullName());
     }
+
+    public function testGetListWithGroup()
+    {
+        self::assertEquals(['1' => '1', '2' => '2'], Model::getListWithGroup(1));
+    }
 }

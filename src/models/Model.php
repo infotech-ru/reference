@@ -67,11 +67,10 @@ class Model extends ActiveRecord
 
     /**
      * @param $brandId
-     * @param $recentOnly
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getListWithGroup($brandId, $recentOnly): array
+    public static function getListWithGroup($brandId): array
     {
         $list = static::find()
             ->isDeleted(0)
