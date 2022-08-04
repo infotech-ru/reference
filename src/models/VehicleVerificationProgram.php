@@ -11,6 +11,7 @@ namespace infotech\reference\models;
  * @property string $name
  * @property string $description
  * @property string $photo
+ * @property string $color
  */
 class VehicleVerificationProgram extends ActiveRecord
 {
