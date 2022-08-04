@@ -40,6 +40,7 @@ class VehicleVerificationProgramTest extends TestCase
                 'name',
                 'description',
                 'photo',
+                'color',
             ],
             $model->attributes()
         );
