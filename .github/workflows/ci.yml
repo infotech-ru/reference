@@ -33,7 +33,7 @@ jobs:
         run: composer config --no-plugins allow-plugins.yiisoft/yii2-composer true
 
       - name: Install dependencies with composer
-        run: composer install --prefer-dist --no-suggest --no-progress
+        run: composer install --prefer-dist --no-progress
 
       - name: Wait for MySQL
         run: |
