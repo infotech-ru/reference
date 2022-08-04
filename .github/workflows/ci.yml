@@ -15,7 +15,7 @@ jobs:
         with:
           character set server: 'utf8'
           collation server: 'utf8_unicode_ci'
-          mysql version: '5.6'
+          mysql version: '8.0'
           mysql database: autocrm_test
           mysql root password: $MYSQL_ROOT_PASSWORD
 
@@ -33,7 +33,7 @@ jobs:
         run: composer config --no-plugins allow-plugins.yiisoft/yii2-composer true
 
       - name: Install dependencies with composer
-        run: composer install --prefer-dist --no-suggest --no-progress
+        run: composer install --prefer-dist --no-progress
 
       - name: Wait for MySQL
         run: |
