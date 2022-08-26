@@ -125,6 +125,16 @@ class BrandTest extends TestCase
         self::assertEquals(152, Brand::HAVAL_ID);
     }
 
+    public function testTankId()
+    {
+        self::assertEquals(2628, Brand::TANK_ID);
+    }
+
+    public function testNissanId()
+    {
+        self::assertEquals(88, Brand::NISSAN_ID);
+    }
+
     public function testCadillacId()
     {
         self::assertEquals(3, Brand::CADILLAC_ID);
