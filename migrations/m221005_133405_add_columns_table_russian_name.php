@@ -6,7 +6,7 @@ class m221005_133405_add_columns_table_russian_name extends Migration
 {
     public function safeUp()
     {
-        $this->addColumn('russian_name', 'status', $this->tinyInteger(1));
+        $this->addColumn('russian_name', 'status', $this->tinyInteger());
         $this->addColumn('russian_name', 'created_by', $this->integer());
         $this->addColumn('russian_name', 'updated_by', $this->integer());
         $this->addColumn('russian_name', 'created_at', $this->dateTime());
@@ -22,4 +22,3 @@ class m221005_133405_add_columns_table_russian_name extends Migration
         $this->dropColumn('russian_name', 'status');
     }
 }
-
