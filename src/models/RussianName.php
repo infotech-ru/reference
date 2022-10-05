@@ -10,6 +10,11 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property string $sex
+ * @property int $status
+ * @property int $created_by
+ * @property int $updated_by
+ * @property string $created_at
+ * @property string $updated_at
  */
 class RussianName extends ActiveRecord
 {
