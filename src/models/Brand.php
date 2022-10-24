@@ -46,6 +46,9 @@ class Brand extends ActiveRecord
     public const  NISSAN_ID = 88;
     public const  HAVAL_ID = 152;
     public const  TANK_ID = 2628;
+    public const  FIAT_ID = 45;
+    public const  FIAT_PROFESSIONAL_ID = 2620;
+    public const  JEEP_ID = 63;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
