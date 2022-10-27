@@ -20,6 +20,7 @@ use yii\helpers\ArrayHelper;
  * @property string $okato
  * @property int $center_city_id
  * @property string $iso_code
+ * @property string $kladr_code
  * @property Country $country
  * @property FederalDistrict $federalDistrict
  * @property City[] $cities
