@@ -26,7 +26,7 @@ class SkinQuery extends ActiveQuery
         $skinSerieTbl = SkinSerie::tableName();
 
         $query = SkinSerie::find()
-            ->andWhere("{$skinSerieTbl}.color_id={$this->tableName()}.id")
+            ->andWhere("{$skinSerieTbl}.skin_id={$this->tableName()}.id")
             ->andWhere(["{$skinSerieTbl}.serie_id" => $serieId]);
 
         return $this->andWhere(['EXISTS', $query]);
