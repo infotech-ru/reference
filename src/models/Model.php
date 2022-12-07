@@ -19,6 +19,7 @@ use yii\base\InvalidConfigException;
  * @property integer $origin_id
  * @property integer $model_class_id
  * @property integer $model_segment_id
+ *
  * @property-read Brand $brand
  * @property-read Generation[] $generations
  * @property-read Equipment[] $equipments
@@ -30,6 +31,7 @@ use yii\base\InvalidConfigException;
  * @property-read Skin[] $skins
  * @property-read ModelImage[] $modelImages
  * @property-read ModelVideo[] $modelVideos
+ * @property-read ModelCountry[] $modelCountries
  */
 class Model extends ActiveRecord
 {
@@ -131,5 +133,10 @@ class Model extends ActiveRecord
     public function getModelVideos()
     {
         return $this->hasMany(ModelVideo::class, ['model_id' => 'id']);
+    }
+
+    public function getModelCountries()
+    {
+        return $this->hasMany(ModelCountry::class, ['model_id' => 'id']);
     }
 }

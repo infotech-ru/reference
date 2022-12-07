@@ -35,4 +35,17 @@ class ModelQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName() . '.brand_id' => $id]);
     }
+
+    /**
+     * @param $id
+     * @return ModelQuery
+     * @throws InvalidConfigException
+     */
+    public function country($id)
+    {
+        return $this->andWhere(['EXISTS', ModelCountry::find()->where([
+            $this->tableName() . 'id' => ModelCountry::tableName() . 'model_id',
+            ModelCountry::tableName() . 'country_id' => $id,
+        ])]);
+    }
 }
