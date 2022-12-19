@@ -43,9 +43,11 @@ class ModelQuery extends ActiveQuery
      */
     public function country($id)
     {
+        [$tableName, $alias] = $this->getTableNameAndAlias();
+
         return $this->andWhere(['EXISTS', ModelCountry::find()->where([
             'AND',
-            $this->tableName() . '.id = ' . ModelCountry::tableName() . '.model_id',
+            $alias . '.id = ' . ModelCountry::tableName() . '.model_id',
             [ModelCountry::tableName() . '.country_id' => $id],
         ])]);
     }
