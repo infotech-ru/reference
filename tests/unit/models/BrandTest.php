@@ -180,6 +180,11 @@ class BrandTest extends TestCase
         self::assertEquals(1, Brand::OPEL_ID);
     }
 
+    public function testMitsubishiId()
+    {
+        self::assertEquals(7, Brand::MITSUBISHI_ID);
+    }
+
     public function testPeugeotId()
     {
         self::assertEquals(4, Brand::PEUGEOT_ID);
