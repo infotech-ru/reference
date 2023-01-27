@@ -14,6 +14,7 @@ use yii\base\InvalidConfigException;
  * @property integer           $generation_id
  * @property integer           $serie_id
  * @property integer           $modification_id
+ * @property integer           $equipment_id
  * @property integer           $status
  * @property string            $code
  * @property string            $created_at
@@ -24,11 +25,13 @@ use yii\base\InvalidConfigException;
  * @property string            $body_code
  * @property integer           $order
  * @property string            $dealerpoint_code
+ *
  * @property-read Brand        $brand
  * @property-read Model        $model
  * @property-read Generation   $generation
  * @property-read Modification $modification
  * @property-read Serie        $serie
+ * @property-read Equipment    $equipment
  */
 class ModelAlias extends ActiveRecord
 {
@@ -93,5 +96,10 @@ class ModelAlias extends ActiveRecord
     public function getModification()
     {
         return $this->hasOne(Modification::class, ['id_car_modification' => 'modification_id']);
+    }
+
+    public function getEquipment()
+    {
+        return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 }
