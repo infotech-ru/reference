@@ -3,6 +3,7 @@
 namespace infotech\reference\tests\unit\models;
 
 use infotech\reference\models\BrandQuery;
+use infotech\reference\models\EquipmentQuery;
 use infotech\reference\models\GenerationQuery;
 use infotech\reference\models\ModelAlias;
 use infotech\reference\models\ModelAliasQuery;
@@ -90,6 +91,12 @@ class ModelAliasTest extends TestCase
         self::assertInstanceOf(ModificationQuery::class, $model->getModification());
     }
 
+    public function testGetEquipment()
+    {
+        $model = new ModelAlias();
+        self::assertInstanceOf(EquipmentQuery::class, $model->getEquipment());
+    }
+
     public function testAttributes()
     {
         $model = new ModelAlias();
@@ -112,6 +119,7 @@ class ModelAliasTest extends TestCase
                 'modification_id',
                 'order',
                 'dealerpoint_code',
+                'equipment_id',
             ],
             $model->attributes()
         );
