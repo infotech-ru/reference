@@ -6,32 +6,34 @@ use yii\base\InvalidConfigException;
 
 /**
  * Class ModelAlias
- * @package infotech\reference\models
- * @property integer           $id
- * @property string            $name
- * @property integer           $brand_id
- * @property integer           $model_id
- * @property integer           $generation_id
- * @property integer           $serie_id
- * @property integer           $modification_id
- * @property integer           $equipment_id
- * @property integer           $status
- * @property string            $code
- * @property string            $created_at
- * @property string            $updated_at
- * @property integer           $classification
- * @property integer           $is_new
- * @property string            $model_code
- * @property string            $body_code
- * @property integer           $order
- * @property string            $dealerpoint_code
  *
- * @property-read Brand        $brand
- * @property-read Model        $model
- * @property-read Generation   $generation
+ * @package infotech\reference\models
+ * @property integer $id
+ * @property string $name
+ * @property integer $brand_id
+ * @property integer $model_id
+ * @property integer $generation_id
+ * @property integer $serie_id
+ * @property integer $modification_id
+ * @property integer $equipment_id
+ * @property integer $status
+ * @property string $code
+ * @property string $created_at
+ * @property string $updated_at
+ * @property integer $classification
+ * @property integer $is_new
+ * @property string $model_code
+ * @property string $body_code
+ * @property integer $order
+ * @property string $dealerpoint_code
+ *
+ * @property-read Brand $brand
+ * @property-read Model $model
+ * @property-read Generation $generation
  * @property-read Modification $modification
- * @property-read Serie        $serie
- * @property-read Equipment    $equipment
+ * @property-read Serie $serie
+ * @property-read Equipment $equipment
+ * @property-read ModelAliasCountry[] $modelAliasCountries
  */
 class ModelAlias extends ActiveRecord
 {
@@ -55,6 +57,7 @@ class ModelAlias extends ActiveRecord
 
     /**
      * @param $brandId
+     *
      * @return array
      * @throws InvalidConfigException
      */
@@ -101,5 +104,10 @@ class ModelAlias extends ActiveRecord
     public function getEquipment()
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
+    }
+
+    public function getModelAliasCountries()
+    {
+        return $this->hasMany(ModelAliasCountry::class, ['model_alias_id' => 'id']);
     }
 }
