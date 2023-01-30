@@ -17,7 +17,7 @@ class ModelAliasCountry extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'model_country';
+        return 'model_alias_country';
     }
 
     public function getModelAlias()
