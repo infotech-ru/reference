@@ -232,4 +232,9 @@ class BrandTest extends TestCase
     {
         self::assertEquals(4, Brand::VEHICLE_TYPE_MOTO);
     }
+
+    public function testSwmId()
+    {
+        self::assertEquals(2681, Brand::SWM_ID);
+    }
 }
