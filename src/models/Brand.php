@@ -69,6 +69,10 @@ class Brand extends ActiveRecord
     public const AUDI_ID = 19;
     public const PORSCHE_ID = 94;
     public const EXEED_ID = 2082;
+    public const SA_ID = 2634;
+    public const ABARTH_ID = 1365;
+    public const LANCIA_ID = 67;
+
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;

@@ -312,4 +312,49 @@ class BrandTest extends TestCase
     {
         self::assertEquals(2082, Brand::EXEED_ID);
     }
+
+    public function testSaId()
+    {
+        self::assertEquals(2634, Brand::SA_ID);
+    }
+
+    public function testAbarthId()
+    {
+        self::assertEquals(1365, Brand::ABARTH_ID);
+    }
+
+    public function testLanciaId()
+    {
+        self::assertEquals(67, Brand::LANCIA_ID);
+    }
+
+    public function testFiatId()
+    {
+        self::assertEquals(45, Brand::FIAT_ID);
+    }
+
+    public function testJeepId()
+    {
+        self::assertEquals(63, Brand::JEEP_ID);
+    }
+
+    public function testDodge()
+    {
+        self::assertEquals(38, Brand::DODGE);
+    }
+
+    public function testChrysler()
+    {
+        self::assertEquals(31, Brand::CHRYSLER);
+    }
+
+    public function testAlfaRomeo()
+    {
+        self::assertEquals(14, Brand::ALFA_ROMEO);
+    }
+
+    public function testFiatProfessional()
+    {
+        self::assertEquals(2620, Brand::FIAT_PROFESSIONAL_ID);
+    }
 }
