@@ -277,4 +277,9 @@ class BrandTest extends TestCase
     {
         self::assertEquals(1367, Brand::GAZ_NEW_ID);
     }
+
+    public function testFawId()
+    {
+        self::assertEquals(43, Brand::FAW_ID);
+    }
 }
