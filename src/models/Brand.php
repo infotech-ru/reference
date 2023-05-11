@@ -63,6 +63,12 @@ class Brand extends ActiveRecord
     public const CHANGAN_ID = 140;
     public const GAZ_NEW_ID = 1367;
     public const FAW_ID = 43;
+    public const TOYOTA_ID = 11;
+    public const VOLKSWAGEN_ID = 9;
+    public const HYUNDAI_ID = 56;
+    public const AUDI_ID = 19;
+    public const PORSCHE_ID = 94;
+    public const EXEED_ID = 2082;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
