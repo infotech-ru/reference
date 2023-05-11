@@ -237,8 +237,124 @@ class BrandTest extends TestCase
     {
         self::assertEquals(2681, Brand::SWM_ID);
     }
+
     public function testLadaId()
     {
         self::assertEquals(125, Brand::LADA_ID);
+    }
+
+    public function testHondaMotoId()
+    {
+        self::assertEquals(1215, Brand::HONDA_MOTO_ID);
+    }
+
+    public function testHondaId()
+    {
+        self::assertEquals(52, Brand::HONDA_ID);
+    }
+
+    public function testAcuraId()
+    {
+        self::assertEquals(13, Brand::ACURA_ID);
+    }
+
+    public function testEvoluteId()
+    {
+        self::assertEquals(2661, Brand::EVOLUTE_ID);
+    }
+
+    public function testVoyahId()
+    {
+        self::assertEquals(2664, Brand::VOYAH_ID);
+    }
+
+    public function testChanganId()
+    {
+        self::assertEquals(140, Brand::CHANGAN_ID);
+    }
+
+    public function testGazNewId()
+    {
+        self::assertEquals(1367, Brand::GAZ_NEW_ID);
+    }
+
+    public function testFawId()
+    {
+        self::assertEquals(43, Brand::FAW_ID);
+    }
+
+    public function testToyotaId()
+    {
+        self::assertEquals(11, Brand::TOYOTA_ID);
+    }
+
+    public function testVolkswagenId()
+    {
+        self::assertEquals(9, Brand::VOLKSWAGEN_ID);
+    }
+
+    public function testHyundaiId()
+    {
+        self::assertEquals(56, Brand::HYUNDAI_ID);
+    }
+
+    public function testAudiId()
+    {
+        self::assertEquals(19, Brand::AUDI_ID);
+    }
+
+    public function testPorscheId()
+    {
+        self::assertEquals(94, Brand::PORSCHE_ID);
+    }
+
+    public function testExeedId()
+    {
+        self::assertEquals(2082, Brand::EXEED_ID);
+    }
+
+    public function testSaId()
+    {
+        self::assertEquals(2634, Brand::SA_ID);
+    }
+
+    public function testAbarthId()
+    {
+        self::assertEquals(1365, Brand::ABARTH_ID);
+    }
+
+    public function testLanciaId()
+    {
+        self::assertEquals(67, Brand::LANCIA_ID);
+    }
+
+    public function testFiatId()
+    {
+        self::assertEquals(45, Brand::FIAT_ID);
+    }
+
+    public function testJeepId()
+    {
+        self::assertEquals(63, Brand::JEEP_ID);
+    }
+
+    public function testDodge()
+    {
+        self::assertEquals(38, Brand::DODGE);
+    }
+
+    public function testChrysler()
+    {
+        self::assertEquals(31, Brand::CHRYSLER);
+    }
+
+    public function testAlfaRomeo()
+    {
+        self::assertEquals(14, Brand::ALFA_ROMEO);
+    }
+
+    public function testFiatProfessional()
+    {
+        self::assertEquals(2620, Brand::FIAT_PROFESSIONAL_ID);
     }
 }
