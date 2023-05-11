@@ -61,6 +61,7 @@ class Brand extends ActiveRecord
     public const EVOLUTE_ID = 2661;
     public const VOYAH_ID = 2664;
     public const CHANGAN_ID = 140;
+    public const GAZ_NEW_ID = 1367;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
