@@ -247,4 +247,14 @@ class BrandTest extends TestCase
     {
         self::assertEquals(1215, Brand::HONDA_MOTO_ID);
     }
+
+    public function testHondaId()
+    {
+        self::assertEquals(52, Brand::HONDA_ID);
+    }
+
+    public function testAcuraId()
+    {
+        self::assertEquals(13, Brand::ACURA_ID);
+    }
 }

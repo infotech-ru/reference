@@ -56,6 +56,8 @@ class Brand extends ActiveRecord
     public const SWM_ID = 2681;
     public const LADA_ID = 125;
     public const HONDA_MOTO_ID = 1215;
+    public const HONDA_ID = 52;
+    public const ACURA_ID = 13;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
