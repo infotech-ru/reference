@@ -82,7 +82,10 @@ class GenerationFileTest extends TestCase
     public function testGetTypeList(): void
     {
         self::assertEquals(
-            [GenerationFile::TYPE_DOCUMENT => Yii::t('app', 'Документация'),],
+            [
+                GenerationFile::TYPE_DOCUMENT => Yii::t('app', 'Документация'),
+                GenerationFile::TYPE_BROCHURE => Yii::t('app', 'Брошюра'),
+            ],
             GenerationFile::getTypeList()
         );
     }

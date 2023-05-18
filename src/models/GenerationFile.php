@@ -18,6 +18,7 @@ use Yii;
 class GenerationFile extends ActiveRecord
 {
     public const TYPE_DOCUMENT = 1;
+    public const TYPE_BROCHURE = 2;
 
     public static function tableName(): string
     {
@@ -28,6 +29,7 @@ class GenerationFile extends ActiveRecord
     {
         return [
             self::TYPE_DOCUMENT => Yii::t('app', 'Документация'),
+            self::TYPE_BROCHURE => Yii::t('app', 'Брошюра'),
         ];
     }
 
