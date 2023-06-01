@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180329_221323_create_mbr_sap_model extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'mbr_sap_model',
@@ -29,7 +29,7 @@ class m180329_221323_create_mbr_sap_model extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('mbr_sap_model');
     }

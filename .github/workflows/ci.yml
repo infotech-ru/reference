@@ -27,7 +27,7 @@ jobs:
         with:
           php-version: "7.4"
           coverage: xdebug
-          tools: composer, phpstan, phpcs, cs2pr
+          tools: composer
 
       - name: Allow composer plugin
         run: composer config --no-plugins allow-plugins.yiisoft/yii2-composer true
@@ -47,8 +47,7 @@ jobs:
       - name: Run unit tests
         run: php vendor/bin/phpunit --configuration phpunit.xml.dist --bootstrap tests/bootstrap.php --coverage-text --coverage-html=build/coverage
 
-      - name: Run phpstan
-        run: phpstan analyse -c phpstan.neon --memory-limit=-1
-
-      - name: Run phpcs
-        run: phpcs -q --report=checkstyle | cs2pr
+      - name: Static analysis with php codesniffer
+        uses: chekalsky/phpcs-action@v1
+        with:
+          phpcs_bin_path: './vendor/bin/phpcs'

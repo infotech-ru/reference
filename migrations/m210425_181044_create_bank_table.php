@@ -10,7 +10,7 @@ class m210425_181044_create_bank_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('credit_bank', [
             'id' => $this->primaryKey(),
@@ -21,7 +21,7 @@ class m210425_181044_create_bank_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('credit_bank');
     }

@@ -10,7 +10,7 @@ class m180903_124139_create_vehicle_option_type_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable('vehicle_option_type', [
             'id' => $this->primaryKey(),
@@ -33,7 +33,7 @@ class m180903_124139_create_vehicle_option_type_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function down()
     {
         $this->dropForeignKey('fk_vehicle_option_type_group_id', 'vehicle_option_type');
         $this->dropTable('vehicle_option_type');

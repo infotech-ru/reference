@@ -10,7 +10,7 @@ class m180607_102209_create_equipment_catalog_emplacement_table extends Migratio
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'eqt_equipment_catalog_emplacement',
@@ -47,7 +47,7 @@ class m180607_102209_create_equipment_catalog_emplacement_table extends Migratio
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('eqt_equipment_catalog_emplacement');
     }

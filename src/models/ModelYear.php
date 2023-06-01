@@ -24,12 +24,12 @@ class ModelYear extends ActiveRecord
         return 'model_year';
     }
 
-    public static function find(): ModelYearQuery
+    public static function find()
     {
         return new ModelYearQuery(static::class);
     }
 
-    public function getModel(): \yii\db\ActiveQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
@@ -40,7 +40,7 @@ class ModelYear extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($modelId, $recentOnly): array
+    public static function getList($modelId, $recentOnly)
     {
         $query = static::find()
             ->model($modelId)
@@ -53,12 +53,12 @@ class ModelYear extends ActiveRecord
         return $query->column();
     }
 
-    public function getModelYearEquipments(): \yii\db\ActiveQuery
+    public function getModelYearEquipments()
     {
         return $this->hasMany(ModelYearEquipment::class, ['model_year_id' => 'id']);
     }
 
-    public function getEquipments(): \yii\db\ActiveQuery
+    public function getEquipments()
     {
         return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('modelYearEquipments');
     }

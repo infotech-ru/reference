@@ -5,12 +5,9 @@ namespace infotech\reference\models\autoru;
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruColorQuery;
 
-/**
- * @property int $autoru_id
- */
 class AutoruColor extends ActiveRecord
 {
-    public static function autoRuColorList(): array
+    public static function autoRuColorList()
     {
         return [
             1 => 'Бежевый',

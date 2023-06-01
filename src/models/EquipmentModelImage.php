@@ -20,12 +20,12 @@ class EquipmentModelImage extends ActiveRecord
         return 'eqt_equipment_model_image';
     }
 
-    public function getEquipment(): \yii\db\ActiveQuery
+    public function getEquipment(): EquipmentQuery
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 
-    public function getModelImage(): \yii\db\ActiveQuery
+    public function getModelImage(): ModelImageQuery
     {
         return $this->hasOne(ModelImage::class, ['id' => 'model_image_id']);
     }

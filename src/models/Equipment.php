@@ -48,7 +48,7 @@ class Equipment extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($serieId, $recentOnly): array
+    public static function getList($serieId, $recentOnly)
     {
         $query = static::find()
             ->serie($serieId)
@@ -61,74 +61,74 @@ class Equipment extends ActiveRecord
         return $query->column();
     }
 
-    public static function find(): EquipmentQuery
+    public static function find()
     {
         return new EquipmentQuery(static::class);
     }
 
-    public function getModel(): \yii\db\ActiveQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getSerie(): \yii\db\ActiveQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
 
-    public function getCountry(): \yii\db\ActiveQuery
+    public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 
-    public function getOptions(): \yii\db\ActiveQuery
+    public function getOptions()
     {
         return $this->hasMany(Option::class, ['equipment_id' => 'id']);
     }
 
-    public function getModelYearEquipments(): \yii\db\ActiveQuery
+    public function getModelYearEquipments()
     {
         return $this->hasMany(ModelYearEquipment::class, ['equipment_id' => 'id']);
     }
 
-    public function getModelYears(): \yii\db\ActiveQuery
+    public function getModelYears()
     {
         return $this->hasMany(ModelYear::class, ['id' => 'model_year_id'])->via('modelYearEquipments');
     }
 
-    public function getModificationEquipments(): \yii\db\ActiveQuery
+    public function getModificationEquipments()
     {
         return $this->hasMany(ModificationEquipment::class, ['equipment_id' => 'id']);
     }
 
-    public function getModifications(): \yii\db\ActiveQuery
+    public function getModifications()
     {
         return $this->hasMany(Modification::class, ['id_car_modification' => 'modification_id'])
             ->via('modificationEquipments');
     }
 
-    public function getEquipmentCountries(): \yii\db\ActiveQuery
+    public function getEquipmentCountries()
     {
         return $this->hasMany(EquipmentCountry::class, ['equipment_id' => 'id']);
     }
 
-    public function getCountries(): \yii\db\ActiveQuery
+    public function getCountries()
     {
         return $this->hasMany(Country::class, ['id' => 'country_id'])->via('equipmentCountries');
     }
 
-    public function getEquipmentCatalogEmplacements(): \yii\db\ActiveQuery
+    public function getEquipmentCatalogEmplacements()
     {
         return $this->hasMany(EquipmentCatalogEmplacement::class, ['equipment_id' => 'id']);
     }
 
-    public function getCatalogEmplacements(): \yii\db\ActiveQuery
+    public function getCatalogEmplacements()
     {
         return $this->hasMany(CatalogEmplacement::class, ['id' => 'catalog_emplacement_id'])
             ->via('equipmentCatalogEmplacements');
     }
 
-    public function getCharacteristicValues(): \yii\db\ActiveQuery
+    public function getCharacteristicValues()
     {
         return $this->hasMany(CharacteristicValue::class, ['id_car_equipment' => 'id_car_equipment']);
     }

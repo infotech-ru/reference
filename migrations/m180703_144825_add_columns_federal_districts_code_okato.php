@@ -10,7 +10,7 @@ class m180703_144825_add_columns_federal_districts_code_okato extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('federal_districts', 'short_name', $this->string());
         $this->addColumn('federal_districts', 'okato', $this->char(2));
@@ -22,7 +22,7 @@ class m180703_144825_add_columns_federal_districts_code_okato extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('fk_federal_districts_country_id', 'federal_districts');
         $this->dropColumn('federal_districts', 'country_id');

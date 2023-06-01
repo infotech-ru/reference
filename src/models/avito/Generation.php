@@ -6,33 +6,32 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\GenerationQuery;
 use infotech\reference\models\Generation as RefGeneration;
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_generation".
  *
- * @property int             $id
- * @property string          $name
- * @property int             $model_id
+ * @property int $id
+ * @property string $name
+ * @property int $model_id
  *
- * @property Model           $model
+ * @property Model $model
  * @property GenerationMap[] $generationMaps
  * @property RefGeneration[] $refGenerations
- * @property Modification[]  $modifications
+ * @property Modification[] $modifications
  */
 class Generation extends ActiveRecord
 {
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'avito_generation';
     }
 
-    public static function find(): GenerationQuery
+    public static function find()
     {
         return new GenerationQuery(static::class);
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
             [['model_id'], 'integer'],
@@ -47,7 +46,7 @@ class Generation extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'id' => Yii::t('app', 'ID'),
@@ -56,23 +55,23 @@ class Generation extends ActiveRecord
         ];
     }
 
-    public function getModel(): ActiveQuery
+    public function getModel()
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getGenerationMaps(): ActiveQuery
+    public function getGenerationMaps()
     {
         return $this->hasMany(GenerationMap::class, ['generation_id' => 'id']);
     }
 
-    public function getRefGenerations(): ActiveQuery
+    public function getRefGenerations()
     {
         return $this->hasMany(RefGeneration::class, ['id_car_generation' => 'ref_generation_id'])
             ->viaTable('avito_generation_map', ['generation_id' => 'id']);
     }
 
-    public function getModifications(): ActiveQuery
+    public function getModifications()
     {
         return $this->hasMany(Modification::class, ['generation_id' => 'id']);
     }

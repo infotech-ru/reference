@@ -6,30 +6,29 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ComplectationMapQuery;
 use infotech\reference\models\Equipment;
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_complectation_map".
  *
- * @property int           $complectation_id
- * @property int           $ref_complectation_id
+ * @property int $complectation_id
+ * @property int $ref_complectation_id
  *
  * @property Complectation $complectation
- * @property Equipment     $refEquipments
+ * @property Equipment $refEquipments
  */
 class ComplectationMap extends ActiveRecord
 {
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'avito_complectation_map';
     }
 
-    public static function find(): ComplectationMapQuery
+    public static function find()
     {
         return new ComplectationMapQuery(static::class);
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
             [['complectation_id', 'ref_complectation_id'], 'required'],
@@ -56,7 +55,7 @@ class ComplectationMap extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'complectation_id' => Yii::t('app', 'Complectation ID'),
@@ -64,12 +63,12 @@ class ComplectationMap extends ActiveRecord
         ];
     }
 
-    public function getComplectation(): ActiveQuery
+    public function getComplectation()
     {
         return $this->hasOne(Complectation::class, ['id' => 'complectation_id']);
     }
 
-    public function getRefEquipments(): ActiveQuery
+    public function getRefEquipments()
     {
         return $this->hasOne(Equipment::class, ['id' => 'ref_complectation_id']);
     }

@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180423_112723_add_equipment_country_field extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn(
             'eqt_equipment',
@@ -21,7 +21,7 @@ class m180423_112723_add_equipment_country_field extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('equipment-country-fk', 'eqt_equipment');
         $this->dropColumn('eqt_equipment', 'country_id');

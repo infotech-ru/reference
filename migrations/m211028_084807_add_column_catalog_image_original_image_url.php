@@ -10,7 +10,7 @@ class m211028_084807_add_column_catalog_image_original_image_url extends Migrati
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('eqt_catalog_image', 'original_image_url', $this->string());
         $this->addColumn('eqt_catalog_image', 'original_image_width', $this->integer());
@@ -20,7 +20,7 @@ class m211028_084807_add_column_catalog_image_original_image_url extends Migrati
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('eqt_catalog_image', 'original_image_height');
         $this->dropColumn('eqt_catalog_image', 'original_image_width');

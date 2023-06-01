@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161103_100330_alter_fk_option_model_option extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->dropForeignKey('eqt_fk_option_model_option', 'eqt_option');
         $this->addForeignKey(
@@ -31,7 +31,7 @@ class m161103_100330_alter_fk_option_model_option extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
     }
 }

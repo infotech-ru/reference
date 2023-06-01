@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m210425_185808_create_credit_program_series_table extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('credit_program_series', [
             'id' => $this->primaryKey(),
@@ -38,7 +38,7 @@ class m210425_185808_create_credit_program_series_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('fk_credit_program_series_program', 'credit_program_series');
         $this->dropForeignKey('fk_credit_program_series_series', 'credit_program_series');

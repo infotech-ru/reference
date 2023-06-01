@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170818_075326_add_column_brands_origin_id extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->addColumn('brands', 'origin_id', $this->integer()->comment('ссылка на таблицу eqt_car_mark'));
         $this->execute(
@@ -12,7 +12,7 @@ class m170818_075326_add_column_brands_origin_id extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropColumn('brands', 'origin_id');
     }

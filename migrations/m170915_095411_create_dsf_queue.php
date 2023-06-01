@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170915_095411_create_dsf_queue extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('dsf_queue', [
             'id' => $this->primaryKey(),
@@ -24,7 +24,7 @@ class m170915_095411_create_dsf_queue extends Migration
         $this->createIndex('priority', 'dsf_queue', 'priority');
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('dsf_queue');
     }

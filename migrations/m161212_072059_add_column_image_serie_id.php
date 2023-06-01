@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161212_072059_add_column_image_serie_id extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->delete('eqt_image');
         $this->addColumn('eqt_image', 'serie_id', $this->integer()->notNull()->after('body_id'));
@@ -21,7 +21,7 @@ class m161212_072059_add_column_image_serie_id extends Migration
         $this->dropColumn('eqt_image', 'body_id');
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->delete('eqt_image');
         $this->addColumn('eqt_image', 'body_id', $this->integer()->notNull()->after('serie_id'));

@@ -10,7 +10,7 @@ class m201112_103919_add_tabl_drom_ru_user_map_complectation extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'dromru_user_complectation',
@@ -72,7 +72,7 @@ class m201112_103919_add_tabl_drom_ru_user_map_complectation extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey(
             'fk_dromru_user_complectation_map_user_complectation_id',

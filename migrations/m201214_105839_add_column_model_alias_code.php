@@ -10,7 +10,7 @@ class m201214_105839_add_column_model_alias_code extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('model_alias', 'code', $this->string()->after('status'));
     }
@@ -18,7 +18,7 @@ class m201214_105839_add_column_model_alias_code extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('model_alias', 'code');
     }

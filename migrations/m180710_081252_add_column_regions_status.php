@@ -10,7 +10,7 @@ class m180710_081252_add_column_regions_status extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('regions', 'status', $this->smallInteger()->notNull()->after('name'));
     }
@@ -18,7 +18,7 @@ class m180710_081252_add_column_regions_status extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('regions', 'status');
     }

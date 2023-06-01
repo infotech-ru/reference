@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m181102_110940_create_table_model_alias extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'model_alias',
@@ -36,7 +36,7 @@ class m181102_110940_create_table_model_alias extends Migration
         $this->addForeignKey('fk_model_alias_serie_id', 'model_alias', 'serie_id', 'car_serie', 'id_car_serie');
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('model_alias');
     }

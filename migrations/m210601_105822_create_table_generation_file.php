@@ -10,7 +10,7 @@ class m210601_105822_create_table_generation_file extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'generation_file',
@@ -36,7 +36,7 @@ class m210601_105822_create_table_generation_file extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('generation_file');
     }

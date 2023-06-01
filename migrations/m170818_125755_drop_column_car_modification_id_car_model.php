@@ -4,12 +4,12 @@ use yii\db\Migration;
 
 class m170818_125755_drop_column_car_modification_id_car_model extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->dropColumn('car_modification', 'id_car_model');
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->addColumn(
             'car_modification',

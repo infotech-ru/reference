@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170221_113913_add_column_car_generation_model_id extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->addColumn(
             'car_generation',
@@ -17,7 +17,7 @@ where car_generation.id_car_model = car_model.id_car_model'
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropColumn('car_generation', 'model_id');
     }

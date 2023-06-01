@@ -10,7 +10,7 @@ class m200520_100611_add_column_avito_id_to_avito_complectetions extends Migrati
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('avito_complectation', 'avito_id', $this->integer()->after('id'));
         $this->createIndex('IDX_avito_complectation_avito_id', 'avito_complectation', 'avito_id');
@@ -19,7 +19,7 @@ class m200520_100611_add_column_avito_id_to_avito_complectetions extends Migrati
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropIndex('IDX_avito_complectation_avito_id', 'avito_complectation');
         $this->dropColumn('avito_complectation', 'avito_id');

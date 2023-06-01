@@ -10,7 +10,7 @@ class m221027_100124_add_kladr_code_in_regions extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('regions', 'kladr_code', $this->string());
     }
@@ -18,7 +18,7 @@ class m221027_100124_add_kladr_code_in_regions extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('regions', 'kladr_code');
     }

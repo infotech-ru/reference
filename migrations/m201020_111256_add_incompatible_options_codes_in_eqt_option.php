@@ -10,7 +10,7 @@ class m201020_111256_add_incompatible_options_codes_in_eqt_option extends Migrat
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('eqt_option', 'incompatible_options_codes', $this->text());
     }
@@ -18,7 +18,7 @@ class m201020_111256_add_incompatible_options_codes_in_eqt_option extends Migrat
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('eqt_option', 'incompatible_options_codes');
     }

@@ -10,7 +10,7 @@ class m190906_111046_add_column_is_not_convert_to_catalog_image extends Migratio
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn(
             'eqt_catalog_image',
@@ -23,7 +23,7 @@ class m190906_111046_add_column_is_not_convert_to_catalog_image extends Migratio
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('eqt_catalog_image', 'is_not_convert');
     }

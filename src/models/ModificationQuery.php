@@ -11,7 +11,7 @@ class ModificationQuery extends ActiveQuery
      * @return ModificationQuery
      * @throws InvalidConfigException
      */
-    public function isRecent($value = true): self
+    public function isRecent($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_recent' => $value]);
     }
@@ -21,7 +21,7 @@ class ModificationQuery extends ActiveQuery
      * @return ModificationQuery
      * @throws InvalidConfigException
      */
-    public function isVisible($value = true): self
+    public function isVisible($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_visible' => $value]);
     }
@@ -31,7 +31,7 @@ class ModificationQuery extends ActiveQuery
      * @return ModificationQuery
      * @throws InvalidConfigException
      */
-    public function isDeleted($value = true): self
+    public function isDeleted($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_deleted' => $value]);
     }

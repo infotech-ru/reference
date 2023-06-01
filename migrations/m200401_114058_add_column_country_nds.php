@@ -10,7 +10,7 @@ class m200401_114058_add_column_country_nds extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('countries', 'nds', $this->float()->comment('НДС в процентах'));
     }
@@ -18,7 +18,7 @@ class m200401_114058_add_column_country_nds extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('countries', 'nds');
     }

@@ -10,7 +10,7 @@ class m181116_152010_alias_add_is_new extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('model_alias', 'is_new', $this->boolean()->defaultValue(false));
     }
@@ -18,7 +18,7 @@ class m181116_152010_alias_add_is_new extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('model_alias', 'is_new');
     }

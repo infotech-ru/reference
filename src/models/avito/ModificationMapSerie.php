@@ -6,16 +6,15 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ModificationMapSerieQuery;
 use infotech\reference\models\Serie;
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_modification_map_serie".
  *
- * @property int          $modification_id
- * @property int          $ref_serie_id
+ * @property int $modification_id
+ * @property int $ref_serie_id
  *
  * @property Modification $modification
- * @property Serie        $refSerie
+ * @property Serie $refSerie
  */
 class ModificationMapSerie extends ActiveRecord
 {
@@ -24,12 +23,12 @@ class ModificationMapSerie extends ActiveRecord
         return 'avito_modification_map_serie';
     }
 
-    public static function find(): ModificationMapSerieQuery
+    public static function find()
     {
         return new ModificationMapSerieQuery(static::class);
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
             [['modification_id', 'ref_serie_id'], 'required'],
@@ -52,7 +51,7 @@ class ModificationMapSerie extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'modification_id' => Yii::t('app', 'Modification ID'),
@@ -60,12 +59,12 @@ class ModificationMapSerie extends ActiveRecord
         ];
     }
 
-    public function getModification(): ActiveQuery
+    public function getModification()
     {
         return $this->hasOne(Modification::class, ['id' => 'modification_id']);
     }
 
-    public function getRefSerie(): ActiveQuery
+    public function getRefSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'ref_serie_id']);
     }

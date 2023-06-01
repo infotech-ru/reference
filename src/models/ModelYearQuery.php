@@ -11,7 +11,7 @@ class ModelYearQuery extends ActiveQuery
      * @return ModelYearQuery
      * @throws InvalidConfigException
      */
-    public function isRecent($value = true): self
+    public function isRecent($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_recent' => $value]);
     }
@@ -21,7 +21,7 @@ class ModelYearQuery extends ActiveQuery
      * @return ModelYearQuery
      * @throws InvalidConfigException
      */
-    public function isDefault($value = true): self
+    public function isDefault($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_default' => $value]);
     }
@@ -31,7 +31,7 @@ class ModelYearQuery extends ActiveQuery
      * @return ModelYearQuery
      * @throws InvalidConfigException
      */
-    public function model($value): self
+    public function model($value)
     {
         return $this->andWhere([$this->tableName() . '.model_id' => $value]);
     }

@@ -6,7 +6,6 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\GenerationMapQuery;
 use infotech\reference\models\Generation as RefGeneration;
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_generation_map".
@@ -19,17 +18,17 @@ use yii\db\ActiveQuery;
  */
 class GenerationMap extends ActiveRecord
 {
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'avito_generation_map';
     }
 
-    public static function find(): GenerationMapQuery
+    public static function find()
     {
         return new GenerationMapQuery(static::class);
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
             [['generation_id', 'ref_generation_id'], 'required'],
@@ -56,7 +55,7 @@ class GenerationMap extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'generation_id' => Yii::t('app', 'Generation ID'),
@@ -64,12 +63,12 @@ class GenerationMap extends ActiveRecord
         ];
     }
 
-    public function getGeneration(): ActiveQuery
+    public function getGeneration()
     {
         return $this->hasOne(Generation::class, ['id' => 'generation_id']);
     }
 
-    public function getRefGeneration(): ActiveQuery
+    public function getRefGeneration()
     {
         return $this->hasOne(RefGeneration::class, ['id_car_generation' => 'ref_generation_id']);
     }

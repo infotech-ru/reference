@@ -27,7 +27,7 @@ class City extends ActiveRecord
         return 'cities';
     }
 
-    public static function find(): CityQuery
+    public static function find()
     {
         return new CityQuery(static::class);
     }
@@ -37,7 +37,7 @@ class City extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($regionId): array
+    public static function getList($regionId)
     {
         $query = static::find()
             ->region($regionId)
@@ -47,12 +47,12 @@ class City extends ActiveRecord
         return $query->column();
     }
 
-    public function getCountry(): \yii\db\ActiveQuery
+    public function getCountry()
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 
-    public function getRegion(): \yii\db\ActiveQuery
+    public function getRegion()
     {
         return $this->hasOne(Region::class, ['id' => 'region_id']);
     }

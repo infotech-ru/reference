@@ -11,7 +11,7 @@ class EquipmentQuery extends ActiveQuery
      * @return EquipmentQuery
      * @throws InvalidConfigException
      */
-    public function serie($value): self
+    public function serie($value)
     {
         return $this->andWhere([$this->tableName() . '.series_id' => $value]);
     }
@@ -21,7 +21,7 @@ class EquipmentQuery extends ActiveQuery
      * @return EquipmentQuery
      * @throws InvalidConfigException
      */
-    public function status($value): self
+    public function status($value)
     {
         return $this->andWhere([$this->tableName() . '.status' => $value]);
     }

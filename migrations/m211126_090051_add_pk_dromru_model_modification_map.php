@@ -7,12 +7,12 @@ use yii\db\Migration;
  */
 class m211126_090051_add_pk_dromru_model_modification_map extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addPrimaryKey('pk', 'dromru_model_modification_map', ['dromru_model_id', 'modification_id']);
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropPrimaryKey('pk', 'dromru_model_modification_map');
     }

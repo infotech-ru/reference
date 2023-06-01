@@ -10,7 +10,7 @@ class m180815_133131_create_vehicle_verification_program_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable('vehicle_verification_program', [
             'id' => $this->primaryKey(),
@@ -33,7 +33,7 @@ class m180815_133131_create_vehicle_verification_program_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function down()
     {
         $this->dropForeignKey('fk_vehicle_verification_program_brand', 'vehicle_verification_program');
         $this->dropTable('vehicle_verification_program');

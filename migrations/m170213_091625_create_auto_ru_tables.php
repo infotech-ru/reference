@@ -5,7 +5,7 @@ use yii\db\Migration;
 
 class m170213_091625_create_auto_ru_tables extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable(
             'eqt_car_type',
@@ -289,7 +289,7 @@ class m170213_091625_create_auto_ru_tables extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropTable('eqt_car_characteristic_value');
         $this->dropTable('eqt_car_characteristic');
