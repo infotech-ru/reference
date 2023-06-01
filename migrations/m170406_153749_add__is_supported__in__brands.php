@@ -4,12 +4,12 @@ use yii\db\Migration;
 
 class m170406_153749_add__is_supported__in__brands extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->addColumn('brands', 'is_supported', 'bool not null default false');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropColumn('brands', 'is_supported');
     }

@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161102_134606_add_column_color_model_id extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->addColumn('eqt_color', 'model_id', $this->integer()->notNull()->after('brand_id'));
         $this->delete('eqt_color', 'model_id=0');
@@ -13,7 +13,7 @@ class m161102_134606_add_column_color_model_id extends Migration
         $this->dropColumn('eqt_color', 'brand_id');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->delete('eqt_color');
         $this->addColumn('eqt_color', 'brand_id', $this->integer()->unsigned()->after('id'));

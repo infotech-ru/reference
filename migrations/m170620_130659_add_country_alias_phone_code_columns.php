@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170620_130659_add_country_alias_phone_code_columns extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->addColumn('countries', 'phone_code', $this->string());
         $this->addColumn('countries', 'alias', $this->string());
@@ -14,7 +14,7 @@ class m170620_130659_add_country_alias_phone_code_columns extends Migration
         $this->update('countries', ['alias' => 'ru', 'phone_code' => '+7'], 'id = 7');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropColumn('countries', 'phone_code');
         $this->dropColumn('countries', 'alias');

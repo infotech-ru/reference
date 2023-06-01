@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m151221_112950_create_table_offer extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_offer',
@@ -54,7 +54,7 @@ class m151221_112950_create_table_offer extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_offer_brand', 'eqt_offer');
         $this->dropForeignKey('eqt_fk_offer_model', 'eqt_offer');

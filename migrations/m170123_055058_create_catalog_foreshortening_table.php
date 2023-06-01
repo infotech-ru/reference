@@ -10,7 +10,7 @@ class m170123_055058_create_catalog_foreshortening_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_catalog_foreshortening',
@@ -27,7 +27,7 @@ class m170123_055058_create_catalog_foreshortening_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('eqt_catalog_foreshortening');
     }

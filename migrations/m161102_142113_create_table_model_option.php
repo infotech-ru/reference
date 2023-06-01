@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161102_142113_create_table_model_option extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_model_option',
@@ -28,7 +28,7 @@ class m161102_142113_create_table_model_option extends Migration
         );
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropTable('eqt_model_option');
     }

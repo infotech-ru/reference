@@ -10,7 +10,7 @@ class m180730_095644_create_table_model_video extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'model_video',
@@ -30,7 +30,7 @@ class m180730_095644_create_table_model_video extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('model_video');
     }

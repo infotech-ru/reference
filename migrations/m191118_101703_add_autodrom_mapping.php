@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m191118_101703_add_autodrom_mapping extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('dromru_mark', [
             'id' => $this->primaryKey(),
@@ -48,7 +48,7 @@ class m191118_101703_add_autodrom_mapping extends Migration
         ]);
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('dromru_mark');
         $this->dropTable('dromru_model');

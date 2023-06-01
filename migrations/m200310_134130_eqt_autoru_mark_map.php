@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m200310_134130_eqt_autoru_mark_map extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_autoru_mark_map',
@@ -41,7 +41,7 @@ class m200310_134130_eqt_autoru_mark_map extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('eqt_autoru_mark_map');
     }

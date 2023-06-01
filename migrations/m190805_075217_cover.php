@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m190805_075217_cover extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('cover', [
             'id' => $this->primaryKey(),
@@ -16,7 +16,7 @@ class m190805_075217_cover extends Migration
         ]);
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('cover');
     }

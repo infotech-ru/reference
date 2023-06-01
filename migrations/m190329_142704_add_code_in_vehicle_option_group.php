@@ -10,7 +10,7 @@ class m190329_142704_add_code_in_vehicle_option_group extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('vehicle_option_group', 'code', $this->string()->null()->defaultValue(null));
     }
@@ -18,7 +18,7 @@ class m190329_142704_add_code_in_vehicle_option_group extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('vehicle_option_group', 'code');
     }

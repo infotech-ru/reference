@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161018_181929_create__order_types extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->createTable(
             'order_types',
@@ -18,7 +18,7 @@ class m161018_181929_create__order_types extends Migration
         $this->createIndex('idx', 'order_types', ['code', 'brand_id'], true);
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropTable('order_types');
     }

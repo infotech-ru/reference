@@ -11,7 +11,7 @@ class ModelOptionTagQuery extends ActiveQuery
      * @return ModelOptionTagQuery
      * @throws InvalidConfigException
      */
-    public function model($value)
+    public function model($value): self
     {
         return $this->andWhere([$this->tableName() . '.model_id' => $value]);
     }

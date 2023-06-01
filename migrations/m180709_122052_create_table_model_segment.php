@@ -10,7 +10,7 @@ class m180709_122052_create_table_model_segment extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'model_segment',
@@ -26,7 +26,7 @@ class m180709_122052_create_table_model_segment extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('model_segment');
     }

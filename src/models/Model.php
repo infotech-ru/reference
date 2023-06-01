@@ -35,12 +35,12 @@ use yii\base\InvalidConfigException;
  */
 class Model extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'models';
     }
 
-    public static function find()
+    public static function find(): ModelQuery
     {
         return new ModelQuery(static::class);
     }
@@ -51,7 +51,7 @@ class Model extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($brandId, $recentOnly)
+    public static function getList($brandId, $recentOnly): array
     {
         $query = static::find()
             ->isDeleted(0)
@@ -65,77 +65,77 @@ class Model extends ActiveRecord
         return $query->column();
     }
 
-    public function getBrand()
+    public function getBrand(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 
-    public function getGenerations()
+    public function getGenerations(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Generation::class, ['model_id' => 'id']);
     }
 
-    public function getEquipments()
+    public function getEquipments(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Equipment::class, ['model_id' => 'id']);
     }
 
-    public function getModelYears()
+    public function getModelYears(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelYear::class, ['model_id' => 'id']);
     }
 
-    public function getColors()
+    public function getColors(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Color::class, ['model_id' => 'id']);
     }
 
-    public function getCatalogEmplacements()
+    public function getCatalogEmplacements(): \yii\db\ActiveQuery
     {
         return $this->hasMany(CatalogEmplacement::class, ['model_id' => 'id']);
     }
 
-    public function getModelOptionTags()
+    public function getModelOptionTags(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelOptionTag::class, ['model_id' => 'id']);
     }
 
-    public function getModelOptions()
+    public function getModelOptions(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelOption::class, ['model_id' => 'id']);
     }
 
-    public function getSkins()
+    public function getSkins(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Skin::class, ['model_id' => 'id']);
     }
 
-    public function getModelClass()
+    public function getModelClass(): \yii\db\ActiveQuery
     {
         return $this->hasOne(ModelClass::class, ['id' => 'model_class_id']);
     }
 
-    public function getModelSegment()
+    public function getModelSegment(): \yii\db\ActiveQuery
     {
         return $this->hasOne(ModelSegment::class, ['id' => 'model_segment_id']);
     }
 
-    public function getFullName()
+    public function getFullName(): string
     {
         return $this->brand->name . ' ' . $this->name;
     }
 
-    public function getModelImages()
+    public function getModelImages(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelImage::class, ['model_id' => 'id']);
     }
 
-    public function getModelVideos()
+    public function getModelVideos(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelVideo::class, ['model_id' => 'id']);
     }
 
-    public function getModelCountries()
+    public function getModelCountries(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelCountry::class, ['model_id' => 'id']);
     }

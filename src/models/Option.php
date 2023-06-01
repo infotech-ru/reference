@@ -5,14 +5,14 @@ namespace infotech\reference\models;
 /**
  * Class Option
  * @package infotech\reference\models
- * @property integer $id
- * @property integer $equipment_id
- * @property integer $model_option_id
- * @property string $name
- * @property string $created_at
- * @property string $updated_at
- * @property integer $option_group_id
- * @property-read Equipment $equipment
+ * @property integer          $id
+ * @property integer          $equipment_id
+ * @property integer          $model_option_id
+ * @property string           $name
+ * @property string           $created_at
+ * @property string           $updated_at
+ * @property integer          $option_group_id
+ * @property-read Equipment   $equipment
  * @property-read ModelOption $modelOption
  * @property-read OptionGroup $optionGroup
  */
@@ -28,8 +28,10 @@ class Option extends ActiveRecord
         return new OptionQuery(static::class);
     }
 
-    public function getEquipment()
+    public function getEquipment(): EquipmentQuery
     {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
+        /** @phpstan-ignore-next-line */
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 

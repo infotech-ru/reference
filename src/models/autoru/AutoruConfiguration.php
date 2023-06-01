@@ -2,7 +2,6 @@
 
 namespace infotech\reference\models\autoru;
 
-use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruConfigurationQuery;
 use infotech\reference\models\Serie as Series;
@@ -85,7 +84,7 @@ class AutoruConfiguration extends ActiveRecord
         ];
     }
 
-    public function getFolder(): ActiveQuery
+    public function getFolder(): \yii\db\ActiveQuery
     {
         return $this->hasOne(AutoruFolder::class, ['id' => 'folder_id']);
     }

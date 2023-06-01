@@ -11,7 +11,7 @@ class FederalDistrictQuery extends ActiveQuery
      * @return FederalDistrictQuery
      * @throws InvalidConfigException
      */
-    public function status($status)
+    public function status($status): self
     {
         return $this->andWhere([$this->tableName() . '.status' => $status]);
     }

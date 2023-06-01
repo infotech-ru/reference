@@ -10,7 +10,7 @@ class m201216_140214_add_column_image_url_to_skin extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('eqt_skin', 'image_url', $this->string()->after('name'));
     }
@@ -18,7 +18,7 @@ class m201216_140214_add_column_image_url_to_skin extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('eqt_skin', 'image_url');
     }

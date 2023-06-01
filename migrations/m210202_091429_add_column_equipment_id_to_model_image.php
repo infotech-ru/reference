@@ -10,7 +10,7 @@ class m210202_091429_add_column_equipment_id_to_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_image', 'equipment_id', $this->integer());
         $this->addForeignKey(
@@ -25,7 +25,7 @@ class m210202_091429_add_column_equipment_id_to_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('FK_model_image_equipment_id', 'model_image');
         $this->dropColumn('model_image', 'equipment_id');

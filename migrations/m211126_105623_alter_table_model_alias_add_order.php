@@ -10,7 +10,7 @@ class m211126_105623_alter_table_model_alias_add_order extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_alias', 'order', $this->integer());
     }
@@ -18,8 +18,8 @@ class m211126_105623_alter_table_model_alias_add_order extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
-        $this->dropColumn('model_alias', 'order', $this->integer());
+        $this->dropColumn('model_alias', 'order');
     }
 }

@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180614_124756_add__equipment_id_in_mbr_sap_model extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn(
             'mbr_sap_model',
@@ -26,7 +26,7 @@ class m180614_124756_add__equipment_id_in_mbr_sap_model extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('mbr_sap_model', 'equipment_id');
 

@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m160212_144730_drop__brand_model_ids extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->db->createCommand(
             '
@@ -28,7 +28,7 @@ drop temporary table `tmp`;'
         $this->dropTable('brand_model_ids');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->createTable(
             'brand_model_ids',

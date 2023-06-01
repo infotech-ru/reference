@@ -10,7 +10,7 @@ class m180112_140433_create_table_russian_name extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'russian_name',
@@ -26,7 +26,7 @@ class m180112_140433_create_table_russian_name extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('russian_name');
     }

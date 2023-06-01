@@ -88,13 +88,13 @@ class AEBRegionUploadHistory extends ActiveRecord
      * @param bool $createNew
      * @return self
      */
-    public static function getActiveUpload($createNew = true)
+    public static function getActiveUpload($createNew = true): ?self
     {
         $upload = self::findOne(['status' => self::STATUS_ACTIVE]);
         if (!$upload && $createNew) {
             $upload = new self();
             $upload->status = self::STATUS_ACTIVE;
-            $upload->year = date('Y');
+            $upload->year = (int)date('Y');
             $upload->import_status = self::IMPORT_STATUS_NEW;
             $upload->imported_success = 0;
             $upload->imported_errors = 0;

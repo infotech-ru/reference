@@ -10,7 +10,7 @@ class m210510_155726_create_table_equipment_model_image extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_equipment_model_image',
@@ -47,7 +47,7 @@ class m210510_155726_create_table_equipment_model_image extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('equipment_model_image-equipment-fk', 'eqt_equipment_model_image');
         $this->dropForeignKey('equipment_model_image-model_image-fk', 'eqt_equipment_model_image');

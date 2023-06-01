@@ -6,32 +6,33 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ModelQuery;
 use infotech\reference\models\Model as RefModel;
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_model".
  *
- * @property int $id
- * @property string $name
- * @property int $make_id
+ * @property int          $id
+ * @property string       $name
+ * @property int          $make_id
  *
  * @property Generation[] $generations
- * @property Make $make
- * @property ModelMap[] $modelMaps
- * @property RefModel[] $refModels
+ * @property Make         $make
+ * @property ModelMap[]   $modelMaps
+ * @property RefModel[]   $refModels
  */
 class Model extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'avito_model';
     }
 
-    public static function find()
+    public static function find(): ModelQuery
     {
         return new ModelQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['make_id'], 'integer'],
@@ -46,7 +47,7 @@ class Model extends ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => Yii::t('app', 'ID'),
@@ -55,22 +56,22 @@ class Model extends ActiveRecord
         ];
     }
 
-    public function getGenerations()
+    public function getGenerations(): ActiveQuery
     {
         return $this->hasMany(Generation::class, ['model_id' => 'id']);
     }
 
-    public function getMake()
+    public function getMake(): ActiveQuery
     {
         return $this->hasOne(Make::class, ['id' => 'make_id']);
     }
 
-    public function getModelMaps()
+    public function getModelMaps(): ActiveQuery
     {
         return $this->hasMany(ModelMap::class, ['model_id' => 'id']);
     }
 
-    public function getRefModels()
+    public function getRefModels(): ActiveQuery
     {
         return $this->hasMany(RefModel::class, ['id' => 'ref_model_id'])
             ->viaTable('avito_model_map', ['model_id' => 'id']);

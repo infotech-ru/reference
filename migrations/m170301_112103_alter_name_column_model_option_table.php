@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170301_112103_alter_name_column_model_option_table extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->alterColumn(
             'eqt_model_option',
@@ -13,7 +13,7 @@ class m170301_112103_alter_name_column_model_option_table extends Migration
         );
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->alterColumn(
             'eqt_model_option',

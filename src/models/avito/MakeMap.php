@@ -6,6 +6,7 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\MakeMapQuery;
 use infotech\reference\models\Brand;
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_make_map".
@@ -18,17 +19,17 @@ use Yii;
  */
 class MakeMap extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'avito_make_map';
     }
 
-    public static function find()
+    public static function find(): MakeMapQuery
     {
         return new MakeMapQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['make_id', 'ref_brand_id'], 'required'],
@@ -51,7 +52,7 @@ class MakeMap extends ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'make_id' => Yii::t('app', 'Make ID'),
@@ -59,12 +60,12 @@ class MakeMap extends ActiveRecord
         ];
     }
 
-    public function getMake()
+    public function getMake(): ActiveQuery
     {
         return $this->hasOne(Make::class, ['id' => 'make_id']);
     }
 
-    public function getRefBrand()
+    public function getRefBrand(): ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'ref_brand_id']);
     }

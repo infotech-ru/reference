@@ -10,7 +10,7 @@ class m191219_132206_add_tbl_dromru_model_map extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->dropForeignKey('fk_dromru_model_model_id', 'dromru_model');
         $this->dropColumn('dromru_model', 'model_id');
@@ -46,7 +46,7 @@ class m191219_132206_add_tbl_dromru_model_map extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->addColumn('dromru_model', 'model_id', $this->integer());
 

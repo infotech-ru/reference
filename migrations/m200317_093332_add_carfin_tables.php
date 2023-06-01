@@ -10,7 +10,7 @@ class m200317_093332_add_carfin_tables extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('carfin_mark', [
             'id' => $this->primaryKey(),
@@ -28,7 +28,7 @@ class m200317_093332_add_carfin_tables extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('carfin_mark');
         $this->dropTable('carfin_model');

@@ -10,7 +10,7 @@ class m190809_102700_crate_mbr_sap_model_import extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('mbr_sap_model_import', [
             'model_code' => $this->string()->notNull(),
@@ -23,7 +23,7 @@ class m190809_102700_crate_mbr_sap_model_import extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('mbr_sap_model_import');
     }

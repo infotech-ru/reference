@@ -5,7 +5,7 @@ use yii\db\Migration;
 
 class m170213_121041_add_column_car_origin_id extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $this->addColumn('car_mark', 'origin_id', $this->integer());
         $this->update('car_mark', ['origin_id' => new Expression('id_car_mark')]);
@@ -30,7 +30,7 @@ class m170213_121041_add_column_car_origin_id extends Migration
         $this->createIndex('car_characteristic_value_origin', 'car_characteristic_value', 'origin_id');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropColumn('car_mark', 'origin_id');
         $this->dropColumn('car_model', 'origin_id');

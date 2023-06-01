@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180112_090556_create_vehicle_passport_status extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'vehicle_passport_status',
@@ -16,7 +16,7 @@ class m180112_090556_create_vehicle_passport_status extends Migration
         $this->addPrimaryKey('PRIMARY_KEY', 'vehicle_passport_status', 'id');
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('vehicle_passport_status');
     }

@@ -10,7 +10,7 @@ class m221207_110447_create_model_country_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'model_country',
@@ -47,7 +47,7 @@ class m221207_110447_create_model_country_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('model_country');
     }

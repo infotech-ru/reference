@@ -10,7 +10,7 @@ class m170123_055734_create_catalog_image_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_catalog_image',
@@ -54,7 +54,7 @@ class m170123_055734_create_catalog_image_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_catalog_image_foreshortening', 'eqt_catalog_image');
         $this->dropForeignKey('eqt_fk_catalog_image_emplacement', 'eqt_catalog_image');

@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m181206_084257_create_table_skin_serie extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('skin_serie', [
             'skin_id' => $this->integer()->notNull(),
@@ -18,7 +18,7 @@ class m181206_084257_create_table_skin_serie extends Migration
         $this->addForeignKey('fk_skin_serie_serie_id', 'skin_serie', 'serie_id', 'car_serie', 'id_car_serie');
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('skin_serie');
     }

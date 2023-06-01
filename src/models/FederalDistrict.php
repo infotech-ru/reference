@@ -34,22 +34,22 @@ class FederalDistrict extends ActiveRecord
         return 'federal_districts';
     }
 
-    public static function find()
+    public static function find(): FederalDistrictQuery
     {
         return new FederalDistrictQuery(static::class);
     }
 
-    public function getRegions()
+    public function getRegions(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Region::class, ['federal_district_id' => 'id']);
     }
 
-    public function getCountry()
+    public function getCountry(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 
-    public static function getList($countryId)
+    public static function getList($countryId): array
     {
         $query = static::find()
             ->status(self::STATUS_ACTIVE)

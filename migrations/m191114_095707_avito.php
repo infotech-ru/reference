@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m191114_095707_avito extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('avito_make', [
             'id' => $this->primaryKey(),
@@ -227,7 +227,7 @@ class m191114_095707_avito extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('avito_complectation_map');
         $this->dropTable('avito_modification_map_mod');

@@ -10,7 +10,7 @@ class m181008_091703_tbl_brand_add_col_vin_man extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn(
             'brands',
@@ -22,7 +22,7 @@ class m181008_091703_tbl_brand_add_col_vin_man extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('brands', 'is_vin_manufacturer');
     }

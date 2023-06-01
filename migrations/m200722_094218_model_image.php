@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m200722_094218_model_image extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_image', 'generation_id', $this->integer());
         $this->addColumn('model_image', 'series_id', $this->integer());
@@ -29,7 +29,7 @@ class m200722_094218_model_image extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('model_image', 'generation_id');
         $this->dropColumn('model_image', 'series_id');

@@ -10,7 +10,7 @@ class m200713_111010_add_id_car_equipment_in_car_characteristic_value extends Mi
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn(
             'car_characteristic_value',
@@ -22,7 +22,7 @@ class m200713_111010_add_id_car_equipment_in_car_characteristic_value extends Mi
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('car_characteristic_value', 'id_car_equipment');
     }

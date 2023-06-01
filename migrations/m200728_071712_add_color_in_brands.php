@@ -10,7 +10,7 @@ class m200728_071712_add_color_in_brands extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('brands', 'color', $this->string());
     }
@@ -18,7 +18,7 @@ class m200728_071712_add_color_in_brands extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('brands', 'color');
     }

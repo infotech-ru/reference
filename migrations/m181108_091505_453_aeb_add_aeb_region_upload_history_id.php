@@ -10,7 +10,7 @@ class m181108_091505_453_aeb_add_aeb_region_upload_history_id extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('aeb_model_mapping', 'aeb_region_upload_history_id', $this->integer());
         $this->addForeignKey(
@@ -43,7 +43,7 @@ class m181108_091505_453_aeb_add_aeb_region_upload_history_id extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('model_mapping_upload_idx', 'aeb_model_mapping');
         $this->dropColumn('aeb_model_mapping', 'aeb_region_upload_history_id');

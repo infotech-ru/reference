@@ -22,12 +22,12 @@ class OptionGroup extends ActiveRecord
         return 'eqt_option_group';
     }
 
-    public static function find()
+    public static function find(): OptionGroupQuery
     {
         return new OptionGroupQuery(static::class);
     }
 
-    public function getBrand()
+    public function getBrand(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }

@@ -39,12 +39,12 @@ class GenerationFile extends ActiveRecord
         return new GenerationFileQuery(static::class);
     }
 
-    public function getGeneration(): GenerationQuery
+    public function getGeneration(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Generation::class, ['id_car_generation' => 'generation_id']);
     }
 
-    public function getUpload(): UploadQuery
+    public function getUpload(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Upload::class, ['id' => 'upload_id']);
     }

@@ -2,36 +2,37 @@
 
 namespace infotech\reference\models\avito;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\MakeQuery;
 use infotech\reference\models\Brand;
 use Yii;
-use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_make".
  *
- * @property int $id
- * @property string $name
+ * @property int       $id
+ * @property string    $name
  *
  * @property MakeMap[] $makeMaps
- * @property Brand[] $refBrands
- * @property Model[] $models
+ * @property Brand[]   $refBrands
+ * @property Model[]   $models
  */
 class Make extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'avito_make';
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['name'], 'string', 'max' => 255],
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => Yii::t('app', 'ID'),
@@ -39,22 +40,22 @@ class Make extends ActiveRecord
         ];
     }
 
-    public function getMakeMaps()
+    public function getMakeMaps(): ActiveQuery
     {
         return $this->hasMany(MakeMap::class, ['make_id' => 'id']);
     }
 
-    public function getRefBrands()
+    public function getRefBrands(): ActiveQuery
     {
         return $this->hasMany(Brand::class, ['id' => 'ref_brand_id'])->viaTable('avito_make_map', ['make_id' => 'id']);
     }
 
-    public function getModels()
+    public function getModels(): ActiveQuery
     {
         return $this->hasMany(Model::class, ['make_id' => 'id']);
     }
 
-    public static function find()
+    public static function find(): MakeQuery
     {
         return new MakeQuery(static::class);
     }
