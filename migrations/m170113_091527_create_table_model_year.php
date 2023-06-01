@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170113_091527_create_table_model_year extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable(
             'model_year',
@@ -21,7 +21,7 @@ class m170113_091527_create_table_model_year extends Migration
         $this->createIndex('uq_model_year', 'model_year', ['model_id', 'year'], true);
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropTable('model_year');
     }

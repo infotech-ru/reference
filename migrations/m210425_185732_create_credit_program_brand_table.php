@@ -10,7 +10,7 @@ class m210425_185732_create_credit_program_brand_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('credit_program_brand', [
             'id' => $this->primaryKey(),
@@ -41,7 +41,7 @@ class m210425_185732_create_credit_program_brand_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('fk_credit_program_brand_program', 'credit_program_brand');
         $this->dropForeignKey('fk_credit_program_brand_brand', 'credit_program_brand');

@@ -38,17 +38,17 @@ class Modification extends ActiveRecord
         return ['id_car_modification'];
     }
 
-    public static function find(): ModificationQuery
+    public static function find()
     {
         return new ModificationQuery(static::class);
     }
 
-    public function getSerie(): \yii\db\ActiveQuery
+    public function getSerie()
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'id_car_serie']);
     }
 
-    public function getCharacteristicValues(): \yii\db\ActiveQuery
+    public function getCharacteristicValues()
     {
         return $this->hasMany(CharacteristicValue::class, ['id_car_modification' => 'id_car_modification']);
     }
@@ -69,12 +69,12 @@ class Modification extends ActiveRecord
         return $query->column();
     }
 
-    public function getModificationEquipments(): \yii\db\ActiveQuery
+    public function getModificationEquipments()
     {
         return $this->hasMany(ModificationEquipment::class, ['modification_id' => 'id_car_modification']);
     }
 
-    public function getEquipments(): \yii\db\ActiveQuery
+    public function getEquipments()
     {
         return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('modificationEquipments');
     }

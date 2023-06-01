@@ -7,12 +7,12 @@ use yii\db\Migration;
  */
 class m181122_142615_add_column_cities_is_regional_center extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('cities', 'is_regional_center', $this->boolean()->notNull());
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('cities', 'is_regional_center');
     }

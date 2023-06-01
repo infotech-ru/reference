@@ -10,7 +10,7 @@ class m170216_063903_create_brand_logo_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable(
             'eqt_brand_logo',
@@ -40,7 +40,7 @@ class m170216_063903_create_brand_logo_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function down()
     {
         $this->dropForeignKey(
             'eqt_fk_brand_logo_brand',

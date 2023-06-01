@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m161229_145500_create__table__news extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable(
             'news',
@@ -17,7 +17,7 @@ class m161229_145500_create__table__news extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropTable('news');
     }

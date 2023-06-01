@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m181207_075512_create_table_modification_equipment extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'modification_equipment',
@@ -34,7 +34,7 @@ class m181207_075512_create_table_modification_equipment extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('modification_equipment');
     }

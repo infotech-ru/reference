@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m171208_132915_add_timezones extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('regions', 'timezone', $this->string());
         $this->addColumn('regions', 'lat', $this->double());
@@ -15,7 +15,7 @@ class m171208_132915_add_timezones extends Migration
         $this->addColumn('cities', 'lng', $this->double());
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('regions', 'timezone');
         $this->dropColumn('regions', 'lat');

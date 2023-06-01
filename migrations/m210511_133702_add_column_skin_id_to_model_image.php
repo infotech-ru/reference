@@ -10,7 +10,7 @@ class m210511_133702_add_column_skin_id_to_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('model_image', 'skin_id', $this->integer()->defaultValue(null)->after('equipment_id'));
     }
@@ -18,7 +18,7 @@ class m210511_133702_add_column_skin_id_to_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('model_image', 'skin_id');
     }

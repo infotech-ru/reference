@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170202_170858_add_column_skin_model_id extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->delete('eqt_offer');
         $this->delete('eqt_skin');
@@ -13,7 +13,7 @@ class m170202_170858_add_column_skin_model_id extends Migration
         $this->addColumn('eqt_skin', 'code', $this->string()->after('model_id'));
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropColumn('eqt_skin', 'code');
         $this->dropForeignKey('eqt_fk_skin_model', 'eqt_skin');

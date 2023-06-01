@@ -34,7 +34,7 @@ class ModelSegment extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList(): array
+    public static function getList()
     {
         return static::find()
             ->select('name, id')
@@ -43,7 +43,7 @@ class ModelSegment extends ActiveRecord
             ->column();
     }
 
-    public static function find(): ModelSegmentQuery
+    public static function find()
     {
         return new ModelSegmentQuery(static::class);
     }

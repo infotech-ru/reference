@@ -10,7 +10,7 @@ class m170123_055708_create_catalog_emplacement_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'eqt_catalog_emplacement',
@@ -68,7 +68,7 @@ class m170123_055708_create_catalog_emplacement_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('eqt_fk_catalog_emplacement_equipment', 'eqt_catalog_emplacement');
         $this->dropForeignKey('eqt_fk_catalog_emplacement_color', 'eqt_catalog_emplacement');

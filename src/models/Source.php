@@ -28,7 +28,7 @@ class Source extends ActiveRecord
         foreach ($list as $item) {
             if ($item->parent_id == $parentId) {
                 $result[$item->id] = ltrim($prefix . ' ' . $item->name);
-                $result += self::processItems($list, $item->id, $prefix . '-');
+                $result += static::processItems($list, $item->id, $prefix . '-');
             }
         }
         return $result;
@@ -36,7 +36,7 @@ class Source extends ActiveRecord
 
     public static function getList(): array
     {
-        return self::processItems(static::find()->all(), null, '');
+        return static::processItems(static::find()->all(), null, '');
     }
 
     public function getParent()

@@ -10,7 +10,7 @@ class m191217_133209_add_dromru_map_tables extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('dromru_model_generation_map', [
             'dromru_model_id' => $this->integer()->notNull()->comment('ID из dromru_model'),
@@ -70,7 +70,7 @@ class m191217_133209_add_dromru_map_tables extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('dromru_model_generation_map');
         $this->dropTable('dromru_model_serie_map');

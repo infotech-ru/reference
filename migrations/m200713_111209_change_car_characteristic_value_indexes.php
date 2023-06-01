@@ -10,7 +10,7 @@ class m200713_111209_change_car_characteristic_value_indexes extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->dropIndex('id_characteristic', 'car_characteristic_value');
         $this->dropIndex('id_car_characteristic', 'car_characteristic_value');
@@ -26,7 +26,7 @@ class m200713_111209_change_car_characteristic_value_indexes extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropIndex('idx', 'car_characteristic_value');
 

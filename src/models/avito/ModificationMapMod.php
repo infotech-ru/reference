@@ -6,30 +6,29 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ModificationMapModQuery;
 use infotech\reference\models\Modification as RefModification;
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_modification_map_mod".
  *
- * @property int             $modification_id
- * @property int             $ref_modification_id
+ * @property int $modification_id
+ * @property int $ref_modification_id
  *
- * @property Modification    $modification
+ * @property Modification $modification
  * @property RefModification $refModification
  */
 class ModificationMapMod extends ActiveRecord
 {
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'avito_modification_map_mod';
     }
 
-    public static function find(): ModificationMapModQuery
+    public static function find()
     {
         return new ModificationMapModQuery(static::class);
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
             [['modification_id', 'ref_modification_id'], 'required'],
@@ -56,7 +55,7 @@ class ModificationMapMod extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'modification_id' => Yii::t('app', 'Modification ID'),
@@ -64,12 +63,12 @@ class ModificationMapMod extends ActiveRecord
         ];
     }
 
-    public function getModification(): ActiveQuery
+    public function getModification()
     {
         return $this->hasOne(Modification::class, ['id' => 'modification_id']);
     }
 
-    public function getRefModification(): ActiveQuery
+    public function getRefModification()
     {
         return $this->hasOne(RefModification::class, ['id_car_modification' => 'modification_id']);
     }

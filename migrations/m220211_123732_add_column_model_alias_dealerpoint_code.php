@@ -7,12 +7,12 @@ use yii\db\Migration;
  */
 class m220211_123732_add_column_model_alias_dealerpoint_code extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('model_alias', 'dealerpoint_code', $this->string());
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('model_alias', 'dealerpoint_code');
     }

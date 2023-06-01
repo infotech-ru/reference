@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m160829_072456_create_upload extends Migration
 {
-    public function safeUp(): void
+    public function up()
     {
         $this->createTable(
             'dsf_upload',
@@ -19,7 +19,7 @@ class m160829_072456_create_upload extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function down()
     {
         $this->dropTable('dsf_upload');
     }

@@ -10,7 +10,7 @@ class m180730_093346_create_table_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'model_image',
@@ -30,7 +30,7 @@ class m180730_093346_create_table_model_image extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('model_image');
     }

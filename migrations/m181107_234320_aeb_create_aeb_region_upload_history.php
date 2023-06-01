@@ -10,7 +10,7 @@ class m181107_234320_aeb_create_aeb_region_upload_history extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('aeb_region_upload_history', [
             'id' => $this->primaryKey(),
@@ -27,7 +27,7 @@ class m181107_234320_aeb_create_aeb_region_upload_history extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('aeb_region_upload_history');
     }

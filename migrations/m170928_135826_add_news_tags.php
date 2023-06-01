@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170928_135826_add_news_tags extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn(
             'news',
@@ -14,7 +14,7 @@ class m170928_135826_add_news_tags extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('news', 'tags_bitmap');
     }

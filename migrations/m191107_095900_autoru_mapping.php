@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m191107_095900_autoru_mapping extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('eqt_autoru_color', [
             'autoru_id' => $this->integer()->defaultValue(0),
@@ -266,7 +266,7 @@ class m191107_095900_autoru_mapping extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey(
             'fk_eqt_autoru_complectation_mapped',

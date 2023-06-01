@@ -2,19 +2,19 @@
 
 namespace infotech\reference\models\dromru;
 
-use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\Brand;
 use infotech\reference\models\dromru\queries\MarkQuery;
-use yii\db\ActiveQuery;
+use Yii;
+use infotech\reference\models\ActiveRecord;
 
 /**
  * This is the model class for table "dromru_mark".
  *
- * @property int    $id
+ * @property int $id
  * @property string $name
- * @property int    $brand_id
+ * @property int $brand_id
  *
- * @property Brand  $refBrand
+ * @property Brand $refBrand
  */
 class Mark extends ActiveRecord
 {
@@ -45,7 +45,7 @@ class Mark extends ActiveRecord
         return new MarkQuery(static::class);
     }
 
-    public function getRefBrands(): ActiveQuery
+    public function getRefBrands()
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }

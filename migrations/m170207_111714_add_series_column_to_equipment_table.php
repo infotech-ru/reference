@@ -10,7 +10,7 @@ class m170207_111714_add_series_column_to_equipment_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp(): void
+    public function up()
     {
         $this->addColumn(
             'eqt_equipment',
@@ -31,7 +31,7 @@ class m170207_111714_add_series_column_to_equipment_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown(): void
+    public function down()
     {
         $this->dropForeignKey('eqt_fk_equipment_series', 'eqt_equipment');
         $this->dropColumn('eqt_equipment', 'series_id');

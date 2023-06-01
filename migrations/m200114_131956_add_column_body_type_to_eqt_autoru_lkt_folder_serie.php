@@ -10,7 +10,7 @@ class m200114_131956_add_column_body_type_to_eqt_autoru_lkt_folder_serie extends
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('eqt_autoru_lkt_folder_serie', 'body_type', $this->integer()->defaultValue(null));
     }
@@ -18,7 +18,7 @@ class m200114_131956_add_column_body_type_to_eqt_autoru_lkt_folder_serie extends
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('eqt_autoru_lkt_folder_serie', 'body_type');
     }

@@ -11,12 +11,17 @@ class SerieQuery extends ActiveQuery
      * @return SerieQuery
      * @throws InvalidConfigException
      */
-    public function isRecent($value = true): self
+    public function isRecent($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_recent' => $value]);
     }
 
-    public function isVisible($value = true): self
+    /**
+     * @param bool $value
+     * @return SerieQuery
+     * @throws InvalidConfigException
+     */
+    public function isVisible($value = true)
     {
         return $this->andWhere([$this->tableName() . '.is_visible' => $value]);
     }
@@ -26,7 +31,7 @@ class SerieQuery extends ActiveQuery
      * @return SerieQuery
      * @throws InvalidConfigException
      */
-    public function generation($generationId): self
+    public function generation($generationId)
     {
         return $this->andWhere([$this->tableName() . '.id_car_generation' => $generationId]);
     }
@@ -36,7 +41,7 @@ class SerieQuery extends ActiveQuery
      * @return SerieQuery
      * @throws InvalidConfigException
      */
-    public function model($modelId): self
+    public function model($modelId)
     {
         return $this->andWhere([$this->tableName() . '.model_id' => $modelId]);
     }

@@ -11,7 +11,7 @@ class ModelClassQuery extends ActiveQuery
      * @return ModelClassQuery
      * @throws InvalidConfigException
      */
-    public function status($value): self
+    public function status($value)
     {
         return $this->andWhere([$this->tableName() . '.status' => $value]);
     }

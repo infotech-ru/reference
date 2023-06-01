@@ -10,7 +10,7 @@ class m181214_122605_add_column_brand_name_market extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn(
             'brands',
@@ -22,7 +22,7 @@ class m181214_122605_add_column_brand_name_market extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('brands', 'name_market');
     }

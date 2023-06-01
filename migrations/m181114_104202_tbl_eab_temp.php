@@ -10,7 +10,7 @@ class m181114_104202_tbl_eab_temp extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->dropColumn('aeb_temporary_aeb_region_data', 'value');
         $this->dropColumn('aeb_temporary_aeb_region_data', 'month');
@@ -79,7 +79,7 @@ class m181114_104202_tbl_eab_temp extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->addColumn('aeb_temporary_aeb_region_data', 'month', $this->integer()->notNull()->after('year'));
         $this->addColumn('aeb_temporary_aeb_region_data', 'value', $this->integer()->notNull()->after('month'));

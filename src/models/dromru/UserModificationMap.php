@@ -3,7 +3,6 @@
 namespace infotech\reference\models\dromru;
 
 use infotech\reference\models\ActiveRecord;
-use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_user_modification_map".
@@ -33,7 +32,7 @@ class UserModificationMap extends ActiveRecord
         ];
     }
 
-    public function getUserComplectation(): ActiveQuery
+    public function getUserComplectation()
     {
         return $this->hasOne(UserComplectation::class, ['id' => 'user_complectation_id']);
     }

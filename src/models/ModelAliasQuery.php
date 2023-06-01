@@ -11,7 +11,7 @@ class ModelAliasQuery extends ActiveQuery
      * @return ModelAliasQuery
      * @throws InvalidConfigException
      */
-    public function brand($brandId): self
+    public function brand($brandId)
     {
         return $this->andWhere([$this->tableName() . '.brand_id' => $brandId]);
     }
@@ -21,7 +21,7 @@ class ModelAliasQuery extends ActiveQuery
      * @return ModelAliasQuery
      * @throws InvalidConfigException
      */
-    public function status($status): self
+    public function status($status)
     {
         return $this->andWhere([$this->tableName() . '.status' => $status]);
     }

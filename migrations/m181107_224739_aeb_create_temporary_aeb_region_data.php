@@ -10,7 +10,7 @@ class m181107_224739_aeb_create_temporary_aeb_region_data extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('aeb_temporary_aeb_region_data', [
             'id' => $this->primaryKey(),
@@ -33,7 +33,7 @@ class m181107_224739_aeb_create_temporary_aeb_region_data extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('aeb_temporary_aeb_region_data');
     }

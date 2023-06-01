@@ -10,7 +10,7 @@ class m201229_105321_add_column_brand_is_recent extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->addColumn('brands', 'is_recent', $this->boolean()->notNull()->defaultValue(1));
         $this->alterColumn('brands', 'is_recent', $this->boolean()->notNull());
@@ -19,7 +19,7 @@ class m201229_105321_add_column_brand_is_recent extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropColumn('brands', 'is_recent');
     }

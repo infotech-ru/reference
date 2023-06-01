@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m151207_134449_create_table_color extends Migration
 {
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable(
             'eqt_color',
@@ -39,7 +39,7 @@ class m151207_134449_create_table_color extends Migration
         );
     }
 
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropForeignKey('eqt_fk_image_color', 'eqt_image');
         $this->dropColumn('eqt_image', 'color_id');

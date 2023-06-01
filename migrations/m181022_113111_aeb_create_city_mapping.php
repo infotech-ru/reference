@@ -10,7 +10,7 @@ class m181022_113111_aeb_create_city_mapping extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp(): void
+    public function safeUp()
     {
         $this->createTable('aeb_city_mapping', [
             'id' => $this->primaryKey(),
@@ -24,7 +24,7 @@ class m181022_113111_aeb_create_city_mapping extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown(): void
+    public function safeDown()
     {
         $this->dropTable('aeb_city_mapping');
     }

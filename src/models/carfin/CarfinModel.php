@@ -30,7 +30,7 @@ class CarfinModel extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getMark(): \yii\db\ActiveQuery
+    public function getMark(): ActiveQuery
     {
         return $this->hasOne(CarfinMark::class, ['id' => 'brand_id']);
     }
@@ -38,7 +38,7 @@ class CarfinModel extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getModel(): \yii\db\ActiveQuery
+    public function getModel(): ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
