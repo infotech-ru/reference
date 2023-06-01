@@ -10,7 +10,7 @@ class m180507_134850_create_country_equipment_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_equipment_country',
@@ -43,7 +43,7 @@ class m180507_134850_create_country_equipment_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('equipment_country-equipment-fk', 'eqt_equipment_country');
         $this->dropForeignKey('equipment_country-country-fk', 'eqt_equipment_country');

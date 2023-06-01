@@ -19,12 +19,12 @@ class ModelOptionTag extends ActiveRecord
         return 'eqt_model_option_tag';
     }
 
-    public static function find()
+    public static function find(): ModelOptionTagQuery
     {
         return new ModelOptionTagQuery(static::class);
     }
 
-    public function getModel()
+    public function getModel(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }

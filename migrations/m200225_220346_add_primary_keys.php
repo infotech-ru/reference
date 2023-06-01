@@ -10,7 +10,7 @@ class m200225_220346_add_primary_keys extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addPrimaryKey('pk', 'currency', 'number_code');
         $this->addPrimaryKey('pk', 'okopf', 'code');
@@ -22,7 +22,7 @@ class m200225_220346_add_primary_keys extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropPrimaryKey('pk', 'currency');
         $this->dropPrimaryKey('pk', 'okopf');

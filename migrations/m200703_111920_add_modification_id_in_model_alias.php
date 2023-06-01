@@ -10,7 +10,7 @@ class m200703_111920_add_modification_id_in_model_alias extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_alias', 'modification_id', $this->integer());
 
@@ -26,7 +26,7 @@ class m200703_111920_add_modification_id_in_model_alias extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('fk_model_alias_modification_id', 'model_alias');
         $this->dropColumn('model_alias', 'modification_id');

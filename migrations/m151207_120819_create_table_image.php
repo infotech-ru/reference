@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m151207_120819_create_table_image extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_image',
@@ -23,7 +23,7 @@ class m151207_120819_create_table_image extends Migration
         $this->addForeignKey('eqt_fk_image_body', 'eqt_image', 'body_id', 'bodies', 'id', 'CASCADE', 'CASCADE');
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_image_body', 'eqt_image');
         $this->dropForeignKey('eqt_fk_image_model', 'eqt_image');

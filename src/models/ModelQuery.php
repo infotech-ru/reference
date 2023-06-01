@@ -11,17 +11,12 @@ class ModelQuery extends ActiveQuery
      * @return ModelQuery
      * @throws InvalidConfigException
      */
-    public function isRecent($value = true)
+    public function isRecent($value = true): self
     {
         return $this->andWhere([$this->tableName() . '.is_recent' => $value]);
     }
 
-    /**
-     * @param bool $value
-     * @return ModelQuery
-     * @throws InvalidConfigException
-     */
-    public function isDeleted($value = true)
+    public function isDeleted($value = true): self
     {
         return $this->andWhere([$this->tableName() . '.is_deleted' => $value]);
     }
@@ -31,7 +26,7 @@ class ModelQuery extends ActiveQuery
      * @return ModelQuery
      * @throws InvalidConfigException
      */
-    public function brand($id)
+    public function brand($id): self
     {
         return $this->andWhere([$this->tableName() . '.brand_id' => $id]);
     }
@@ -41,14 +36,17 @@ class ModelQuery extends ActiveQuery
      * @return ModelQuery
      * @throws InvalidConfigException
      */
-    public function country($id)
+    public function country($id): self
     {
         [$tableName, $alias] = $this->getTableNameAndAlias();
 
-        return $this->andWhere(['EXISTS', ModelCountry::find()->where([
-            'AND',
-            $alias . '.id = ' . ModelCountry::tableName() . '.model_id',
-            [ModelCountry::tableName() . '.country_id' => $id],
-        ])]);
+        return $this->andWhere([
+            'EXISTS',
+            ModelCountry::find()->where([
+                'AND',
+                $alias . '.id = ' . ModelCountry::tableName() . '.model_id',
+                [ModelCountry::tableName() . '.country_id' => $id],
+            ])
+        ]);
     }
 }

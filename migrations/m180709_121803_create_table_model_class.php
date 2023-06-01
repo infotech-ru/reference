@@ -10,7 +10,7 @@ class m180709_121803_create_table_model_class extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'model_class',
@@ -26,7 +26,7 @@ class m180709_121803_create_table_model_class extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('model_class');
     }

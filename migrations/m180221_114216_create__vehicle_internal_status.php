@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180221_114216_create__vehicle_internal_status extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'vehicle_internal_status',
@@ -16,7 +16,7 @@ class m180221_114216_create__vehicle_internal_status extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('vehicle_internal_status');
     }

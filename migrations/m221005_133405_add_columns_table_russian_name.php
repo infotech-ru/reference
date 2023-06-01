@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m221005_133405_add_columns_table_russian_name extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('russian_name', 'status', $this->tinyInteger());
         $this->addColumn('russian_name', 'created_by', $this->integer());
@@ -13,7 +13,7 @@ class m221005_133405_add_columns_table_russian_name extends Migration
         $this->addColumn('russian_name', 'updated_at', $this->dateTime());
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('russian_name', 'updated_at');
         $this->dropColumn('russian_name', 'created_at');

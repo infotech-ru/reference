@@ -6,6 +6,7 @@ use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\avito\queries\ComplectationQuery;
 use infotech\reference\models\Equipment;
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_complectation".
@@ -21,17 +22,17 @@ use Yii;
  */
 class Complectation extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'avito_complectation';
     }
 
-    public static function find()
+    public static function find(): ComplectationQuery
     {
         return new ComplectationQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['modification_id', 'avito_id'], 'integer'],
@@ -46,7 +47,7 @@ class Complectation extends ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => Yii::t('app', 'ID'),
@@ -56,17 +57,17 @@ class Complectation extends ActiveRecord
         ];
     }
 
-    public function getModification()
+    public function getModification(): ActiveQuery
     {
         return $this->hasOne(Modification::class, ['id' => 'modification_id']);
     }
 
-    public function getComplectationMaps()
+    public function getComplectationMaps(): ActiveQuery
     {
         return $this->hasMany(ComplectationMap::class, ['complectation_id' => 'id']);
     }
 
-    public function getRefEquipments()
+    public function getRefEquipments(): ActiveQuery
     {
         return $this->hasMany(Equipment::class, ['id' => 'ref_complectation_id'])
             ->viaTable('avito_complectation_map', ['complectation_id' => 'id']);

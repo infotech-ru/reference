@@ -36,7 +36,7 @@ class Serie extends ActiveRecord
         return ['id_car_serie'];
     }
 
-    public static function find()
+    public static function find(): SerieQuery
     {
         return new SerieQuery(static::class);
     }
@@ -44,7 +44,7 @@ class Serie extends ActiveRecord
     public static function getList($generationId, $recentOnly)
     {
         $query = static::find()
-            ->isVisible(1)
+            ->isVisible(true)
             ->generation($generationId)
             ->select('name, id_car_serie')
             ->indexBy('id_car_serie');
@@ -70,8 +70,10 @@ class Serie extends ActiveRecord
         return $this->hasMany(Modification::class, ['id_car_serie' => 'id_car_serie']);
     }
 
-    public function getEquipments()
+    public function getEquipments(): EquipmentQuery
     {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
+        /** @phpstan-ignore-next-line */
         return $this->hasMany(Equipment::class, ['series_id' => 'id_car_serie']);
     }
 

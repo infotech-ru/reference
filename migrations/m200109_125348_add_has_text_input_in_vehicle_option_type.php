@@ -10,7 +10,7 @@ class m200109_125348_add_has_text_input_in_vehicle_option_type extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('vehicle_option_type', 'has_text_input', $this->boolean()->notNull()->defaultValue(false));
     }
@@ -18,7 +18,7 @@ class m200109_125348_add_has_text_input_in_vehicle_option_type extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('vehicle_option_type', 'has_text_input');
     }

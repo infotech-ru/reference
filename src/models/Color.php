@@ -37,22 +37,22 @@ class Color extends ActiveRecord
         return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();
     }
 
-    public static function find()
+    public static function find(): ColorQuery
     {
         return new ColorQuery(static::class);
     }
 
-    public function getModel()
+    public function getModel(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getCommonColor()
+    public function getCommonColor(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Color::class, ['id' => 'common_color_id']);
     }
 
-    public function getCatalogEmplacements()
+    public function getCatalogEmplacements(): \yii\db\ActiveQuery
     {
         return $this->hasMany(CatalogEmplacement::class, ['color_id' => 'id']);
     }

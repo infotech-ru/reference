@@ -70,17 +70,17 @@ class ModelImage extends ActiveRecord
         return new ModelImageQuery(static::class);
     }
 
-    public function getModel()
+    public function getModel(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getGeneration()
+    public function getGeneration(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Generation::class, ['id_car_generation' => 'generation_id']);
     }
 
-    public function getSeries()
+    public function getSeries(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'series_id']);
     }
@@ -88,28 +88,22 @@ class ModelImage extends ActiveRecord
     /**
      * @deprecated
      */
-    public function getEquipment()
+    public function getEquipment(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 
-    public function getSkin()
+    public function getSkin(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Skin::class, ['id' => 'skin_id']);
     }
 
-    /**
-     * @return EquipmentModelImageQuery
-     */
-    public function getEquipmentModelImages()
+    public function getEquipmentModelImages(): \yii\db\ActiveQuery
     {
         return $this->hasMany(EquipmentModelImage::class, ['model_image_id' => 'id']);
     }
 
-    /**
-     * @return EquipmentQuery
-     */
-    public function getEquipments()
+    public function getEquipments(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Equipment::class, ['id' => 'equipment_id'])->via('equipmentModelImages');
     }

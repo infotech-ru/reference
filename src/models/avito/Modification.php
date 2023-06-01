@@ -7,6 +7,7 @@ use infotech\reference\models\avito\queries\ModificationQuery;
 use infotech\reference\models\Modification as RefModification;
 use infotech\reference\models\Serie;
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "avito_modification".
@@ -34,17 +35,17 @@ use Yii;
  */
 class Modification extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'avito_modification';
     }
 
-    public static function find()
+    public static function find(): ModificationQuery
     {
         return new ModificationQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['generation_id', 'avito_id'], 'integer'],
@@ -74,7 +75,7 @@ class Modification extends ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => Yii::t('app', 'ID'),
@@ -93,27 +94,27 @@ class Modification extends ActiveRecord
         ];
     }
 
-    public function getComplectations()
+    public function getComplectations(): ActiveQuery
     {
         return $this->hasMany(Complectation::class, ['modification_id' => 'id']);
     }
 
-    public function getGeneration()
+    public function getGeneration(): ActiveQuery
     {
         return $this->hasOne(Generation::class, ['id' => 'generation_id']);
     }
 
-    public function getModificationMapMods()
+    public function getModificationMapMods(): ActiveQuery
     {
         return $this->hasMany(ModificationMapMod::class, ['modification_id' => 'id']);
     }
 
-    public function getModificationMapSeries()
+    public function getModificationMapSeries(): ActiveQuery
     {
         return $this->hasMany(ModificationMapSerie::class, ['modification_id' => 'id']);
     }
 
-    public function getRefSeries()
+    public function getRefSeries(): ActiveQuery
     {
         return $this->hasMany(
             Serie::class,
@@ -124,7 +125,7 @@ class Modification extends ActiveRecord
         );
     }
 
-    public function getRefModification()
+    public function getRefModification(): ActiveQuery
     {
         return $this->hasMany(
             RefModification::class,

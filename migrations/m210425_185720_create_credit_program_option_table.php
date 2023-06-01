@@ -10,7 +10,7 @@ class m210425_185720_create_credit_program_option_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('credit_program_option', [
             'id' => $this->primaryKey(),
@@ -21,7 +21,7 @@ class m210425_185720_create_credit_program_option_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('credit_program_option');
     }

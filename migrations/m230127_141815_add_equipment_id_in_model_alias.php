@@ -10,7 +10,7 @@ class m230127_141815_add_equipment_id_in_model_alias extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_alias', 'equipment_id', $this->integer());
         $this->addForeignKey(
@@ -27,7 +27,7 @@ class m230127_141815_add_equipment_id_in_model_alias extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('model_alias', 'equipment_id');
     }

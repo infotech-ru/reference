@@ -34,7 +34,7 @@ class ModelClass extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList()
+    public static function getList(): array
     {
         return static::find()
             ->select('name, id')
@@ -43,7 +43,7 @@ class ModelClass extends ActiveRecord
             ->column();
     }
 
-    public static function find()
+    public static function find(): ModelClassQuery
     {
         return new ModelClassQuery(static::class);
     }

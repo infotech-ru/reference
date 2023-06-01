@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m170303_111324_alter_equipment_table extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn(
             'eqt_equipment',
@@ -25,7 +25,7 @@ class m170303_111324_alter_equipment_table extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn(
             'eqt_equipment',

@@ -10,7 +10,7 @@ class m180703_145223_add_columns_regions_okato extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('regions', 'okato', $this->char(2));
     }
@@ -18,7 +18,7 @@ class m180703_145223_add_columns_regions_okato extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('regions', 'okato');
     }

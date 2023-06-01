@@ -10,7 +10,7 @@ class m190226_133624_add_code_in_models extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('models', 'code', $this->string()->null()->after('tradein_code'));
     }
@@ -18,7 +18,7 @@ class m190226_133624_add_code_in_models extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('models', 'code');
     }

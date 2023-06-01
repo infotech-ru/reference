@@ -11,7 +11,7 @@ class m210727_092144_add_column_eqt_model_option_ord extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('eqt_model_option', 'ord', $this->integer()->notNull());
         $this->update('eqt_model_option', ['ord' => new Expression('id')]);
@@ -20,7 +20,7 @@ class m210727_092144_add_column_eqt_model_option_ord extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('eqt_model_option', 'ord');
     }

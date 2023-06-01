@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m180201_103417_create_table_currency extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'currency',
@@ -18,7 +18,7 @@ class m180201_103417_create_table_currency extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('currency');
     }

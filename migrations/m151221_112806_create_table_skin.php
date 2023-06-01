@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m151221_112806_create_table_skin extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_skin',
@@ -28,7 +28,7 @@ class m151221_112806_create_table_skin extends Migration
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_skin_brand', 'eqt_skin');
         $this->dropTable('eqt_skin');

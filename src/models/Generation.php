@@ -5,17 +5,17 @@ namespace infotech\reference\models;
 /**
  * Class Generation
  * @package infotech\reference\models
- * @property integer $id_car_generation
- * @property string $name
- * @property integer $model_id
- * @property string $year_begin
- * @property string $year_end
- * @property boolean $is_visible
- * @property integer $id_car_type
- * @property boolean $is_recent
- * @property integer $origin_id
- * @property-read Model $model
- * @property-read Serie[] $series
+ * @property integer               $id_car_generation
+ * @property string                $name
+ * @property integer               $model_id
+ * @property string                $year_begin
+ * @property string                $year_end
+ * @property boolean               $is_visible
+ * @property integer               $id_car_type
+ * @property boolean               $is_recent
+ * @property integer               $origin_id
+ * @property-read Model            $model
+ * @property-read Serie[]          $series
  * @property-read GenerationFile[] $files
  */
 class Generation extends ActiveRecord
@@ -30,12 +30,12 @@ class Generation extends ActiveRecord
         return 'car_generation';
     }
 
-    public static function find()
+    public static function find(): GenerationQuery
     {
         return new GenerationQuery(static::class);
     }
 
-    public static function getList($modelId, $recentOnly, $year)
+    public static function getList($modelId, $recentOnly, $year): array
     {
         $query = static::find()
             ->isVisible(1)
@@ -50,17 +50,17 @@ class Generation extends ActiveRecord
         return $query->column();
     }
 
-    public function getModel()
+    public function getModel(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getSeries()
+    public function getSeries(): \yii\db\ActiveQuery
     {
         return $this->hasMany(Serie::class, ['id_car_generation' => 'id_car_generation']);
     }
 
-    public function getFiles()
+    public function getFiles(): \yii\db\ActiveQuery
     {
         return $this->hasMany(GenerationFile::class, ['generation_id' => 'id_car_generation']);
     }

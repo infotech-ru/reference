@@ -10,7 +10,7 @@ class m210717_085550_add_url_in_eqt_catalog_foreshortening extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('eqt_catalog_foreshortening', 'url', $this->string());
     }
@@ -18,7 +18,7 @@ class m210717_085550_add_url_in_eqt_catalog_foreshortening extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('eqt_catalog_foreshortening', 'url');
     }

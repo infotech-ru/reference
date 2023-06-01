@@ -4,12 +4,12 @@ use yii\db\Migration;
 
 class m170818_080034_drop_table_car_mark extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->dropTable('car_mark');
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->execute(
             "create table car_mark

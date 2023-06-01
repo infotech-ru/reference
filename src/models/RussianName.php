@@ -28,7 +28,8 @@ class RussianName extends ActiveRecord
 
     public static function name2Sex($name)
     {
-        $name = static::ucFirst($name, Yii::$app->charset);
+        $name = self::ucFirst($name, Yii::$app->charset);
+        /** @var self[] $models */
         $models = static::find()->where('name = :name COLLATE utf8_bin', [':name' => $name])->all();
         if (count($models) != 1) {
             return null;

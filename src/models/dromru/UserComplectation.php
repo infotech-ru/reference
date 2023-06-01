@@ -2,9 +2,8 @@
 
 namespace infotech\reference\models\dromru;
 
-use yii\db\ActiveQuery;
-use infotech\reference\models\Modification;
 use infotech\reference\models\ActiveRecord;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "dromru_user_complectation".
@@ -40,7 +39,7 @@ class UserComplectation extends ActiveRecord
         ];
     }
 
-    public function getDromRuModel()
+    public function getDromRuModel(): ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'dromru_model_id']);
     }

@@ -26,7 +26,7 @@ class CarfinMark extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getBrand(): ActiveQuery
+    public function getBrand(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }

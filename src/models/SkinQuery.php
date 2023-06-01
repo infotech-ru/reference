@@ -11,7 +11,7 @@ class SkinQuery extends ActiveQuery
      * @return SkinQuery
      * @throws InvalidConfigException
      */
-    public function model($modelId)
+    public function model($modelId): self
     {
         return $this->andWhere([$this->tableName() . '.model_id' => $modelId]);
     }
@@ -21,7 +21,7 @@ class SkinQuery extends ActiveQuery
      * @return SkinQuery
      * @throws InvalidConfigException
      */
-    public function serie($serieId)
+    public function serie($serieId): self
     {
         $skinSerieTbl = SkinSerie::tableName();
 

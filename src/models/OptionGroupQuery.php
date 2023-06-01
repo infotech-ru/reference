@@ -11,7 +11,7 @@ class OptionGroupQuery extends ActiveQuery
      * @return OptionGroupQuery
      * @throws InvalidConfigException
      */
-    public function brand($value)
+    public function brand($value): self
     {
         return $this->andWhere([$this->tableName() . '.brand_id' => $value]);
     }

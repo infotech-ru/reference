@@ -10,7 +10,7 @@ class m171004_100929_create_model_option_tag_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'eqt_model_option_tag',
@@ -40,7 +40,7 @@ class m171004_100929_create_model_option_tag_table extends Migration
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_model_option_model_option_tag', 'eqt_model_option');
         $this->dropColumn('eqt_model_option', 'model_option_tag_id');

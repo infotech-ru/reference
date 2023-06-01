@@ -2,37 +2,21 @@
 
 namespace infotech\reference\models;
 
-use yii\base\InvalidConfigException;
 use yii\db\Expression;
 
 class GenerationQuery extends ActiveQuery
 {
-    /**
-     * @param bool $value
-     * @return GenerationQuery
-     * @throws InvalidConfigException
-     */
-    public function isVisible($value = true)
+    public function isVisible($value = true): self
     {
         return $this->andWhere([$this->tableName() . '.is_visible' => $value]);
     }
 
-    /**
-     * @param bool $value
-     * @return GenerationQuery
-     * @throws InvalidConfigException
-     */
-    public function isRecent($value = true)
+    public function isRecent($value = true): self
     {
         return $this->andWhere([$this->tableName() . '.is_recent' => $value]);
     }
 
-    /**
-     * @param $modelId
-     * @return GenerationQuery
-     * @throws InvalidConfigException
-     */
-    public function model($modelId)
+    public function model($modelId): self
     {
         $serie = Serie::find()
             ->select('id_car_serie')
@@ -42,12 +26,7 @@ class GenerationQuery extends ActiveQuery
         return $this->andWhere(['OR', [$this->tableName() . '.model_id' => $modelId], ['EXISTS', $serie]]);
     }
 
-    /**
-     * @param $year
-     * @return GenerationQuery
-     * @throws InvalidConfigException
-     */
-    public function year($year)
+    public function year($year): self
     {
         $years = array_filter((array)$year, 'intval');
 

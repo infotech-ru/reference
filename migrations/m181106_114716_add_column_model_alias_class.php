@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m181106_114716_add_column_model_alias_class extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('model_alias', 'classification', $this->tinyInteger()->notNull());
     }
@@ -15,7 +15,7 @@ class m181106_114716_add_column_model_alias_class extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('model_alias', 'classification');
     }

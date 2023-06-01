@@ -4,7 +4,7 @@ use yii\db\Migration;
 
 class m151204_094738_create_table_equipment extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable(
             'bodies',
@@ -407,7 +407,7 @@ SQL
         );
     }
 
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropForeignKey('eqt_fk_equipment_model', 'eqt_equipment');
         $this->dropTable('eqt_equipment');

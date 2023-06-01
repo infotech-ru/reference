@@ -2,7 +2,6 @@
 
 namespace infotech\reference\models\autoru;
 
-use infotech\reference\models\ActiveQuery;
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruComplectationMapQuery;
 
@@ -54,17 +53,17 @@ class AutoruComplectationRelation extends ActiveRecord
         ];
     }
 
-    public function getModification(): ActiveQuery
+    public function getModification(): \yii\db\ActiveQuery
     {
         return $this->hasOne(AutoruModification::class, ['id' => 'modification_id']);
     }
 
-    public function getComplectation(): ActiveQuery
+    public function getComplectation(): \yii\db\ActiveQuery
     {
         return $this->hasOne(AutoruComplectation::class, ['id' => 'complectation_id']);
     }
 
-    public function getMapped(): ActiveQuery
+    public function getMapped(): \yii\db\ActiveQuery
     {
         return $this->hasMany(
             AutoruComplectationMapped::class,

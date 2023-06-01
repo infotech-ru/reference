@@ -10,7 +10,7 @@ class m201020_111257_add_incompatible_options_codes_in_eqt_model_option extends 
     /**
      * @inheritdoc
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->addColumn('eqt_model_option', 'incompatible_options_codes', $this->text());
     }
@@ -18,7 +18,7 @@ class m201020_111257_add_incompatible_options_codes_in_eqt_model_option extends 
     /**
      * @inheritdoc
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropColumn('eqt_model_option', 'incompatible_options_codes');
     }

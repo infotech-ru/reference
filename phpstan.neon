@@ -1,0 +1,10 @@
+parameters:
+    level: 5
+    paths:
+        - src
+        - migrations
+    bootstrapFiles:
+        - vendor/yiisoft/yii2/Yii.php
+    tmpDir: runtime
+    treatPhpDocTypesAsCertain: false
+    checkMissingIterableValueType: false

@@ -71,42 +71,42 @@ class ModelAlias extends ActiveRecord
             ->column();
     }
 
-    public static function find()
+    public static function find(): ModelAliasQuery
     {
         return new ModelAliasQuery(static::class);
     }
 
-    public function getBrand()
+    public function getBrand(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
     }
 
-    public function getModel()
+    public function getModel(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
     }
 
-    public function getGeneration()
+    public function getGeneration(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Generation::class, ['id_car_generation' => 'generation_id']);
     }
 
-    public function getSerie()
+    public function getSerie(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Serie::class, ['id_car_serie' => 'serie_id']);
     }
 
-    public function getModification()
+    public function getModification(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Modification::class, ['id_car_modification' => 'modification_id']);
     }
 
-    public function getEquipment()
+    public function getEquipment(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Equipment::class, ['id' => 'equipment_id']);
     }
 
-    public function getModelAliasCountries()
+    public function getModelAliasCountries(): \yii\db\ActiveQuery
     {
         return $this->hasMany(ModelAliasCountry::class, ['model_alias_id' => 'id']);
     }
