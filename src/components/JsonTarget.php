@@ -79,6 +79,6 @@ class JsonTarget extends FileTarget
             ]
         ];
 
-        return Json::encode($value);
+        return Json::encode($value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
     }
 }
