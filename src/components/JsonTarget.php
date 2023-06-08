@@ -29,6 +29,7 @@ class JsonTarget extends FileTarget
         if (!is_string($text)) {
             if ($text instanceof HttpException) {
                 $statusCode = $text->statusCode;
+                $level = 'info';
             }
             // exceptions may not be serializable if in the call stack somewhere is a Closure
             if ($text instanceof Throwable) {
@@ -43,14 +44,9 @@ class JsonTarget extends FileTarget
                 $traces[] = "{$trace['file']}:{$trace['line']}";
             }
         }
-        $context = ArrayHelper::filter($GLOBALS, $this->logVars);
-        foreach ($this->maskVars as $var) {
-            if (ArrayHelper::getValue($context, $var) !== null) {
-                ArrayHelper::setValue($context, $var, '***');
-            }
-        }
 
         $logVars = [];
+        $context = ArrayHelper::filter($GLOBALS, $this->logVars);
         foreach ($context as $key => $value) {
             $logVars[$key] = $value;
         }
