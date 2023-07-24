@@ -23,6 +23,7 @@ use yii\helpers\ArrayHelper;
  * @property Generation $generation
  * @property Generation[] $generations
  * @property AutoruFolderGeneration[] $folderGenerations
+ * @property AutoruFolderModels[] $folderModels
  */
 class AutoruFolder extends ActiveRecord
 {
@@ -152,5 +153,10 @@ class AutoruFolder extends ActiveRecord
     public function getFolderGenerations()
     {
         return $this->hasMany(AutoruFolderGeneration::class, ['folder_id' => 'id']);
+    }
+
+    public function getFolderModels()
+    {
+        return $this->hasMany(AutoruFolderModels::class, ['folder_id' => 'id']);
     }
 }
