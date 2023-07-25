@@ -2,9 +2,10 @@
 
 namespace infotech\reference\models\autoru;
 
+use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\Model;
 
-class AutoruFolderModels
+class AutoruFolderModels extends ActiveRecord
 {
     public static function tableName()
     {
