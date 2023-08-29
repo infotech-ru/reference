@@ -86,7 +86,7 @@ class ColorTest extends TestCase
 
     public function testGetList()
     {
-        self::assertEquals(['1' => '1'], Color::getList(1));
-        self::assertEquals(['2' => '2'], Color::getList(2));
+        self::assertEquals(['1' => '1 ()'], Color::getList(1));
+        self::assertEquals(['2' => '2 ()'], Color::getList(2));
     }
 }

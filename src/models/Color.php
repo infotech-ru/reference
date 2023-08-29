@@ -3,10 +3,13 @@
 namespace infotech\reference\models;
 
 use yii\base\InvalidConfigException;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class Color
+ *
  * @package infotech\reference\models
+ *
  * @property integer $id
  * @property string $code
  * @property integer $model_id
@@ -28,13 +31,13 @@ class Color extends ActiveRecord
     }
 
     /**
-     * @param $modelId
-     * @return array
      * @throws InvalidConfigException
      */
     public static function getList($modelId): array
     {
-        return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();
+        return ArrayHelper::map(static::find()->model($modelId)->all(), 'id', static function (self $model) {
+            return "{$model->name} ({$model->code})";
+        });
     }
 
     public static function find()
