@@ -4,6 +4,7 @@ namespace infotech\reference\models;
 
 /**
  * Class Brand
+ *
  * @package infotech\reference\models
  * @property integer $id
  * @property string $name
@@ -52,6 +53,7 @@ class Brand extends ActiveRecord
     public const ALFA_ROMEO = 14;
     public const CHRYSLER = 31;
     public const DODGE = 38;
+    public const DONGFENG_ID = 39;
     public const MITSUBISHI_ID = 7;
     public const SWM_ID = 2681;
     public const LADA_ID = 125;
