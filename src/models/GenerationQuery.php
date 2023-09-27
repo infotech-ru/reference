@@ -43,6 +43,31 @@ class GenerationQuery extends ActiveQuery
     }
 
     /**
+     * @param $modelId
+     * @return GenerationQuery
+     * @throws InvalidConfigException
+     */
+    public function byModel($modelId): self
+    {
+        return $this->andWhere([$this->tableName() . '.model_id' => $modelId]);
+    }
+
+    /**
+     * @param $modelId
+     * @return GenerationQuery
+     * @throws InvalidConfigException
+     */
+    public function bySerieViaModel($modelId): self
+    {
+        $serie = Serie::find()
+            ->select('id_car_serie')
+            ->model($modelId)
+            ->generation(new Expression($this->tableName() . '.id_car_generation'));
+
+        return $this->andWhere(['EXISTS', $serie]);
+    }
+
+    /**
      * @param $year
      * @return GenerationQuery
      * @throws InvalidConfigException
