@@ -16,7 +16,7 @@ namespace infotech\reference\models;
  * @property string $city1 — Наименование подчиненного населенного пункта, в котором находится объект почтовой связи
  * @property string $date — Дата актуализации информации об объекте почтовой связи
  */
-class PostIndex extends \yii\db\ActiveRecord
+class PostIndex extends ActiveRecord
 {
     public static function tableName(): string
     {
