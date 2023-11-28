@@ -64,6 +64,7 @@ class RegionTest extends TestCase
                 'center_city_id',
                 'iso_code',
                 'kladr_code',
+                'fias_id',
             ],
             $model->attributes()
         );
