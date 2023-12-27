@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property int $folder_id
  * @property string $folder
  * @property int $brand_id
+ * @property boolean $is_virtual_folder
  *
  * @property AutoruLktFolderGeneration[] $autoruLktFolderGenerations
  * @property AutoruLktFolderMark[] $autoruLktFolderMarks
@@ -43,6 +44,7 @@ class AutoruLkt extends ActiveRecord
         return [
             [['id'], 'required'],
             [['id', 'folder_id', 'brand_id'], 'integer'],
+            [['is_virtual_folder'], 'boolean'],
             [['mark', 'folder'], 'string', 'max' => 255],
             [['folder_id'], 'unique'],
         ];
@@ -58,6 +60,7 @@ class AutoruLkt extends ActiveRecord
             'mark' => 'Mark',
             'folder_id' => 'Folder ID',
             'folder' => 'Folder',
+            'is_virtual_folder' => 'Виртуальная марка (отсутствие идентификатора в справочнике)',
             'brand_id' => 'Brand ID',
         ];
     }
