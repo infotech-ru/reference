@@ -13,6 +13,7 @@ use yii\base\InvalidConfigException;
  * @property string $code
  * @property string $name
  * @property string $image_url
+ * @property bool $is_deleted
  * @property string $created_at
  * @property string $updated_at
  * @property-read  SkinSerie[] $skinSeries

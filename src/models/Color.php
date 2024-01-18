@@ -19,6 +19,7 @@ use yii\helpers\ArrayHelper;
  * @property string $image_url
  * @property string $created_at
  * @property string $updated_at
+ * @property bool $is_deleted
  * @property-read Model $model
  * @property-read Color $commonColor
  * @property-read CatalogEmplacement[] $catalogEmplacements
