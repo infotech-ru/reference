@@ -6,5 +6,4 @@ use infotech\reference\models\ActiveQuery;
 
 class ModelAliasQuery extends ActiveQuery
 {
-
 }
