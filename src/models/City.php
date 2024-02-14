@@ -17,8 +17,10 @@ use yii\base\InvalidConfigException;
  * @property double $lat
  * @property double $lng
  * @property boolean $is_regional_center
- * @property Country $country
- * @property Region $region
+ * @property string $fias_id
+ *
+ * @property-read Country $country
+ * @property-read Region $region
  */
 class City extends ActiveRecord
 {
@@ -27,7 +29,7 @@ class City extends ActiveRecord
         return 'cities';
     }
 
-    public static function find()
+    public static function find(): CityQuery
     {
         return new CityQuery(static::class);
     }
@@ -37,7 +39,7 @@ class City extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($regionId)
+    public static function getList($regionId): array
     {
         $query = static::find()
             ->region($regionId)
@@ -47,12 +49,12 @@ class City extends ActiveRecord
         return $query->column();
     }
 
-    public function getCountry()
+    public function getCountry(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 
-    public function getRegion()
+    public function getRegion(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Region::class, ['id' => 'region_id']);
     }

@@ -21,15 +21,17 @@ use yii\helpers\ArrayHelper;
  * @property int $center_city_id
  * @property string $iso_code
  * @property string $kladr_code
- * @property Country $country
- * @property FederalDistrict $federalDistrict
- * @property City[] $cities
- * @property City $centerCity
+ * @property string $fias_id
+ *
+ * @property-read Country $country
+ * @property-read FederalDistrict $federalDistrict
+ * @property-read City[] $cities
+ * @property-read City $centerCity
  */
 class Region extends ActiveRecord
 {
-    public const  STATUS_ACTIVE = 0;
-    public const  STATUS_DELETED = 1;
+    public const STATUS_ACTIVE = 0;
+    public const STATUS_DELETED = 1;
 
     public static function getStatusList(): array
     {
@@ -44,7 +46,7 @@ class Region extends ActiveRecord
         return 'regions';
     }
 
-    public static function find()
+    public static function find(): RegionQuery
     {
         return new RegionQuery(static::class);
     }
@@ -55,7 +57,7 @@ class Region extends ActiveRecord
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($countryId, $federalDistrictId)
+    public static function getList($countryId, $federalDistrictId): array
     {
         $query = static::find()
             ->status(self::STATUS_ACTIVE)
@@ -66,7 +68,7 @@ class Region extends ActiveRecord
         return $query->column();
     }
 
-    public static function getListRegionsByCountry()
+    public static function getListRegionsByCountry(): array
     {
         $query = static::find()
             ->select('name, id, country_id')
@@ -76,22 +78,22 @@ class Region extends ActiveRecord
         return ArrayHelper::map($query->all(), 'id', 'name', 'country.name');
     }
 
-    public function getCountry()
+    public function getCountry(): \yii\db\ActiveQuery
     {
         return $this->hasOne(Country::class, ['id' => 'country_id']);
     }
 
-    public function getFederalDistrict()
+    public function getFederalDistrict(): \yii\db\ActiveQuery
     {
         return $this->hasOne(FederalDistrict::class, ['id' => 'federal_district_id']);
     }
 
-    public function getCities()
+    public function getCities(): \yii\db\ActiveQuery
     {
         return $this->hasMany(City::class, ['region_id' => 'id']);
     }
 
-    public function getCenterCity()
+    public function getCenterCity(): \yii\db\ActiveQuery
     {
         return $this->hasOne(City::class, ['id' => 'center_city_id']);
     }

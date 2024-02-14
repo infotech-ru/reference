@@ -61,6 +61,7 @@ class CityTest extends TestCase
                 'lat',
                 'lng',
                 'is_regional_center',
+                'fias_id',
             ],
             $model->attributes()
         );
