@@ -50,14 +50,6 @@ class TranslationMessage extends ActiveRecord
         return 'translation_message';
     }
 
-    public static function getLanguagesList(): array
-    {
-        return [
-            static::EN_US => static::EN_US,
-            static::RU_RU => static::RU_RU,
-        ];
-    }
-
     public static function find(): ActiveQuery
     {
         return new TranslationMessageQuery(static::class);
@@ -66,5 +58,13 @@ class TranslationMessage extends ActiveRecord
     public function getSourceMessage(): ActiveQuery
     {
         return $this->hasOne(TranslationSourceMessage::class, ['id' => 'id']);
+    }
+
+    public static function getLanguagesList(): array
+    {
+        return [
+            static::EN_US => static::EN_US,
+            static::RU_RU => static::RU_RU,
+        ];
     }
 }

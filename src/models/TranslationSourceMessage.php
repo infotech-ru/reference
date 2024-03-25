@@ -32,7 +32,7 @@ class TranslationSourceMessage extends ActiveRecord
     {
         return [
             ['category', 'string'],
-            ['category', 'in', 'range' => array_keys(static::getCategoriesList())],
+            ['category', 'exist', 'targetClass' => TranslationCategory::class, 'targetAttribute' => 'key'],
             ['message', 'required'],
             ['message', 'string'],
             [['category', 'message'], 'unique', 'targetAttribute' => ['category', 'message']],
@@ -42,22 +42,6 @@ class TranslationSourceMessage extends ActiveRecord
     public static function tableName(): string
     {
         return 'translation_source_message';
-    }
-
-    public static function getCategoriesList(): array
-    {
-        return [
-            '_dsf_honda_moto' => '_dsf_honda_moto',
-            'app' => 'app',
-            'app-geely' => 'app-geely',
-            'app-honda-moto' => 'app-honda-moto',
-            'app-KZ' => 'app-KZ',
-            'app-stellantis' => 'app-stellantis',
-            'app-subaru' => 'app-subaru',
-            'dsf-stellantis' => 'dsf-stellantis',
-            'simple-discount' => 'simple-discount',
-            'simple-discount-haval' => 'simple-discount-haval',
-        ];
     }
 
     public static function find(): ActiveQuery
