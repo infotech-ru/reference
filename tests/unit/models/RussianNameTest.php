@@ -51,6 +51,7 @@ class RussianNameTest extends TestCase
             [
                 'id',
                 'name',
+                'alias',
                 'sex',
                 'status',
                 'created_by',

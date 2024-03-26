@@ -9,6 +9,7 @@ use Yii;
  * @package infotech\reference\models
  * @property integer $id
  * @property string $name
+ * @property string $alias
  * @property string $sex
  * @property int $status
  * @property int $created_by
