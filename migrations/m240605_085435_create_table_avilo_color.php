@@ -31,5 +31,4 @@ class m240605_085435_create_table_avilo_color extends Migration
     {
         $this->dropTable('eqt_avito_color');
     }
-
 }
