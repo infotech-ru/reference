@@ -16,6 +16,7 @@ use yii\helpers\ArrayHelper;
  * @property string $name
  * @property int $mark_id
  * @property int $model_id
+ * @property int $autoru_generation_id
  * @property int $model_is_recent
  *
  * @property AutoruMark $mark
@@ -85,7 +86,7 @@ class AutoruFolder extends ActiveRecord
     {
         return [
             [['id'], 'required'],
-            [['id', 'mark_id', 'model_id', 'model_is_recent'], 'integer'],
+            [['id', 'mark_id', 'model_id', 'model_is_recent', 'autoru_generation_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['id'], 'unique'],
             [
