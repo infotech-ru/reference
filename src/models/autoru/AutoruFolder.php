@@ -18,6 +18,8 @@ use yii\helpers\ArrayHelper;
  * @property int $model_id
  * @property int $autoru_generation_id
  * @property int $autoru_model_id
+ * @property int $autoru_model_name
+ * @property int $autoru_generation_name
  * @property int $model_is_recent
  *
  * @property AutoruMark $mark
@@ -88,7 +90,7 @@ class AutoruFolder extends ActiveRecord
         return [
             [['id'], 'required'],
             [['id', 'mark_id', 'model_id', 'model_is_recent', 'autoru_generation_id', 'autoru_model_id'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'autoru_model_name', 'autoru_generation_name'], 'string', 'max' => 255],
             [['id'], 'unique'],
             [
                 ['mark_id'],
@@ -124,6 +126,10 @@ class AutoruFolder extends ActiveRecord
             'name' => 'Модель (AutoRu)',
             'mark_id' => 'Марка',
             'model_id' => 'Модель',
+            'autoru_generation_id' => 'ID покаления автору',
+            'autoru_model_id' => 'ID модели автору',
+            'autoru_model_name' => 'Название модели автору',
+            'autoru_generation_name' => 'Название поколения автору',
         ];
     }
 
