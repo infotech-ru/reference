@@ -42,4 +42,15 @@ class AutoruBusinesOptionMap extends ActiveRecord
             ],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'option_type_id' => 'Опция',
+            'option_value' => 'Значение опции',
+            'autoru_option_code' => 'ID (код) опции Autoru',
+            'autoru_option_group' => 'Название группы опций в Autoru',
+            'autoru_option_value' => 'Значение опции в Autoru',
+        ];
+    }
 }

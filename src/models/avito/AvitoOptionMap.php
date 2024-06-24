@@ -42,4 +42,15 @@ class AvitoOptionMap extends ActiveRecord
             ],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'option_type_id' => 'Опция',
+            'option_value' => 'Значение опции',
+            'avito_option_code' => 'ID (код) опции Avito',
+            'avito_option_group' => 'Название группы опций в Avito',
+            'avito_option_value' => 'Значение опции в Avito',
+        ];
+    }
 }
