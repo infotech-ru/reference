@@ -38,7 +38,7 @@ class AvitoOptionMap extends ActiveRecord
                     'avito_option_group',
                     'avito_option_value',
                 ],
-                'integer',
+                'string',
             ],
         ];
     }

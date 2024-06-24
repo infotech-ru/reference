@@ -38,7 +38,7 @@ class AutoruBusinesOptionMap extends ActiveRecord
                     'autoru_option_group',
                     'autoru_option_value',
                 ],
-                'integer',
+                'string',
             ],
         ];
     }
