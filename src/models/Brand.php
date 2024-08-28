@@ -81,6 +81,7 @@ class Brand extends ActiveRecord
     public const ALTAI_ID = 2721;
     public const OMODA_ID = 2643;
     public const JAECOO_ID = 2692;
+    public const KNEWSTAR_ID = 2771;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
