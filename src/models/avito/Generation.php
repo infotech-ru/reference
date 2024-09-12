@@ -13,6 +13,7 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property int $model_id
+ * @property boolean $is_archive
  *
  * @property Model $model
  * @property GenerationMap[] $generationMaps
@@ -43,6 +44,7 @@ class Generation extends ActiveRecord
                 'targetClass' => Model::class,
                 'targetAttribute' => ['model_id' => 'id']
             ],
+            ['is_archive', 'boolean'],
         ];
     }
 

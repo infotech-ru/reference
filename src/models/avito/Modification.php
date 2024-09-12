@@ -24,6 +24,7 @@ use Yii;
  * @property string $transmission
  * @property string $power
  * @property string $engine_size
+ * @property boolean $is_archive
  *
  * @property Complectation[] $complectations
  * @property Generation $generation
@@ -71,6 +72,7 @@ class Modification extends ActiveRecord
                 'targetClass' => Generation::class,
                 'targetAttribute' => ['generation_id' => 'id']
             ],
+            ['is_archive', 'boolean'],
         ];
     }
 

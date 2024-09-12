@@ -13,6 +13,7 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property int $make_id
+ * @property boolean $is_archive
  *
  * @property Generation[] $generations
  * @property Make $make
@@ -43,6 +44,7 @@ class Model extends ActiveRecord
                 'targetClass' => Make::class,
                 'targetAttribute' => ['make_id' => 'id']
             ],
+            ['is_archive', 'boolean'],
         ];
     }
 

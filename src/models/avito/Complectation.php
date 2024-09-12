@@ -14,6 +14,7 @@ use Yii;
  * @property int $avito_id
  * @property string $name
  * @property int $modification_id
+ * @property boolean $is_archive
  *
  * @property Modification $modification
  * @property ComplectationMap[] $complectationMaps
@@ -43,6 +44,7 @@ class Complectation extends ActiveRecord
                 'targetClass' => Modification::class,
                 'targetAttribute' => ['modification_id' => 'id']
             ],
+            ['is_archive', 'boolean'],
         ];
     }
 
