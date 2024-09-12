@@ -12,6 +12,7 @@ use infotech\reference\models\ActiveRecord;
  *
  * @property int $id
  * @property string $name
+ * @property boolean $is_archive
  *
  * @property MakeMap[] $makeMaps
  * @property Brand[] $refBrands
@@ -28,6 +29,7 @@ class Make extends ActiveRecord
     {
         return [
             [['name'], 'string', 'max' => 255],
+            ['is_archive', 'boolean'],
         ];
     }
 
