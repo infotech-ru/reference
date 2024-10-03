@@ -57,6 +57,7 @@ class FederalDistrictTest extends TestCase
                 'okato',
                 'status',
                 'country_id',
+                'eng_name',
             ],
             $model->attributes()
         );
