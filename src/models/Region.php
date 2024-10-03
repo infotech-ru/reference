@@ -13,6 +13,7 @@ use yii\helpers\ArrayHelper;
  * @property integer $country_id
  * @property integer $federal_district_id
  * @property string $name
+ * @property string $eng_name
  * @property integer $status
  * @property string $timezone
  * @property double $lat
