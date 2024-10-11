@@ -15,11 +15,11 @@ use yii\db\ActiveQuery;
  *
  * @package infotech\reference\models
  */
-class LegalEntitiesTypes extends ActiveRecord
+class LegalEntityType extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return 'legal_entities_types';
+        return 'legal_entity_type';
     }
 
     public static function getList(): array
@@ -27,9 +27,9 @@ class LegalEntitiesTypes extends ActiveRecord
         return static::find()->select('name, id')->indexBy('id')->orderBy(['order' => SORT_DESC])->column();
     }
 
-    public static function find(): LegalEntitiesTypesQuery
+    public static function find(): LegalEntityTypeQuery
     {
-        return new LegalEntitiesTypesQuery(static::class);
+        return new LegalEntityTypeQuery(static::class);
     }
 
     public function getCountry(): CountryQuery
