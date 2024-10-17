@@ -9,9 +9,9 @@ use yii\db\ActiveQuery;
  *
  * @property string $name
  * @property string $full_name
- * @property integer $country_id
  * @property integer $order
- * @property-read Country $country
+ * @property integer $code_okopf
+ * @property-read Country[] $countries
  *
  * @package infotech\reference\models
  */
@@ -32,8 +32,9 @@ class LegalEntityType extends ActiveRecord
         return new LegalEntityTypeQuery(static::class);
     }
 
-    public function getCountry(): CountryQuery
+    public function getCountries(): ActiveQuery
     {
-        return $this->hasOne(Country::class, ['id' => 'country_id']);
+        return $this->hasMany(Country::class, ['id' => 'country_id'])
+            ->viaTable(LegalEntityTypeCountry::tableName(), ['legal_entity_type_id' => 'id']);
     }
 }
