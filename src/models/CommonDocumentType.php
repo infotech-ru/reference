@@ -14,6 +14,7 @@ class CommonDocumentType extends ActiveRecord
 {
     public const STATUS_ACTIVE = 1;
     public const STATUS_DELETED = 2;
+
     public static function tableName(): string
     {
         return 'common_document_types';
