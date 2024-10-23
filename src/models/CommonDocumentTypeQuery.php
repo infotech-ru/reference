@@ -8,5 +8,4 @@ class CommonDocumentTypeQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName() . '.is_active' => CommonDocumentType::STATUS_ACTIVE]);
     }
-
 }

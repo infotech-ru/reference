@@ -24,5 +24,4 @@ class CommonDocumentType extends ActiveRecord
     {
         return new CommonDocumentTypeQuery(static::class);
     }
-
 }
