@@ -8,6 +8,7 @@ namespace infotech\reference\models;
  * @property integer $id
  * @property string $name
  * @property integer $context
+ * @property integer $system_code
  * @property boolean $is_active
  */
 class CommonDocumentType extends ActiveRecord
