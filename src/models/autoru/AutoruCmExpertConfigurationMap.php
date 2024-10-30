@@ -10,13 +10,13 @@ use infotech\reference\models\ActiveRecord;
  * @property int $cm_expert_brand_id
  * @property int $cm_expert_model_id
  * @property int $cm_expert_generation_id
- * @property string $cm_expert_body
- * @property string $cm_expert_doors
- * @property string $cm_expert_engine
+ * @property int $cm_expert_body
+ * @property int $cm_expert_doors
+ * @property int $cm_expert_engine
  * @property string $cm_expert_volume
- * @property string $cm_expert_power
- * @property string $cm_expert_drive
- * @property string $cm_expert_gear
+ * @property int $cm_expert_power
+ * @property int $cm_expert_drive
+ * @property int $cm_expert_gear
  *
  * @property string $autoru_brand_name
  * @property string $autoru_model_name
