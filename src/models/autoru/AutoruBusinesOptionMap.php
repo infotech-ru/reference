@@ -2,6 +2,7 @@
 
 namespace infotech\reference\models\autoru;
 
+use infotech\reference\models\VehicleOptionType;
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\ActiveQuery;
 
@@ -14,6 +15,7 @@ use infotech\reference\models\ActiveQuery;
  * @property string $autoru_option_code
  * @property string $autoru_option_group
  * @property string $autoru_option_value
+ * @property string $autoru_option_name
  */
 class AutoruBusinesOptionMap extends ActiveRecord
 {
@@ -22,35 +24,8 @@ class AutoruBusinesOptionMap extends ActiveRecord
         return 'autoru_business_options_map';
     }
 
-    public function rules(): array
+    public function getOptionType(): \yii\db\ActiveQuery
     {
-        return [
-            [
-                [
-                    'option_type_id',
-                ],
-                'integer',
-            ],
-            [
-                [
-                    'option_value',
-                    'autoru_option_code',
-                    'autoru_option_group',
-                    'autoru_option_value',
-                ],
-                'string',
-            ],
-        ];
-    }
-
-    public function attributeLabels()
-    {
-        return [
-            'option_type_id' => 'Опция',
-            'option_value' => 'Значение опции',
-            'autoru_option_code' => 'ID (код) опции Autoru',
-            'autoru_option_group' => 'Название группы опций в Autoru',
-            'autoru_option_value' => 'Значение опции в Autoru',
-        ];
+        return $this->hasOne(VehicleOptionType::class, ['id' => 'option_type_id']);
     }
 }
