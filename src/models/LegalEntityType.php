@@ -9,17 +9,17 @@ use yii\db\ActiveQuery;
  *
  * @property string $name
  * @property string $full_name
- * @property integer $country_id
  * @property integer $order
- * @property-read Country $country
+ * @property integer $code_okopf
+ * @property-read Country[] $countries
  *
  * @package infotech\reference\models
  */
-class LegalEntitiesTypes extends ActiveRecord
+class LegalEntityType extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return 'legal_entities_types';
+        return 'legal_entity_type';
     }
 
     public static function getList(): array
@@ -27,13 +27,14 @@ class LegalEntitiesTypes extends ActiveRecord
         return static::find()->select('name, id')->indexBy('id')->orderBy(['order' => SORT_DESC])->column();
     }
 
-    public static function find(): LegalEntitiesTypesQuery
+    public static function find(): LegalEntityTypeQuery
     {
-        return new LegalEntitiesTypesQuery(static::class);
+        return new LegalEntityTypeQuery(static::class);
     }
 
-    public function getCountry(): CountryQuery
+    public function getCountries(): ActiveQuery
     {
-        return $this->hasOne(Country::class, ['id' => 'country_id']);
+        return $this->hasMany(Country::class, ['id' => 'country_id'])
+            ->viaTable(LegalEntityTypeCountry::tableName(), ['legal_entity_type_id' => 'id']);
     }
 }

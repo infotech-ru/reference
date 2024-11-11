@@ -82,11 +82,13 @@ class Brand extends ActiveRecord
     public const OMODA_ID = 2643;
     public const JAECOO_ID = 2692;
     public const KNEWSTAR_ID = 2771;
+    public const NOT_DEFINED_ID = 139;
 
     public const VEHICLE_TYPE_MIXED = 1;
     public const VEHICLE_TYPE_PASSENGER = 2;
     public const VEHICLE_TYPE_CARGO = 3;
     public const VEHICLE_TYPE_MOTO = 4;
+    public const VEHICLE_TYPE_HND = 5;
 
     public static function tableName(): string
     {
