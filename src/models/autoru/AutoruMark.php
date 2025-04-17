@@ -29,7 +29,7 @@ class AutoruMark extends ActiveRecord
     {
         return [
             [['id', 'brand_id'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'code'], 'string', 'max' => 255],
             [['id'], 'unique'],
         ];
     }
@@ -39,6 +39,7 @@ class AutoruMark extends ActiveRecord
         return [
             'id' => 'ИД (AutoRu)',
             'name' => 'Марка (AutoRu)',
+            'code' => 'Код марки',
             'brand_id' => 'Бренд',
         ];
     }
