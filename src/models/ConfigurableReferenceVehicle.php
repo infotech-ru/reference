@@ -25,6 +25,7 @@ class ConfigurableReferenceVehicle extends ActiveRecord
         return 'configurable_reference_vehicle';
     }
 
+
     public static function find()
     {
         return new ConfigurableReferenceVehicleQuery(static::class);
