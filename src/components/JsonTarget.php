@@ -79,6 +79,10 @@ class JsonTarget extends FileTarget
             ]
         ];
 
+        if (Yii::$app->errorHandler->hasMethod('getErrorId')) {
+            $value['error-id'] = Yii::$app->errorHandler->getErrorId();
+        }
+
         return Json::encode($value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
     }
 }
