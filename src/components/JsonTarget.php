@@ -23,6 +23,14 @@ class JsonTarget extends FileTarget
 
     public function formatMessage($message): string
     {
+        return Json::encode(
+            $this->getMessageData($message),
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE
+        );
+    }
+
+    protected function getMessageData($message): array
+    {
         list($text, $level, $category, $timestamp) = $message;
         $level = Logger::getLevelName($level);
         $statusCode = 200;
@@ -65,7 +73,7 @@ class JsonTarget extends FileTarget
             $duration = null;
         }
 
-        $value = [
+        return [
             'message' => $text,
             'level' => $level,
             'category' => $category,
@@ -78,11 +86,5 @@ class JsonTarget extends FileTarget
                 'user_id' => $userId,
             ]
         ];
-
-        if (Yii::$app->errorHandler->hasMethod('getErrorId')) {
-            $value['error-id'] = Yii::$app->errorHandler->getErrorId();
-        }
-
-        return Json::encode($value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
     }
 }
