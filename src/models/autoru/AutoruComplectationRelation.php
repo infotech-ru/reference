@@ -14,6 +14,7 @@ use infotech\reference\models\autoru\queries\AutoruComplectationMapQuery;
  *
  * @property AutoruConfigurationMap[] $mapped
  * @property int[] $mapIds
+ * @deprecated use AutoruComplectationMapped
  */
 class AutoruComplectationRelation extends ActiveRecord
 {
