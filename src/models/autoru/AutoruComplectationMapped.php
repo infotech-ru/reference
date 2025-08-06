@@ -4,6 +4,7 @@ namespace infotech\reference\models\autoru;
 
 use infotech\reference\models\ActiveRecord;
 use infotech\reference\models\autoru\queries\AutoruComplectationMappedQuery;
+use infotech\reference\models\Equipment;
 use yii\db\ActiveQuery;
 
 class AutoruComplectationMapped extends ActiveRecord
@@ -30,11 +31,25 @@ class AutoruComplectationMapped extends ActiveRecord
                 'targetAttribute' => ['complectation_id', 'modification_id', 'map_id']
             ],
             [
-                ['complectation_id', 'modification_id'],
+                'complectation_id',
                 'exist',
                 'skipOnError' => true,
-                'targetClass' => AutoruComplectationRelation::class,
-                'targetAttribute' => ['complectation_id' => 'complectation_id', 'modification_id' => 'modification_id']
+                'targetClass' => AutoruComplectation::class,
+                'targetAttribute' => 'id',
+            ],
+            [
+                'modification_id',
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => AutoruModification::class,
+                'targetAttribute' => 'id',
+            ],
+            [
+                'map_id',
+                'exist',
+                'skipOnError' => true,
+                'targetClass' => Equipment::class,
+                'targetAttribute' => 'id',
             ],
         ];
     }

@@ -14,7 +14,8 @@ use infotech\reference\models\autoru\queries\AutoruComplectationQuery;
  * @property int $id
  * @property string $name
  *
- * @property AutoruComplectationRelation[] $maps
+ * @property AutoruComplectationRelation[] $maps deprecated use mapped
+ * @property AutoruComplectationMapped $mapped
  */
 class AutoruComplectation extends ActiveRecord
 {
@@ -78,9 +79,17 @@ class AutoruComplectation extends ActiveRecord
         ];
     }
 
+    /**
+     * @deprecated
+     */
     public function getMaps()
     {
         return $this->hasOne(AutoruComplectationRelation::class, ['complectation_id' => 'id']);
+    }
+
+    public function getMapped()
+    {
+        return $this->hasOne(AutoruComplectationMapped::class, ['complectation_id' => 'id']);
     }
 
     public static function find(): AutoruComplectationQuery
