@@ -17,7 +17,6 @@ class m250905_112156_alter_table_eqt_autoru_mark extends Migration
             DROP PRIMARY KEY,
             ADD PRIMARY KEY (`id`, `code`) USING BTREE;
         ');
-
     }
 
     /**
