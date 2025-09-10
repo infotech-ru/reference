@@ -22,6 +22,7 @@ use yii\base\InvalidConfigException;
  * @property-read Model $model
  * @property-read Serie $serie
  * @property-read Option[] $options
+ * @property-read Option[] $mainOptions
  * @property-read ModelYearEquipment[] $modelYearEquipments
  * @property-read ModelYear[] $modelYears
  * @property-read ModificationEquipment[] $modificationEquipments
@@ -84,6 +85,14 @@ class Equipment extends ActiveRecord
     public function getOptions()
     {
         return $this->hasMany(Option::class, ['equipment_id' => 'id']);
+    }
+
+    public function getMainOptions()
+    {
+        return $this->hasMany(Option::class, ['equipment_id' => 'id'])
+            ->innerJoinWith(['modelOption' => function (ModelOptionQuery $q) {
+                $q->isMain();
+            }]);
     }
 
     public function getModelYearEquipments()

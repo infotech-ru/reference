@@ -35,4 +35,14 @@ class ModelOptionQuery extends ActiveQuery
     {
         return $this->andWhere([$this->tableName() . '.model_option_tag_id' => $value]);
     }
+
+    /**
+     * @param bool $value
+     * @return ModelOptionQuery
+     * @throws InvalidConfigException
+     */
+    public function isMain($value = true)
+    {
+        return $this->andWhere([$this->tableName() . '.is_main' => $value]);
+    }
 }
