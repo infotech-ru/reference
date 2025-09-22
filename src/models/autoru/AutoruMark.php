@@ -31,6 +31,7 @@ class AutoruMark extends ActiveRecord
             [['id', 'brand_id'], 'integer'],
             [['name', 'code'], 'string', 'max' => 255],
             [['id'], 'unique'],
+            [['code'], 'required'],
         ];
     }
 
