@@ -14,6 +14,7 @@ namespace infotech\reference\models;
  * @property string $updated_at
  * @property string $incompatible_options_codes
  * @property int $ord
+ * @property bool $is_main
  * @property-read Model $model
  * @property-read OptionGroup $optionGroup
  * @property-read ModelOptionTag $modelOptionTag
