@@ -95,7 +95,7 @@ class AutoruComplectation extends ActiveRecord
         return $this->hasOne(AutoruComplectationMapped::class, ['complectation_id' => 'id']);
     }
 
-    public function getModifications():ActiveQuery
+    public function getModifications(): ActiveQuery
     {
         return $this->hasMany(AutoruModification::class, ['id' => 'modification_id']);
     }
