@@ -28,12 +28,19 @@ class Skin extends ActiveRecord
 
     /**
      * @param $modelId
+     * @param array|int|null $seriedId
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($modelId): array
+    public static function getList($modelId, array|int|null $seriedId = null): array
     {
-        return static::find()->model($modelId)->select('name, id')->indexBy('id')->column();
+        $query = static::find()->model($modelId)->select('name, id')->indexBy('id');
+
+        if ($seriedId) {
+            $query->serie($seriedId);
+        }
+
+        return $query->column();
     }
 
     public static function find()
