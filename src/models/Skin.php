@@ -3,6 +3,7 @@
 namespace infotech\reference\models;
 
 use yii\base\InvalidConfigException;
+use yii\db\Expression;
 
 /**
  * Class Skin
@@ -29,17 +30,20 @@ class Skin extends ActiveRecord
     /**
      * @param $modelId
      * @param array|int|null $seriedId
+     * @param bool $withCode
      * @return array
      * @throws InvalidConfigException
      */
-    public static function getList($modelId, array|int|null $seriedId = null): array
+    public static function getList($modelId, array|int|null $seriedId = null, bool $withCode = false): array
     {
-        $query = static::find()->model($modelId)->select('name, id')->indexBy('id');
+        $query = static::find()
+            ->model($modelId)
+            ->select([$withCode ? new Expression("CONCAT(name, ' (', code, ')')") : 'name', 'id'])
+            ->indexBy('id');
 
-        if ($seriedId) {
+        if ($seriedId && $modelId && (clone $query)->serie($seriedId)->exists()) {
             $query->serie($seriedId);
         }
-
         return $query->column();
     }
 
