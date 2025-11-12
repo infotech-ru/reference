@@ -12,9 +12,13 @@ use infotech\reference\models\autoru\queries\AutoruComplectationQuery;
  * This is the model class for table "{{%autoru_complectation}}".
  *
  * @property int $id
+ * @property int $modification_id
  * @property string $name
  *
- * @property AutoruComplectationRelation[] $maps
+ * @property-read AutoruModification[] $modifications
+ *
+ * @property AutoruComplectationRelation[] $maps deprecated use mapped
+ * @property AutoruComplectationMapped $mapped
  */
 class AutoruComplectation extends ActiveRecord
 {
@@ -62,7 +66,7 @@ class AutoruComplectation extends ActiveRecord
     {
         return [
             [['id'], 'required'],
-            [['id'], 'integer'],
+            [['id', 'modification_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['id'], 'unique'],
         ];
@@ -78,9 +82,22 @@ class AutoruComplectation extends ActiveRecord
         ];
     }
 
+    /**
+     * @deprecated
+     */
     public function getMaps()
     {
         return $this->hasOne(AutoruComplectationRelation::class, ['complectation_id' => 'id']);
+    }
+
+    public function getMapped()
+    {
+        return $this->hasOne(AutoruComplectationMapped::class, ['complectation_id' => 'id']);
+    }
+
+    public function getModifications(): ActiveQuery
+    {
+        return $this->hasMany(AutoruModification::class, ['id' => 'modification_id']);
     }
 
     public static function find(): AutoruComplectationQuery
