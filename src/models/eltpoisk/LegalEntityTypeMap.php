@@ -3,7 +3,6 @@
 namespace infotech\reference\models\eltpoisk;
 
 use infotech\reference\models\ActiveRecord;
-use infotech\reference\models\Brand;
 use infotech\reference\models\eltpoisk\queries\LegalEntityTypeMapQuery;
 use infotech\reference\models\LegalEntityType;
 use Yii;
@@ -38,7 +37,7 @@ class LegalEntityTypeMap extends ActiveRecord
                 ['legal_entity_type_id'],
                 'exist',
                 'skipOnError' => true,
-                'targetClass' => Brand::class,
+                'targetClass' => LegalEntityType::class,
                 'targetAttribute' => ['legal_entity_type_id' => 'id']
             ],
         ];
@@ -47,7 +46,7 @@ class LegalEntityTypeMap extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'legal_entity_type_id' => Yii::t('app', 'Ref Brand ID'),
+            'legal_entity_type_id' => Yii::t('app', 'Ref Legal Entity ID'),
         ];
     }
 
