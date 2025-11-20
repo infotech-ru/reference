@@ -23,6 +23,7 @@ class Country extends ActiveRecord
     public const  AZERBAIJAN_ID = 32;
     public const  UKRAINE_ID = 785;
     public const  KYRGYZSTAN_ID = 449;
+    public const  UZBEKISTAN_ID = 821;
 
     public static function tableName(): string
     {
@@ -32,6 +33,16 @@ class Country extends ActiveRecord
     public static function getList(): array
     {
         return static::find()->select('name, id')->indexBy('id')->column();
+    }
+
+    public static function getListOrderedByName($order = 'asc'): array
+    {
+        $sortOrder = strtolower($order) === 'asc' ? 'asc' : 'desc';
+        return static::find()
+            ->select('name, id')
+            ->orderBy(['name' => $sortOrder])
+            ->indexBy('id')
+            ->column();
     }
 
     public static function find()
