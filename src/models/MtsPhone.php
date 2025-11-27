@@ -31,7 +31,6 @@ class MtsPhone extends ActiveRecord
         return [
             [['hash', 'phone'], 'required'],
             ['hash', 'integer'],
-            ['request_id', 'exist', 'targetRelation' => 'request'],
             ['status', 'default', 'value' => self::STATUS_FREE],
             ['status', 'in', 'range' => array_keys(self::statusList())],
         ];
