@@ -3,7 +3,6 @@
 namespace infotech\reference\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * @property int $id
