@@ -7,10 +7,12 @@ use yii\db\ActiveRecord;
 
 /**
  * @property int $id
- * @property int $hash
+ * @property int|null $hash
  * @property string $phone
- * @property int $request_id
+ * @property int|null $request_id
+ * @property int|null $dealer_id
  * @property int $status
+ * @property int|null $free_at
  */
 class MtsPhone extends ActiveRecord
 {

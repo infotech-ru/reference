@@ -17,6 +17,7 @@ class TranslationMessage extends ActiveRecord
     public const EN_US = 'en_US';
     public const RU_RU = 'ru_RU';
     public const ZH_CN = 'zh_CN';
+    public const ES_ES = 'es_ES';
 
     public function attributeLabels(): array
     {
@@ -67,6 +68,7 @@ class TranslationMessage extends ActiveRecord
             static::EN_US => static::EN_US,
             static::RU_RU => static::RU_RU,
             static::ZH_CN => static::ZH_CN,
+            static::ES_ES => static::ES_ES,
         ];
     }
 }
