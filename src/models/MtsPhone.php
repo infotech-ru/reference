@@ -3,7 +3,6 @@
 namespace infotech\reference\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * @property int $id
@@ -20,8 +19,7 @@ class MtsPhone extends ActiveRecord
     public const STATUS_PROCESS = 2;
     public const STATUS_FORWARD_TO_CLIENT = 3;
     public const STATUS_FORWARD_TO_DEALER = 4;
-    public const STATUS_REMOVED = 5;
-    public const STATUS_WAIT_SETUP = 6;
+    public const STATUS_WAIT_SETUP = 5;
 
     public static function tableName(): string
     {
@@ -35,6 +33,7 @@ class MtsPhone extends ActiveRecord
             ['hash', 'integer'],
             ['status', 'default', 'value' => self::STATUS_FREE],
             ['status', 'in', 'range' => array_keys(self::statusList())],
+            ['free_at', 'integer'],
         ];
     }
 
@@ -45,6 +44,7 @@ class MtsPhone extends ActiveRecord
             'phone' => Yii::t('app', 'Номер телефона'),
             'request_id' => Yii::t('app', 'ID лида'),
             'status' => Yii::t('app', 'Статус'),
+            'free_at' => Yii::t('app', 'Освобождён'),
         ];
     }
 
@@ -55,7 +55,6 @@ class MtsPhone extends ActiveRecord
             self::STATUS_PROCESS => Yii::t('app', 'Обрабатывается'),
             self::STATUS_FORWARD_TO_CLIENT => Yii::t('app', 'Переадресация к клиенту'),
             self::STATUS_FORWARD_TO_DEALER => Yii::t('app', 'Переадресация к дилеру'),
-            self::STATUS_REMOVED => Yii::t('app', 'Удалён'),
             self::STATUS_WAIT_SETUP => Yii::t('app', 'Ожидает настройки'),
         ];
     }
